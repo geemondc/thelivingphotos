@@ -1415,6 +1415,11 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 body.dark .lc-pair{background:#241c12}
 @media (max-width:560px){.lc-envs{grid-template-columns:repeat(3,1fr)}}
 </style>
+<style>
+  .markheart{position:absolute;top:8px;right:8px;z-index:4;width:34px;height:34px;border-radius:50%;background:rgba(255,253,248,.94);box-shadow:0 2px 8px rgba(60,30,10,.28);display:flex;align-items:center;justify-content:center;font-size:17px;line-height:1;color:#c9b98f;cursor:pointer;user-select:none;-webkit-user-select:none}
+  .markheart.on{color:#d6336c}
+  .lc-linklabel{font-weight:700;font-size:16px;color:var(--ink);margin:14px 0 4px;text-align:center}
+</style>
 <section id="sendcard">
   <div class="sec-head">
     <h2 data-i18n="mkH">Send a Living Card</h2>
@@ -1424,10 +1429,42 @@ body.dark .lc-pair{background:#241c12}
       <div class="lc-step"><span class="lc-stepno">1</span><div><p class="lc-stept" data-i18n="xp1t">Pick an envelope</p><p class="lc-stepp" data-i18n="xp1p">The envelope is the first thing they see — pick the one you like.</p></div></div>
       <div class="lc-step"><span class="lc-stepno">2</span><div><p class="lc-stept" data-i18n="xp2t">Pick a card</p><p class="lc-stepp" data-i18n="xp2p">The living picture that plays inside when it opens. The groups are named for what plays.</p></div></div>
       <div class="lc-step"><span class="lc-stepno">3</span><div><p class="lc-stept" data-i18n="xp3t">Write your words</p><p class="lc-stepp" data-i18n="xp3p">Who it&rsquo;s to, your message, and your name.</p></div></div>
-      <div class="lc-step"><span class="lc-stepno">4</span><div><p class="lc-stept" data-i18n="xp4t">Send it</p><p class="lc-stepp" data-i18n="xp4p">A card is $1. Bought a bundle (5 for $3 &middot; 10 for $5)? You get a pack code — type it below. Each card you send uses one from your pack. Looking is always free.</p></div></div>
+      <div class="lc-step"><span class="lc-stepno">4</span><div><p class="lc-stept" data-i18n="xp4t">Send it</p><p class="lc-stepp" data-i18n="xp4p">A card is $1. Bought a bundle (5 for $3 &middot; 10 for $5)? You get a pack code — type it below. Each card you send uses one from your pack. Looking is always free. You get the link when it&rsquo;s made — send it to them, and keep a copy for yourself; it opens any time.</p></div></div>
     </div>
 
     <p class="lc-label" data-i18n="pkEnvH">Step 1 · Pick an envelope</p>
+    <div class="lc-marked" id="lcMarkedEnvWrap" hidden>
+      <p class="lc-fam"><span aria-hidden="true" style="color:#d6336c">♥</span> <span data-i18n="markedH">Your marked</span></p>
+      <div class="lc-envs" id="lcMarkedEnvs" role="radiogroup" aria-label="Your marked envelopes"></div>
+    </div>
+    <p class="lc-fam" data-i18n="noAnimEnvH">No animation envelopes</p>
+    <p class="lc-sub" data-i18n="noAnimEnvP">A plain envelope — no picture on it, just the color.</p>
+    <div class="lc-envs" role="radiogroup" aria-label="No animation envelopes">
+      <button type="button" class="lc-envp lc-envplainp" data-plainenv="White" aria-pressed="false">
+        <div class="mini" style="background:#ffffff"><div class="mflap" style="background:#ece4d0"></div></div>
+        <span class="lc-pick-t" data-i18n="cWhite">Plain White</span>
+      </button>
+      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Blue" aria-pressed="false">
+        <div class="mini" style="background:#2e5fa3"><div class="mflap" style="background:#254e86"></div></div>
+        <span class="lc-pick-t" data-i18n="cBlue">Plain Blue</span>
+      </button>
+      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Red" aria-pressed="false">
+        <div class="mini" style="background:#c23b2e"><div class="mflap" style="background:#a02f24"></div></div>
+        <span class="lc-pick-t" data-i18n="cRed">Plain Red</span>
+      </button>
+      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Green" aria-pressed="false">
+        <div class="mini" style="background:#2e7d4f"><div class="mflap" style="background:#256841"></div></div>
+        <span class="lc-pick-t" data-i18n="cGreen">Plain Green</span>
+      </button>
+      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Orange" aria-pressed="false">
+        <div class="mini" style="background:#e07b2a"><div class="mflap" style="background:#c0631c"></div></div>
+        <span class="lc-pick-t" data-i18n="cOrange">Plain Orange</span>
+      </button>
+      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Purple" aria-pressed="false">
+        <div class="mini" style="background:#6d4fa1"><div class="mflap" style="background:#594083"></div></div>
+        <span class="lc-pick-t" data-i18n="cPurple">Plain Purple</span>
+      </button>
+    </div>
     <p class="lc-fam">Occasions</p>
     <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Occasions">
       <button type="button" class="lc-envp" data-pick="birthday" data-paid="1" aria-pressed="false">
@@ -1773,6 +1810,44 @@ body.dark .lc-pair{background:#241c12}
     </div>
     <p class="lc-label" data-i18n="pkCardH">Step 2 · Pick a card</p>
     <p class="lc-sub" data-i18n="pkCardP">The living picture that plays inside when it opens.</p>
+    <div class="lc-marked" id="lcMarkedCardWrap" hidden>
+      <p class="lc-fam"><span aria-hidden="true" style="color:#d6336c">♥</span> <span data-i18n="markedH">Your marked</span></p>
+      <div class="lc-scenes" id="lcMarkedCards" role="radiogroup" aria-label="Your marked cards"></div>
+    </div>
+    <p class="lc-fam" data-i18n="noAnimH">No animation cards</p>
+    <p class="lc-sub" data-i18n="noAnimP">No picture playing — just your words on a plain inside.</p>
+    <div class="lc-scenes" role="radiogroup" aria-label="No animation cards">
+      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="White" data-paid="1" aria-pressed="false">
+        <span class="lc-swatch" style="background:#ffffff;border:1.5px solid #d9cfb6"></span>
+        <span class="lc-scene-t" data-i18n="cWhite">Plain White</span>
+        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
+      </button>
+      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Blue" data-paid="1" aria-pressed="false">
+        <span class="lc-swatch" style="background:#2e5fa3"></span>
+        <span class="lc-scene-t" data-i18n="cBlue">Plain Blue</span>
+        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
+      </button>
+      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Red" data-paid="1" aria-pressed="false">
+        <span class="lc-swatch" style="background:#c23b2e"></span>
+        <span class="lc-scene-t" data-i18n="cRed">Plain Red</span>
+        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
+      </button>
+      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Green" data-paid="1" aria-pressed="false">
+        <span class="lc-swatch" style="background:#2e7d4f"></span>
+        <span class="lc-scene-t" data-i18n="cGreen">Plain Green</span>
+        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
+      </button>
+      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Orange" data-paid="1" aria-pressed="false">
+        <span class="lc-swatch" style="background:#e07b2a"></span>
+        <span class="lc-scene-t" data-i18n="cOrange">Plain Orange</span>
+        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
+      </button>
+      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Purple" data-paid="1" aria-pressed="false">
+        <span class="lc-swatch" style="background:#6d4fa1"></span>
+        <span class="lc-scene-t" data-i18n="cPurple">Plain Purple</span>
+        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
+      </button>
+    </div>
     <p class="lc-fam">School</p>
     <div class="lc-scenes" role="radiogroup" aria-label="Cards — School">
       <button type="button" class="lc-scene lc-cardp" data-pick="bkboys" data-paid="1" aria-pressed="false">
@@ -2016,40 +2091,6 @@ body.dark .lc-pair{background:#241c12}
         <span class="lc-scene-s">The Window Seat</span>
       </button>
     </div>
-    <p class="lc-fam" data-i18n="noAnimH">No animation cards</p>
-    <p class="lc-sub" data-i18n="noAnimP">No picture playing — just your words on a plain inside.</p>
-    <div class="lc-scenes" role="radiogroup" aria-label="No animation cards">
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Red" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#c23b2e"></span>
-        <span class="lc-scene-t" data-i18n="cRed">Plain Red</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Blue" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#2e5fa3"></span>
-        <span class="lc-scene-t" data-i18n="cBlue">Plain Blue</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Green" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#2e7d4f"></span>
-        <span class="lc-scene-t" data-i18n="cGreen">Plain Green</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Orange" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#e07b2a"></span>
-        <span class="lc-scene-t" data-i18n="cOrange">Plain Orange</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Purple" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#6d4fa1"></span>
-        <span class="lc-scene-t" data-i18n="cPurple">Plain Purple</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Pink" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#d6699e"></span>
-        <span class="lc-scene-t" data-i18n="cPink">Plain Pink</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-    </div>
     <p class="lc-label" data-i18n="wrH">Step 3 · Write your words</p>
     <label class="lc-field"><span data-i18n="mkTo">Who is it for?</span>
       <input id="lcTo" type="text" maxlength="60" autocomplete="off"></label>
@@ -2068,6 +2109,7 @@ body.dark .lc-pair{background:#241c12}
     <button type="button" class="cta teal lc-make" id="lcMake" data-i18n="mkMake">Make my card</button>
     <div class="lc-result" id="lcResult" hidden>
       <iframe id="lcPreview" title="Your Living Card preview" loading="lazy" scrolling="no" style="border:0;width:100%;height:540px;border-radius:14px;background:#221016"></iframe>
+      <p class="lc-linklabel" data-i18n="yourLinkH">Your card link — send it to them, and keep a copy for yourself:</p>
       <p class="lc-linkrow"><a id="lcLink" href="#" target="_blank" rel="noopener"></a></p>
       <div class="lc-share">
         <button type="button" class="cta ghost" id="lcCopy" data-i18n="mkCopy">Copy link</button>
@@ -2095,6 +2137,19 @@ body.dark .lc-pair{background:#241c12}
     var el = document.getElementById('lcPair');
     if (!el) return;
     var plainB = document.querySelector('.lc-plainp.on');
+    var plainEnvB = document.querySelector('.lc-envplainp.on');
+    if (plainEnvB){
+      var insideTxt;
+      if (plainB){
+        insideTxt = 'Plain ' + plainB.getAttribute('data-plain') + ' — your words, no picture playing';
+      } else {
+        var twinE = ALIAS[scene] || scene;
+        var cardE = document.querySelector('.lc-cardp[data-pick="' + scene + '"]') || document.querySelector('.lc-cardp[data-pick="' + twinE + '"]');
+        insideTxt = cardE ? nameOf(cardE) : 'Its own living scene';
+      }
+      el.textContent = 'Your card: Envelope — Plain ' + plainEnvB.getAttribute('data-plainenv') + ' · Inside — ' + insideTxt;
+      return;
+    }
     if (plainB){
       el.textContent = 'Your card: Plain ' + plainB.getAttribute('data-plain') + ' — your words, no picture playing.';
       return;
@@ -2115,9 +2170,27 @@ body.dark .lc-pair{background:#241c12}
       var t = document.querySelector(sel + '[data-pick="' + scene + '"]') || document.querySelector(sel + '[data-pick="' + twin + '"]');
       if (t && t !== btn){ t.classList.add('on'); t.setAttribute('aria-pressed','true'); }
     });
+    if (btn.classList.contains('lc-envp')){
+      /* a designed envelope replaces any plain-envelope choice */
+      document.querySelectorAll('.lc-envplainp').forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
+    } else if (document.querySelector('.lc-envplainp.on')){
+      /* a plain envelope is chosen — it stays the envelope while the inside changes */
+      var envTwin = document.querySelector('.lc-envp[data-pick="' + scene + '"]') || document.querySelector('.lc-envp[data-pick="' + twin + '"]');
+      if (envTwin){ envTwin.classList.remove('on'); envTwin.setAttribute('aria-pressed','false'); }
+    }
     pairText();
   }
   picks.forEach(function(b){ b.addEventListener('click', function(){ select(b); }); });
+  var envPlains = document.querySelectorAll('.lc-envplainp');
+  envPlains.forEach(function(b){
+    b.addEventListener('click', function(){
+      var was = b.classList.contains('on');
+      envPlains.forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
+      document.querySelectorAll('.lc-envp[data-pick]').forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
+      if (!was){ b.classList.add('on'); b.setAttribute('aria-pressed','true'); }
+      pairText();
+    });
+  });
   pairText();
   function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
   document.getElementById('lcMake').addEventListener('click', function(){
@@ -2247,6 +2320,87 @@ body.dark .lc-pair{background:#241c12}
   });
 })();
 </script>
+<script>
+/* Gallery mark-it (session-only, same spirit as the Wall's): tap the ♥ on
+   any envelope or card tile to mark it — marked designs surface first in
+   the matching Send-section step. The ♥ is its own control; the tile's
+   tap-to-watch link is never touched. Marks live in sessionStorage, so
+   they last for this visit only. The marked rows are shortcuts: tapping
+   one presses the real picker button, so selection, the pair line and
+   the pack gate all behave exactly as in the full lists. */
+(function(){
+  var EKEY = 'lcMarkedEnv', CKEY = 'lcMarkedCard';
+  function load(k){ try { return JSON.parse(sessionStorage.getItem(k) || '[]'); } catch(e){ return []; } }
+  function save(k, v){ try { sessionStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+  var markedEnv = load(EKEY), markedCard = load(CKEY);
+  function has(arr, k){ return arr.indexOf(k) !== -1; }
+  function keyOf(a, param){
+    var m = (a.getAttribute('href') || '').match(new RegExp('[?&]' + param + '=([^&]+)'));
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function renderMarked(){
+    cloneInto('lcMarkedEnvWrap', 'lcMarkedEnvs', markedEnv, '.lc-envp[data-pick]');
+    cloneInto('lcMarkedCardWrap', 'lcMarkedCards', markedCard, '.lc-cardp[data-pick]');
+  }
+  function cloneInto(wrapId, boxId, marked, btnSel){
+    var wrap = document.getElementById(wrapId), box = document.getElementById(boxId);
+    if (!wrap || !box) return;
+    box.innerHTML = '';
+    var n = 0;
+    document.querySelectorAll(btnSel).forEach(function(orig){
+      var k = orig.getAttribute('data-pick');
+      if (!has(marked, k)) return;
+      var c = document.createElement('button');
+      c.type = 'button';
+      c.className = orig.className;
+      c.setAttribute('data-clonekey', k);
+      if (orig.getAttribute('data-paid')) c.setAttribute('data-paid', orig.getAttribute('data-paid'));
+      c.setAttribute('aria-pressed', orig.classList.contains('on') ? 'true' : 'false');
+      if (orig.classList.contains('on')) c.classList.add('on');
+      c.innerHTML = orig.innerHTML;
+      c.addEventListener('click', function(){
+        var o = document.querySelector(btnSel.split('[')[0] + '[data-pick="' + k + '"]');
+        if (o) o.click();
+      });
+      box.appendChild(c); n++;
+    });
+    wrap.hidden = n === 0;
+  }
+  function heart(tile, kind, key){
+    var host = tile.querySelector('.mini') || tile;
+    var h = document.createElement('span');
+    h.className = 'markheart';
+    h.setAttribute('role', 'button');
+    h.textContent = '♥';
+    function sync(){
+      var on = has(kind === 'env' ? markedEnv : markedCard, key);
+      h.classList.toggle('on', on);
+      h.setAttribute('aria-pressed', on ? 'true' : 'false');
+      h.setAttribute('aria-label', on ? 'Marked — tap to unmark' : 'Mark this one');
+    }
+    h.addEventListener('click', function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      var arr = kind === 'env' ? markedEnv : markedCard;
+      var i = arr.indexOf(key);
+      if (i === -1) arr.push(key); else arr.splice(i, 1);
+      save(kind === 'env' ? EKEY : CKEY, arr);
+      sync(); renderMarked();
+    });
+    host.appendChild(h);
+    sync();
+  }
+  document.querySelectorAll('#envelopes a.tile').forEach(function(a){
+    var k = keyOf(a, 'env'); if (k) heart(a, 'env', k);
+  });
+  document.querySelectorAll('.band a.tile').forEach(function(a){
+    var k = keyOf(a, 'card'); if (k) heart(a, 'card', k);
+  });
+  /* keep the marked rows' highlight in step with the real pickers */
+  var form = document.querySelector('#sendcard .lc-form');
+  if (form) form.addEventListener('click', function(){ setTimeout(renderMarked, 0); });
+  renderMarked();
+})();
+</script>
 
 <footer>Living Photos &middot; thelivingphotos.com</footer>
 <script>
@@ -2339,11 +2493,13 @@ body.dark .lc-pair{background:#241c12}
     xp1t:'Elige un sobre', xp1p:'El sobre es lo primero que ven: elige el que te guste.',
     xp2t:'Elige una tarjeta', xp2p:'La imagen viviente que se reproduce adentro cuando se abre. Los grupos se nombran por lo que se reproduce.',
     xp3t:'Escribe tus palabras', xp3p:'Para quién es, tu mensaje y tu nombre.',
-    xp4t:'Envíala', xp4p:'Una tarjeta cuesta $1. ¿Compraste un paquete (5 por $3 · 10 por $5)? Recibes un código de paquete: escríbelo abajo. Cada tarjeta que envíes usa una de tu paquete. Mirar siempre es gratis.',
+    xp4t:'Envíala', xp4p:'Una tarjeta cuesta $1. ¿Compraste un paquete (5 por $3 · 10 por $5)? Recibes un código de paquete: escríbelo abajo. Cada tarjeta que envíes usa una de tu paquete. Mirar siempre es gratis. Cuando esté lista, recibes el enlace: envíaselo a ellos y guarda una copia para ti; se abre cuando quieras.',
     pkEnvH:'Paso 1 · Elige un sobre', pkCardH:'Paso 2 · Elige una tarjeta', pkCardP:'La imagen viviente que se reproduce adentro cuando se abre.',
     wrH:'Paso 3 · Escribe tus palabras', sendH:'Paso 4 · Envíala',
     noAnimH:'Tarjetas sin animación', noAnimP:'Sin imagen en movimiento: solo tus palabras en un interior sencillo.', noAnimS:'Solo tus palabras — nada se reproduce',
-    cRed:'Rojo sencillo', cBlue:'Azul sencillo', cGreen:'Verde sencillo', cOrange:'Naranja sencillo', cPurple:'Morado sencillo', cPink:'Rosa sencillo'
+    cRed:'Rojo sencillo', cBlue:'Azul sencillo', cGreen:'Verde sencillo', cOrange:'Naranja sencillo', cPurple:'Morado sencillo', cWhite:'Blanco sencillo',
+    noAnimEnvH:'Sobres sin animación', noAnimEnvP:'Un sobre sencillo: sin imagen, solo el color.',
+    markedH:'Tus marcados', yourLinkH:'El enlace de tu tarjeta — envíaselo y guarda una copia para ti:'
   };
   var tagged = document.querySelectorAll('[data-i18n]');
   tagged.forEach(function(el){ el.setAttribute('data-en', el.innerHTML); });
