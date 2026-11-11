@@ -201,7 +201,7 @@ footer .mark .star{color:var(--gold-deep)}
 .cmp-tag.living{background:var(--teal);color:#eafaf7}
 .cmp-cell.on{outline:3px solid var(--gold);outline-offset:2px}
 .cmp-cell:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
-/* The Hammock exhibit - tap readiness (com-LPe97c4672): a flip lands only when the
+/* The Hammock exhibit - tap readiness (twin-LPe072134e): a flip lands only when the
    target is actually ready to show (still decoded / living embed
    loaded); lazy cell paint stays invisible until decoded, so no
    window can strand a void under the frame-catcher. */
@@ -209,10 +209,10 @@ footer .mark .star{color:var(--gold-deep)}
    every window shows the ENTIRE painting; any window whose shape
    differs from the painting letterboxes over a blurred copy of the
    same plate instead of slicing its edges. */
-.fit-b0f4a059 .ex-frame .stage-still{object-fit:fill}
-.fit-b0f4a059 .cmp-cell .cmp-media{position:relative;background:#14100c}
-.fit-b0f4a059 .cmp-cell .cmp-media::before{content:"";position:absolute;inset:0;background-image:var(--hk);background-size:cover;background-position:center;filter:blur(14px) brightness(.72) saturate(1.06);transform:scale(1.12)}
-.fit-b0f4a059 .cmp-cell .cmp-media img{position:relative;z-index:1;object-fit:fill}
+.fit-ed803a9d .ex-frame .stage-still{object-fit:fill}
+.fit-ed803a9d .cmp-cell .cmp-media{position:relative;background:#14100c}
+.fit-ed803a9d .cmp-cell .cmp-media::before{content:"";position:absolute;inset:0;background-image:var(--hk);background-size:cover;background-position:center;filter:blur(14px) brightness(.72) saturate(1.06);transform:scale(1.12)}
+.fit-ed803a9d .cmp-cell .cmp-media img{position:relative;z-index:1;object-fit:fill}
 
 /* ---------- THE WALL (full-screen tour) ---------- */
 .wall-invite{margin-top:30px;margin-bottom:32px;text-align:center}
@@ -533,12 +533,107 @@ snapTo(null);
     <h1 data-en="Living Photos" data-es="Fotos Vivas">Living Photos</h1>
     <p class="welcome" data-en="Your favorite picture, changing from day to night. Watch the colors shift and the lights twinkle — the people stay just as they are." data-es="Tu foto favorita, cambiando del día a la noche. Mira cómo cambian los colores y titilan las luces — la gente se queda tal como es.">Your favorite picture, changing from day to night. Watch the colors shift and the lights twinkle — the people stay just as they are.</p>
     <p class="welcome" data-en="Made from your photo — $5 for one, $10 for three. Delivered within 3 days, with one lighting revision included." data-es="Hecha de tu foto — $5 por una, $10 por tres. Entrega en 3 días, con una revisión de iluminación incluida.">Made from your photo — $5 for one, $10 for three. Delivered within 3 days, with one lighting revision included.</p>
+
+<style id="storybook1110">
+/* STORYBOOK (Nov 10): flip-through welcome — one big picture + two rhyme lines per page */
+.storybook{max-width:700px;margin:28px auto 6px;background:var(--paper);border:1px solid var(--gold-b);border-radius:22px;box-shadow:0 14px 30px rgba(59,42,18,.16);overflow:hidden}
+.sb-view{overflow:hidden}
+.sb-track{display:flex;transition:transform .45s ease;align-items:flex-start}
+.sb-view{transition:height .45s ease}
+.sb-page{flex:0 0 100%;margin:0;text-align:center}
+.sb-pic{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#f3ead2}
+.sb-pic.contain{object-fit:contain}
+.sb-page figcaption{padding:16px 20px 6px;font-size:clamp(18px,2.6vw,21.5px);line-height:1.55;font-weight:600;color:var(--ink)}
+.sb-page figcaption .sb-first{display:block;font-size:clamp(19px,5.2vw,24px);font-weight:800;color:var(--teal-d);text-wrap:balance}
+body.dark .sb-page figcaption .sb-first{color:#7fd4da}
+.sb-page figcaption a,.sb-page figcaption .sb-doorlink{color:var(--teal-d);font-weight:800;text-decoration:underline;text-decoration-color:var(--gold-b);text-decoration-thickness:2px;text-underline-offset:3px}
+body.dark .sb-page figcaption a,body.dark .sb-page figcaption .sb-doorlink{color:#7fd4da}
+.sb-doorlink{background:none;border:0;font:inherit;cursor:pointer;padding:0}
+.sb-doors{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;padding:12px 14px 4px}
+.sb-nav{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 14px}
+.sb-arrow{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--gold-b);background:var(--paper);color:var(--ink);font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 10px rgba(59,42,18,.15)}
+.sb-arrow[disabled]{opacity:.3;cursor:default;box-shadow:none}
+.sb-dots{display:flex;gap:9px}
+.sb-dot{width:13px;height:13px;border-radius:50%;border:2px solid var(--gold-deep);background:transparent;cursor:pointer;padding:0}
+.sb-dot.on{background:var(--gold-deep)}
+.sb-hint{font-size:14.5px;color:var(--ink2);text-align:center;padding:0 16px 12px;margin-top:-6px}
+.wall-door-tag{font-style:normal !important;font-weight:800;font-size:16.5px !important;color:var(--teal-d) !important;margin-bottom:4px !important}
+body.dark .wall-door-tag{color:#7fd4da !important}
+@media (max-width:560px){.sb-page figcaption{padding:14px 14px 4px}}
+</style>
+
+<div class="storybook" id="storyBook">
+  <div class="sb-view" id="sbView">
+    <div class="sb-track" id="sbTrack">
+      <figure class="sb-page">
+        <img class="sb-pic" src="thumbs/school-cheer.jpg" alt="The avatar friends cheering in the sunshine" loading="eager">
+        <figcaption><span class="sb-first" data-en="Welcome, welcome, come and see —" data-es="¡Ven, ven, ven a ver —">Welcome, welcome, come and see —</span><span data-en="pictures that move, one, two, three!" data-es="fotos que se mueven: ¡una, dos, tres!">pictures that move, one, two, three!</span></figcaption>
+      </figure>
+      <figure class="sb-page">
+        <img class="sb-pic" src="img/p-75b0ea33dd.jpg" alt="The Volcano — a living photo glowing at night" loading="lazy">
+        <figcaption><span data-en="Some photos glow from day to night —" data-es="Unas fotos brillan del día a la noche —">Some photos glow from day to night —</span><br><span data-en="they shimmer, they shine, they change their light." data-es="titilan, relucen y cambian su luz.">they shimmer, they shine, they change their light.</span></figcaption>
+      </figure>
+      <figure class="sb-page">
+        <img class="sb-pic" src="thumbs/school-scboys-loop.webp" alt="A Soccer Boys living card scene playing — Goggles scores a goal" loading="lazy">
+        <figcaption><span data-en="Some come in " data-es="Otras vienen en ">Some come in </span><a href="envelopes.html" data-en="envelopes" data-es="sobres">envelopes</a><span data-en=" — tap for a surprise!" data-es=" — ¡toca y verás!"> — tap for a surprise!</span><br><span data-en="A little scene plays in front of your eyes." data-es="Una pequeña escena se mueve ante tus ojos.">A little scene plays in front of your eyes.</span></figcaption>
+      </figure>
+      <figure class="sb-page">
+        <img class="sb-pic contain" src="https://geemondc.github.io/living-notes/thumb-notebook.png" alt="A little folded note — To: Friend, from Me" loading="lazy">
+        <figcaption><span data-en="Some are " data-es="Otras son ">Some are </span><a href="envelopes.html#notes" data-en="tiny notes" data-es="notitas">tiny notes</a><span data-en=", folded tight —" data-es=", dobladas bien —">, folded tight —</span><br><span data-en="open one up and it pops to life!" data-es="¡abre una y cobra vida!">open one up and it pops to life!</span></figcaption>
+      </figure>
+      <figure class="sb-page">
+        <img class="sb-pic" src="thumbs/storybook-walking-wall.webp" alt="The avatar friends walking the Wall" loading="lazy">
+        <figcaption><button type="button" class="sb-doorlink" id="sbWallLink" data-en="Walk the Wall" data-es="Camina por La Pared">Walk the Wall</button><span data-en=", so big, so tall." data-es=", tan grande, tan alta.">, so big, so tall.</span><br><span data-en="Visit " data-es="Visita ">Visit </span><a href="theater.html" data-en="the Theater" data-es="el Teatro">the Theater</a><span data-en=", browse " data-es=", mira ">, browse </span><a href="#samples" data-en="the Pieces" data-es="las piezas">the Pieces</a><span data-en=" — that's not all." data-es=" — ¡y eso no es todo!"> — that's not all.</span></figcaption>
+      </figure>
+      <figure class="sb-page">
+        <img class="sb-pic" src="hero-sharing-web.jpg" alt="All eight avatar friends together, holding an envelope, a note, and a glowing card" loading="lazy">
+        <figcaption><span data-en="Tap any door, come on through —" data-es="Toca cualquier puerta y pasa —">Tap any door, come on through —</span><br><span data-en="everything here is waiting for you." data-es="¡todo aquí te está esperando!">everything here is waiting for you.</span></figcaption>
+        <div class="sb-doors">
+          <button type="button" class="furn" id="sbDoorWall"><span data-en="✦ The Wall" data-es="✦ La Pared">✦ The Wall</span></button>
+          <a class="furn" href="#samples"><span data-en="✦ The Pieces" data-es="✦ Las piezas">✦ The Pieces</span></a>
+          <a class="furn" href="theater.html"><span data-en="✦ The Theater" data-es="✦ El Teatro">✦ The Theater</span></a>
+          <a class="furn" href="envelopes.html"><span data-en="✦ Cards &amp; Envelopes" data-es="✦ Tarjetas y Sobres">✦ Cards &amp; Envelopes</span></a>
+          <a class="furn" href="envelopes.html#notes"><span data-en="✦ Living Notes" data-es="✦ Notas Vivas">✦ Living Notes</span></a>
+        </div>
+      </figure>
+    </div>
+  </div>
+  <div class="sb-nav">
+    <button type="button" class="sb-arrow" id="sbPrev" aria-label="Previous page">‹</button>
+    <div class="sb-dots" id="sbDots"></div>
+    <button type="button" class="sb-arrow" id="sbNext" aria-label="Next page">›</button>
+  </div>
+  <p class="sb-hint" data-en="Tap the picture or the arrows to turn the page." data-es="Toca la foto o las flechas para pasar la página.">Tap the picture or the arrows to turn the page.</p>
+</div>
+<script>
+(function(){
+  var track=document.getElementById('sbTrack'); if(!track) return;
+  var pages=track.children.length, i=0;
+  var prev=document.getElementById('sbPrev'), next=document.getElementById('sbNext'), dots=document.getElementById('sbDots');
+  for(var d=0; d<pages; d++){ var b=document.createElement('button'); b.type='button'; b.className='sb-dot'; b.setAttribute('aria-label','Page '+(d+1)); (function(n){ b.addEventListener('click',function(){ go(n); }); })(d); dots.appendChild(b); }
+  var viewEl=document.getElementById('sbView'); function fit(){ viewEl.style.height=track.children[i].offsetHeight+'px'; } function go(n){ i=Math.max(0,Math.min(pages-1,n)); track.style.transform='translateX('+(-i*100)+'%)'; prev.disabled=(i===0); next.disabled=(i===pages-1); for(var k=0;k<dots.children.length;k++) dots.children[k].classList.toggle('on',k===i); fit(); } window.addEventListener('resize',fit); window.addEventListener('load',fit);
+  prev.addEventListener('click',function(){ go(i-1); });
+  next.addEventListener('click',function(){ go(i+1); });
+  var view=document.getElementById('sbView');
+  view.addEventListener('click',function(e){ if(e.target.closest('a,button')) return; if(i<pages-1) go(i+1); });
+  var sx=null;
+  view.addEventListener('touchstart',function(e){ sx=e.changedTouches[0].clientX; },{passive:true});
+  view.addEventListener('touchend',function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>42){ go(i+(dx<0?1:-1)); } },{passive:true});
+  function openWall(){ var b=document.getElementById('wallOpen'); if(b) b.click(); }
+  var wl=document.getElementById('sbWallLink'); if(wl) wl.addEventListener('click',openWall);
+  var dw=document.getElementById('sbDoorWall'); if(dw) dw.addEventListener('click',openWall);
+  go(0);
+})();
+</script>
+
+    <p style="text-align:center;max-width:640px;margin:20px auto 0;font-size:16.5px;line-height:1.6;color:var(--ink2)" data-en="We're a small workshop making living photos, animated cards, and unfolding notes — learning as we go, and adding new things along the way." data-es="Somos un taller pequeño que hace fotos vivas, tarjetas animadas y notas que se despliegan — aprendiendo sobre la marcha, y agregando cosas nuevas en el camino.">We're a small workshop making living photos, animated cards, and unfolding notes — learning as we go, and adding new things along the way.</p>
     <div class="cta-row">
       <a class="cta teal" href="#difference" data-en="See the difference" data-es="Mira la diferencia">See the difference</a>
       <a class="cta ghost" href="#make" data-en="Make mine — from $5" data-es="Haz la mía — desde $5">Make mine — from $5</a>
     </div>
     <p style="margin-top:14px;font-size:15.5px"><span data-en="Also:" data-es="También:">Also:</span> <a href="envelopes.html" data-en="animated greeting cards with opening envelopes — from $1" data-es="tarjetas animadas con sobres que se abren — desde $1">animated greeting cards with opening envelopes — from $1</a></p>
     <div class="wall-invite">
+      <p class="wall-door-tag" data-en="The Wall — the whole collection, full screen, one after another" data-es="La Pared — toda la colección, a pantalla completa, una tras otra">The Wall — the whole collection, full screen, one after another</p>
       <p data-en="Start with the Wall — a full-screen walk through our living photos, one after another, day turning to night. Two minutes inside beats any description." data-es="Empieza con La Pared — un paseo a pantalla completa por nuestras fotos vivas, una tras otra, del día a la noche. Dos minutos dentro valen más que cualquier descripción.">Start with the Wall — a full-screen walk through our living photos, one after another, day turning to night. Two minutes inside beats any description.</p>
       <button class="cta wallbtn" id="wallOpen" type="button" data-en="✦ Experience the Wall" data-es="✦ Vive La Pared">✦ Experience the Wall</button>
     </div>
@@ -774,7 +869,7 @@ snapTo(null);
 <div class="exhibit">
     <h3 data-en="The Hammock" data-es="La Hamaca">The Hammock</h3>
     <p class="exhibit-cap" data-en="A painted view from a hammock by the sea — leaves overhead, the water below, and the whole day passing over you: bright morning, golden sunset, and a night full of color." data-es="Una vista pintada desde una hamaca junto al mar: hojas arriba, el agua abajo y todo el día pasando sobre ti: mañana brillante, atardecer dorado y una noche llena de color.">A painted view from a hammock by the sea — leaves overhead, the water below, and the whole day passing over you: bright morning, golden sunset, and a night full of color.</p>
-    <div class="lp3 fit-b0f4a059" data-lp3>
+    <div class="lp3 fit-ed803a9d" data-lp3>
       <div class="ex-frame" style="aspect-ratio:1600/1200"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
         <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
         <iframe scrolling="no" data-live="https://geemondc.github.io/hammock/#wallnb" title="Living Photo — The Hammock, playing" loading="eager" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/1200"></iframe>
@@ -818,7 +913,7 @@ snapTo(null);
 <div class="theater-door">
   <div class="goldrule"></div>
   <h2 data-en="Step Into Our Theater" data-es="Entra a Nuestro Teatro">Step Into Our Theater</h2>
-  <p data-en="This page holds our select five, and the Wall walks you through ten favorites — but the whole collection lives in the theater, kept up to date. Every living photo on one page would make this page too heavy and slow, so they live in their own room: step in, pick a poster, and it plays full-screen, like a movie." data-es="Esta página guarda nuestras cinco selectas, y La Pared te lleva por diez favoritas — pero toda la colección vive en el teatro, siempre al día. Todas las fotos vivas en una sola página harían esta página demasiado pesada y lenta, así que viven en su propia sala: entra, elige un póster y se reproduce en pantalla completa, como una película.">This page holds our select five, and the Wall walks you through ten favorites — but the whole collection lives in the theater, kept up to date. Every living photo on one page would make this page too heavy and slow, so they live in their own room: step in, pick a poster, and it plays full-screen, like a movie.</p>
+  <p data-en="This page holds our select six, and the Wall walks you through ten favorites — but the whole collection lives in the theater, kept up to date. Every living photo on one page would make this page too heavy and slow, so they live in their own room: step in, pick a poster, and it plays full-screen, like a movie." data-es="Esta página guarda nuestras seis selectas, y La Pared te lleva por diez favoritas — pero toda la colección vive en el teatro, siempre al día. Todas las fotos vivas en una sola página harían esta página demasiado pesada y lenta, así que viven en su propia sala: entra, elige un póster y se reproduce en pantalla completa, como una película.">This page holds our select five, and the Wall walks you through ten favorites — but the whole collection lives in the theater, kept up to date. Every living photo on one page would make this page too heavy and slow, so they live in their own room: step in, pick a poster, and it plays full-screen, like a movie.</p>
   <div class="cta-row"><a class="cta teal" href="theater.html" data-en="Enter the Theater" data-es="Entra al Teatro">Enter the Theater</a></div>
 </div>
 
@@ -1058,13 +1153,59 @@ snapTo(null);
 
 
   <div class="lc-form">
-    <p class="lc-label" data-en="1 · Your free card — on us" data-es="1 · Tu tarjeta gratis — va por la casa">1 · Your free card — on us</p>
+    <p class="lc-label" data-en="1 · Pick a card — the Love card is free, the rest use your pack" data-es="1 · Elige una tarjeta: la del amor es gratis, las demás usan tu paquete">1 · Pick a card — the Love card is free, the rest use your pack</p>
     <div class="lc-scenes" role="radiogroup" aria-label="Card scene">
       <button type="button" class="lc-scene on" data-scene="biglove" aria-pressed="true">
         <img src="https://geemondc.github.io/big-heart-scene/thumb.jpg" alt="The Love Card — the Big Heart" loading="lazy">
-        <span class="lc-scene-t" data-en="The Love Card" data-es="La tarjeta del amor">The Love Card</span>
+        <span class="lc-scene-t" data-en="The Love Card — FREE" data-es="La tarjeta del amor — GRATIS">The Love Card — FREE</span>
         <span class="lc-scene-s" data-en="For someone you love" data-es="Para alguien que amas">For someone you love</span>
       </button>
+      <button type="button" class="lc-scene" data-scene="birthday" data-paid="1" aria-pressed="false">
+        <img src="thumbs/birthday.jpg" alt="Birthday" loading="lazy">
+        <span class="lc-scene-t" data-en="Birthday" data-es="Cumpleaños">Birthday</span>
+        <span class="lc-scene-s" data-en="1 pack card" data-es="1 tarjeta del paquete">1 pack card</span>
+      </button>
+      <button type="button" class="lc-scene" data-scene="wedding" data-paid="1" aria-pressed="false">
+        <img src="thumbs/wedding.jpg" alt="Wedding" loading="lazy">
+        <span class="lc-scene-t" data-en="Wedding" data-es="Boda">Wedding</span>
+        <span class="lc-scene-s" data-en="1 pack card" data-es="1 tarjeta del paquete">1 pack card</span>
+      </button>
+      <button type="button" class="lc-scene" data-scene="barmitzvah" data-paid="1" aria-pressed="false">
+        <img src="thumbs/barmitzvah.jpg" alt="Bar Mitzvah" loading="lazy">
+        <span class="lc-scene-t" data-en="Bar Mitzvah" data-es="Bar Mitzvá">Bar Mitzvah</span>
+        <span class="lc-scene-s" data-en="1 pack card" data-es="1 tarjeta del paquete">1 pack card</span>
+      </button>
+      <button type="button" class="lc-scene" data-scene="surprise" data-paid="1" aria-pressed="false">
+        <img src="thumbs/surprise.jpg" alt="Surprise" loading="lazy">
+        <span class="lc-scene-t" data-en="Surprise" data-es="Sorpresa">Surprise</span>
+        <span class="lc-scene-s" data-en="1 pack card" data-es="1 tarjeta del paquete">1 pack card</span>
+      </button>
+      <button type="button" class="lc-scene" data-scene="graduation" data-paid="1" aria-pressed="false">
+        <img src="thumbs/graduation.jpg" alt="Graduation" loading="lazy">
+        <span class="lc-scene-t" data-en="Graduation" data-es="Graduación">Graduation</span>
+        <span class="lc-scene-s" data-en="1 pack card" data-es="1 tarjeta del paquete">1 pack card</span>
+      </button>
+      <button type="button" class="lc-scene" data-scene="baby" data-paid="1" aria-pressed="false">
+        <img src="thumbs/baby.jpg" alt="Baby" loading="lazy">
+        <span class="lc-scene-t" data-en="Baby" data-es="Bebé">Baby</span>
+        <span class="lc-scene-s" data-en="1 pack card" data-es="1 tarjeta del paquete">1 pack card</span>
+      </button>
+      <button type="button" class="lc-scene" data-scene="christmas" data-paid="1" aria-pressed="false">
+        <img src="thumbs/christmas.jpg" alt="Christmas" loading="lazy">
+        <span class="lc-scene-t" data-en="Christmas" data-es="Navidad">Christmas</span>
+        <span class="lc-scene-s" data-en="1 pack card" data-es="1 tarjeta del paquete">1 pack card</span>
+      </button>
+      <button type="button" class="lc-scene" data-scene="balloonburst" data-paid="1" aria-pressed="false">
+        <img src="thumbs/balloonburst.jpg" alt="Balloon Pop" loading="lazy">
+        <span class="lc-scene-t" data-en="Balloon Pop" data-es="Globo que estalla">Balloon Pop</span>
+        <span class="lc-scene-s" data-en="1 pack card" data-es="1 tarjeta del paquete">1 pack card</span>
+      </button>
+    </div>
+    <div id="lcPack" hidden>
+      <label class="lc-field"><span data-en="Your pack code" data-es="Tu código de paquete">Your pack code</span>
+        <input id="lcPackCode" type="text" maxlength="14" autocomplete="off" placeholder="GEE-XXXX-XXXX" style="font-family:'Courier New',monospace;letter-spacing:.06em"></label>
+      <p id="lcPackMsg" style="font-size:14.5px;line-height:1.5;margin:2px 2px 0;color:var(--ink2)"></p>
+      <p style="font-size:14px;margin:8px 2px 0"><a href="pack.html" target="_blank" rel="noopener" data-en="Just bought a pack, or lost your code? Get it here →" data-es="¿Acabas de comprar un paquete o perdiste tu código? Consíguelo aquí →">Just bought a pack, or lost your code? Get it here →</a></p>
     </div>
     <p class="lc-label" data-en="2 · Write your card" data-es="2 · Escribe tu tarjeta">2 · Write your card</p>
     <label class="lc-field"><span data-en="Who is it for?" data-es="¿Para quién es?">Who is it for?</span>
@@ -1142,6 +1283,96 @@ snapTo(null);
 })();
 </script>
 
+<script src="pack-config.js"></script>
+<script src="pack.js"></script>
+<script>
+/* Pack gate for the maker form (runs in capture phase, ahead of the form's
+   own handlers; the free Love card path is never touched):
+   - Picking a paid scene shows the pack-code field.
+   - "Make my card" on a paid scene first checks the code + balance with the
+     pack service. No code / no balance / service off = the card is not made
+     and the visitor is told plainly why. Browsing and previewing never tick.
+   - The first share action (Copy / Text / WhatsApp / Email) on a made card
+     ticks exactly 1 credit for that card — sharing the same card again is
+     free, here and on the server (it dedupes by card id). */
+(function(){
+  var FREE = 'biglove';
+  var scene = FREE, paid = false;
+  var pending = null; /* {code, cardId, scene, done} for the card on stage */
+  var msg = document.getElementById('lcPackMsg');
+  var box = document.getElementById('lcPack');
+  var input = document.getElementById('lcPackCode');
+  function say(t){ if (msg) msg.textContent = t; }
+  document.querySelectorAll('.lc-scene').forEach(function(b){
+    b.addEventListener('click', function(){
+      scene = b.getAttribute('data-scene') || FREE;
+      paid = b.getAttribute('data-paid') === '1';
+      pending = null;
+      if (box) box.hidden = !paid;
+      if (paid){
+        if (input && !input.value && window.PackGate) input.value = PackGate.getCode();
+        say(window.PackGate && PackGate.live()
+          ? 'This card uses 1 from your pack when you send it. Making and previewing it is free.'
+          : 'Pack codes are being switched on — if you just bought a pack, your purchase is safe in Stripe and your code will work here the moment the switch flips.');
+        if (input && input.value && window.PackGate && PackGate.live()) checkBalance();
+      }
+    });
+  });
+  function checkBalance(){
+    var code = (input.value || '').trim();
+    if (!code || !window.PackGate) return;
+    PackGate.balance(code).then(function(r){
+      PackGate.setCode(code.toUpperCase());
+      say(r.balance > 0
+        ? '✓ Pack found — ' + r.balance + (r.balance === 1 ? ' card' : ' cards') + ' left. This card will use 1 when you send it.'
+        : 'That pack is finished — grab another below and keep going.');
+    }).catch(function(){ say('We do not recognize that code yet — double-check it, or use the finder link below.'); });
+  }
+  if (input) input.addEventListener('change', checkBalance);
+  var gatePass = false;
+  document.getElementById('lcMake').addEventListener('click', function(ev){
+    if (gatePass){ gatePass = false; return; } /* the verified re-dispatch goes straight through */
+    if (!paid) return; /* Love is free — never gated, never ticked */
+    var code = ((input && input.value) || (window.PackGate && PackGate.getCode()) || '').trim();
+    function block(t){ ev.stopImmediatePropagation(); ev.preventDefault(); say(t); if (box) box.scrollIntoView({behavior:'smooth', block:'nearest'}); }
+    if (!window.PackGate || !PackGate.live()){
+      block('Pack codes are being switched on right now — your purchase is safe in Stripe, and this will work the moment the switch flips. The Love card above is free meanwhile.');
+      return;
+    }
+    if (!code){ block('Type your pack code first — it arrived right after you paid (and the finder below can recover it from your email).'); return; }
+    /* We must check before the form builds the card: stop this click, verify,
+       then re-dispatch it once the balance is known good. */
+    ev.stopImmediatePropagation(); ev.preventDefault();
+    say('Checking your pack…');
+    PackGate.balance(code).then(function(r){
+      if (r.balance <= 0){ say('That pack is finished — grab another and keep going. Your words above are saved right where you left them.'); return; }
+      PackGate.setCode(code.toUpperCase());
+      pending = { code: code.toUpperCase(), cardId: PackGate.newCardId(), scene: scene, done: false };
+      say('✓ ' + r.balance + (r.balance === 1 ? ' card' : ' cards') + ' in your pack — this one uses 1 when you send it.');
+      gatePass = true;
+      var btn = document.getElementById('lcMake');
+      var again = new MouseEvent('click', { bubbles: true, cancelable: true });
+      btn.dispatchEvent(again);
+    }).catch(function(){ say('We do not recognize that code — double-check it, or use the finder link below.'); });
+  }, true);
+  function tickOnce(){
+    if (!pending || pending.done || !window.PackGate) return;
+    pending.done = true;
+    var p = pending;
+    PackGate.tick(p.code, p.cardId, p.scene).then(function(r){
+      if (r && typeof r.balance === 'number') say('✓ Sent — ' + r.balance + (r.balance === 1 ? ' card' : ' cards') + ' left in your pack.');
+      else if (r && r.queued) say('✓ Sent — your pack count will catch up in a moment.');
+    }).catch(function(e){
+      pending.done = false;
+      if (e && e.body && e.body.error === 'pack_finished') say('Your pack just ran out — this share still went through on us. Grab another pack to keep sending.');
+    });
+  }
+  ['lcCopy', 'lcSms', 'lcWa', 'lcMail'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('click', tickOnce, true);
+  });
+})();
+</script>
 
 <section id="more">
   <div class="sec-head"><h2 data-en="Come see more of our stuff" data-es="Ven a ver más de lo nuestro">Come see more of our stuff</h2></div>
@@ -1159,6 +1390,19 @@ snapTo(null);
     <p class="cat-box-crew" data-en="Our group is a bunch of different trades — traders, a doctor, photo editors, builders and teachers — each of us learning from the others." data-es="Nuestro grupo reúne muchos oficios distintos: operadores de bolsa, un médico, editores de fotos, constructores y maestros, cada uno aprendiendo de los demás.">Our group is a bunch of different trades — traders, a doctor, photo editors, builders and teachers — each of us learning from the others.</p>
     <a class="cat-box-btn" href="https://geemondc.github.io/future-ready-hub" data-en="See the Future Ready Catalog →" data-es="Ver el Catálogo Future Ready →">See the Future Ready Catalog →</a>
     </div>
+  </div>
+</section>
+
+<!-- ============ OUR WORKSHOP ============ -->
+<section id="workshop">
+  <div class="sec-head">
+    <h2 data-en="A little about our workshop" data-es="Un poco sobre nuestro taller">A little about our workshop</h2>
+  </div>
+  <div class="goldrule"></div>
+  <div class="sec-head" style="margin-top:20px">
+    <p data-en="Living Photos is a small workshop with a lot of ideas. We try things, learn from them, and keep working on the details." data-es="Living Photos es un taller pequeño con muchas ideas. Probamos cosas, aprendemos de ellas y seguimos trabajando en los detalles.">Living Photos is a small workshop with a lot of ideas. We try things, learn from them, and keep working on the details.</p>
+    <p data-en="You may notice a new scene, a different fold, or a tidier page when you come back. That's us, making things a little better." data-es="Quizás notes una escena nueva, un pliegue diferente o una página más ordenada cuando vuelvas. Somos nosotros, haciendo las cosas un poquito mejor.">You may notice a new scene, a different fold, or a tidier page when you come back. That's us, making things a little better.</p>
+    <p data-en="We hope you find something here that makes you think of someone." data-es="Esperamos que encuentres aquí algo que te haga pensar en alguien.">We hope you find something here that makes you think of someone.</p>
   </div>
 </section>
 <footer>
@@ -1763,3 +2007,4 @@ html,body{overflow-x:hidden;overflow-x:clip}
 </body>
 <!-- mirror sync 2026-11-05 -->
 </html>
+<!-- build re-trigger 2026-11-09 -->
