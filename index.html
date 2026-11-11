@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="google-site-verification" content="nJ_n9rsAJQ0tbepMPgFOEseuQHCQPFSAnF2PPOPfkuc" />
-<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Living Photos — Future Ready</title>
 <meta name="description" content="Living Photos by Future Ready: a photo you love, made richer in color and light — by hand, one photo at a time.">
@@ -587,58 +586,35 @@ body.dark .wall-door-tag{color:#7fd4da !important}
 <figure class="sb-panel">
         <img class="sb-pic" src="hero-sharing-web.jpg" alt="All eight avatar friends together, holding an envelope, a note, and a glowing card" loading="lazy">
         <figcaption><span data-en="Tap any door, come on through —" data-es="Toca cualquier puerta y pasa —">Tap any door, come on through —</span><br><span data-en="everything here is waiting for you." data-es="¡todo aquí te está esperando!">everything here is waiting for you.</span></figcaption>
+        <div class="sb-doors">
+          <button type="button" class="furn" id="sbDoorWall"><span data-en="✦ The Wall" data-es="✦ La Pared">✦ The Wall</span></button>
+          <a class="furn" href="#samples"><span data-en="✦ The Pieces" data-es="✦ Las piezas">✦ The Pieces</span></a>
+          <a class="furn" href="theater.html"><span data-en="✦ The Theater" data-es="✦ El Teatro">✦ The Theater</span></a>
+          <a class="furn" href="envelopes.html"><span data-en="✦ Cards &amp; Envelopes" data-es="✦ Tarjetas y Sobres">✦ Cards &amp; Envelopes</span></a>
+          <a class="furn" href="envelopes.html#notes"><span data-en="✦ Living Notes" data-es="✦ Notas Vivas">✦ Living Notes</span></a>
+        </div>
       </figure>
 </div>
 <script>
 (function(){
   function openWall(){ var b=document.getElementById('wallOpen'); if(b) b.click(); }
   var wl=document.getElementById('sbWallLink'); if(wl) wl.addEventListener('click',openWall);
+  var dw=document.getElementById('sbDoorWall'); if(dw) dw.addEventListener('click',openWall);
 })();
 </script>
 
-<!-- ============ STRAIGHTEN 1111 PREVIEW: storybook-end -> volcano choices zone ============ -->
-<style id="choices1111">
-.choices{max-width:700px;margin:26px auto 6px}
-.choice-panel{margin:0 0 26px;text-align:center;background:var(--paper);border:1px solid var(--gold-b);border-radius:22px;box-shadow:0 14px 30px rgba(59,42,18,.16);overflow:hidden}
-.choice-panel:last-child{margin-bottom:0}
-.choice-pic{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#f3ead2}
-.choice-panel figcaption{padding:16px 20px 14px;font-size:clamp(17.5px,2.6vw,20.5px);line-height:1.55;color:var(--ink)}
-.choice-name{display:block;font-size:clamp(20px,5.2vw,25px);font-weight:800;color:var(--teal-d);margin-bottom:2px}
-body.dark .choice-name{color:#7fd4da}
-.choice-line{display:block}
-.choice-door{display:inline-block;margin-top:10px;font-weight:800;color:#fdf6e3;background:var(--teal);border:1.5px solid var(--teal-d);border-radius:999px;padding:13px 30px;font-size:19px;line-height:1.25;text-decoration:none;cursor:pointer;font-family:inherit}
-.choice-door.gold{background:linear-gradient(180deg,var(--gold-b),var(--gold));color:#3a2703;border-color:var(--gold-deep)}
-body.dark .choice-door{color:#fdf6e3}
-body.dark .choice-door.gold{color:#3a2703}
-@media (max-width:560px){.choice-panel figcaption{padding:14px 14px 12px}.choice-panel{margin-bottom:20px}.choice-door{font-size:18px;padding:12px 24px}}
-</style>
-<section id="choices">
-  <div class="sec-head">
-    <h2 data-en="Pick your door" data-es="Elige tu puerta">Pick your door</h2>
-    <p data-en="Four fun things live here. Pick the one you like!" data-es="Aquí viven cuatro cosas divertidas. ¡Elige la que más te guste!">Four fun things live here. Pick the one you like!</p>
-  </div>
-  <div class="goldrule"></div>
-  <div class="choices">
-    <figure class="choice-panel">
-      <img class="choice-pic" src="thumbs/welcome-loop.webp" alt="The avatar friends together — Teal holding a glowing framed picture">
-      <figcaption><span class="choice-name" data-en="Make Your Photo Living" data-es="Haz tu Foto Viva">Make Your Photo Living</span><span class="choice-line" data-en="Send us a photo you love. We make it glow — day turns to sunset, sunset turns to night." data-es="Envíanos una foto que ames. La hacemos brillar: el día se vuelve atardecer, y el atardecer, noche.">Send us a photo you love. We make it glow — day turns to sunset, sunset turns to night.</span><span class="choice-line" data-en="$5 for one photo. $10 for three." data-es="$5 por una foto. $10 por tres.">$5 for one photo. $10 for three.</span><a class="choice-door" href="#make" data-en="Make my photo living →" data-es="Haz mi foto viva →">Make my photo living →</a></figcaption>
-    </figure>
-    <figure class="choice-panel">
-      <img class="choice-pic" src="thumbs/school-scboys-loop.webp" alt="A living card scene playing — Goggles scores a goal">
-      <figcaption><span class="choice-name" data-en="Send a Living Card" data-es="Envía una Tarjeta Viva">Send a Living Card</span><span class="choice-line" data-en="A card hides in an envelope. Tap it — a tiny movie pops out! Your words go inside." data-es="Una tarjeta se esconde en un sobre. ¡Tócalo y sale una peliculita! Tus palabras van dentro.">A card hides in an envelope. Tap it — a tiny movie pops out! Your words go inside.</span><span class="choice-line" data-en="Most cards are $1. Your first card is free — the Emerald, our best one." data-es="Casi todas las tarjetas cuestan $1. Tu primera tarjeta es gratis: la Emerald, la mejor de todas.">Most cards are $1. Your first card is free — the Emerald, our best one.</span><a class="choice-door" href="https://thelivingphotos.com/envelopes.html" data-en="See the cards →" data-es="Mira las tarjetas →">See the cards →</a><br><a href="https://thelivingphotos.com/envelopes.html?pick=luxemerald#sendcard" style="display:inline-block;margin-top:12px;font-weight:800;font-size:17.5px;color:var(--teal-d);text-decoration:underline;text-decoration-color:var(--gold-b);text-decoration-thickness:2px;text-underline-offset:3px" data-en="Send the free card — Emerald" data-es="Envía la tarjeta gratis — Emerald">Send the free card — Emerald</a></figcaption>
-    </figure>
-    <figure class="choice-panel">
-      <img class="choice-pic" src="thumbs/storybook-walking-wall.webp" alt="The avatar friends walking the Wall">
-      <figcaption><span class="choice-name" data-en="The Wall" data-es="La Pared">The Wall</span><span class="choice-line" data-en="The Wall is a big walk of our best living photos. They play one by one, big and bright — like a tiny museum." data-es="La Pared es un paseo grande con nuestras mejores fotos vivas. Se ven una por una, grandes y brillantes, como un museo pequeñito.">The Wall is a big walk of our best living photos. They play one by one, big and bright — like a tiny museum.</span><span class="choice-line" data-en="Why go? To watch them glow — and to get ideas for your own photo. Tap the ♥ on the ones you love to keep them." data-es="¿Por qué ir? Para verlas brillar y sacar ideas para tu foto. Toca el ♥ en las que ames para guardarlas.">Why go? To watch them glow — and to get ideas for your own photo. Tap the ♥ on the ones you love to keep them.</span><button type="button" class="choice-door" id="wallOpen" data-en="✦ Walk the Wall →" data-es="✦ Camina por La Pared →">✦ Walk the Wall →</button></figcaption>
-    </figure>
-    <figure class="choice-panel">
-      <img class="choice-pic" src="hero-sharing-web.jpg" alt="All eight avatar friends together, holding an envelope, a note, and a glowing card">
-      <figcaption><span class="choice-name" data-en="The Theater" data-es="El Teatro">The Theater</span><span class="choice-line" data-en="The Theater is our movie house. Even more living photos live there, hung up like movie posters." data-es="El Teatro es nuestro cine. Allí viven aún más fotos vivas, colgadas como carteles de películas.">The Theater is our movie house. Even more living photos live there, hung up like movie posters.</span><span class="choice-line" data-en="Why step in? Pick a poster, and it plays big — full screen, like a movie." data-es="¿Por qué entrar? Elige un cartel y se reproduce en grande, en pantalla completa, como una película.">Why step in? Pick a poster, and it plays big — full screen, like a movie.</span><a class="choice-door gold" href="theater.html" data-en="Step into the Theater →" data-es="Entra al Teatro →">Step into the Theater →</a></figcaption>
-    </figure>
-  </div>
-</section>
-
+    <div class="cta-row">
+      <a class="cta ghost" href="#make" data-en="Make my photo living — from $5" data-es="Haz mi foto viva — desde $5">Make my photo living — from $5</a>
+    </div>
+    <div class="wall-invite">
+      <p class="wall-door-tag" data-en="The Wall — our favorites, hung big — tap one and watch it live." data-es="La Pared — nuestras favoritas, colgadas en grande — toca una y mírala vivir.">The Wall — our favorites, hung big — tap one and watch it live.</p>
+      <button class="cta wallbtn" id="wallOpen" type="button" data-en="✦ Experience the Wall" data-es="✦ Vive La Pared">✦ Experience the Wall</button>
+    </div>
     <style>.top-doors{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:2px auto 34px;max-width:940px}.top-doors .cta{height:auto;min-height:68px;font-size:21px;font-weight:800;letter-spacing:.02em;line-height:1.25;text-align:center;padding:16px 40px;border:2px solid;white-space:normal}.top-doors .td-theater{background:var(--teal);color:#fdf6e3;border-color:var(--teal-d);box-shadow:0 16px 36px rgba(9,63,68,.42)}.top-doors .td-cards{background:linear-gradient(180deg,var(--gold-b),var(--gold));color:#3a2703;border-color:var(--gold-deep);box-shadow:0 16px 32px rgba(90,55,0,.30)}@media (max-width:560px){.top-doors{flex-direction:column;margin-bottom:28px}.top-doors .cta{width:100%;font-size:19px;padding:15px 20px}}</style>
+    <div class="top-doors">
+      <a class="cta td-theater" href="theater.html" data-en="✦ The Theater" data-es="✦ El Teatro">✦ The Theater</a>
+      <a class="cta td-cards" href="envelopes.html" data-en="✦ Living Cards, Envelopes &amp; Notes" data-es="✦ Tarjetas, Sobres y Notas">✦ Living Cards, Envelopes &amp; Notes</a>
+    </div>
   </div>
   <div class="lp3" data-lp3>
     <div class="cover-photo"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div><img class="cover-poster" src="img/p-75b0ea33dd.jpg" alt="The Volcano — the living painting: the volcano erupts over a sea of clouds under the moon" data-canon="0">
@@ -679,6 +655,43 @@ body.dark .choice-door.gold{color:#3a2703}
 </header>
 
 <div class="wrap">
+
+<!-- ============ WHAT WE SELL ============ -->
+<style id="pitch1111">
+.pitch{max-width:700px;margin:26px auto 6px}
+.pitch-panel{margin:0 0 26px;text-align:center;background:var(--paper);border:1px solid var(--gold-b);border-radius:22px;box-shadow:0 14px 30px rgba(59,42,18,.16);overflow:hidden}
+.pitch-panel:last-child{margin-bottom:0}
+.pitch-pic{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#f3ead2}
+.pitch-panel figcaption{padding:16px 20px 14px;font-size:clamp(17.5px,2.6vw,20.5px);line-height:1.55;color:var(--ink)}
+.pitch-name{display:block;font-size:clamp(20px,5.2vw,25px);font-weight:800;color:var(--teal-d);margin-bottom:2px}
+body.dark .pitch-name{color:#7fd4da}
+.pitch-door{display:inline-block;margin-top:8px;font-weight:800;color:var(--teal-d);text-decoration:underline;text-decoration-color:var(--gold-b);text-decoration-thickness:2px;text-underline-offset:3px;background:none;border:0;font-size:inherit;font-family:inherit;cursor:pointer;padding:0}
+body.dark .pitch-door{color:#7fd4da}
+@media (max-width:560px){.pitch-panel figcaption{padding:14px 14px 12px}.pitch-panel{margin-bottom:20px}}
+</style>
+<section id="pitch">
+  <div class="sec-head">
+    <h2 data-en="What we sell" data-es="Lo que vendemos">What we sell</h2>
+  </div>
+  <div class="goldrule"></div>
+  <div class="pitch">
+    <figure class="pitch-panel">
+      <img class="pitch-pic" src="thumbs/volcano-loop.webp" alt="A living photo glowing at night">
+      <figcaption><span class="pitch-name" data-en="Living Photos" data-es="Fotos Vivas">Living Photos</span><span data-en="Send us your photo — we make it living. It glows from day to sunset to night. $5 for one · $10 for three." data-es="Envíanos tu foto — la hacemos viva. Brilla del día al atardecer y a la noche. $5 por una · $10 por tres.">Send us your photo — we make it living. It glows from day to sunset to night. $5 for one · $10 for three.</span><br><a class="pitch-door" href="#make" data-en="Send us yours →" data-es="Envíanos la tuya →">Send us yours →</a></figcaption>
+    </figure>
+    <figure class="pitch-panel">
+      <img class="pitch-pic" src="thumbs/school-scboys-loop.webp" alt="A living card scene playing — Goggles scores a goal">
+      <figcaption><span class="pitch-name" data-en="Living Cards" data-es="Tarjetas Vivas">Living Cards</span><span data-en="A little movie in an envelope, with your words inside. $1 each — and your first one, the Emerald, is free." data-es="Una pequeña película en un sobre, con tus palabras dentro. $1 cada una — y la primera, la Emerald, es gratis.">A little movie in an envelope, with your words inside. $1 each — and your first one, the Emerald, is free.</span><br><a class="pitch-door" href="envelopes.html" data-en="See the cards →" data-es="Mira las tarjetas →">See the cards →</a></figcaption>
+    </figure>
+    <figure class="pitch-panel">
+      <img class="pitch-pic" src="thumbs/storybook-walking-wall.webp" alt="The avatar friends walking the Wall">
+      <figcaption><span class="pitch-name" data-en="The Wall" data-es="La Pared">The Wall</span><span data-en="The Wall is ours — our favorites, hung big. Walk it and watch them live. Then send us yours: your photo is the one we make." data-es="La Pared es nuestra — nuestras favoritas, colgadas en grande. Camínala y míralas vivir. Después envíanos la tuya: tu foto es la que hacemos.">The Wall is ours — our favorites, hung big. Walk it and watch them live. Then send us yours: your photo is the one we make.</span><br><button type="button" class="pitch-door" id="pitchWallLink" data-en="Walk the Wall →" data-es="Camina por La Pared →">Walk the Wall →</button></figcaption>
+    </figure>
+  </div>
+<script>
+(function(){var b=document.getElementById('pitchWallLink');if(b)b.addEventListener('click',function(){var w=document.getElementById('wallOpen');if(w)w.click();});})();
+</script>
+</section>
 
 <!-- ============ THE DIFFERENCE / STAGE ============ -->
 <section id="difference">
@@ -1111,12 +1124,22 @@ body.dark .choice-door.gold{color:#3a2703}
 <section id="sendcard">
   <div class="sec-head">
     <h2 data-en="Send a Living Card" data-es="Env&#237;a una tarjeta viva">Send a Living Card</h2>
-    <p data-en="For taking the time to view our page &#8212; here is our way of saying thank you. Your first card is free &#8212; our best one: Emerald, a First Class card. Open it, write who it&#8217;s for, add one line from you, and send it. First Class cards are $1.50 each and they aren&#8217;t sold in bundles &#8212; this one sample is on us." data-es="Por tomarte el tiempo de ver nuestra p&#225;gina &#8212; esta es nuestra manera de decirte gracias. Tu primera tarjeta es gratis &#8212; la mejor de todas: Emerald, una tarjeta First Class. &#193;brela, escribe para qui&#233;n es, a&#241;ade una l&#237;nea tuya y env&#237;ala. Las tarjetas First Class cuestan $1.50 cada una y no se venden en paquetes &#8212; esta muestra va por la casa.">For taking the time to view our page &#8212; here is our way of saying thank you. Your first card is free &#8212; our best one: Emerald, a First Class card. Open it, write who it&#8217;s for, add one line from you, and send it. First Class cards are $1.50 each and they aren&#8217;t sold in bundles &#8212; this one sample is on us.</p>
   </div>
   <div class="goldrule"></div>
-  <p class="lc-sample-big"><a class="cta teal" href="https://thelivingphotos.com/envelopes.html?pick=luxemerald#sendcard" target="_blank" rel="noopener" data-en="Send the free card &#8212; Emerald" data-es="Env&#237;a la tarjeta gratis &#8212; Emerald">Send the free card &#8212; Emerald</a></p>
-  <p class="lc-sample-cap" style="margin-top:28px" data-en="Want to see all the Living Cards and envelopes?" data-es="&#191;Quieres ver todas las Tarjetas Vivientes y los sobres?">Want to see all the Living Cards and envelopes?</p>
-  <p class="lc-sample-big" style="margin-top:12px"><a class="cta ghost" href="https://thelivingphotos.com/envelopes.html" target="_blank" rel="noopener" data-en="Click over here &#8594;" data-es="Haz clic por aqu&#237; &#8594;">Click over here &#8594;</a></p>
+  <style id="sendcard1111">
+  .sc-boxes .lc-sample-big{margin-top:16px}
+  .sc-fine{display:block;margin-top:10px;font-size:.84em;line-height:1.5;opacity:.88}
+  </style>
+  <div class="pitch sc-boxes">
+    <figure class="pitch-panel">
+      <img class="pitch-pic" src="hero-sharing-web.jpg" alt="All eight friends together &#8212; Braids holds a sealed envelope, and Pink holds one open with a glowing card inside" loading="lazy">
+      <figcaption><span class="pitch-name" data-en="Your first card is free &#8212; the Emerald, our best one." data-es="Tu primera tarjeta es gratis &#8212; la Emerald, la mejor de todas.">Your first card is free &#8212; the Emerald, our best one.</span><span data-en="Open it, write who it&#8217;s for, add one line from you, and send it." data-es="&#193;brela, escribe para qui&#233;n es, a&#241;ade una l&#237;nea tuya y env&#237;ala.">Open it, write who it&#8217;s for, add one line from you, and send it.</span><span class="sc-fine" data-en="First Class cards are $1.50 each &#8212; not sold in bundles. This one is on us." data-es="Las tarjetas First Class cuestan $1.50 cada una &#8212; no se venden en paquetes. Esta va por la casa.">First Class cards are $1.50 each &#8212; not sold in bundles. This one is on us.</span><p class="lc-sample-big"><a class="cta teal" href="emerald.html" target="_blank" rel="noopener" data-en="Take a look at your free Emerald card" data-es="Mira tu tarjeta Emerald gratis">Take a look at your free Emerald card</a></p></figcaption>
+    </figure>
+    <figure class="pitch-panel">
+      <img class="pitch-pic" src="thumbs/storybook-walking-wall.webp" alt="The friends on the move &#8212; Braids carries a sealed envelope, Teal a glowing card, Puff a little note" loading="lazy">
+      <figcaption><span data-en="Want to see all the Living Cards and envelopes?" data-es="&#191;Quieres ver todas las Tarjetas Vivas y los sobres?">Want to see all the Living Cards and envelopes?</span><p class="lc-sample-big"><a class="cta ghost" href="https://thelivingphotos.com/envelopes.html" target="_blank" rel="noopener" data-en="See all the cards &#8594;" data-es="Mira todas las tarjetas &#8594;">See all the cards &#8594;</a></p></figcaption>
+    </figure>
+  </div>
 
   <div class="yt-box">
     <div class="yt-lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
