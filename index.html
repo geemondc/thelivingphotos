@@ -201,7 +201,7 @@ footer .mark .star{color:var(--gold-deep)}
 .cmp-tag.living{background:var(--teal);color:#eafaf7}
 .cmp-cell.on{outline:3px solid var(--gold);outline-offset:2px}
 .cmp-cell:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
-/* The Hammock exhibit - tap readiness (twin-LPe072134e): a flip lands only when the
+/* The Hammock exhibit - tap readiness (com-LPe97c4672): a flip lands only when the
    target is actually ready to show (still decoded / living embed
    loaded); lazy cell paint stays invisible until decoded, so no
    window can strand a void under the frame-catcher. */
@@ -209,10 +209,10 @@ footer .mark .star{color:var(--gold-deep)}
    every window shows the ENTIRE painting; any window whose shape
    differs from the painting letterboxes over a blurred copy of the
    same plate instead of slicing its edges. */
-.fit-ed803a9d .ex-frame .stage-still{object-fit:fill}
-.fit-ed803a9d .cmp-cell .cmp-media{position:relative;background:#14100c}
-.fit-ed803a9d .cmp-cell .cmp-media::before{content:"";position:absolute;inset:0;background-image:var(--hk);background-size:cover;background-position:center;filter:blur(14px) brightness(.72) saturate(1.06);transform:scale(1.12)}
-.fit-ed803a9d .cmp-cell .cmp-media img{position:relative;z-index:1;object-fit:fill}
+.fit-b0f4a059 .ex-frame .stage-still{object-fit:fill}
+.fit-b0f4a059 .cmp-cell .cmp-media{position:relative;background:#14100c}
+.fit-b0f4a059 .cmp-cell .cmp-media::before{content:"";position:absolute;inset:0;background-image:var(--hk);background-size:cover;background-position:center;filter:blur(14px) brightness(.72) saturate(1.06);transform:scale(1.12)}
+.fit-b0f4a059 .cmp-cell .cmp-media img{position:relative;z-index:1;object-fit:fill}
 
 /* ---------- THE WALL (full-screen tour) ---------- */
 .wall-invite{margin-top:30px;margin-bottom:32px;text-align:center}
@@ -464,7 +464,6 @@ img.crew-scene{cursor:zoom-in}
 @keyframes ytchase{0%,100%{opacity:1}50%{opacity:.18}}
 .yt-box-line{color:#f2e7c8;font-size:18.5px;line-height:1.55;margin:0 auto;max-width:520px}
 .yt-box-btn{display:inline-block;margin-top:18px;background:#c8102e;color:#fff;font-weight:800;font-size:19px;letter-spacing:.02em;padding:14px 30px;border-radius:999px;text-decoration:none;box-shadow:0 6px 22px rgba(200,16,46,.4)}
-.yt-friends{display:block;width:calc(100% + 52px);max-width:none;height:clamp(180px,50vw,295px);object-fit:cover;object-position:50% 22%;margin:-38px -26px 22px;border-bottom:2px solid var(--gold);border-radius:16px 16px 0 0}
 .cat-box{position:relative;max-width:800px;margin:26px auto 4px;background:#14100c;border:2px solid var(--gold);border-radius:20px;padding:48px 30px 36px;text-align:center;box-shadow:0 16px 46px rgba(20,12,2,.38)}
 .cat-box-title{color:#f6e9c9;font-size:27px;font-weight:800;line-height:1.3;margin:0 auto;max-width:640px}
 .cat-box-line{color:#e9dcba;font-size:18.5px;line-height:1.6;margin:16px auto 0;max-width:620px}
@@ -515,15 +514,6 @@ snapTo(null);
   <a class="sblink" href="https://chillingathome.lovable.app" target="_blank" rel="noopener">
     <span class="ic">♥</span><span><span class="t">Chilling at Home</span><br>
     <span class="s" data-en="The living photo, playing" data-es="La foto viva, en movimiento">The living photo, playing</span></span></a>
-  <a class="sblink" href="theater.html">
-    <span class="ic">🎭</span><span><span class="t" data-en="The Theater" data-es="El Teatro">The Theater</span><br>
-    <span class="s" data-en="The whole collection, on one page" data-es="Toda la colección, en una página">The whole collection, on one page</span></span></a>
-  <a class="sblink" href="envelopes.html">
-    <span class="ic">✉</span><span><span class="t" data-en="Cards &amp; Envelopes" data-es="Tarjetas y Sobres">Cards &amp; Envelopes</span><br>
-    <span class="s" data-en="Cards that open, scenes that play" data-es="Tarjetas que se abren, escenas que se mueven">Cards that open, scenes that play</span></span></a>
-  <a class="sblink" href="https://futurereadyorigami.lovable.app">
-    <span class="ic">✎</span><span><span class="t" data-en="Living Notes" data-es="Notas Vivas">Living Notes</span><br>
-    <span class="s" data-en="Folded notes that pop to life" data-es="Notas dobladas que cobran vida">Folded notes that pop to life</span></span></a>
   <a class="sblink" href="#" data-muse-open>
     <span class="ic">✧</span><span><span class="t" data-en="Want to learn how to use Muse?" data-es="¿Quieres aprender a usar Muse?">Want to learn how to use Muse?</span><br>
     <span class="s" data-en="The tool behind all of this" data-es="La herramienta detrás de todo esto">The tool behind all of this</span></span></a>
@@ -543,72 +533,13 @@ snapTo(null);
     <h1 data-en="Living Photos" data-es="Fotos Vivas">Living Photos</h1>
     <p class="welcome" data-en="Your favorite picture, changing from day to night. Watch the colors shift and the lights twinkle — the people stay just as they are." data-es="Tu foto favorita, cambiando del día a la noche. Mira cómo cambian los colores y titilan las luces — la gente se queda tal como es.">Your favorite picture, changing from day to night. Watch the colors shift and the lights twinkle — the people stay just as they are.</p>
     <p class="welcome" data-en="Made from your photo — $5 for one, $10 for three. Delivered within 3 days, with one lighting revision included." data-es="Hecha de tu foto — $5 por una, $10 por tres. Entrega en 3 días, con una revisión de iluminación incluida.">Made from your photo — $5 for one, $10 for three. Delivered within 3 days, with one lighting revision included.</p>
-
-<style id="storybook1110">
-/* STORYBOOK (Nov 10, open-stack pass): the intro explainer as one open stack of panels — every picture + its two rhyme lines visible on the page, AdrianaSpace/poster form; no flipping, nothing hidden behind a button */
-.storybook{max-width:700px;margin:28px auto 6px}
-.sb-panel{margin:0 0 26px;text-align:center;background:var(--paper);border:1px solid var(--gold-b);border-radius:22px;box-shadow:0 14px 30px rgba(59,42,18,.16);overflow:hidden}
-.sb-panel:last-child{margin-bottom:0}
-.sb-pic{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#f3ead2}
-.sb-pic.contain{object-fit:contain}
-.sb-panel figcaption{padding:16px 20px 12px;font-size:clamp(18px,2.6vw,21.5px);line-height:1.55;font-weight:600;color:var(--ink)}
-.sb-panel figcaption .sb-first{display:block;font-size:clamp(19px,5.2vw,24px);font-weight:800;color:var(--teal-d);text-wrap:balance}
-body.dark .sb-panel figcaption .sb-first{color:#7fd4da}
-.sb-panel figcaption a,.sb-panel figcaption .sb-doorlink{color:var(--teal-d);font-weight:800;text-decoration:underline;text-decoration-color:var(--gold-b);text-decoration-thickness:2px;text-underline-offset:3px}
-body.dark .sb-panel figcaption a,body.dark .sb-panel figcaption .sb-doorlink{color:#7fd4da}
-.sb-doorlink{background:none;border:0;font:inherit;cursor:pointer;padding:0}
-.sb-doors{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;padding:4px 14px 16px}
-.wall-door-tag{font-style:normal !important;font-weight:800;font-size:16.5px !important;color:var(--teal-d) !important;margin-bottom:4px !important}
-body.dark .wall-door-tag{color:#7fd4da !important}
-@media (max-width:560px){.sb-panel figcaption{padding:14px 14px 10px}.sb-panel{margin-bottom:20px}}
-</style>
-
-<div class="storybook" id="storyBook">
-<figure class="sb-panel">
-        <img class="sb-pic" src="thumbs/welcome-loop.webp" alt="The avatar friends cheering in the sunshine" loading="eager">
-        <figcaption><span class="sb-first" data-en="Welcome, welcome, come and see —" data-es="¡Ven, ven, ven a ver —">Welcome, welcome, come and see —</span><span data-en="pictures that move, one, two, three!" data-es="fotos que se mueven: ¡una, dos, tres!">pictures that move, one, two, three!</span></figcaption>
-      </figure>
-<figure class="sb-panel">
-        <img class="sb-pic" src="thumbs/volcano-loop.webp" alt="The Volcano — a living photo glowing at night" loading="lazy">
-        <figcaption><span data-en="Some photos glow from day to night —" data-es="Unas fotos brillan del día a la noche —">Some photos glow from day to night —</span><br><span data-en="they shimmer, they shine, they change their light." data-es="titilan, relucen y cambian su luz.">they shimmer, they shine, they change their light.</span></figcaption>
-      </figure>
-<figure class="sb-panel">
-        <img class="sb-pic" src="thumbs/school-scboys-loop.webp" alt="A Soccer Boys living card scene playing — Goggles scores a goal" loading="lazy">
-        <figcaption><span data-en="Some come in " data-es="Otras vienen en ">Some come in </span><a href="envelopes.html" data-en="envelopes" data-es="sobres">envelopes</a><span data-en=" — tap for a surprise!" data-es=" — ¡toca y verás!"> — tap for a surprise!</span><br><span data-en="A little scene plays in front of your eyes." data-es="Una pequeña escena se mueve ante tus ojos.">A little scene plays in front of your eyes.</span></figcaption>
-      </figure>
-<figure class="sb-panel">
-        <img class="sb-pic contain" src="https://geemondc.github.io/living-notes/thumb-notebook.png" alt="A little folded note — To: Friend, from Me" loading="lazy">
-        <figcaption><span data-en="Some are " data-es="Otras son ">Some are </span><a href="https://futurereadyorigami.lovable.app" data-en="tiny notes" data-es="notitas">tiny notes</a><span data-en=", folded tight —" data-es=", dobladas bien —">, folded tight —</span><br><span data-en="open one up and it pops to life!" data-es="¡abre una y cobra vida!">open one up and it pops to life!</span></figcaption>
-      </figure>
-<figure class="sb-panel">
-        <img class="sb-pic" src="thumbs/storybook-walking-wall.webp" alt="The avatar friends walking the Wall" loading="lazy">
-        <figcaption><button type="button" class="sb-doorlink" id="sbWallLink" data-en="Walk the Wall" data-es="Camina por La Pared">Walk the Wall</button><span data-en=", so big, so tall." data-es=", tan grande, tan alta.">, so big, so tall.</span><br><span data-en="Visit " data-es="Visita ">Visit </span><a href="theater.html" data-en="the Theater" data-es="el Teatro">the Theater</a><span data-en=", browse " data-es=", mira ">, browse </span><a href="#samples" data-en="the Pieces" data-es="las piezas">the Pieces</a><span data-en=" — that's not all." data-es=" — ¡y eso no es todo!"> — that's not all.</span></figcaption>
-      </figure>
-<figure class="sb-panel">
-        <img class="sb-pic" src="hero-sharing-web.jpg" alt="All eight avatar friends together, holding an envelope, a note, and a glowing card" loading="lazy">
-        <figcaption><span data-en="Tap any door, come on through —" data-es="Toca cualquier puerta y pasa —">Tap any door, come on through —</span><br><span data-en="everything here is waiting for you." data-es="¡todo aquí te está esperando!">everything here is waiting for you.</span></figcaption>
-        <div class="sb-doors">
-          <button type="button" class="furn" id="sbDoorWall"><span data-en="✦ The Wall" data-es="✦ La Pared">✦ The Wall</span></button>
-          <a class="furn" href="#samples"><span data-en="✦ The Pieces" data-es="✦ Las piezas">✦ The Pieces</span></a>
-          <a class="furn" href="theater.html"><span data-en="✦ The Theater" data-es="✦ El Teatro">✦ The Theater</span></a>
-          <a class="furn" href="envelopes.html"><span data-en="✦ Cards &amp; Envelopes" data-es="✦ Tarjetas y Sobres">✦ Cards &amp; Envelopes</span></a>
-          <a class="furn" href="https://futurereadyorigami.lovable.app"><span data-en="✦ Living Notes" data-es="✦ Notas Vivas">✦ Living Notes</span></a>
-        </div>
-      </figure>
-</div>
-<script>
-(function(){
-  function openWall(){ var b=document.getElementById('wallOpen'); if(b) b.click(); }
-  var wl=document.getElementById('sbWallLink'); if(wl) wl.addEventListener('click',openWall);
-  var dw=document.getElementById('sbDoorWall'); if(dw) dw.addEventListener('click',openWall);
-})();
-</script>
-
     <div class="cta-row">
-      <a class="cta ghost" href="#make" data-en="Make my photo living — from $5" data-es="Haz mi foto viva — desde $5">Make my photo living — from $5</a>
+      <a class="cta teal" href="#difference" data-en="See the difference" data-es="Mira la diferencia">See the difference</a>
+      <a class="cta ghost" href="#make" data-en="Make mine — from $5" data-es="Haz la mía — desde $5">Make mine — from $5</a>
     </div>
+    <p style="margin-top:14px;font-size:15.5px"><span data-en="Also:" data-es="También:">Also:</span> <a href="envelopes.html" data-en="animated greeting cards with opening envelopes — from $1" data-es="tarjetas animadas con sobres que se abren — desde $1">animated greeting cards with opening envelopes — from $1</a></p>
     <div class="wall-invite">
-      <p class="wall-door-tag" data-en="The Wall — our favorites, hung big — tap one and watch it live." data-es="La Pared — nuestras favoritas, colgadas en grande — toca una y mírala vivir.">The Wall — our favorites, hung big — tap one and watch it live.</p>
+      <p data-en="Start with the Wall — a full-screen walk through our living photos, one after another, day turning to night. Two minutes inside beats any description." data-es="Empieza con La Pared — un paseo a pantalla completa por nuestras fotos vivas, una tras otra, del día a la noche. Dos minutos dentro valen más que cualquier descripción.">Start with the Wall — a full-screen walk through our living photos, one after another, day turning to night. Two minutes inside beats any description.</p>
       <button class="cta wallbtn" id="wallOpen" type="button" data-en="✦ Experience the Wall" data-es="✦ Vive La Pared">✦ Experience the Wall</button>
     </div>
     <style>.top-doors{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:2px auto 34px;max-width:940px}.top-doors .cta{height:auto;min-height:68px;font-size:21px;font-weight:800;letter-spacing:.02em;line-height:1.25;text-align:center;padding:16px 40px;border:2px solid;white-space:normal}.top-doors .td-theater{background:var(--teal);color:#fdf6e3;border-color:var(--teal-d);box-shadow:0 16px 36px rgba(9,63,68,.42)}.top-doors .td-cards{background:linear-gradient(180deg,var(--gold-b),var(--gold));color:#3a2703;border-color:var(--gold-deep);box-shadow:0 16px 32px rgba(90,55,0,.30)}@media (max-width:560px){.top-doors{flex-direction:column;margin-bottom:28px}.top-doors .cta{width:100%;font-size:19px;padding:15px 20px}}</style>
@@ -656,43 +587,6 @@ body.dark .wall-door-tag{color:#7fd4da !important}
 </header>
 
 <div class="wrap">
-
-<!-- ============ WHAT WE SELL ============ -->
-<style id="pitch1111">
-.pitch{max-width:700px;margin:26px auto 6px}
-.pitch-panel{margin:0 0 26px;text-align:center;background:var(--paper);border:1px solid var(--gold-b);border-radius:22px;box-shadow:0 14px 30px rgba(59,42,18,.16);overflow:hidden}
-.pitch-panel:last-child{margin-bottom:0}
-.pitch-pic{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#f3ead2}
-.pitch-panel figcaption{padding:16px 20px 14px;font-size:clamp(17.5px,2.6vw,20.5px);line-height:1.55;color:var(--ink)}
-.pitch-name{display:block;font-size:clamp(20px,5.2vw,25px);font-weight:800;color:var(--teal-d);margin-bottom:2px}
-body.dark .pitch-name{color:#7fd4da}
-.pitch-door{display:inline-block;margin-top:8px;font-weight:800;color:var(--teal-d);text-decoration:underline;text-decoration-color:var(--gold-b);text-decoration-thickness:2px;text-underline-offset:3px;background:none;border:0;font-size:inherit;font-family:inherit;cursor:pointer;padding:0}
-body.dark .pitch-door{color:#7fd4da}
-@media (max-width:560px){.pitch-panel figcaption{padding:14px 14px 12px}.pitch-panel{margin-bottom:20px}}
-</style>
-<section id="pitch">
-  <div class="sec-head">
-    <h2 data-en="What we sell" data-es="Lo que vendemos">What we sell</h2>
-  </div>
-  <div class="goldrule"></div>
-  <div class="pitch">
-    <figure class="pitch-panel">
-      <img class="pitch-pic" src="thumbs/volcano-loop.webp" alt="A living photo glowing at night">
-      <figcaption><span class="pitch-name" data-en="Living Photos" data-es="Fotos Vivas">Living Photos</span><span data-en="Send us your photo — we make it living. It glows from day to sunset to night. $5 for one · $10 for three." data-es="Envíanos tu foto — la hacemos viva. Brilla del día al atardecer y a la noche. $5 por una · $10 por tres.">Send us your photo — we make it living. It glows from day to sunset to night. $5 for one · $10 for three.</span><br><a class="pitch-door" href="#make" data-en="Send us yours →" data-es="Envíanos la tuya →">Send us yours →</a></figcaption>
-    </figure>
-    <figure class="pitch-panel">
-      <img class="pitch-pic" src="thumbs/school-scboys-loop.webp" alt="A living card scene playing — Goggles scores a goal">
-      <figcaption><span class="pitch-name" data-en="Living Cards" data-es="Tarjetas Vivas">Living Cards</span><span data-en="A little movie in an envelope, with your words inside. $1 each — and your first one, the Emerald, is free." data-es="Una pequeña película en un sobre, con tus palabras dentro. $1 cada una — y la primera, la Emerald, es gratis.">A little movie in an envelope, with your words inside. $1 each — and your first one, the Emerald, is free.</span><br><a class="pitch-door" href="envelopes.html" data-en="See the cards →" data-es="Mira las tarjetas →">See the cards →</a></figcaption>
-    </figure>
-    <figure class="pitch-panel">
-      <img class="pitch-pic" src="thumbs/storybook-walking-wall.webp" alt="The avatar friends walking the Wall">
-      <figcaption><span class="pitch-name" data-en="The Wall" data-es="La Pared">The Wall</span><span data-en="The Wall is ours — our favorites, hung big. Walk it and watch them live. Then send us yours: your photo is the one we make." data-es="La Pared es nuestra — nuestras favoritas, colgadas en grande. Camínala y míralas vivir. Después envíanos la tuya: tu foto es la que hacemos.">The Wall is ours — our favorites, hung big. Walk it and watch them live. Then send us yours: your photo is the one we make.</span><br><button type="button" class="pitch-door" id="pitchWallLink" data-en="Walk the Wall →" data-es="Camina por La Pared →">Walk the Wall →</button></figcaption>
-    </figure>
-  </div>
-<script>
-(function(){var b=document.getElementById('pitchWallLink');if(b)b.addEventListener('click',function(){var w=document.getElementById('wallOpen');if(w)w.click();});})();
-</script>
-</section>
 
 <!-- ============ THE DIFFERENCE / STAGE ============ -->
 <section id="difference">
@@ -756,8 +650,8 @@ body.dark .pitch-door{color:#7fd4da}
   <div class="make-pics"><figure><img src="img/p-d3824541f2.webp" alt="Adriana cooking at home in her kitchen"><figcaption data-en="Cook at home — the recipe is free. But it's your time, your tries, and your cleanup." data-es="Cocínalo en casa — la receta es gratis. Pero es tu tiempo, tus intentos y tu limpieza.">Cook at home — the recipe is free. But it's your time, your tries, and your cleanup.</figcaption></figure><figure><img src="img/p-d6a0f00350.webp" alt="Adriana eating out at a restaurant"><figcaption data-en="Eat out — it costs a little more, we do all the work, and you just enjoy it." data-es="Sal a comer — cuesta un poco más, hacemos todo el trabajo y tú solo lo disfrutas.">Eat out — it costs a little more, we do all the work, and you just enjoy it.</figcaption></figure></div>
   <div class="offer">
 <div class="doors">
-<div class="door"><p class="deal" data-en="One living photo — $5" data-es="Una foto viva — $5">One living photo — $5</p><p class="get" data-en="One photo you love, brought to life — we do the work, you save the time." data-es="Una foto que amas, hecha viva — nosotros hacemos el trabajo, tú ahorras el tiempo.">One photo you love, brought to life — we do the work, you save the time.</p><a class="donatebtn" href="https://buy.stripe.com/bJebJ140f47d1iX9hwbsc02" target="_blank" rel="noopener" data-en="$5 — Make my photo living" data-es="$5 — Haz mi foto viva">$5 — Make my photo living</a></div>
-<div class="door best"><span class="burst" data-en="BEST VALUE" data-es="MEJOR OFERTA">BEST VALUE</span><p class="deal" data-en="Three living photos — $10 · buy two, get one free" data-es="Tres fotos vivas — $10 · compras dos, una gratis">Three living photos — $10 · buy two, get one free</p><p class="get" data-en="Three favorites, brought to life — buy two, get one free." data-es="Tres favoritas, hechas vivas: compras dos y la tercera va por la casa.">Three favorites, brought to life — buy two, get one free.</p><a class="donatebtn" href="https://buy.stripe.com/6oU8wP8gv3391iXalAbsc03" target="_blank" rel="noopener" data-en="$10 — Make three of my photos living" data-es="$10 — Haz tres de mis fotos vivas">$10 — Make three of my photos living</a></div>
+<div class="door"><p class="deal" data-en="One living photo — $5" data-es="Una foto viva — $5">One living photo — $5</p><p class="get" data-en="One photo you love, brought to life — we do the work, you save the time." data-es="Una foto que amas, hecha viva — nosotros hacemos el trabajo, tú ahorras el tiempo.">One photo you love, brought to life — we do the work, you save the time.</p><a class="donatebtn" href="https://buy.stripe.com/bJebJ140f47d1iX9hwbsc02" target="_blank" rel="noopener" data-en="Make my photo — $5" data-es="Haz mi foto — $5">Make my photo — $5</a></div>
+<div class="door best"><span class="burst" data-en="BEST VALUE" data-es="MEJOR OFERTA">BEST VALUE</span><p class="deal" data-en="Three living photos — $10 · buy two, get one free" data-es="Tres fotos vivas — $10 · compras dos, una gratis">Three living photos — $10 · buy two, get one free</p><p class="get" data-en="Three favorites, brought to life — buy two, get one free." data-es="Tres favoritas, hechas vivas: compras dos y la tercera va por la casa.">Three favorites, brought to life — buy two, get one free.</p><a class="donatebtn" href="https://buy.stripe.com/6oU8wP8gv3391iXalAbsc03" target="_blank" rel="noopener" data-en="Make my three — $10" data-es="Haz mis tres — $10">Make my three — $10</a></div>
 </div>
 <p class="secure" data-en="Your price covers the living photo and its page. Want to keep the other two versions as still photos as well? They're $1 each — just ask when you send your photo." data-es="Tu precio cubre la foto viva y su página. ¿Quieres guardar también las otras dos versiones como fotos fijas? Cuestan $1 cada una: solo pídelas cuando envíes tu foto.">Your price covers the living photo and its page. Want to keep the other two versions as still photos as well? They're $1 each — just ask when you send your photo.</p>
 <p class="secure" data-en="Secure payment through Stripe." data-es="Pago seguro a través de Stripe.">Secure payment through Stripe.</p>
@@ -828,7 +722,7 @@ body.dark .pitch-door{color:#7fd4da}
     <div class="lp3" data-lp3>
       <div class="ex-frame" style="aspect-ratio:1600/900"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
         <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
-        <iframe scrolling="no" data-live="https://geemondc.github.io/new-york/#wall" title="Living Photo — New York at Nightfall, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/900"></iframe>
+        <iframe scrolling="no" data-live="https://newyorkatnightfall.lovable.app" title="Living Photo — New York at Nightfall, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/900"></iframe>
         <img class="ph stage-still" src="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_0jm9vn6zxv9qctvwj6fzdyewtr/5348b7f7edba009b4b63a6f3bb7c4d24_1793725525034.png" alt="New York at Nightfall" hidden loading="lazy">
       <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
       <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
@@ -870,7 +764,7 @@ body.dark .pitch-door{color:#7fd4da}
     <div class="lp3" data-lp3>
       <div class="ex-frame" style="aspect-ratio:1600/900"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
         <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
-        <iframe scrolling="no" data-live="https://geemondc.github.io/snow-globe/#wall" title="Living Photo — The Snow Globe, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/900"></iframe>
+        <iframe scrolling="no" data-live="https://futurereadysnowglobe.lovable.app" title="Living Photo — The Snow Globe, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/900"></iframe>
         <img class="ph stage-still" src="https://screenshot2.lovable.dev/lovp_2tcqm63vtv8r08yjqprngjabf5/386d1cffa14e060bb29bcb1ed68d65ef_1793784032235.png" alt="The Snow Globe" hidden loading="lazy">
       <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
       <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
@@ -880,7 +774,7 @@ body.dark .pitch-door{color:#7fd4da}
 <div class="exhibit">
     <h3 data-en="The Hammock" data-es="La Hamaca">The Hammock</h3>
     <p class="exhibit-cap" data-en="A painted view from a hammock by the sea — leaves overhead, the water below, and the whole day passing over you: bright morning, golden sunset, and a night full of color." data-es="Una vista pintada desde una hamaca junto al mar: hojas arriba, el agua abajo y todo el día pasando sobre ti: mañana brillante, atardecer dorado y una noche llena de color.">A painted view from a hammock by the sea — leaves overhead, the water below, and the whole day passing over you: bright morning, golden sunset, and a night full of color.</p>
-    <div class="lp3 fit-ed803a9d" data-lp3>
+    <div class="lp3 fit-b0f4a059" data-lp3>
       <div class="ex-frame" style="aspect-ratio:1600/1200"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
         <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
         <iframe scrolling="no" data-live="https://geemondc.github.io/hammock/#wallnb" title="Living Photo — The Hammock, playing" loading="eager" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/1200"></iframe>
@@ -924,7 +818,7 @@ body.dark .pitch-door{color:#7fd4da}
 <div class="theater-door">
   <div class="goldrule"></div>
   <h2 data-en="Step Into Our Theater" data-es="Entra a Nuestro Teatro">Step Into Our Theater</h2>
-  <p data-en="This page holds our select six, and the Wall walks you through ten favorites. The whole collection lives in the Theater — step in, pick a poster, and it plays full-screen, like a movie." data-es="Esta página guarda nuestras seis selectas, y La Pared te lleva por diez favoritas. Toda la colección vive en el Teatro: entra, elige un póster y se reproduce en pantalla completa, como una película.">This page holds our select six, and the Wall walks you through ten favorites. The whole collection lives in the Theater — step in, pick a poster, and it plays full-screen, like a movie.</p>
+  <p data-en="This page holds our select five, and the Wall walks you through eleven favorites — but the whole collection lives in the theater, kept up to date. Every living photo on one page would make this page too heavy and slow, so they live in their own room: step in, pick a poster, and it plays full-screen, like a movie." data-es="Esta página guarda nuestras cinco selectas, y La Pared te lleva por once favoritas — pero toda la colección vive en el teatro, siempre al día. Todas las fotos vivas en una sola página harían esta página demasiado pesada y lenta, así que viven en su propia sala: entra, elige un póster y se reproduce en pantalla completa, como una película.">This page holds our select five, and the Wall walks you through eleven favorites — but the whole collection lives in the theater, kept up to date. Every living photo on one page would make this page too heavy and slow, so they live in their own room: step in, pick a poster, and it plays full-screen, like a movie.</p>
   <div class="cta-row"><a class="cta teal" href="theater.html" data-en="Enter the Theater" data-es="Entra al Teatro">Enter the Theater</a></div>
 </div>
 
@@ -1122,33 +1016,132 @@ body.dark .pitch-door{color:#7fd4da}
 </section>
 
 <!-- ============ SEND A LIVING CARD ============ -->
+<style>
+.lc-form{max-width:640px;margin:26px auto 0;text-align:left}
+.lc-label{font-weight:700;font-size:17px;margin:22px 0 10px;color:var(--ink)}
+.lc-scenes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lc-scenes:has(> .lc-scene:only-child){grid-template-columns:minmax(0,430px);justify-content:center}
+.lc-scene{border:2px solid var(--gold-b);background:#fff;border-radius:14px;padding:14px 16px;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink)}
+.lc-scene.on{border-color:var(--teal);background:#eef6f5;box-shadow:0 4px 14px rgba(20,90,85,.14)}
+.lc-scene img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:9px;display:block;margin-bottom:9px}
+.lc-scene-t{display:block;font-weight:700;font-size:16.5px}
+.lc-scene-s{display:block;font-size:14.5px;color:var(--ink2);margin-top:3px}
+.lc-field{display:block;margin:12px 0}
+.lc-field>span{display:block;font-weight:600;font-size:15.5px;margin-bottom:6px}
+.lc-field input{width:100%;padding:13px 14px;font-size:16.5px;font-family:inherit;border:1.5px solid var(--gold-b);border-radius:12px;background:#fff;color:var(--ink)}
+.lc-field.bad input{border-color:#c0392b;background:#fdf1f0}
+.lc-make{margin-top:16px;width:100%}
+.lc-result{margin-top:24px}
+.lc-linkrow{word-break:break-all;text-align:center;margin:14px 0 4px;font-size:15px}
+.lc-share{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}
+.lc-copied{text-align:center;color:var(--teal);font-weight:700;margin-top:12px}
+.lc-sample{text-align:center;margin-top:20px}
+@media (max-width:560px){.lc-scenes{grid-template-columns:1fr}.lc-scenes:has(> .lc-scene:only-child){grid-template-columns:minmax(0,430px)}}
+</style>
 <section id="sendcard">
   <div class="sec-head">
-    <h2 data-en="Send a Living Card" data-es="Env&#237;a una tarjeta viva">Send a Living Card</h2>
+    <h2 data-en="Send a Living Card" data-es="Envía una tarjeta viva">Send a Living Card</h2>
+    <p data-en="For taking the time to view our page — here is our way of saying thank you. Your first card is free — the Love card, on us. Write who it&#8217;s for, add one line from you — we&#8217;ll make the card and give you a link to send. Every other card is just $1 — see them all in the envelopes." data-es="Por tomarte el tiempo de ver nuestra página — esta es nuestra manera de decirte gracias. Tu primera tarjeta es gratis: la tarjeta del amor, va por la casa. Escribe para quién es, añade una línea tuya — haremos la tarjeta y te daremos un enlace para enviarla. Cada otra tarjeta cuesta solo $1: míralas todas en los sobres.">For taking the time to view our page — here is our way of saying thank you. Your first card is free — the Love card, on us. Write who it&#8217;s for, add one line from you — we&#8217;ll make the card and give you a link to send. Every other card is just $1 — see them all in the envelopes.</p>
   </div>
   <div class="goldrule"></div>
-  <style id="sendcard1111">
-  .sc-boxes .lc-sample-big{margin-top:16px}
-  .sc-fine{display:block;margin-top:10px;font-size:.84em;line-height:1.5;opacity:.88}
-  </style>
-  <div class="pitch sc-boxes">
-    <figure class="pitch-panel">
-      <img class="pitch-pic" src="hero-sharing-web.jpg" alt="All eight friends together &#8212; Braids holds a sealed envelope, and Pink holds one open with a glowing card inside" loading="lazy">
-      <figcaption><span class="pitch-name" data-en="Your first card is free &#8212; the Emerald, our best one." data-es="Tu primera tarjeta es gratis &#8212; la Emerald, la mejor de todas.">Your first card is free &#8212; the Emerald, our best one.</span><span data-en="Open it, write who it&#8217;s for, add one line from you, and send it." data-es="&#193;brela, escribe para qui&#233;n es, a&#241;ade una l&#237;nea tuya y env&#237;ala.">Open it, write who it&#8217;s for, add one line from you, and send it.</span><span class="sc-fine" data-en="First Class cards are $1.50 each &#8212; not sold in bundles. This one is on us." data-es="Las tarjetas First Class cuestan $1.50 cada una &#8212; no se venden en paquetes. Esta va por la casa.">First Class cards are $1.50 each &#8212; not sold in bundles. This one is on us.</span><p class="lc-sample-big"><a class="cta teal" href="emerald.html" target="_blank" rel="noopener" data-en="Take a look at your free Emerald card" data-es="Mira tu tarjeta Emerald gratis">Take a look at your free Emerald card</a></p></figcaption>
-    </figure>
-    <figure class="pitch-panel">
-      <img class="pitch-pic" src="thumbs/storybook-walking-wall.webp" alt="The friends on the move &#8212; Braids carries a sealed envelope, Teal a glowing card, Puff a little note" loading="lazy">
-      <figcaption><span data-en="Want to see all the Living Cards and envelopes?" data-es="&#191;Quieres ver todas las Tarjetas Vivas y los sobres?">Want to see all the Living Cards and envelopes?</span><p class="lc-sample-big"><a class="cta ghost" href="https://thelivingphotos.com/envelopes.html" target="_blank" rel="noopener" data-en="See all the cards &#8594;" data-es="Mira todas las tarjetas &#8594;">See all the cards &#8594;</a></p></figcaption>
-    </figure>
+
+  <style>.cards-door{margin-top:34px}.cards-door .door-pic{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--gold-b);box-shadow:var(--shadow)}.cards-door .door-pic img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}.cards-door h3{font-size:clamp(24px,4.4vw,32px);margin:22px 0 8px}.cards-door .cta-row{margin-top:16px}.cards-door .cta-row .cta{height:auto;min-height:66px;font-size:22px;font-weight:800;letter-spacing:.02em;line-height:1.25;text-align:center;padding:20px 52px;border-width:2px;box-shadow:0 16px 36px rgba(9,63,68,.42)}.cards-door .lc-sample-big .cta{height:auto;font-size:15.5px;padding:10px 24px;box-shadow:none}@media (max-width:560px){.cards-door .cta-row .cta{font-size:19px;padding:17px 24px;width:100%}}</style>
+  <div class="theater-door cards-door">
+    <a class="door-pic" href="https://thelivingphotos.com/envelopes.html" target="_blank" rel="noopener"><img src="https://geemondc.github.io/big-heart-scene/thumb.jpg" alt="The Love Card — the Big Heart" loading="lazy"></a>
+    <h3 data-en="The Envelopes" data-es="Los sobres">The Envelopes</h3>
+    <p data-en="All our envelopes and cards live in the gallery — pick a favorite, add your line, and send a little light." data-es="Todos nuestros sobres y tarjetas viven en la galería — elige tu favorita, añade tu línea y envía un poco de luz.">All our envelopes and cards live in the gallery — pick a favorite, add your line, and send a little light.</p>
+    <div class="cta-row"><a class="cta teal" href="https://thelivingphotos.com/envelopes.html" target="_blank" rel="noopener" data-en="See all 66 envelopes &amp; 66 cards" data-es="Ver todos los 66 sobres y 66 tarjetas">See all 66 envelopes &amp; 66 cards</a></div>
+    <p class="lc-sample-big" style="margin-top:20px"><a class="cta ghost" href="https://geemondc.github.io/living-card-sample/?scene=biglove&amp;to=Someone%20Special&amp;from=A%20Friend" target="_blank" rel="noopener" data-en="See a sample card" data-es="Mira una tarjeta de muestra">See a sample card</a></p>
+  </div>
+  <p class="lc-sample-cap" data-en="This is a real one &#8212; an envelope to open, the living scene inside, and the sender&#8217;s words in the middle. Yours will look just like it." data-es="Esta es una de verdad: un sobre para abrir, la escena viva adentro y las palabras de quien la env&#237;a en el centro. La tuya se ver&#225; igual.">This is a real one — an envelope to open, the living scene inside, and the sender’s words in the middle. Yours will look just like it.</p>
+
+
+
+  <div class="lc-form">
+    <p class="lc-label" data-en="1 · Your free card — on us" data-es="1 · Tu tarjeta gratis — va por la casa">1 · Your free card — on us</p>
+    <div class="lc-scenes" role="radiogroup" aria-label="Card scene">
+      <button type="button" class="lc-scene on" data-scene="biglove" aria-pressed="true">
+        <img src="https://geemondc.github.io/big-heart-scene/thumb.jpg" alt="The Love Card — the Big Heart" loading="lazy">
+        <span class="lc-scene-t" data-en="The Love Card" data-es="La tarjeta del amor">The Love Card</span>
+        <span class="lc-scene-s" data-en="For someone you love" data-es="Para alguien que amas">For someone you love</span>
+      </button>
+    </div>
+    <p class="lc-label" data-en="2 · Write your card" data-es="2 · Escribe tu tarjeta">2 · Write your card</p>
+    <label class="lc-field"><span data-en="Who is it for?" data-es="¿Para quién es?">Who is it for?</span>
+      <input id="lcTo" type="text" maxlength="60" autocomplete="off"></label>
+    <label class="lc-field"><span data-en="Your line (optional)" data-es="Tu línea (opcional)">Your line (optional)</span>
+      <input id="lcLine" type="text" maxlength="140" autocomplete="off"></label>
+    <label class="lc-field"><span data-en="From" data-es="De">From</span>
+      <input id="lcFrom" type="text" maxlength="60" autocomplete="off"></label>
+    <button type="button" class="cta teal lc-make" id="lcMake" data-en="Make my card" data-es="Haz mi tarjeta">Make my card</button>
+    <div class="lc-result" id="lcResult" hidden>
+      <iframe id="lcPreview" title="Your Living Card preview" loading="lazy" scrolling="no" style="border:0;width:100%;height:540px;border-radius:14px;background:#221016"></iframe>
+      <p class="lc-linkrow"><a id="lcLink" href="#" target="_blank" rel="noopener"></a></p>
+      <div class="lc-share">
+        <button type="button" class="cta ghost" id="lcCopy" data-en="Copy link" data-es="Copiar enlace">Copy link</button>
+        <a class="cta ghost" id="lcSms" href="#" data-en="Text message" data-es="Mensaje de texto">Text message</a>
+        <a class="cta ghost" id="lcWa" href="#" target="_blank" rel="noopener" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</a>
+        <a class="cta ghost" id="lcMail" href="#" data-en="Email" data-es="Correo">Email</a>
+      </div>
+      <p class="lc-copied" id="lcCopied" hidden data-en="Link copied ✓" data-es="Enlace copiado ✓">Link copied ✓</p>
+    </div>
+
   </div>
 
   <div class="yt-box">
     <div class="yt-lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    <img class="yt-friends" src="thumbs/welcome-loop.webp" alt="All eight friends &#8212; Teal, Goggles, Braids, Phones, Pink, Cap, Puff and Beanie &#8212; gathered at the door to welcome you in" loading="lazy">
     <p class="yt-box-line" data-en="Subscribe to our YouTube and learn more about us — and how Future Ready originated." data-es="Suscríbete a nuestro YouTube y conoce más de nosotros, y cómo nació Future Ready.">Subscribe to our YouTube and learn more about us — and how Future Ready originated.</p>
     <a class="yt-box-btn" href="https://www.youtube.com/@geemondc?sub_confirmation=1" target="_blank" rel="noopener" data-en="Subscribe to our YouTube channel" data-es="Suscr&#237;bete a nuestro canal de YouTube">Subscribe to our YouTube channel</a>
   </div>
 </section>
+<script>
+(function(){
+  var CARD = 'https://geemondc.github.io/living-card-sample/';
+  var scene = 'biglove';
+  var sceneBtns = document.querySelectorAll('.lc-scene');
+  sceneBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      sceneBtns.forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
+      b.classList.add('on'); b.setAttribute('aria-pressed','true');
+      scene = b.getAttribute('data-scene') || 'biglove';
+    });
+  });
+  function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  document.getElementById('lcMake').addEventListener('click', function(){
+    var to = val('lcTo'), from = val('lcFrom'), line = val('lcLine'), ok = true;
+    [['lcTo', to], ['lcFrom', from]].forEach(function(pair){
+      var f = document.getElementById(pair[0]).closest('.lc-field');
+      if (f){ if (!pair[1]){ f.classList.add('bad'); ok = false; } else { f.classList.remove('bad'); } }
+    });
+    if (!ok) return;
+    var url = CARD + '?to=' + encodeURIComponent(to) + '&from=' + encodeURIComponent(from) +
+      (line ? '&line=' + encodeURIComponent(line) : '') + '&scene=' + scene;
+    var res = document.getElementById('lcResult');
+    res.hidden = false;
+    document.getElementById('lcPreview').src = url;
+    var link = document.getElementById('lcLink');
+    link.href = url; link.textContent = url;
+    var enc = encodeURIComponent(url);
+    document.getElementById('lcSms').href = 'sms:?&body=' + enc;
+    document.getElementById('lcWa').href = 'https://wa.me/?text=' + enc;
+    document.getElementById('lcMail').href = 'mailto:?subject=' + encodeURIComponent('A Living Card for ' + to) + '&body=' + enc;
+    document.getElementById('lcCopied').hidden = true;
+    if (res.scrollIntoView) res.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+  document.getElementById('lcCopy').addEventListener('click', function(){
+    var url = document.getElementById('lcLink').href;
+    function done(){ document.getElementById('lcCopied').hidden = false; }
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done, done); }
+    else {
+      var ta = document.createElement('textarea');
+      ta.value = url; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta); done();
+    }
+  });
+})();
+</script>
+
 
 <section id="more">
   <div class="sec-head"><h2 data-en="Come see more of our stuff" data-es="Ven a ver más de lo nuestro">Come see more of our stuff</h2></div>
@@ -1166,24 +1159,6 @@ body.dark .pitch-door{color:#7fd4da}
     <p class="cat-box-crew" data-en="Our group is a bunch of different trades — traders, a doctor, photo editors, builders and teachers — each of us learning from the others." data-es="Nuestro grupo reúne muchos oficios distintos: operadores de bolsa, un médico, editores de fotos, constructores y maestros, cada uno aprendiendo de los demás.">Our group is a bunch of different trades — traders, a doctor, photo editors, builders and teachers — each of us learning from the others.</p>
     <a class="cat-box-btn" href="https://geemondc.github.io/future-ready-hub" data-en="See the Future Ready Catalog →" data-es="Ver el Catálogo Future Ready →">See the Future Ready Catalog →</a>
     </div>
-  </div>
-</section>
-
-<style id="workshopbig1111">
-#workshop .sec-head{max-width:840px}
-#workshop .sec-head h2{font-size:clamp(40px,7vw,58px);line-height:1.08}
-#workshop .sec-head p{font-size:clamp(19px,3vw,22.5px);line-height:1.68;margin-top:18px}
-</style>
-<!-- ============ OUR WORKSHOP ============ -->
-<section id="workshop">
-  <div class="sec-head">
-    <h2 data-en="A little about our workshop" data-es="Un poco sobre nuestro taller">A little about our workshop</h2>
-  </div>
-  <div class="goldrule"></div>
-  <div class="sec-head" style="margin-top:20px">
-    <p data-en="Living Photos is a small workshop with a lot of ideas. We try things, learn from them, and keep working on the details." data-es="Living Photos es un taller pequeño con muchas ideas. Probamos cosas, aprendemos de ellas y seguimos trabajando en los detalles.">Living Photos is a small workshop with a lot of ideas. We try things, learn from them, and keep working on the details.</p>
-    <p data-en="You may notice a new scene, a different fold, or a tidier page when you come back. That's us, making things a little better." data-es="Quizás notes una escena nueva, un pliegue diferente o una página más ordenada cuando vuelvas. Somos nosotros, haciendo las cosas un poquito mejor.">You may notice a new scene, a different fold, or a tidier page when you come back. That's us, making things a little better.</p>
-    <p data-en="We hope you find something here that makes you think of someone." data-es="Esperamos que encuentres aquí algo que te haga pensar en alguien.">We hope you find something here that makes you think of someone.</p>
   </div>
 </section>
 <footer>
@@ -1220,14 +1195,14 @@ body.dark .pitch-door{color:#7fd4da}
       <p class="kicker" data-en="✦ The Wall" data-es="✦ La Pared">✦ The Wall</p>
       <h2 data-en="That’s the wall." data-es="Esa es La Pared.">That’s the wall.</h2>
       <div class="rule"></div>
-      <p data-en="Ten photos — ten moments, each given back its color and its light. Your photo could live like this." data-es="Diez fotos: diez momentos, cada uno con su color y su luz de vuelta. Tu foto podría vivir así.">Ten photos — ten moments, each given back its color and its light. Your photo could live like this.</p>
+      <p data-en="Eleven photos — eleven moments, each given back its color and its light. Your photo could live like this." data-es="Once fotos: once momentos, cada uno con su color y su luz de vuelta. Tu foto podría vivir así.">Eleven photos — eleven moments, each given back its color and its light. Your photo could live like this.</p>
       <div class="wall-marks" id="wallMarks" hidden>
         <h3 data-en="♥ Your marked photos" data-es="♥ Tus fotos marcadas">♥ Your marked photos</h3>
         <ul id="wallMarksList"></ul>
         <p data-en="Marked the ones you loved? Now make one of your own photos live like them:" data-es="¿Marcaste las que amaste? Ahora haz que una foto tuya viva como ellas:">Marked the ones you loved? Now make one of your own photos live like them:</p>
         <div class="wall-buy">
-          <a class="donatebtn" href="https://buy.stripe.com/bJebJ140f47d1iX9hwbsc02" target="_blank" rel="noopener" data-en="$5 — Make my photo living" data-es="$5 — Haz mi foto viva">$5 — Make my photo living</a>
-          <a class="donatebtn" href="https://buy.stripe.com/6oU8wP8gv3391iXalAbsc03" target="_blank" rel="noopener" data-en="$10 — Make three of my photos living" data-es="$10 — Haz tres de mis fotos vivas">$10 — Make three of my photos living</a>
+          <a class="donatebtn" href="https://buy.stripe.com/bJebJ140f47d1iX9hwbsc02" target="_blank" rel="noopener" data-en="Make my photo — $5" data-es="Haz mi foto — $5">Make my photo — $5</a>
+          <a class="donatebtn" href="https://buy.stripe.com/6oU8wP8gv3391iXalAbsc03" target="_blank" rel="noopener" data-en="Make my three — $10" data-es="Haz mis tres — $10">Make my three — $10</a>
         </div>
       </div>
       <button class="wall-begin" id="wallToMake" type="button" data-en="See how it works" data-es="Mira cómo funciona">See how it works</button>
@@ -1383,14 +1358,15 @@ body.dark .pitch-door{color:#7fd4da}
   var PHOTOS = [
     {src:'https://playingandvibecoding.lovable.app', t:'Living Photo \u2014 Cooking in the Clubhouse, playing'},
     {src:'https://geemondc.github.io/train/#wall', t:'Living Photo \u2014 Window Seat \u2014 The Train, playing'},
-    {src:'https://geemondc.github.io/snow-globe/#wall', t:'Living Photo \u2014 The Snow Globe, playing'},
+    {src:'https://futurereadysnowglobe.lovable.app', t:'Living Photo \u2014 The Snow Globe, playing'},
     {src:'https://templevalley2.lovable.app', t:'Living Photo \u2014 Temple Valley 2, playing'},
     {src:'https://geemondc.github.io/broadwalk/#wall', t:'Living Photo \u2014 The Hollywood Broadwalk, playing'},
-    {src:'https://geemondc.github.io/new-york/#wall', t:'Living Photo \u2014 New York at Nightfall, playing'},
+    {src:'https://newyorkatnightfall.lovable.app', t:'Living Photo \u2014 New York at Nightfall, playing'},
     {src:'https://futurereadycabin.lovable.app', t:'Living Photo \u2014 The Cabin, playing'},
     {src:'https://futurereadybeach.lovable.app', t:'Living Photo \u2014 Future Ready Beach, playing'},
     {src:'https://geemondc.github.io/prom-night/#wall', t:'Living Photo \u2014 Prom Night, playing'},
-    {src:'https://geemondc.github.io/hammock/#wall', t:'Living Photo \u2014 The Hammock, playing'}
+    {src:'https://geemondc.github.io/hammock/#wall', t:'Living Photo \u2014 The Hammock, playing'},
+    {src:'https://geemondc.github.io/lighthouse/#wall', t:'Living Photo \u2014 The Lighthouse, playing'}
   ];
   var wall = document.getElementById('wall'),
       pre = document.getElementById('wallPreface'),
@@ -1469,27 +1445,10 @@ body.dark .pitch-door{color:#7fd4da}
     wallNext.setAttribute('aria-hidden', PHOTOS[i].framed ? 'false' : 'true');
     showChrome();
     updateMark();
-    warm(idx + 1); warm(idx + 2);
-  }
-  /* EVENINGFIX (Nov 10): pre-create the next stops' iframes so they load and
-     paint while the current stop plays - no black Loading sign on arrival. */
-  function warm(i){
-    if (i < 0 || i >= PHOTOS.length || frames[i]) return;
-    var f = document.createElement('iframe');
-    f.src = PHOTOS[i].src;
-    f.title = PHOTOS[i].t;
-    f.setAttribute('allow', 'autoplay; fullscreen');
-    f.setAttribute('allowfullscreen', '');
-    f.setAttribute('scrolling', 'no');
-    f.style.visibility = 'hidden';
-    f.addEventListener('load', function(){ f.dataset.lpLoaded = '1'; });
-    slot.appendChild(f);
-    frames[i] = f;
   }
   function openWall(){
     state = 'preface';
     face('preface');
-    warm(0); warm(1); warm(2);
     wall.hidden = false;
     wall.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -1805,4 +1764,3 @@ html,body{overflow-x:hidden;overflow-x:clip}
 </body>
 <!-- mirror sync 2026-11-05 -->
 </html>
-<!-- build re-trigger 2026-11-09 -->
