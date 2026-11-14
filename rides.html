@@ -71,6 +71,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   .frame{position:relative; border-radius:18px; overflow:hidden; box-shadow:0 14px 40px rgba(43,18,24,.28); background:#17110d; aspect-ratio:16/9; cursor:zoom-in}
   .frame .blur{position:absolute; inset:-30px; background-size:cover; background-position:center; filter:blur(24px) brightness(.8) saturate(1.15); transform:scale(1.12)}
   .frame img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block; transition:opacity .28s ease}
+.frame video{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block; transition:opacity .28s ease}
+.frame video.fading{opacity:0}
   .frame img.fading{opacity:0}
   .rd-name{text-align:center; font-size:clamp(24px,4.4vw,32px); color:#5d1220; margin-top:20px; line-height:1.2}
   .rd-line{text-align:center; font-family:Georgia,serif; font-style:italic; font-size:17px; color:#5c4a38; margin-top:7px; line-height:1.5; padding:0 10px}
@@ -122,6 +124,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   #fs{display:none; position:fixed; inset:0; z-index:95; background:#000; align-items:center; justify-content:center; cursor:zoom-out}
   #fs.show{display:flex}
   #fs img{max-width:100%; max-height:100%; object-fit:contain; display:block}
+#fs video{width:100%; height:100%; object-fit:contain; display:block; background:#000}
   #fs .hint{position:absolute; left:0; right:0; bottom:calc(14px + env(safe-area-inset-bottom)); text-align:center; font-family:Georgia,serif; font-style:italic; font-size:13.5px; color:rgba(245,231,200,.75)}
 </style>
 </head>
@@ -150,7 +153,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     <img class="hero" src="img/ride-train.jpg" alt="The Starry Night Train">
     <h1 data-i18n="title">The Rides</h1>
     <p class="b b-shelf" data-i18n="shelf">Ten rides — every one of them made today.</p>
-    <p class="b b-slide" data-i18n="slide">Slide the names up top to see them all — every one is numbered, 1 of 10 to 10 of 10.</p>
+    <p class="b b-slide" data-i18n="slide">Slide the names up top — every ride plays on the big screen, numbered 1 of 10 to 10 of 10.</p>
     <button id="rdGo" type="button" data-i18n="go">See the rides &rarr;</button>
   </div>
 </div>
@@ -165,7 +168,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <main class="stage">
   <div class="frame" id="frame" role="button" aria-label="See it full screen">
     <div class="blur" id="frameBlur"></div>
-    <img id="frameImg" src="img/ride-train.jpg" alt="">
+    <video id="frameVid" autoplay muted loop playsinline preload="auto" poster="img/ride-train.jpg" src="ride-train.mp4" aria-label="The ride, playing"></video>
   </div>
   <h2 class="rd-name" id="rdName"></h2>
   <p class="rd-line" id="rdLine"></p>
@@ -183,43 +186,43 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <footer>Living Photos &middot; Future Ready</footer>
 
 <div id="fs" role="dialog" aria-label="Full screen">
-  <img id="fsImg" src="" alt="">
+  <video id="fsVid" muted loop playsinline></video>
   <div class="hint" data-i18n="tapClose">Tap to close</div>
 </div>
 <script>
 (function(){
   var RIDES = [
-    {key:'train',     short:'Train',     name:'The Starry Night Train',  img:'img/ride-train.jpg',
+    {key:'train',     short:'Train',     name:'The Starry Night Train',  img:'img/ride-train.jpg', vid:'ride-train.mp4',
      en:'A train ride under a swirling painted sky.', es:'Un viaje en tren bajo un cielo pintado que gira.'},
-    {key:'sleigh',    short:'Sleigh',    name:'The Sleigh',              img:'img/ride-sleigh.jpg',
+    {key:'sleigh',    short:'Sleigh',    name:'The Sleigh',              img:'img/ride-sleigh.jpg', vid:'ride-sleigh.mp4',
      en:'A horse-drawn sleigh through a snowy village at dusk.', es:'Un trineo tirado por un caballo por un pueblo nevado al atardecer.'},
-    {key:'drive',     short:'Drive',     name:'The Coastal Drive',       img:'img/ride-drive.jpg',
+    {key:'drive',     short:'Drive',     name:'The Coastal Drive',       img:'img/ride-drive.jpg', vid:'ride-drive.mp4',
      en:'A sunset drive down the Florida coast.', es:'Un paseo al atardecer por la costa de Florida.'},
-    {key:'gondola',   short:'Gondola',   name:'The Gondola over the Falls', img:'img/ride-gondola.jpg',
+    {key:'gondola',   short:'Gondola',   name:'The Gondola over the Falls', img:'img/ride-gondola.jpg', vid:'ride-gondola.mp4',
      en:'A gondola ride over Storybook Falls.', es:'Un viaje en g\u00f3ndola sobre las Cataratas de Cuento.'},
-    {key:'sub',       short:'Sub',       name:'The Underwater Sub',      img:'img/ride-sub.jpg',
+    {key:'sub',       short:'Sub',       name:'The Underwater Sub',      img:'img/ride-sub.jpg', vid:'ride-sub.mp4',
      en:'A submarine ride through the coral reef.', es:'Un viaje en submarino por el arrecife de coral.'},
-    {key:'space',     short:'Space',     name:'The Space Cockpit',       img:'img/ride-space.jpg',
+    {key:'space',     short:'Space',     name:'The Space Cockpit',       img:'img/ride-space.jpg', vid:'ride-space.mp4',
      en:'A spaceship ride through a glowing nebula.', es:'Un viaje en nave espacial por una nebulosa brillante.'},
-    {key:'neon',      short:'Neon',      name:'The Neon Universe',       img:'img/ride-neon.jpg',
+    {key:'neon',      short:'Neon',      name:'The Neon Universe',       img:'img/ride-neon.jpg', vid:'ride-neon.mp4',
      en:'The same sky turned neon, swirling toward a black hole.', es:'El mismo cielo en ne\u00f3n, girando hacia un agujero negro.'},
-    {key:'broadwalk', short:'Broadwalk', name:'The Broadwalk Bike Ride', img:'img/ride-broadwalk.jpg',
+    {key:'broadwalk', short:'Broadwalk', name:'The Broadwalk Bike Ride', img:'img/ride-broadwalk.jpg', vid:'ride-broadwalk.mp4',
      en:'A bike ride down the Hollywood Broadwalk at sunset.', es:'Un paseo en bicicleta por el Broadwalk de Hollywood al atardecer.'},
-    {key:'aurora',    short:'Lift',      name:'The Aurora Lift',         img:'img/ride-aurora.jpg',
+    {key:'aurora',    short:'Lift',      name:'The Aurora Lift',         img:'img/ride-aurora.jpg', vid:'ride-aurora.mp4',
      en:'A chairlift ride under the northern lights, up to The Cabin.', es:'Un viaje en telesilla bajo la aurora boreal, hasta La Caba\u00f1a.'},
-    {key:'boat',      short:'Boat',      name:'The Boat Ride',           img:'boat-ride-poster.jpg',
+    {key:'boat',      short:'Boat',      name:'The Boat Ride',           img:'boat-ride-poster.jpg', vid:'ride-boat.mp4',
      en:'Our flagship \u2014 Golden, Bridge, Marina and Sunset, and the Long Ride that joins them all.', es:'Nuestro favorito \u2014 Golden, Bridge, Marina y Sunset, y el Viaje Largo que los une a todos.'}
   ];
   var ES = {
     navStore:'Fotos Vivientes', navTheater:'El Teatro', navCards:'Tarjetas y Sobres', navNotes:'Notas Vivientes',
     darkBtn:'Oscuro', qrTitle:'Escanea para abrir esta p\u00e1gina',
     title:'Los Paseos', shelf:'Diez paseos \u2014 todos hechos hoy.',
-    slide:'Desliza los nombres arriba para verlos todos \u2014 cada uno est\u00e1 numerado, del 1 de 10 al 10 de 10.',
+    slide:'Desliza los nombres arriba \u2014 cada paseo se reproduce en la pantalla grande, numerado del 1 de 10 al 10 de 10.',
     go:'Ver los paseos \u2192', allTen:'Los diez paseos', tapClose:'Toca para cerrar', of:'de'
   };
   var lang = 'en', cur = 0;
   var $ = function(id){ return document.getElementById(id); };
-  var picker = $('picker'), list = $('rdList'), img = $('frameImg'), blur = $('frameBlur');
+  var picker = $('picker'), list = $('rdList'), vid = $('frameVid'), blur = $('frameBlur');
 
   RIDES.forEach(function(r, i){
     var b = document.createElement('button');
@@ -236,15 +239,12 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 
   function render(){
     var r = RIDES[cur];
-    img.classList.add('fading');
-    var pre = new Image();
-    pre.onload = function(){
-      img.src = r.img; img.alt = r.name;
-      blur.style.backgroundImage = 'url("' + r.img + '")';
-      img.classList.remove('fading');
-    };
-    pre.onerror = function(){ img.src = r.img; img.classList.remove('fading'); };
-    pre.src = r.img;
+    blur.style.backgroundImage = 'url("' + r.img + '")';
+    vid.classList.add('fading');
+    vid.poster = r.img;
+    if (vid.getAttribute('src') !== r.vid) vid.src = r.vid;
+    vid.oncanplay = function(){ vid.classList.remove('fading'); };
+    var pr = vid.play(); if (pr) pr.catch(function(){});
     $('rdName').textContent = r.name;
     $('rdLine').textContent = (lang === 'es') ? r.es : r.en;
     $('fcCount').textContent = r.name + ' \u00b7 ' + (cur + 1) + ' ' + ((lang === 'es') ? ES.of : 'of') + ' 10';
@@ -278,8 +278,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     else { openFs(); }
   }, {passive:true});
   frame.addEventListener('click', function(){ openFs(); });
-  function openFs(){ $('fsImg').src = RIDES[cur].img; $('fsImg').alt = RIDES[cur].name; $('fs').classList.add('show'); }
-  function closeFs(){ $('fs').classList.remove('show'); }
+  function openFs(){ var v = $('fsVid'); v.poster = RIDES[cur].img; v.src = RIDES[cur].vid; $('fs').classList.add('show'); var p = v.play(); if (p) p.catch(function(){}); }
+  function closeFs(){ var v = $('fsVid'); v.pause(); v.removeAttribute('src'); v.load(); $('fs').classList.remove('show'); }
   $('fs').addEventListener('click', closeFs);
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeFs(); });
 
