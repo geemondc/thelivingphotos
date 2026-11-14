@@ -524,7 +524,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     <div class="hero-wait">Our friends, sharing — painting on its way</div>
     <div class="hero-furn">
       <h1>Living Cards, Envelopes &amp; Notes</h1>
-      <div class="counts" data-i18n="counts">92 envelopes &middot; 62 cards &middot; 4 living notes</div>
+      <div class="counts" data-i18n="counts">12 colors &middot; 62 cards &middot; 4 living notes</div>
       <div class="brandline">Photo Letters by Living Photos</div>
       <div class="hero-qr" id="qrCard">
         <div class="qrtitle" data-i18n="qrTitle">Scan to open this page</div>
@@ -632,7 +632,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     <a class="tile" href="#envelopes">
       <div class="mini m-classic"><div class="mflap"></div><div class="mseal">✦</div></div>
       <div class="tname" data-i18n="kindCards">Living Cards &amp; Envelopes</div>
-      <div class="topen">92 kinds — pick the envelope for its opening; the card is chosen on its own, below</div>
+      <div class="topen">Pick the envelope&rsquo;s color and its opening; the card is chosen on its own, below</div>
     </a>
       <div class="pair">
         <a class="pbox" href="https://geemondc.github.io/living-card-sample/?env=bigview&amp;to=Friend&amp;from=Me" target="_blank" rel="noopener">
@@ -663,13 +663,13 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
       </div>
     </div>
     <div class="kind">
-    <a class="tile" href="#special">
+    <a class="tile" href="envelopes-all.html#special">
       <div class="mini m-origami"><div class="mflap"></div><div class="mseal">△</div></div>
       <div class="tname">Special Envelopes</div>
       <div class="topen">Origami that folds into shapes, boxes that burst open</div>
     </a>
       <div class="pair">
-        <a class="pbox" href="#special">
+        <a class="pbox" href="envelopes-all.html#special">
           <span class="pstage"><span class="spenv"><span class="mbody"></span><span class="mflap"></span><span class="mseal">△</span></span></span>
           <span class="pcap">Folded paper, closed</span>
         </a>
@@ -681,24 +681,91 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     </div>
   </div>
 </section>
+<style id="pk-css">
+/* ===== The Envelope, Two Choices (Nov 14): picker section + maker steps 1-2 ===== */
+.pk-wrap{max-width:720px;margin:0 auto;text-align:left}
+.pk-step{font-family:Arial,sans-serif;font-size:12px;letter-spacing:.18em;color:#a33b2e;text-transform:uppercase;margin:30px 0 4px}
+.pk-h{font-size:21px;font-weight:normal;margin:0 0 12px;color:var(--ink)}
+.pk-swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pk-sw{border:2px solid transparent;border-radius:12px;padding:6px 4px 7px;background:#fff;cursor:pointer;text-align:center;box-shadow:0 1px 4px rgba(60,40,10,.12);font-family:Arial,sans-serif;color:var(--ink)}
+.pk-sw .pk-dot{display:block;width:34px;height:34px;border-radius:50%;margin:2px auto 5px;box-shadow:inset 0 -4px 8px rgba(0,0,0,.18)}
+.pk-sw span{font-size:11.5px;color:#4a3a28}
+.pk-sw.on{border-color:var(--teal)}
+.pk-stage{display:flex;justify-content:center;margin:26px 0 4px}
+.pk-env{position:relative;width:min(430px,92vw);aspect-ratio:1.62;border-radius:10px;overflow:hidden;background:linear-gradient(160deg,var(--e1),var(--e2));box-shadow:0 14px 34px rgba(60,30,5,.28);transition:background .3s}
+.pk-env .pk-flap{position:absolute;inset:0;background:linear-gradient(180deg,var(--f1),var(--f2));clip-path:polygon(0 0,100% 0,50% 56%);opacity:.97}
+.pk-env .pk-seal{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--s1),var(--s2) 62%,var(--s3));display:flex;align-items:center;justify-content:center;color:#5a3405;font-size:19px;box-shadow:0 3px 10px rgba(0,0,0,.3);z-index:2}
+.pk-env .pk-to{position:absolute;left:0;right:0;top:66%;text-align:center;color:var(--ink);font-size:21px;z-index:2}
+.pk-env .pk-from{position:absolute;left:0;right:0;top:78%;text-align:center;color:var(--ink);font-size:15px;font-style:italic;opacity:.92;z-index:2}
+.pk-colorname{text-align:center;color:var(--ink2);font-style:italic;min-height:20px;margin:0}
+.pk-opts{display:flex;flex-direction:column;gap:10px}
+.pk-opt{border:2px solid var(--gold-b);border-radius:12px;background:#fff;padding:13px 15px;cursor:pointer;text-align:left;font-family:Georgia,serif;width:100%;box-shadow:0 1px 4px rgba(60,40,10,.08);color:var(--ink)}
+.pk-opt b{font-size:17px;font-weight:normal;display:block}
+.pk-opt small{color:var(--ink2);font-size:13.5px;line-height:1.45;display:block;margin-top:3px}
+.pk-opt.on{border-color:var(--teal);background:#eef6f5}
+.pk-note{color:var(--ink2);font-style:italic;margin-top:10px;font-size:14.5px}
+.pk-sub{font-size:15px;color:var(--ink2);line-height:1.45;margin:0 0 10px}
+.pk-frame{border:0;width:100%;height:540px;border-radius:14px;background:#221016;display:block}
+.pk-then{background:#fff;border:1px solid var(--gold-b);border-radius:12px;padding:16px;margin-top:26px;text-align:center;font-size:16.5px;line-height:1.55;box-shadow:0 1px 4px rgba(60,40,10,.08);color:var(--ink)}
+.pk-go{display:inline-block;margin-top:10px;background:#14655e;color:#fdf6e3;text-decoration:none;padding:10px 22px;border-radius:999px;font-family:Arial,sans-serif;font-size:14px;font-weight:700}
+body.dark .pk-sw,body.dark .pk-opt,body.dark .pk-then{background:#241c12}
+body.dark .pk-sw span{color:#d9c9a8}
+/* maker: animation rows + plain inside tint */
+.lc-anims{display:flex;flex-direction:column;gap:10px}
+.lc-animp{border:2px solid var(--gold-b);border-radius:12px;background:#fff;padding:12px 15px;cursor:pointer;text-align:left;font-family:inherit;width:100%;color:var(--ink)}
+.lc-animp b{font-size:16.5px;font-weight:700;display:block}
+.lc-animp small{color:var(--ink2);font-size:13.5px;line-height:1.45;display:block;margin-top:3px}
+.lc-animp.on{border-color:var(--teal);background:#eef6f5;box-shadow:0 4px 14px rgba(20,90,85,.14)}
+body.dark .lc-animp{background:#241c12}
+.lc-plain-in{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:16/9;border-radius:9px;margin-bottom:9px;border:1.5px solid rgba(160,130,70,.35)}
+.lc-plain-words{font-style:italic;font-size:17px;color:#2b2118}
+</style>
 <section id="envelopes">
   <div class="sec-head">
-    <h2 data-i18n="envH">The Envelopes</h2>
-    <p data-i18n="envP">Tap one to watch it open — the envelope is the whole show.</p>
-    <p>Every envelope and card here is interchangeable — mix any envelope with any card. The one exception is First Class, just below: each of those envelopes is a complete design of its own.</p>
+    <h2 data-i18n="envH">The Envelope &mdash; Two Choices</h2>
+    <p data-i18n="envP">No more scrolling through ninety envelopes. Pick a color, pick an animation. That&rsquo;s it.</p>
   </div>
-  <div class="beat">
-    <div class="btxt">
-      <h3 data-i18n="nameWhyH">Why the names?</h3>
-      <p data-i18n="nameWhy1">The name tells you what plays after the seal opens.</p>
-      <p data-i18n="nameWhy2">Birthday plays a birthday scene. Christmas plays Christmas. Sports &amp; Games plays a game moment.</p>
-      <p data-i18n="nameWhy3">Every name has its own animation.</p>
-      <p data-i18n="nameWhy4">Don't want an animation? Pick Plain — just your words.</p>
+  <div class="pk-wrap">
+    <div class="pk-step" data-i18n="pkS1">Step 1</div>
+    <h3 class="pk-h" data-i18n="pkS1H">Choose your color</h3>
+    <div class="pk-swatches" id="pkSwatches" role="radiogroup" aria-label="Envelope colors">
+      <button type="button" class="pk-sw on" data-color="red" aria-pressed="true"><span class="pk-dot" style="background:linear-gradient(160deg,#c93338,#7e1420)"></span><span data-i18n="colRed">Red</span></button>
+      <button type="button" class="pk-sw" data-color="gold" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#e0af52,#a8742a)"></span><span data-i18n="colGold">Gold</span></button>
+      <button type="button" class="pk-sw" data-color="ivory" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#f8f2e2,#e7d9b8)"></span><span data-i18n="colIvory">Ivory</span></button>
+      <button type="button" class="pk-sw" data-color="berry" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#ef7094,#c2335f)"></span><span data-i18n="colBerry">Berry Pink</span></button>
+      <button type="button" class="pk-sw" data-color="sunny" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#ffd95e,#eda51c)"></span><span data-i18n="colSunny">Sunny</span></button>
+      <button type="button" class="pk-sw" data-color="sage" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#c9dab9,#93ad84)"></span><span data-i18n="colSage">Sage</span></button>
+      <button type="button" class="pk-sw" data-color="emerald" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#289564,#14563c)"></span><span data-i18n="colEmerald">Emerald</span></button>
+      <button type="button" class="pk-sw" data-color="sky" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#97c4ea,#4f8fc9)"></span><span data-i18n="colSky">Sky</span></button>
+      <button type="button" class="pk-sw" data-color="navy" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#33597f,#1b3450)"></span><span data-i18n="colNavy">Navy</span></button>
+      <button type="button" class="pk-sw" data-color="burgundy" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#8e2c40,#5a1624)"></span><span data-i18n="colBurgundy">Burgundy</span></button>
+      <button type="button" class="pk-sw" data-color="purple" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#7f61b3,#4e3579)"></span><span data-i18n="colPurple">Purple</span></button>
+      <button type="button" class="pk-sw" data-color="brick" aria-pressed="false"><span class="pk-dot" style="background:linear-gradient(160deg,#b34a2e,#7a2a1a)"></span><span data-i18n="colBrick">Brick</span></button>
     </div>
+    <div class="pk-stage">
+      <div class="pk-env" id="pkEnv">
+        <div class="pk-flap"></div>
+        <div class="pk-seal">&#10038;</div>
+        <div class="pk-to">Alex</div>
+        <div class="pk-from">from Jordan</div>
+      </div>
+    </div>
+    <p class="pk-colorname" id="pkColorName"></p>
+    <div class="pk-step" data-i18n="pkS2">Step 2</div>
+    <h3 class="pk-h" data-i18n="pkS2H">Choose your animation</h3>
+    <div class="pk-opts" id="pkOpts" role="radiogroup" aria-label="Opening animation">
+      <button type="button" class="pk-opt on" data-anim="none" aria-pressed="true"><b data-i18n="aNoneT">Just open it</b><small data-i18n="aNoneS">No animation. The envelope opens and the card comes right out.</small></button>
+      <button type="button" class="pk-opt" data-anim="scene" aria-pressed="false"><b data-i18n="aSceneT">A little scene</b><small data-i18n="aSceneS">A small drawn moment first &mdash; sunflowers bloom, a fireplace lights, a lily opens. Each card has its own.</small></button>
+      <button type="button" class="pk-opt" data-anim="explosion" aria-pressed="false"><b data-i18n="aExpT">Explosion</b><small data-i18n="aExpS">The classic burst. Only if you pick it &mdash; it is never automatic.</small></button>
+      <button type="button" class="pk-opt" data-anim="hearts" aria-pressed="false"><b data-i18n="aHeartsT">Hearts</b><small data-i18n="aHeartsS">A burst of hearts. For love.</small></button>
+    </div>
+    <p class="pk-note" data-i18n="pkNote">Don&rsquo;t pick one? The card just opens. Simple.</p>
+    <h3 class="pk-h" data-i18n="pkWatchH" style="margin-top:30px">See it open</h3>
+    <p class="pk-sub" data-i18n="pkWatchP">This is the real thing, with an example card inside &mdash; yours is the card you pick in the maker below. Tap the seal to open it.</p>
+    <iframe id="pkPreview" class="pk-frame" title="Your envelope, opening" loading="lazy" scrolling="no" src="https://geemondc.github.io/living-card-sample/?scene=congratulations&amp;color=red&amp;anim=none&amp;to=Alex&amp;from=Jordan&amp;line=You%20did%20it%20%E2%80%94%20so%20proud%20of%20you"></iframe>
+    <div class="pk-then"><span data-i18n="pkThen">Then pick your card, write your words, and send it.<br>Color &middot; animation &middot; card &middot; words. That&rsquo;s the whole thing.</span><br><a class="pk-go" href="#sendcard" data-i18n="pkGo">Go to the maker &darr;</a></div>
   </div>
-  <div class="grid">
-
-        <style>
+<style>
     .fcdoor{grid-column:1/-1;text-align:center;background:linear-gradient(180deg,#fdf8ea,#f3e8cb);border:1.5px solid #c9a24d;border-radius:18px;padding:22px 18px 24px;margin:6px 0 4px}
     .fcdoor img{width:min(340px,84vw);height:auto;border-radius:14px;box-shadow:0 12px 28px rgba(59,42,18,.25);display:block;margin:0 auto}
     .fcdoor h3{font-family:Georgia,serif;font-size:24px;color:#2b1d08;margin:16px 0 6px;letter-spacing:.02em}
@@ -714,483 +781,45 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
       <p data-i18n="fcDoorLine">First Class cards are $1.50 each and they aren't sold in bundles.</p>
       <a class="fcdoor-btn" href="https://geemondc.github.io/living-cards-site/formal-preview-clean/" data-i18n="fcDoorBtn">See the First Class cards →</a>
     </div>
-<h3 class="fam" data-i18n="plainEnvH">Plain Envelopes</h3>
-    <p class="fam-note" data-i18n="plainSub">No animation when the seal opens — just your words.</p>
-    <a class="tile" href="#sendcard" data-plaintile="env" data-plaincolor="White">
-      <div class="mini" style="background:#ffffff"><div class="mflap" style="background:#ece4d0"></div></div>
-      <div class="tname" data-i18n="cWhite">Plain White</div>
-      <div class="topen" data-i18n="noAnimS">Your words only — nothing plays</div>
-    </a>
-    <a class="tile" href="#sendcard" data-plaintile="env" data-plaincolor="Blue">
-      <div class="mini" style="background:#2e5fa3"><div class="mflap" style="background:#254e86"></div></div>
-      <div class="tname" data-i18n="cBlue">Plain Blue</div>
-      <div class="topen" data-i18n="noAnimS">Your words only — nothing plays</div>
-    </a>
-    <a class="tile" href="#sendcard" data-plaintile="env" data-plaincolor="Red">
-      <div class="mini" style="background:#c23b2e"><div class="mflap" style="background:#a02f24"></div></div>
-      <div class="tname" data-i18n="cRed">Plain Red</div>
-      <div class="topen" data-i18n="noAnimS">Your words only — nothing plays</div>
-    </a>
-    <a class="tile" href="#sendcard" data-plaintile="env" data-plaincolor="Green">
-      <div class="mini" style="background:#2e7d4f"><div class="mflap" style="background:#256841"></div></div>
-      <div class="tname" data-i18n="cGreen">Plain Green</div>
-      <div class="topen" data-i18n="noAnimS">Your words only — nothing plays</div>
-    </a>
-    <a class="tile" href="#sendcard" data-plaintile="env" data-plaincolor="Orange">
-      <div class="mini" style="background:#e07b2a"><div class="mflap" style="background:#c0631c"></div></div>
-      <div class="tname" data-i18n="cOrange">Plain Orange</div>
-      <div class="topen" data-i18n="noAnimS">Your words only — nothing plays</div>
-    </a>
-    <a class="tile" href="#sendcard" data-plaintile="env" data-plaincolor="Purple">
-      <div class="mini" style="background:#6d4fa1"><div class="mflap" style="background:#594083"></div></div>
-      <div class="tname" data-i18n="cPurple">Plain Purple</div>
-      <div class="topen" data-i18n="noAnimS">Your words only — nothing plays</div>
-    </a>
-<h3 class="fam">Occasions</h3>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=birthday&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-kid"><div class="mflap"></div><div class="mseal">★</div></div>
-      <div class="tname">Birthday</div>
-      <div class="topen">Confetti bursts</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=biglove&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-biglove"><div class="mflap"></div><div class="mseal">♥</div></div>
-      <div class="tname">Love</div>
-      <div class="topen">The heart beats, swells and bursts</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=wedding&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-wedding"><div class="mflap"></div><div class="mseal">○</div></div>
-      <div class="tname">Wedding</div>
-      <div class="topen">A gold ring rises</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=barmitzvah&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-barmitzvah"><div class="mflap"></div><div class="mseal">✡</div></div>
-      <div class="tname">Bar Mitzvah</div>
-      <div class="topen">A star draws itself</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=surprise&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-surprise"><div class="mflap"></div><div class="mseal">!</div></div>
-      <div class="tname">Surprise</div>
-      <div class="topen">A jack-in-the-box springs out</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=graduation&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-graduation"><div class="mflap"></div><div class="mseal">▲</div></div>
-      <div class="tname">Graduation</div>
-      <div class="topen">A cap flies off</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=baby&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-baby"><div class="mflap"></div><div class="mseal">●</div></div>
-      <div class="tname">Baby</div>
-      <div class="topen">Balloons float away</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=anniversary&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-anniversary"><div class="mflap"></div><div class="mseal">✦</div></div>
-      <div class="tname">Anniversary</div>
-      <div class="topen">Gold confetti falls</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=congratulations&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-congratulations"><div class="mflap"></div><div class="mseal">★</div></div>
-      <div class="tname">Congratulations</div>
-      <div class="topen">Confetti falls</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=partyroom&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-partyroom"><div class="mflap"></div><div class="mseal">✿</div></div>
-      <div class="tname">Birthday Table</div>
-      <div class="topen">Confetti bursts</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=fireside&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-fireside"><div class="mflap"></div><div class="mseal">✶</div></div>
-      <div class="tname">Fireside</div>
-      <div class="topen">A fire lights</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=sympathy&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sympathy"><div class="mflap"></div><div class="mseal">❀</div></div>
-      <div class="tname">Sympathy</div>
-      <div class="topen">Petals drift down</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=thinking&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-thinking"><div class="mflap"></div><div class="mseal">✦</div></div>
-      <div class="tname">Thinking of You</div>
-      <div class="topen">Petals drift in the light</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=thanksgiving&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-thanksgiving"><div class="mflap"></div><div class="mseal">✦</div></div>
-      <div class="tname">Thanksgiving</div>
-      <div class="topen">The turkey arrives, steaming</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=hanukkah&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-hanukkah"><div class="mflap"></div><div class="mseal">✦</div></div>
-      <div class="tname">Hanukkah</div>
-      <div class="topen">The menorah lights up</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=christmas&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-christmas"><div class="mflap"></div><div class="mseal">★</div></div>
-      <div class="tname">Christmas</div>
-      <div class="topen">A star rises, lights blink on</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=balloonburst&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-balloonpop"><div class="mflap"></div><div class="mseal">●</div></div>
-      <div class="tname">Balloon Pop</div>
-      <div class="topen">A balloon swells &amp; pops</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=pinata&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-pinata"><div class="mflap"></div><div class="mseal">★</div></div>
-      <div class="tname">Piñata</div>
-      <div class="topen">It swings, cracks, candy rains</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=partytime&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-partytime"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Party Time</div>
-      <div class="topen">The popper bursts — balloons bob</div>
-    </a>
-    <h3 class="fam">Sports & Games</h3>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=gameday&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-gameday"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Football</div>
-      <div class="topen">The football spirals in — pennants flying</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=holes&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-holes"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Golf</div>
-      <div class="topen">The ball arcs in — gold sparks fly</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=fishing&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-fishing"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Fishing A</div>
-      <div class="topen">The bobber dips — and the fish leaps</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=hoops&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-hoops"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Basketball</div>
-      <div class="topen">The ball stretches, swishes — sparks</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=pickle&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-pickle"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Pickleball</div>
-      <div class="topen">Paddles up — the rally pops</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=homerun&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-homerun"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Baseball A</div>
-      <div class="topen">The ball bounces in — medal swings</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=goal&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-goal"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Soccer A</div>
-      <div class="topen">Into the net — gold medal swings</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=racers&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-racers"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Race Car Driving</div>
-      <div class="topen">The checkered pennants fly — trophy rises</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=champions&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-champions"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Champions</div>
-      <div class="topen">The trophy cup pops in — medals swing</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=coach&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-coach"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Navy Megaphone</div>
-      <div class="topen">The megaphone pops — whistle swings</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=fans&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-fans"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Fans</div>
-      <div class="topen">Pom-poms shake — the foam finger springs up</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=fairway&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-fairway"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Fairway</div>
-      <div class="topen">The bouquet pops in — flag ripples</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=tightlines&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-tightlines"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Fishing B</div>
-      <div class="topen">The bobber dips — fish drift by</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=homer&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-homer"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Baseball B</div>
-      <div class="topen">The glove pops — the ball bounces home</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=striker&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-striker"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Soccer B</div>
-      <div class="topen">The ball bounces at the goal mouth</div>
-    </a>
-    <h3 class="fam">Nature & Places</h3>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=snowglobe&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-snowglobe"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Snow Globe</div>
-      <div class="topen">Snow swirls &amp; settles</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=ocean&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-ocean"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Ocean</div>
-      <div class="topen">A wave washes over</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=bloom&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-bloom"><div class="mflap"></div><div class="mseal">❀</div></div>
-      <div class="tname">Bloom</div>
-      <div class="topen">Flowers bloom open</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=treasure&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-treasure"><div class="mflap"></div><div class="mseal">$</div></div>
-      <div class="tname">Treasure Chest</div>
-      <div class="topen">Gold light pours out, coins spill</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=firefly&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-firefly"><div class="mflap"></div><div class="mseal">·</div></div>
-      <div class="tname">Firefly</div>
-      <div class="topen">Fireflies drift out glowing</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=hotair&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-hotair"><div class="mflap"></div><div class="mseal">▲</div></div>
-      <div class="tname">Hot Air Balloon</div>
-      <div class="topen">It lifts through the clouds</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=lantern&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-lantern"><div class="mflap"></div><div class="mseal">✦</div></div>
-      <div class="tname">Sky Lantern</div>
-      <div class="topen">A lantern rises into the night</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=tropical&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-tropical"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Tropical</div>
-      <div class="topen">The sloth sways — butterflies drift</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=beachday&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-beachday"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Beach Day</div>
-      <div class="topen">The crab bobs — kite drifts overhead</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=desert&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-desert"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Desert Night</div>
-      <div class="topen">The fennec runs — stars twinkle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=pond&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-pond"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Frog Pond</div>
-      <div class="topen">The frog leaps in — rainbow overhead</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=rainforest&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-rainforest"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Rainforest</div>
-      <div class="topen">The macaw drifts in — tree frog pops</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=wetlands&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-wetlands"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Wetlands</div>
-      <div class="topen">The kingfisher drifts — lotus bobs</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=desertday&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-desertday"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Desert Day</div>
-      <div class="topen">The camel pops in — fennec runs by</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=garden&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-garden"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Garden Bouquet</div>
-      <div class="topen">The bouquet pops — butterfly drifts</div>
-    </a>
-    <h3 class="fam">Kind Words</h3>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=thankyou&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-thankyou"><div class="mflap"></div><div class="mseal">❀</div></div>
-      <div class="tname">Thank You</div>
-      <div class="topen">A bouquet grows</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=getwell&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-getwell"><div class="mflap"></div><div class="mseal">☀</div></div>
-      <div class="tname">Get Well</div>
-      <div class="topen">The sun comes up</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=withlove&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-withlove"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">With Love</div>
-      <div class="topen">The big heart pops in — hearts shower</div>
-    </a>
-    <h3 class="fam" id="special">Special Envelopes</h3>
-    <style>
-    .fam-note{grid-column:1/-1;text-align:center;font-family:Georgia,serif;font-style:italic;font-size:14.5px;line-height:1.5;color:#5c4a38;margin:5px auto 0;max-width:560px}
-    body.dark .fam-note{color:#d9c9a8}
-    </style>
-    <p class="fam-note" data-i18n="specialP1">A Special Envelope is the whole show — there's no card to pick.</p>
-    <p class="fam-note" data-i18n="specialP2">Open it, and a living scene plays inside. It's named for the scene you watch.</p>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=butterfly&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-butterfly"><div class="mflap"></div><div class="mseal">B</div></div>
-      <div class="tname">Butterfly</div>
-      <div class="topen">Butterflies fly out</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=money&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-money"><div class="mflap"></div><div class="mseal">$</div></div>
-      <div class="tname">Money</div>
-      <div class="topen">Dollar bills rain</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=origami&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-origami"><div class="mflap"></div><div class="mseal">△</div></div>
-      <div class="tname">Origami Tree</div>
-      <div class="topen">A paper tree unfolds</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=origamibird&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-origamibird"><div class="mflap"></div><div class="mseal">△</div></div>
-      <div class="tname">Origami Bird</div>
-      <div class="topen">A paper bird unfolds</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=origamiboat&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-origamiboat"><div class="mflap"></div><div class="mseal">△</div></div>
-      <div class="tname">Origami Boat</div>
-      <div class="topen">A paper boat unfolds</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=origamifrog&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-origamifrog"><div class="mflap"></div><div class="mseal">△</div></div>
-      <div class="tname">Origami Frog</div>
-      <div class="topen">A paper frog unfolds</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=origamiflower&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-origamiflower"><div class="mflap"></div><div class="mseal">△</div></div>
-      <div class="tname">Origami Flower</div>
-      <div class="topen">A paper flower unfolds</div>
-    </a>
-    <h3 class="fam">Sea Life</h3>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=deepsea&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-deepsea"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Deep Sea</div>
-      <div class="topen">The dolphin drifts through the blue</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=shore&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-shore"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Shore</div>
-      <div class="topen">The kite drifts — crab bobs on the sand</div>
-    </a>
-    <h3 class="fam">Music</h3>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=celebrate&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-celebrate"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Celebrate</div>
-      <div class="topen">Poppers pop — hearts and stars shower</div>
-    </a>
-    <h3 class="fam">School</h3>
-    <p class="fam-note">School favorites, for game day and every day — pick the player who looks like your kid.</p>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=bkboys&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-bkboys"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Basketball — Boys</div>
-      <div class="topen">The ball bursts through the net &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=bkgirls&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-bkgirls"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Basketball — Girls</div>
-      <div class="topen">The ball bursts through the net &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=scboys&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-scboys"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Soccer — Boys</div>
-      <div class="topen">The ball blasts into the net &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=scgirls&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-scgirls"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Soccer — Girls</div>
-      <div class="topen">The ball blasts into the net &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=fbboys&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-fbboys"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Football — Boys</div>
-      <div class="topen">The ball launches through the uprights &middot; Middle–High</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=fbgirls&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-fbgirls"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Flag Football — Girls</div>
-      <div class="topen">The ball launches through the uprights &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=bsa&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-bsa"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Baseball A</div>
-      <div class="topen">A home-run blast &middot; Middle–High</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=bsb&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-bsb"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Baseball B</div>
-      <div class="topen">A home-run blast &middot; Middle–High</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=sba&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-sba"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Softball A</div>
-      <div class="topen">A home-run blast &middot; Middle–High</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=sbb&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-sbb"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Softball B</div>
-      <div class="topen">A home-run blast &middot; Middle–High</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=swboys&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-swboys"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Swimming — Boys</div>
-      <div class="topen">A splash explosion &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=swgirls&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-swgirls"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Swimming — Girls</div>
-      <div class="topen">A splash explosion &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=tkboys&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-tkboys"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Track — Boys</div>
-      <div class="topen">The finish-line bursts open &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=tkgirls&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-tkgirls"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Track — Girls</div>
-      <div class="topen">The finish-line bursts open &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=cheer&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-cheer"><div class="mflap"></div><div class="mseal">★</div></div>
-      <div class="tname">Cheer</div>
-      <div class="topen">A pom-pom blast &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=vbboys&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-vbboys"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Volleyball — Boys</div>
-      <div class="topen">The ball slams over the net &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=vbgirls&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-vbgirls"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Volleyball — Girls</div>
-      <div class="topen">The ball slams over the net &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=dance&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-dance"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Dance</div>
-      <div class="topen">The music bursts open &middot; Middle</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=robot&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-sc-robot"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Robot Delivery</div>
-      <div class="topen">The robot rolls out &middot; Middle</div>
-    </a>
-    <h3 class="fam">Adult Sports</h3>
-    <p class="fam-note">Grown-up game day — the sports you play now, with the friends you know. Pick your player.</p>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=pickle-girls&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-as-pickle-girls"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Pickleball — Girls</div>
-      <div class="topen">The dink drops dead at the net &middot; Adults</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=pickle-guys&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-as-pickle-guys"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Pickleball — Guys</div>
-      <div class="topen">The flick streaks past &middot; Adults</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=fishing-dawn&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-as-fishing-dawn"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Fishing — Dawn</div>
-      <div class="topen">The trout leaps clear at dawn &middot; Adults</div>
-    </a>
-    <a class="tile" href="https://geemondc.github.io/living-card-sample/?env=baseball-night&to=Friend&from=Me" target="_blank" rel="noopener">
-      <div class="mini m-as-baseball-night"><div class="mflap"></div><div class="mseal"></div></div>
-      <div class="tname">Baseball — Night</div>
-      <div class="topen">The swing connects under the lights &middot; Adults</div>
-    </a>
-</div>
-  <p class="soon">And the shelf keeps growing — birthdays, love, Christmas, the garden and music are being painted now. Every new envelope arrives with its own opening.</p>
-  </section>
+</section>
+<script>
+/* Picker sample (Nov 14): the stage envelope recolors live, and the framed
+   engine sample below it reloads with the same color + animation, so what
+   the visitor previews is what the maker sends. */
+(function(){
+  var PAL = {red:{n:'Red',e1:'#c93338',e2:'#7e1420',f1:'#d64545',f2:'#8f1a24',s1:'#ffe6bd',s2:'#e8973e',s3:'#9a5410',ink:'#ffe6bd'},gold:{n:'Gold',e1:'#e0af52',e2:'#a8742a',f1:'#eebd66',f2:'#b57f31',s1:'#fff3d6',s2:'#d9941e',s3:'#8a5a12',ink:'#fff7e0'},ivory:{n:'Ivory',e1:'#f8f2e2',e2:'#e7d9b8',f1:'#fffdf6',f2:'#efe2c4',s1:'#ffe6bd',s2:'#d9a441',s3:'#97742c',ink:'#7a5c1e'},berry:{n:'Berry Pink',e1:'#ef7094',e2:'#c2335f',f1:'#f786a5',f2:'#cd4069',s1:'#ffe6bd',s2:'#e8973e',s3:'#9a5410',ink:'#ffffff'},sunny:{n:'Sunny',e1:'#ffd95e',e2:'#eda51c',f1:'#ffe37a',f2:'#f2b52e',s1:'#fff8e0',s2:'#d9941e',s3:'#8a5a12',ink:'#6d4c00'},sage:{n:'Sage',e1:'#c9dab9',e2:'#93ad84',f1:'#d8e6ca',f2:'#a3ba93',s1:'#fff6d8',s2:'#c9a24d',s3:'#7a5c1e',ink:'#33502a'},emerald:{n:'Emerald',e1:'#289564',e2:'#14563c',f1:'#31a873',f2:'#186346',s1:'#ffe6bd',s2:'#e8973e',s3:'#9a5410',ink:'#eafff3'},sky:{n:'Sky',e1:'#97c4ea',e2:'#4f8fc9',f1:'#a9cff0',f2:'#5f9fd6',s1:'#ffffff',s2:'#e8c877',s3:'#97742c',ink:'#123c63'},navy:{n:'Navy',e1:'#33597f',e2:'#1b3450',f1:'#3e6491',f2:'#203c5c',s1:'#ffe6bd',s2:'#d9a441',s3:'#97742c',ink:'#dbe9f7'},burgundy:{n:'Burgundy',e1:'#8e2c40',e2:'#5a1624',f1:'#9c364c',f2:'#671b2b',s1:'#ffe6bd',s2:'#e8973e',s3:'#9a5410',ink:'#f7d9de'},purple:{n:'Purple',e1:'#7f61b3',e2:'#4e3579',f1:'#8d70bf',f2:'#5a4189',s1:'#ffe6bd',s2:'#e8973e',s3:'#9a5410',ink:'#eadffc'},brick:{n:'Brick',e1:'#b34a2e',e2:'#7a2a1a',f1:'#bf5636',f2:'#86331f',s1:'#ffe6bd',s2:'#e8973e',s3:'#9a5410',ink:'#ffe6bd'}};
+  var colorKey = 'red', animKey = 'none';
+  var env = document.getElementById('pkEnv'), nameEl = document.getElementById('pkColorName'), frame = document.getElementById('pkPreview');
+  function sample(){
+    if (frame) frame.src = 'https://geemondc.github.io/living-card-sample/?scene=congratulations&color=' + colorKey + '&anim=' + animKey + '&to=Alex&from=Jordan&line=' + encodeURIComponent('You did it \u2014 so proud of you');
+  }
+  function pick(key){
+    var c = PAL[key]; if (!c) return;
+    colorKey = key;
+    ['e1','e2','f1','f2','s1','s2','s3','ink'].forEach(function(k){ env.style.setProperty('--' + k, c[k]); });
+    nameEl.textContent = c.n;
+    document.querySelectorAll('#pkSwatches .pk-sw').forEach(function(el){
+      var on = el.getAttribute('data-color') === key;
+      el.classList.toggle('on', on); el.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    sample();
+  }
+  document.querySelectorAll('#pkSwatches .pk-sw').forEach(function(b){
+    b.addEventListener('click', function(){ pick(b.getAttribute('data-color')); });
+  });
+  document.querySelectorAll('#pkOpts .pk-opt').forEach(function(b){
+    b.addEventListener('click', function(){
+      animKey = b.getAttribute('data-anim') || 'none';
+      document.querySelectorAll('#pkOpts .pk-opt').forEach(function(x){
+        var on = x === b;
+        x.classList.toggle('on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      sample();
+    });
+  });
+  pick('red');
+})();
+</script>
 <section id="notes">
   <div class="sec-head">
     <h2 data-i18n="notesH">The Living Notes</h2>
@@ -1680,428 +1309,87 @@ body.dark .lc-pair{background:#241c12}
   </div>
   <div class="lc-form">
     <div class="lc-steps" aria-label="How sending a Living Card works">
-      <div class="lc-step"><span class="lc-stepno">1</span><div><p class="lc-stept" data-i18n="xp1t">Pick an envelope</p><p class="lc-stepp" data-i18n="xp1p">The envelope is the first thing they see — pick the one you like.</p></div></div>
-      <div class="lc-step"><span class="lc-stepno">2</span><div><p class="lc-stept" data-i18n="xp2t">Pick a card</p><p class="lc-stepp" data-i18n="xp2p">The living picture that plays inside when it opens. The groups are named for what plays.</p></div></div>
-      <div class="lc-step"><span class="lc-stepno">3</span><div><p class="lc-stept" data-i18n="xp3t">Write your words</p><p class="lc-stepp" data-i18n="xp3p">Who it&rsquo;s to, your message, and your name.</p></div></div>
-      <div class="lc-step"><span class="lc-stepno">4</span><div><p class="lc-stept" data-i18n="xp4t">Send it</p><p class="lc-stepp" data-i18n="xp4p">A card is $1. Bought a bundle (5 for $3 &middot; 10 for $5)? You get a pack code — type it below. Each card you send uses one from your pack. Looking is always free. You get the link when it&rsquo;s made — send it to them, and keep a copy for yourself; it opens any time.</p></div></div>
+      <div class="lc-step"><span class="lc-stepno">1</span><div><p class="lc-stept" data-i18n="xp1t">Choose a color</p><p class="lc-stepp" data-i18n="xp1p">The envelope is the first thing they see &mdash; pick its color.</p></div></div>
+      <div class="lc-step"><span class="lc-stepno">2</span><div><p class="lc-stept" data-i18n="xp2t">Choose an animation</p><p class="lc-stepp" data-i18n="xp2p">Only if you want one. It plays right after the envelope opens &mdash; or the card just comes out.</p></div></div>
+      <div class="lc-step"><span class="lc-stepno">3</span><div><p class="lc-stept" data-i18n="xp3t">Pick a card</p><p class="lc-stepp" data-i18n="xp3p">A living card that plays inside &mdash; or a plain card: just your words, no picture.</p></div></div>
+      <div class="lc-step"><span class="lc-stepno">4</span><div><p class="lc-stept" data-i18n="xp4t">Write your words and send</p><p class="lc-stepp" data-i18n="xp4p">A card is $1. Bought a bundle (5 for $3 &middot; 10 for $5)? You get a pack code — type it below. Each card you send uses one from your pack. Looking is always free. You get the link when it&rsquo;s made — send it to them, and keep a copy for yourself; it opens any time.</p></div></div>
     </div>
 
-    <p class="lc-label" data-i18n="pkEnvH">Step 1 · Pick an envelope</p>
-    <div class="lc-marked" id="lcMarkedEnvWrap" hidden>
-      <p class="lc-fam"><span aria-hidden="true" style="color:#d6336c">♥</span> <span data-i18n="markedH">Your marked</span></p>
-      <div class="lc-envs" id="lcMarkedEnvs" role="radiogroup" aria-label="Your marked envelopes"></div>
-    </div>
-    <p class="lc-fam" data-i18n="noAnimEnvH">No animation envelopes</p>
-    <p class="lc-sub" data-i18n="noAnimEnvP">A plain envelope — no picture on it, just the color.</p>
-    <div class="lc-envs" role="radiogroup" aria-label="No animation envelopes">
-      <button type="button" class="lc-envp lc-envplainp" data-plainenv="White" aria-pressed="false">
-        <div class="mini" style="background:#ffffff"><div class="mflap" style="background:#ece4d0"></div></div>
-        <span class="lc-pick-t" data-i18n="cWhite">Plain White</span>
+    <p class="lc-label" data-i18n="pkEnvH">Step 1 &middot; Choose your color</p>
+    <p class="lc-sub" data-i18n="pkEnvP">The envelope is the first thing they see &mdash; pick its color. Any color can carry any card.</p>
+    <div class="lc-envs" role="radiogroup" aria-label="Envelope colors">
+      <button type="button" class="lc-envp lc-colorp on" data-color="red" aria-pressed="true">
+        <div class="mini" style="background:linear-gradient(160deg,#c93338,#7e1420)"><div class="mflap" style="background:linear-gradient(180deg,#d64545,#8f1a24)"></div></div>
+        <span class="lc-pick-t" data-i18n="colRed">Red</span>
       </button>
-      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Blue" aria-pressed="false">
-        <div class="mini" style="background:#2e5fa3"><div class="mflap" style="background:#254e86"></div></div>
-        <span class="lc-pick-t" data-i18n="cBlue">Plain Blue</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="gold" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#e0af52,#a8742a)"><div class="mflap" style="background:linear-gradient(180deg,#eebd66,#b57f31)"></div></div>
+        <span class="lc-pick-t" data-i18n="colGold">Gold</span>
       </button>
-      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Red" aria-pressed="false">
-        <div class="mini" style="background:#c23b2e"><div class="mflap" style="background:#a02f24"></div></div>
-        <span class="lc-pick-t" data-i18n="cRed">Plain Red</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="ivory" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#f8f2e2,#e7d9b8)"><div class="mflap" style="background:linear-gradient(180deg,#fffdf6,#efe2c4)"></div></div>
+        <span class="lc-pick-t" data-i18n="colIvory">Ivory</span>
       </button>
-      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Green" aria-pressed="false">
-        <div class="mini" style="background:#2e7d4f"><div class="mflap" style="background:#256841"></div></div>
-        <span class="lc-pick-t" data-i18n="cGreen">Plain Green</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="berry" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#ef7094,#c2335f)"><div class="mflap" style="background:linear-gradient(180deg,#f786a5,#cd4069)"></div></div>
+        <span class="lc-pick-t" data-i18n="colBerry">Berry Pink</span>
       </button>
-      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Orange" aria-pressed="false">
-        <div class="mini" style="background:#e07b2a"><div class="mflap" style="background:#c0631c"></div></div>
-        <span class="lc-pick-t" data-i18n="cOrange">Plain Orange</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="sunny" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#ffd95e,#eda51c)"><div class="mflap" style="background:linear-gradient(180deg,#ffe37a,#f2b52e)"></div></div>
+        <span class="lc-pick-t" data-i18n="colSunny">Sunny</span>
       </button>
-      <button type="button" class="lc-envp lc-envplainp" data-plainenv="Purple" aria-pressed="false">
-        <div class="mini" style="background:#6d4fa1"><div class="mflap" style="background:#594083"></div></div>
-        <span class="lc-pick-t" data-i18n="cPurple">Plain Purple</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="sage" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#c9dab9,#93ad84)"><div class="mflap" style="background:linear-gradient(180deg,#d8e6ca,#a3ba93)"></div></div>
+        <span class="lc-pick-t" data-i18n="colSage">Sage</span>
       </button>
-    </div>
-    <p class="lc-fam">Occasions</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Occasions">
-      <button type="button" class="lc-envp" data-pick="birthday" data-paid="1" aria-pressed="false">
-        <div class="mini m-kid"><div class="mflap"></div><div class="mseal">★</div></div>
-        <span class="lc-pick-t">Birthday</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="emerald" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#289564,#14563c)"><div class="mflap" style="background:linear-gradient(180deg,#31a873,#186346)"></div></div>
+        <span class="lc-pick-t" data-i18n="colEmerald">Emerald</span>
       </button>
-      <button type="button" class="lc-envp on" data-pick="biglove" data-paid="1" aria-pressed="true">
-        <div class="mini m-biglove"><div class="mflap"></div><div class="mseal">♥</div></div>
-        <span class="lc-pick-t">Love</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="sky" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#97c4ea,#4f8fc9)"><div class="mflap" style="background:linear-gradient(180deg,#a9cff0,#5f9fd6)"></div></div>
+        <span class="lc-pick-t" data-i18n="colSky">Sky</span>
       </button>
-      <button type="button" class="lc-envp" data-pick="wedding" data-paid="1" aria-pressed="false">
-        <div class="mini m-wedding"><div class="mflap"></div><div class="mseal">○</div></div>
-        <span class="lc-pick-t">Wedding</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="navy" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#33597f,#1b3450)"><div class="mflap" style="background:linear-gradient(180deg,#3e6491,#203c5c)"></div></div>
+        <span class="lc-pick-t" data-i18n="colNavy">Navy</span>
       </button>
-      <button type="button" class="lc-envp" data-pick="barmitzvah" data-paid="1" aria-pressed="false">
-        <div class="mini m-barmitzvah"><div class="mflap"></div><div class="mseal">✡</div></div>
-        <span class="lc-pick-t">Bar Mitzvah</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="burgundy" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#8e2c40,#5a1624)"><div class="mflap" style="background:linear-gradient(180deg,#9c364c,#671b2b)"></div></div>
+        <span class="lc-pick-t" data-i18n="colBurgundy">Burgundy</span>
       </button>
-      <button type="button" class="lc-envp" data-pick="surprise" data-paid="1" aria-pressed="false">
-        <div class="mini m-surprise"><div class="mflap"></div><div class="mseal">!</div></div>
-        <span class="lc-pick-t">Surprise</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="purple" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#7f61b3,#4e3579)"><div class="mflap" style="background:linear-gradient(180deg,#8d70bf,#5a4189)"></div></div>
+        <span class="lc-pick-t" data-i18n="colPurple">Purple</span>
       </button>
-      <button type="button" class="lc-envp" data-pick="graduation" data-paid="1" aria-pressed="false">
-        <div class="mini m-graduation"><div class="mflap"></div><div class="mseal">▲</div></div>
-        <span class="lc-pick-t">Graduation</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="baby" data-paid="1" aria-pressed="false">
-        <div class="mini m-baby"><div class="mflap"></div><div class="mseal">●</div></div>
-        <span class="lc-pick-t">Baby</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="thanksgiving" data-paid="1" aria-pressed="false">
-        <div class="mini m-thanksgiving"><div class="mflap"></div><div class="mseal">✦</div></div>
-        <span class="lc-pick-t">Thanksgiving</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="hanukkah" data-paid="1" aria-pressed="false">
-        <div class="mini m-hanukkah"><div class="mflap"></div><div class="mseal">✦</div></div>
-        <span class="lc-pick-t">Hanukkah</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="christmas" data-paid="1" aria-pressed="false">
-        <div class="mini m-christmas"><div class="mflap"></div><div class="mseal">★</div></div>
-        <span class="lc-pick-t">Christmas</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="balloonburst" data-paid="1" aria-pressed="false">
-        <div class="mini m-balloonpop"><div class="mflap"></div><div class="mseal">●</div></div>
-        <span class="lc-pick-t">Balloon Pop</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="pinata" data-paid="1" aria-pressed="false">
-        <div class="mini m-pinata"><div class="mflap"></div><div class="mseal">★</div></div>
-        <span class="lc-pick-t">Piñata</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="partytime" data-paid="1" aria-pressed="false">
-        <div class="mini m-partytime"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Party Time</span>
+      <button type="button" class="lc-envp lc-colorp" data-color="brick" aria-pressed="false">
+        <div class="mini" style="background:linear-gradient(160deg,#b34a2e,#7a2a1a)"><div class="mflap" style="background:linear-gradient(180deg,#bf5636,#86331f)"></div></div>
+        <span class="lc-pick-t" data-i18n="colBrick">Brick</span>
       </button>
     </div>
-    <p class="lc-fam">Sports &amp; Games</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Sports &amp; Games">
-      <button type="button" class="lc-envp" data-pick="gameday" data-paid="1" aria-pressed="false">
-        <div class="mini m-gameday"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Football</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="holes" data-paid="1" aria-pressed="false">
-        <div class="mini m-holes"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Golf</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="fishing" data-paid="1" aria-pressed="false">
-        <div class="mini m-fishing"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Fishing A</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="hoops" data-paid="1" aria-pressed="false">
-        <div class="mini m-hoops"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Basketball</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="pickle" data-paid="1" aria-pressed="false">
-        <div class="mini m-pickle"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Pickleball</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="homerun" data-paid="1" aria-pressed="false">
-        <div class="mini m-homerun"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Baseball A</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="goal" data-paid="1" aria-pressed="false">
-        <div class="mini m-goal"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Soccer A</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="racers" data-paid="1" aria-pressed="false">
-        <div class="mini m-racers"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Race Car Driving</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="champions" data-paid="1" aria-pressed="false">
-        <div class="mini m-champions"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Champions</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="coach" data-paid="1" aria-pressed="false">
-        <div class="mini m-coach"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Navy Megaphone</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="fans" data-paid="1" aria-pressed="false">
-        <div class="mini m-fans"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Fans</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="fairway" data-paid="1" aria-pressed="false">
-        <div class="mini m-fairway"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Fairway</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="tightlines" data-paid="1" aria-pressed="false">
-        <div class="mini m-tightlines"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Fishing B</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="homer" data-paid="1" aria-pressed="false">
-        <div class="mini m-homer"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Baseball B</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="striker" data-paid="1" aria-pressed="false">
-        <div class="mini m-striker"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Soccer B</span>
+    <p class="lc-label" data-i18n="pkAnimH">Step 2 &middot; Choose an animation</p>
+    <p class="lc-sub" data-i18n="pkAnimP">It plays right after the envelope opens &mdash; only if you pick one.</p>
+    <div class="lc-anims" role="radiogroup" aria-label="Opening animation">
+      <button type="button" class="lc-animp on" data-anim="none" aria-pressed="true"><b data-i18n="aNoneT">Just open it</b><small data-i18n="aNoneS">No animation. The envelope opens and the card comes right out.</small></button>
+      <button type="button" class="lc-animp" data-anim="scene" aria-pressed="false"><b data-i18n="aSceneT">A little scene</b><small data-i18n="aSceneS">A small drawn moment first &mdash; sunflowers bloom, a fireplace lights, a lily opens. Each card has its own.</small></button>
+      <button type="button" class="lc-animp" data-anim="explosion" aria-pressed="false"><b data-i18n="aExpT">Explosion</b><small data-i18n="aExpS">The classic burst. Only if you pick it &mdash; it is never automatic.</small></button>
+      <button type="button" class="lc-animp" data-anim="hearts" aria-pressed="false"><b data-i18n="aHeartsT">Hearts</b><small data-i18n="aHeartsS">A burst of hearts. For love.</small></button>
+    </div>
+    <p class="lc-label" data-i18n="pkCardH">Step 3 &middot; Pick a card</p>
+    <p class="lc-sub" data-i18n="pkCardP">A living card that plays inside &mdash; or a plain card: just your words, no picture.</p>
+    <div class="lc-scenes">
+      <button type="button" class="lc-scene lc-plainp" data-pick="plain" data-paid="1" aria-pressed="false">
+        <span class="lc-plain-in" id="lcPlainIn" style="background:#f1dedf"><span class="lc-plain-words">&ldquo;Your words here&rdquo;</span></span>
+        <span class="lc-scene-t" data-i18n="plainT">Plain card</span>
+        <span class="lc-scene-s" data-i18n="plainS">Just your words, no picture &mdash; on one clean inside.</span>
       </button>
     </div>
-    <p class="lc-fam">Nature &amp; Places</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Nature &amp; Places">
-      <button type="button" class="lc-envp" data-pick="snowglobe" data-paid="1" aria-pressed="false">
-        <div class="mini m-snowglobe"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Snow Globe</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="ocean" data-paid="1" aria-pressed="false">
-        <div class="mini m-ocean"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Ocean</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="bloom" data-paid="1" aria-pressed="false">
-        <div class="mini m-bloom"><div class="mflap"></div><div class="mseal">❀</div></div>
-        <span class="lc-pick-t">Bloom</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="treasure" data-paid="1" aria-pressed="false">
-        <div class="mini m-treasure"><div class="mflap"></div><div class="mseal">$</div></div>
-        <span class="lc-pick-t">Treasure Chest</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="firefly" data-paid="1" aria-pressed="false">
-        <div class="mini m-firefly"><div class="mflap"></div><div class="mseal">·</div></div>
-        <span class="lc-pick-t">Firefly</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="hotair" data-paid="1" aria-pressed="false">
-        <div class="mini m-hotair"><div class="mflap"></div><div class="mseal">▲</div></div>
-        <span class="lc-pick-t">Hot Air Balloon</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="lantern" data-paid="1" aria-pressed="false">
-        <div class="mini m-lantern"><div class="mflap"></div><div class="mseal">✦</div></div>
-        <span class="lc-pick-t">Sky Lantern</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="tropical" data-paid="1" aria-pressed="false">
-        <div class="mini m-tropical"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Tropical</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="beachday" data-paid="1" aria-pressed="false">
-        <div class="mini m-beachday"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Beach Day</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="desert" data-paid="1" aria-pressed="false">
-        <div class="mini m-desert"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Desert Night</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="pond" data-paid="1" aria-pressed="false">
-        <div class="mini m-pond"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Frog Pond</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="rainforest" data-paid="1" aria-pressed="false">
-        <div class="mini m-rainforest"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Rainforest</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="wetlands" data-paid="1" aria-pressed="false">
-        <div class="mini m-wetlands"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Wetlands</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="desertday" data-paid="1" aria-pressed="false">
-        <div class="mini m-desertday"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Desert Day</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="garden" data-paid="1" aria-pressed="false">
-        <div class="mini m-garden"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Garden Bouquet</span>
-      </button>
-    </div>
-    <p class="lc-fam">Kind Words</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Kind Words">
-      <button type="button" class="lc-envp" data-pick="thankyou" data-paid="1" aria-pressed="false">
-        <div class="mini m-thankyou"><div class="mflap"></div><div class="mseal">❀</div></div>
-        <span class="lc-pick-t">Thank You</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="getwell" data-paid="1" aria-pressed="false">
-        <div class="mini m-getwell"><div class="mflap"></div><div class="mseal">☀</div></div>
-        <span class="lc-pick-t">Get Well</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="withlove" data-paid="1" aria-pressed="false">
-        <div class="mini m-withlove"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">With Love</span>
-      </button>
-    </div>
-    <p class="lc-fam">Special Envelopes</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Special Envelopes">
-      <button type="button" class="lc-envp" data-pick="butterfly" data-paid="1" aria-pressed="false">
-        <div class="mini m-butterfly"><div class="mflap"></div><div class="mseal">B</div></div>
-        <span class="lc-pick-t">Butterfly</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="money" data-paid="1" aria-pressed="false">
-        <div class="mini m-money"><div class="mflap"></div><div class="mseal">$</div></div>
-        <span class="lc-pick-t">Money</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="origami" data-paid="1" aria-pressed="false">
-        <div class="mini m-origami"><div class="mflap"></div><div class="mseal">△</div></div>
-        <span class="lc-pick-t">Origami Tree</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="origamibird" data-paid="1" aria-pressed="false">
-        <div class="mini m-origamibird"><div class="mflap"></div><div class="mseal">△</div></div>
-        <span class="lc-pick-t">Origami Bird</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="origamiboat" data-paid="1" aria-pressed="false">
-        <div class="mini m-origamiboat"><div class="mflap"></div><div class="mseal">△</div></div>
-        <span class="lc-pick-t">Origami Boat</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="origamifrog" data-paid="1" aria-pressed="false">
-        <div class="mini m-origamifrog"><div class="mflap"></div><div class="mseal">△</div></div>
-        <span class="lc-pick-t">Origami Frog</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="origamiflower" data-paid="1" aria-pressed="false">
-        <div class="mini m-origamiflower"><div class="mflap"></div><div class="mseal">△</div></div>
-        <span class="lc-pick-t">Origami Flower</span>
-      </button>
-    </div>
-    <p class="lc-fam">Sea Life</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Sea Life">
-      <button type="button" class="lc-envp" data-pick="deepsea" data-paid="1" aria-pressed="false">
-        <div class="mini m-deepsea"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Deep Sea</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="shore" data-paid="1" aria-pressed="false">
-        <div class="mini m-shore"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Shore</span>
-      </button>
-    </div>
-    <p class="lc-fam">Music</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Music">
-      <button type="button" class="lc-envp" data-pick="celebrate" data-paid="1" aria-pressed="false">
-        <div class="mini m-celebrate"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Celebrate</span>
-      </button>
-    </div>
-    <p class="lc-fam">School</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — School">
-      <button type="button" class="lc-envp" data-pick="bkboys" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-bkboys"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Basketball — Boys</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="bkgirls" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-bkgirls"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Basketball — Girls</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="scboys" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-scboys"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Soccer — Boys</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="scgirls" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-scgirls"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Soccer — Girls</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="fbboys" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-fbboys"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Football — Boys</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="fbgirls" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-fbgirls"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Flag Football — Girls</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="bsa" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-bsa"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Baseball A</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="bsb" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-bsb"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Baseball B</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="sba" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-sba"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Softball A</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="sbb" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-sbb"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Softball B</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="swboys" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-swboys"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Swimming — Boys</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="swgirls" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-swgirls"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Swimming — Girls</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="tkboys" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-tkboys"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Track — Boys</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="tkgirls" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-tkgirls"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Track — Girls</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="cheer" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-cheer"><div class="mflap"></div><div class="mseal">★</div></div>
-        <span class="lc-pick-t">Cheer</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="vbboys" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-vbboys"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Volleyball — Boys</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="vbgirls" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-vbgirls"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Volleyball — Girls</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="dance" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-dance"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Dance</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="robot" data-paid="1" aria-pressed="false">
-        <div class="mini m-sc-robot"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Robot Delivery</span>
-      </button>
-    </div>
-    <p class="lc-fam">Adult Sports</p>
-    <div class="lc-envs" role="radiogroup" aria-label="Envelopes — Adult Sports">
-      <button type="button" class="lc-envp" data-pick="pickle-girls" data-paid="1" aria-pressed="false">
-        <div class="mini m-as-pickle-girls"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Pickleball — Girls</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="pickle-guys" data-paid="1" aria-pressed="false">
-        <div class="mini m-as-pickle-guys"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Pickleball — Guys</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="fishing-dawn" data-paid="1" aria-pressed="false">
-        <div class="mini m-as-fishing-dawn"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Fishing — Dawn</span>
-      </button>
-      <button type="button" class="lc-envp" data-pick="baseball-night" data-paid="1" aria-pressed="false">
-        <div class="mini m-as-baseball-night"><div class="mflap"></div><div class="mseal"></div></div>
-        <span class="lc-pick-t">Baseball — Night</span>
-      </button>
-    </div>
-    <p class="lc-label" data-i18n="pkCardH">Step 2 · Pick a card</p>
-    <p class="lc-sub" data-i18n="pkCardP">The living picture that plays inside when it opens.</p>
+    <p class="lc-sub" data-i18n="plainTintP">The plain inside takes a soft tint of your envelope color &mdash; automatically. Your words stay dark and easy to read.</p>
     <div class="lc-marked" id="lcMarkedCardWrap" hidden>
       <p class="lc-fam"><span aria-hidden="true" style="color:#d6336c">♥</span> <span data-i18n="markedH">Your marked</span></p>
       <div class="lc-scenes" id="lcMarkedCards" role="radiogroup" aria-label="Your marked cards"></div>
     </div>
-    <p class="lc-fam" data-i18n="noAnimH">No animation cards</p>
-    <p class="lc-sub" data-i18n="noAnimP">No picture playing — just your words on a plain inside.</p>
-    <div class="lc-scenes" role="radiogroup" aria-label="No animation cards">
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="White" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#ffffff;border:1.5px solid #d9cfb6"></span>
-        <span class="lc-scene-t" data-i18n="cWhite">Plain White</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Blue" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#2e5fa3"></span>
-        <span class="lc-scene-t" data-i18n="cBlue">Plain Blue</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Red" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#c23b2e"></span>
-        <span class="lc-scene-t" data-i18n="cRed">Plain Red</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Green" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#2e7d4f"></span>
-        <span class="lc-scene-t" data-i18n="cGreen">Plain Green</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Orange" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#e07b2a"></span>
-        <span class="lc-scene-t" data-i18n="cOrange">Plain Orange</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-      <button type="button" class="lc-scene lc-plainp" data-pick="bigview" data-plain="Purple" data-paid="1" aria-pressed="false">
-        <span class="lc-swatch" style="background:#6d4fa1"></span>
-        <span class="lc-scene-t" data-i18n="cPurple">Plain Purple</span>
-        <span class="lc-scene-s" data-i18n="noAnimS">Your words only — nothing plays</span>
-      </button>
-    </div>
+    <p class="lc-fam" data-i18n="lcLivingH">Living cards</p>
     <p class="lc-fam">School</p>
     <div class="lc-scenes" role="radiogroup" aria-label="Cards — School">
       <button type="button" class="lc-scene lc-cardp" data-pick="bkboys" data-paid="1" aria-pressed="false">
@@ -2312,7 +1600,7 @@ body.dark .lc-pair{background:#241c12}
         <span class="lc-scene-s">The Window Seat</span>
       </button>
     </div>
-    <p class="lc-label" data-i18n="wrH">Step 3 · Write your words</p>
+    <p class="lc-label" data-i18n="wrH">Step 4 &middot; Write your words</p>
     <label class="lc-field"><span data-i18n="mkTo">Who is it for?</span>
       <input id="lcTo" type="text" maxlength="60" autocomplete="off"></label>
     <label class="lc-field"><span data-i18n="mkLine">Your line (optional)</span>
@@ -2326,7 +1614,7 @@ body.dark .lc-pair{background:#241c12}
       <p style="font-size:14px;margin:8px 2px 0"><a href="pack.html" target="_blank" rel="noopener" data-i18n="mkFinder">Just bought a pack, or lost your code? Get it here →</a></p>
     </div>
     <p class="lc-pair" id="lcPair"></p>
-    <p class="lc-label" data-i18n="sendH">Step 4 · Send it</p>
+    <p class="lc-label" data-i18n="sendH">Send it</p>
     <button type="button" class="cta teal lc-make" id="lcMake" data-i18n="mkMake">Make my card</button>
     <div class="lc-result" id="lcResult" hidden>
       <iframe id="lcPreview" title="Your Living Card preview" loading="lazy" scrolling="no" style="border:0;width:100%;height:540px;border-radius:14px;background:#221016"></iframe>
@@ -2344,11 +1632,18 @@ body.dark .lc-pair{background:#241c12}
   </div>
 </section>
 <script>
+/* The maker, two-choice edition (Nov 14): Step 1 the envelope is a COLOR,
+   Step 2 an ANIMATION (only if picked), Step 3 a living card OR the plain
+   card, Step 4 words + send. The link carries scene + color + anim to the
+   engine, which honors all three. Plain: the link also carries plain=1 and
+   the inside tint derived from the envelope color, so a words-only inside
+   can adopt them; the plain inside preview above Step 3 already shows the
+   exact tint the sender's words will sit on. */
 (function(){
   var CARD = 'https://geemondc.github.io/living-card-sample/';
-  var scene = 'biglove';
-  var ALIAS = { xmas: 'snowglobe', snowglobe: 'xmas' };
-  var picks = document.querySelectorAll('[data-pick]');
+  var COLORS = { red:{n:'Red',tint:'#f1dedf'}, gold:{n:'Gold',tint:'#f6efe2'}, ivory:{n:'Ivory',tint:'#fdfbf8'}, berry:{n:'Berry Pink',tint:'#f9e5eb'}, sunny:{n:'Sunny',tint:'#fef5e2'}, sage:{n:'Sage',tint:'#f3f6f0'}, emerald:{n:'Emerald',tint:'#ddeae5'}, sky:{n:'Sky',tint:'#eaf2f9'}, navy:{n:'Navy',tint:'#dfe3e8'}, burgundy:{n:'Burgundy',tint:'#eadee0'}, purple:{n:'Purple',tint:'#e8e4ef'}, brick:{n:'Brick',tint:'#efe1de'} };
+  var ANIMS = { none:'Just open it', scene:'A little scene', explosion:'Explosion', hearts:'Hearts' };
+  var colorKey = 'red', animKey = 'none', scene = 'biglove', plain = false;
   function nameOf(btn){
     if (!btn) return '';
     var t = btn.querySelector('.lc-scene-t') || btn.querySelector('.lc-pick-t');
@@ -2357,59 +1652,72 @@ body.dark .lc-pair{background:#241c12}
   function pairText(){
     var el = document.getElementById('lcPair');
     if (!el) return;
-    var plainB = document.querySelector('.lc-plainp.on');
-    var plainEnvB = document.querySelector('.lc-envplainp.on');
-    if (plainEnvB){
-      var insideTxt;
-      if (plainB){
-        insideTxt = 'Plain ' + plainB.getAttribute('data-plain') + ' — your words, no picture playing';
-      } else {
-        var twinE = ALIAS[scene] || scene;
-        var cardE = document.querySelector('.lc-cardp[data-pick="' + scene + '"]') || document.querySelector('.lc-cardp[data-pick="' + twinE + '"]');
-        insideTxt = cardE ? nameOf(cardE) : 'Its own living scene';
-      }
-      el.textContent = 'Your card: Envelope — Plain ' + plainEnvB.getAttribute('data-plainenv') + ' · Inside — ' + insideTxt;
-      return;
+    var c = COLORS[colorKey];
+    var txt;
+    if (plain){
+      txt = 'Your card: Envelope \u2014 ' + c.n + ' \u00b7 Inside \u2014 Plain, your words only \u00b7 Inside tint \u2014 soft ' + c.n;
+    } else {
+      var cardB = document.querySelector('.lc-cardp[data-pick="' + scene + '"]');
+      txt = 'Your card: Envelope \u2014 ' + c.n + ' \u00b7 Inside \u2014 ' + (cardB ? nameOf(cardB) : 'Its own living scene');
     }
-    if (plainB){
-      el.textContent = 'Your card: Plain ' + plainB.getAttribute('data-plain') + ' — your words, no picture playing.';
-      return;
-    }
-    var twin = ALIAS[scene] || scene;
-    var envB = document.querySelector('.lc-envp[data-pick="' + scene + '"]') || document.querySelector('.lc-envp[data-pick="' + twin + '"]');
-    var cardB = document.querySelector('.lc-cardp[data-pick="' + scene + '"]') || document.querySelector('.lc-cardp[data-pick="' + twin + '"]');
-    var envName = envB ? nameOf(envB) : 'Its matching envelope';
-    var cardName = cardB ? nameOf(cardB) : 'Its own living scene';
-    el.textContent = 'Your card: Envelope — ' + envName + ' · Inside — ' + cardName;
+    if (animKey !== 'none') txt += ' \u00b7 Opening \u2014 ' + ANIMS[animKey];
+    el.textContent = txt;
   }
-  function select(btn){
-    scene = btn.getAttribute('data-pick') || 'biglove';
-    picks.forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
-    btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
-    var twin = ALIAS[scene] || scene;
-    ['.lc-envp', '.lc-cardp'].forEach(function(sel){
-      var t = document.querySelector(sel + '[data-pick="' + scene + '"]') || document.querySelector(sel + '[data-pick="' + twin + '"]');
-      if (t && t !== btn){ t.classList.add('on'); t.setAttribute('aria-pressed','true'); }
+  function pickColor(key, btn){
+    if (!COLORS[key]) return;
+    colorKey = key;
+    document.querySelectorAll('.lc-colorp').forEach(function(x){
+      var on = x.getAttribute('data-color') === key;
+      x.classList.toggle('on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    if (btn.classList.contains('lc-envp')){
-      /* a designed envelope replaces any plain-envelope choice */
-      document.querySelectorAll('.lc-envplainp').forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
-    } else if (document.querySelector('.lc-envplainp.on')){
-      /* a plain envelope is chosen — it stays the envelope while the inside changes */
-      var envTwin = document.querySelector('.lc-envp[data-pick="' + scene + '"]') || document.querySelector('.lc-envp[data-pick="' + twin + '"]');
-      if (envTwin){ envTwin.classList.remove('on'); envTwin.setAttribute('aria-pressed','false'); }
-    }
+    var tin = document.getElementById('lcPlainIn');
+    if (tin) tin.style.background = COLORS[key].tint;
     pairText();
   }
-  picks.forEach(function(b){ b.addEventListener('click', function(){ select(b); }); });
-  var envPlains = document.querySelectorAll('.lc-envplainp');
-  envPlains.forEach(function(b){
+  document.querySelectorAll('.lc-colorp').forEach(function(b){
+    b.addEventListener('click', function(){ pickColor(b.getAttribute('data-color'), b); });
+  });
+  document.querySelectorAll('.lc-animp').forEach(function(b){
     b.addEventListener('click', function(){
-      var was = b.classList.contains('on');
-      envPlains.forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
-      document.querySelectorAll('.lc-envp[data-pick]').forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
-      if (!was){ b.classList.add('on'); b.setAttribute('aria-pressed','true'); }
+      animKey = b.getAttribute('data-anim') || 'none';
+      document.querySelectorAll('.lc-animp').forEach(function(x){
+        var on = x === b;
+        x.classList.toggle('on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
       pairText();
+    });
+  });
+  function pickPlain(){
+    plain = true;
+    document.querySelectorAll('.lc-cardp').forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
+    var pb = document.querySelector('.lc-plainp');
+    if (pb){ pb.classList.add('on'); pb.setAttribute('aria-pressed','true'); }
+    pairText();
+  }
+  var plainBtn = document.querySelector('.lc-plainp');
+  if (plainBtn) plainBtn.addEventListener('click', pickPlain);
+  document.querySelectorAll('.lc-cardp').forEach(function(b){
+    b.addEventListener('click', function(){
+      plain = false;
+      scene = b.getAttribute('data-pick') || 'biglove';
+      document.querySelectorAll('.lc-cardp').forEach(function(x){
+        var on = x === b;
+        x.classList.toggle('on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      var pb = document.querySelector('.lc-plainp');
+      if (pb){ pb.classList.remove('on'); pb.setAttribute('aria-pressed','false'); }
+      pairText();
+    });
+  });
+  /* The Living Cards band's plain tiles are same-page shortcuts: their old
+     color buttons are gone, so a tap now picks the plain card and lends the
+     envelope the nearest matching color. */
+  var TILECOLOR = { White:'ivory', Blue:'navy', Red:'red', Green:'emerald', Orange:'sunny', Purple:'purple' };
+  document.querySelectorAll('[data-plaintile="card"]').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      var c = TILECOLOR[tile.getAttribute('data-plaincolor')];
+      if (c) pickColor(c);
+      pickPlain();
     });
   });
   pairText();
@@ -2422,7 +1730,12 @@ body.dark .lc-pair{background:#241c12}
     });
     if (!ok) return;
     var url = CARD + '?to=' + encodeURIComponent(to) + '&from=' + encodeURIComponent(from) +
-      (line ? '&line=' + encodeURIComponent(line) : '') + '&scene=' + scene;
+      (line ? '&line=' + encodeURIComponent(line) : '');
+    if (plain){
+      url += '&plain=1&color=' + colorKey + '&anim=' + animKey + '&tint=' + COLORS[colorKey].tint.slice(1);
+    } else {
+      url += '&scene=' + scene + '&color=' + colorKey + '&anim=' + animKey;
+    }
     var res = document.getElementById('lcResult');
     res.hidden = false;
     document.getElementById('lcPreview').src = url;
@@ -2707,17 +2020,17 @@ body.dark .lc-pair{background:#241c12}
     sub:'Los sobres y las tarjetas se eligen por separado. Toca un sobre arriba para verlo abrirse \u2014 vac\u00edo, puro espect\u00e1culo \u2014 y luego elige una tarjeta abajo para verla por s\u00ed sola. Cualquier sobre puede llevar cualquier tarjeta.',
     kindsH:'Tres maneras de enviar un poco de vida',
     kindsP:'Sobres que se abren solos \u00b7 tarjetas vivientes por s\u00ed solas \u00b7 notas vivientes dobladas \u00b7 sobres especiales. Toca un tipo para saltar a \u00e9l.',
-    envH:'Los Sobres', envP:'Toca uno para verlo abrirse: el sobre es todo el espect\u00e1culo.',
+    envH:'El sobre \u2014 dos opciones', envP:'Ya no hay que recorrer noventa sobres. Elige un color, elige una animaci\u00f3n. Eso es todo.',
     nameWhyH:'\u00bfPor qu\u00e9 esos nombres?', nameWhy1:'El nombre te dice qu\u00e9 se reproduce cuando se abre el sello.', nameWhy2:'Cumplea\u00f1os reproduce una escena de cumplea\u00f1os. Navidad reproduce Navidad. Deportes y Juegos reproduce un momento del juego.', nameWhy3:'Cada nombre tiene su propia animaci\u00f3n.', nameWhy4:'\u00bfNo quieres animaci\u00f3n? Elige Sencillo: solo tus palabras.', specialP1:'Un Sobre Especial es todo el espect\u00e1culo: no hay tarjeta que elegir.', specialP2:'\u00c1brelo y una escena viva se reproduce dentro. Su nombre es la escena que ves.',
     notesH:'Las Notas Vivientes', notesP:'Sin sobre, sin ocasi\u00f3n: solo una nota doblada, pasada de mano en mano. Toca una y mira c\u00f3mo se desdobla.',
     cardsH:'Las Tarjetas Vivientes', cardsP:'Las tarjetas vivientes, por s\u00ed solas, sin sobre. Elige primero tu sobre y luego tu tarjeta: toca una tarjeta para ver solo la tarjeta, la escena viviente y las palabras.',
     kindCards:'Tarjetas Vivientes y Sobres', kindNotes:'Notas Vivientes',
-    xp1t:'Elige un sobre', xp1p:'El sobre es lo primero que ven: elige el que te guste.',
-    xp2t:'Elige una tarjeta', xp2p:'La imagen viviente que se reproduce adentro cuando se abre. Los grupos se nombran por lo que se reproduce.',
-    xp3t:'Escribe tus palabras', xp3p:'Para quién es, tu mensaje y tu nombre.',
-    xp4t:'Envíala', xp4p:'Una tarjeta cuesta $1. ¿Compraste un paquete (5 por $3 · 10 por $5)? Recibes un código de paquete: escríbelo abajo. Cada tarjeta que envíes usa una de tu paquete. Mirar siempre es gratis. Cuando esté lista, recibes el enlace: envíaselo a ellos y guarda una copia para ti; se abre cuando quieras.',
-    pkEnvH:'Paso 1 · Elige un sobre', pkCardH:'Paso 2 · Elige una tarjeta', pkCardP:'La imagen viviente que se reproduce adentro cuando se abre.',
-    wrH:'Paso 3 · Escribe tus palabras', sendH:'Paso 4 · Envíala',
+    xp1t:'Elige un color', xp1p:'El sobre es lo primero que ven: elige su color.',
+    xp2t:'Elige una animaci\u00f3n', xp2p:'Solo si quieres una. Se reproduce justo despu\u00e9s de que el sobre se abre, o la tarjeta sale directamente.',
+    xp3t:'Elige una tarjeta', xp3p:'Una tarjeta viviente que se reproduce adentro, o una tarjeta sencilla: solo tus palabras, sin imagen.',
+    xp4t:'Escribe tus palabras y env\u00edala', xp4p:'Una tarjeta cuesta $1. ¿Compraste un paquete (5 por $3 · 10 por $5)? Recibes un código de paquete: escríbelo abajo. Cada tarjeta que envíes usa una de tu paquete. Mirar siempre es gratis. Cuando esté lista, recibes el enlace: envíaselo a ellos y guarda una copia para ti; se abre cuando quieras.',
+    pkEnvH:'Paso 1 \u00b7 Elige tu color', pkCardH:'Paso 3 \u00b7 Elige una tarjeta', pkCardP:'Una tarjeta viviente que se reproduce adentro, o una tarjeta sencilla: solo tus palabras, sin imagen.',
+    pkEnvP:'El sobre es lo primero que ven: elige su color. Cualquier color puede llevar cualquier tarjeta.', pkAnimH:'Paso 2 \u00b7 Elige una animaci\u00f3n', pkAnimP:'Se reproduce justo despu\u00e9s de que el sobre se abre, solo si eliges una.', plainT:'Tarjeta sencilla', plainS:'Solo tus palabras, sin imagen, en un interior limpio.', plainTintP:'El interior sencillo toma un tinte suave del color de tu sobre, autom\u00e1ticamente. Tus palabras se quedan oscuras y f\u00e1ciles de leer.', lcLivingH:'Tarjetas vivientes', pkS1:'Paso 1', pkS1H:'Elige tu color', pkS2:'Paso 2', pkS2H:'Elige tu animaci\u00f3n', aNoneT:'Solo \u00e1brelo', aNoneS:'Sin animaci\u00f3n. El sobre se abre y la tarjeta sale enseguida.', aSceneT:'Una peque\u00f1a escena', aSceneS:'Un peque\u00f1o momento dibujado primero: girasoles que florecen, una chimenea que se enciende, un lirio que se abre. Cada tarjeta tiene el suyo.', aExpT:'Explosi\u00f3n', aExpS:'La explosi\u00f3n cl\u00e1sica. Solo si t\u00fa la eliges: nunca es autom\u00e1tica.', aHeartsT:'Corazones', aHeartsS:'Una lluvia de corazones. Para el amor.', pkNote:'\u00bfNo eliges ninguna? La tarjeta se abre y ya. Simple.', pkWatchH:'M\u00edralo abrirse', pkWatchP:'Esto es de verdad, con una tarjeta de ejemplo adentro: la tuya es la que elijas en el creador de abajo. Toca el sello para abrirlo.', pkThen:'Luego elige tu tarjeta, escribe tus palabras y env\u00edala.<br>Color \u00b7 animaci\u00f3n \u00b7 tarjeta \u00b7 palabras. Eso es todo.', pkGo:'Ir al creador \u2193', colRed:'Rojo', colGold:'Dorado', colIvory:'Marfil', colBerry:'Rosa Baya', colSunny:'Soleado', colSage:'Salvia', colEmerald:'Esmeralda', colSky:'Cielo', colNavy:'Azul Marino', colBurgundy:'Burdeos', colPurple:'Morado', colBrick:'Ladrillo', wrH:'Paso 4 \u00b7 Escribe tus palabras', sendH:'Env\u00edala',
     noAnimH:'Tarjetas sin animación', noAnimP:'Sin imagen en movimiento: solo tus palabras en un interior sencillo.', noAnimS:'Solo tus palabras — nada se reproduce',
     cRed:'Rojo sencillo', cBlue:'Azul sencillo', cGreen:'Verde sencillo', cOrange:'Naranja sencillo', cPurple:'Morado sencillo', cWhite:'Blanco sencillo',
     noAnimEnvH:'Sobres sin animación', noAnimEnvP:'Un sobre sencillo: sin imagen, solo el color.',
