@@ -73,6 +73,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   .frame img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block; transition:opacity .28s ease}
 .frame video{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block; transition:opacity .28s ease}
 .frame video.fading{opacity:0}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+  #frameFsBtn{position:absolute;right:10px;bottom:10px;z-index:3;appearance:none;border:1.5px solid #a87f24;background:linear-gradient(180deg,#e9cf8f,#c9a227);color:#2a1e05;font-family:Georgia,serif;font-size:13px;font-weight:700;letter-spacing:.04em;padding:8px 14px;border-radius:999px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.35)}
   .frame img.fading{opacity:0}
   .rd-name{text-align:center; font-size:clamp(24px,4.4vw,32px); color:#5d1220; margin-top:20px; line-height:1.2}
   .rd-line{text-align:center; font-family:Georgia,serif; font-style:italic; font-size:17px; color:#5c4a38; margin-top:7px; line-height:1.5; padding:0 10px}
@@ -173,6 +175,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   <div class="frame" id="frame" role="button" aria-label="See it full screen">
     <div class="blur" id="frameBlur"></div>
     <video id="frameVid" autoplay muted loop playsinline preload="auto" poster="img/ride-train.jpg" src="ride-train.mp4" aria-label="The ride, playing"></video>
+    <iframe id="frameFrame" title="The long ride, playing" allow="autoplay; fullscreen" style="display:none"></iframe>
+    <button id="frameFsBtn" type="button" style="display:none">See it full screen</button>
   </div>
   <h2 class="rd-name" id="rdName"></h2>
   <p class="rd-line" id="rdLine"></p>
@@ -276,10 +280,13 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     var r = RIDES[cur];
     blur.style.backgroundImage = 'url("' + r.img + '")';
     vid.poster = r.img;
+    var ff = $('frameFrame'), fb = $('frameFsBtn');
     if (!r.vid) {
       if (vid.getAttribute('src')) { vid.removeAttribute('src'); vid.load(); }
       vid.classList.remove('fading');
+      if (r.href) { ff.style.display = 'block'; if (ff.getAttribute('src') !== r.href) ff.src = r.href; fb.style.display = 'block'; }
     } else {
+      ff.style.display = 'none'; if (ff.getAttribute('src')) ff.removeAttribute('src'); fb.style.display = 'none';
       vid.classList.add('fading');
       if (vid.getAttribute('src') !== r.vid) vid.src = r.vid;
       vid.oncanplay = function(){ vid.classList.remove('fading'); };
