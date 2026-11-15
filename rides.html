@@ -286,7 +286,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
       vid.classList.remove('fading');
       if (r.href) { ff.style.display = 'block'; if (ff.getAttribute('src') !== r.href) ff.src = r.href; fb.style.display = 'block'; }
     } else {
-      ff.style.display = 'none'; if (ff.getAttribute('src')) ff.removeAttribute('src'); fb.style.display = 'none';
+      ff.style.display = 'none'; if (ff.getAttribute('src')) ff.removeAttribute('src'); fb.style.display = 'block';
       vid.classList.add('fading');
       if (vid.getAttribute('src') !== r.vid) vid.src = r.vid;
       vid.oncanplay = function(){ vid.classList.remove('fading'); };
@@ -308,6 +308,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     if (on && on.scrollIntoView) on.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
   }
   function go(i){ if (i < 0 || i >= RIDES.length) return; cur = i; render(); }
+  $('frameFsBtn').addEventListener('click', function(e){ e.stopPropagation(); openFs(); });
   $('fcPrev').addEventListener('click', function(){ go(cur - 1); });
   $('fcNext').addEventListener('click', function(){ go(cur + 1); });
   document.addEventListener('keydown', function(e){
@@ -322,9 +323,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     if (tx === null) return;
     var dx = e.changedTouches[0].clientX - tx; tx = null;
     if (Math.abs(dx) > 48){ go(cur + (dx < 0 ? 1 : -1)); }
-    else { openFs(); }
   }, {passive:true});
-  frame.addEventListener('click', function(){ openFs(); });
   function openFs(){ if (RIDES[cur].href) { $('fsFrame').src = RIDES[cur].href; $('fs').classList.add('has-frame'); $('fs').classList.add('show'); return; } var v = $('fsVid'); v.poster = RIDES[cur].img; v.src = RIDES[cur].vid; $('fs').classList.add('show'); var p = v.play(); if (p) p.catch(function(){}); }
   function closeFs(){ var v = $('fsVid'); v.pause(); v.removeAttribute('src'); v.load(); var f = $('fsFrame'); if (f) f.removeAttribute('src'); $('fs').classList.remove('has-frame'); $('fs').classList.remove('show'); }
   window.addEventListener('message', function(e){ if (e.data === 'lc-close-fs') closeFs(); });
