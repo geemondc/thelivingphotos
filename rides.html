@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Rides — Living Photos</title>
-<meta name="description" content="The Rides — twelve short animated loops, free to watch. Scroll the names up top to see them all.">
+<meta name="description" content="The Rides — fourteen rides, free to watch. Scroll the names up top to see them all.">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:Didot,"Playfair Display",Georgia,serif; background:#faf5ea; color:#3a2c22}
@@ -152,7 +152,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   <div class="wrap">
     <img class="hero" src="img/ride-train.jpg" alt="The Starry Night Train">
     <h1 data-i18n="title">The Rides</h1>
-    <p class="b b-shelf" data-i18n="shelf">Twelve short animated loops, free to watch.</p>
+    <p class="b b-shelf" data-i18n="shelf">Fourteen rides, free to watch.</p>
     <p class="b b-slide" data-i18n="slide">Scroll the names up top — tap one and the ride plays.</p>
     <button id="rdGo" type="button" data-i18n="go">See the rides &rarr;</button>
   </div>
@@ -160,7 +160,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 
 <header class="rd-head">
   <h1 data-i18n="title">The Rides</h1>
-  <p class="shelf" data-i18n="shelf">Twelve short animated loops, free to watch.</p>
+  <p class="shelf" data-i18n="shelf">Fourteen rides, free to watch.</p>
 </header>
 
 <nav id="picker" aria-label="Choose a ride"></nav>
@@ -179,8 +179,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <div id="fcCount" aria-live="polite"></div>
 
 <section class="list-wrap">
-  <h2 data-i18n="allTen">All twelve rides</h2>
-  <nav id="rdList" aria-label="All twelve rides"></nav>
+  <h2 data-i18n="allTen">All fourteen rides</h2>
+  <nav id="rdList" aria-label="All fourteen rides"></nav>
 </section>
 
 <footer>Living Photos &middot; Future Ready</footer>
@@ -215,14 +215,18 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     {key:'boat',      short:'Boat',      name:'The Boat Ride',           img:'boat-ride-poster.jpg', vid:'ride-boat.mp4',
      en:'Our flagship \u2014 Golden, Bridge, Marina and Sunset, and the Long Ride that joins them all.', es:'Nuestro favorito \u2014 Golden, Bridge, Marina y Sunset, y el Viaje Largo que los une a todos.'},
     {key:'balloon',   short:'Balloon',   name:'The Balloon Ride',        img:'img/ride-balloon.jpg', vid:'ride-balloon.mp4',
-     en:'A balloon ride over Temple Valley at golden hour.', es:'Un paseo en globo sobre el Valle del Templo a la hora dorada.'}
+     en:'A balloon ride over Temple Valley at golden hour.', es:'Un paseo en globo sobre el Valle del Templo a la hora dorada.'},
+    {key:'drift',     short:'Valley Drift', name:'Temple Valley Drift', img:'img/ride-balloon-side.jpg', href:'https://geemondc.github.io/balloon-ride/',
+     en:'The endless one \u2014 tap the picture and climb in. You drift over Temple Valley and it never ends.', es:'El interminable \u2014 toca la imagen y sube. Derivas sobre el Valle del Templo y nunca termina.'},
+    {key:'forward',   short:'Forward',   name:'Forward Drift',         img:'img/ride-balloon-fwd.jpg', href:'https://geemondc.github.io/balloon-ride-forward/',
+     en:'The endless one, coming at you \u2014 tap the picture and climb in. Balloons drift past you over Temple Valley.', es:'El interminable, viniendo hacia ti \u2014 toca la imagen y sube. Los globos pasan junto a ti sobre el Valle del Templo.'}
   ];
   var ES = {
     navStore:'Fotos Vivientes', navTheater:'El Teatro', navCards:'Tarjetas y Sobres', navNotes:'Notas Vivientes',
     darkBtn:'Oscuro', qrTitle:'Escanea para abrir esta p\u00e1gina',
-    title:'Los Paseos', shelf:'Doce paseos cortos animados, gratis para ver.',
+    title:'Los Paseos', shelf:'Catorce paseos, gratis para ver.',
     slide:'Recorre los nombres arriba \u2014 toca uno y el paseo se reproduce.',
-    go:'Ver los paseos \u2192', allTen:'Los doce paseos', tapClose:'Toca para cerrar', of:'de'
+    go:'Ver los paseos \u2192', allTen:'Los catorce paseos', tapClose:'Toca para cerrar', of:'de'
   };
   var lang = 'en', cur = 0;
   var $ = function(id){ return document.getElementById(id); };
@@ -244,11 +248,16 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   function render(){
     var r = RIDES[cur];
     blur.style.backgroundImage = 'url("' + r.img + '")';
-    vid.classList.add('fading');
     vid.poster = r.img;
-    if (vid.getAttribute('src') !== r.vid) vid.src = r.vid;
-    vid.oncanplay = function(){ vid.classList.remove('fading'); };
-    var pr = vid.play(); if (pr) pr.catch(function(){});
+    if (r.href) {
+      if (vid.getAttribute('src')) { vid.removeAttribute('src'); vid.load(); }
+      vid.classList.remove('fading');
+    } else {
+      vid.classList.add('fading');
+      if (vid.getAttribute('src') !== r.vid) vid.src = r.vid;
+      vid.oncanplay = function(){ vid.classList.remove('fading'); };
+      var pr = vid.play(); if (pr) pr.catch(function(){});
+    }
     $('rdName').textContent = r.name;
     $('rdLine').textContent = (lang === 'es') ? r.es : r.en;
     $('fcCount').textContent = r.name + ' \u00b7 ' + (cur + 1) + ' ' + ((lang === 'es') ? ES.of : 'of') + ' ' + RIDES.length;
@@ -282,7 +291,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     else { openFs(); }
   }, {passive:true});
   frame.addEventListener('click', function(){ openFs(); });
-  function openFs(){ var v = $('fsVid'); v.poster = RIDES[cur].img; v.src = RIDES[cur].vid; $('fs').classList.add('show'); var p = v.play(); if (p) p.catch(function(){}); }
+  function openFs(){ if (RIDES[cur].href) { window.location.href = RIDES[cur].href; return; } var v = $('fsVid'); v.poster = RIDES[cur].img; v.src = RIDES[cur].vid; $('fs').classList.add('show'); var p = v.play(); if (p) p.catch(function(){}); }
   function closeFs(){ var v = $('fsVid'); v.pause(); v.removeAttribute('src'); v.load(); $('fs').classList.remove('show'); }
   $('fs').addEventListener('click', closeFs);
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeFs(); });
