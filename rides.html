@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Rides — Living Photos</title>
-<meta name="description" content="The Rides — eleven short animated loops, free to watch. Scroll the names up top to see them all.">
+<meta name="description" content="The Rides — twelve short animated loops, free to watch. Scroll the names up top to see them all.">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:Didot,"Playfair Display",Georgia,serif; background:#faf5ea; color:#3a2c22}
@@ -152,7 +152,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   <div class="wrap">
     <img class="hero" src="img/ride-train.jpg" alt="The Starry Night Train">
     <h1 data-i18n="title">The Rides</h1>
-    <p class="b b-shelf" data-i18n="shelf">Eleven short animated loops, free to watch.</p>
+    <p class="b b-shelf" data-i18n="shelf">Twelve short animated loops, free to watch.</p>
     <p class="b b-slide" data-i18n="slide">Scroll the names up top — tap one and the ride plays.</p>
     <button id="rdGo" type="button" data-i18n="go">See the rides &rarr;</button>
   </div>
@@ -160,7 +160,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 
 <header class="rd-head">
   <h1 data-i18n="title">The Rides</h1>
-  <p class="shelf" data-i18n="shelf">Eleven short animated loops, free to watch.</p>
+  <p class="shelf" data-i18n="shelf">Twelve short animated loops, free to watch.</p>
 </header>
 
 <nav id="picker" aria-label="Choose a ride"></nav>
@@ -179,8 +179,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <div id="fcCount" aria-live="polite"></div>
 
 <section class="list-wrap">
-  <h2 data-i18n="allTen">All eleven rides</h2>
-  <nav id="rdList" aria-label="All eleven rides"></nav>
+  <h2 data-i18n="allTen">All twelve rides</h2>
+  <nav id="rdList" aria-label="All twelve rides"></nav>
 </section>
 
 <footer>Living Photos &middot; Future Ready</footer>
@@ -213,14 +213,16 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     {key:'aurora',    short:'Lift',      name:'The Aurora Lift',         img:'img/ride-aurora.jpg', vid:'ride-aurora.mp4',
      en:'A chairlift ride under the northern lights, up to The Cabin.', es:'Un viaje en telesilla bajo la aurora boreal, hasta La Caba\u00f1a.'},
     {key:'boat',      short:'Boat',      name:'The Boat Ride',           img:'boat-ride-poster.jpg', vid:'ride-boat.mp4',
-     en:'Our flagship \u2014 Golden, Bridge, Marina and Sunset, and the Long Ride that joins them all.', es:'Nuestro favorito \u2014 Golden, Bridge, Marina y Sunset, y el Viaje Largo que los une a todos.'}
+     en:'Our flagship \u2014 Golden, Bridge, Marina and Sunset, and the Long Ride that joins them all.', es:'Nuestro favorito \u2014 Golden, Bridge, Marina y Sunset, y el Viaje Largo que los une a todos.'},
+    {key:'balloon',   short:'Balloon',   name:'The Balloon Ride',        img:'img/ride-balloon.jpg', vid:'ride-balloon.mp4',
+     en:'A balloon ride over Temple Valley at golden hour.', es:'Un paseo en globo sobre el Valle del Templo a la hora dorada.'}
   ];
   var ES = {
     navStore:'Fotos Vivientes', navTheater:'El Teatro', navCards:'Tarjetas y Sobres', navNotes:'Notas Vivientes',
     darkBtn:'Oscuro', qrTitle:'Escanea para abrir esta p\u00e1gina',
-    title:'Los Paseos', shelf:'Once paseos cortos animados, gratis para ver.',
+    title:'Los Paseos', shelf:'Doce paseos cortos animados, gratis para ver.',
     slide:'Recorre los nombres arriba \u2014 toca uno y el paseo se reproduce.',
-    go:'Ver los paseos \u2192', allTen:'Los once paseos', tapClose:'Toca para cerrar', of:'de'
+    go:'Ver los paseos \u2192', allTen:'Los doce paseos', tapClose:'Toca para cerrar', of:'de'
   };
   var lang = 'en', cur = 0;
   var $ = function(id){ return document.getElementById(id); };
