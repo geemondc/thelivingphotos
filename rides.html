@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Rides — Living Photos</title>
-<meta name="description" content="The Rides — fourteen doors, twenty-five rides, free to watch. Scroll the names up top to see them all.">
+<meta name="description" content="The Rides — thirteen doors, twenty-five rides, free to watch. Scroll the names up top to see them all.">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:Didot,"Playfair Display",Georgia,serif; background:#faf5ea; color:#3a2c22}
@@ -99,6 +99,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   .fcRow .fcN{min-width:16px;color:#d9b64f;font-size:13px;font-weight:700}
   .fcRow .fcNm{font-size:15.5px;letter-spacing:.03em;white-space:nowrap}
   .fcRow .fcOc{font-size:12.5px;font-style:italic;color:#cbbd93;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fcRow .fcBadge{margin-left:auto;flex:0 0 auto;background:#c9a227;color:#241c11;font-size:10.5px;font-weight:700;letter-spacing:.08em;border-radius:999px;padding:2px 8px}
   .fcRow.on{background:rgba(233,226,210,.95);color:#241c11;border-color:rgba(201,162,39,.8)}
   .fcRow.on .fcN{color:#8a6d2f}
   .fcRow.on .fcOc{color:#6d5518}
@@ -155,7 +156,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   <div class="wrap">
     <img class="hero" src="img/ride-train.jpg" alt="The Starry Night Train">
     <h1 data-i18n="title">The Rides</h1>
-    <p class="b b-shelf" data-i18n="shelf">Fourteen doors. Twenty-five rides, free to watch.</p>
+    <p class="b b-shelf" data-i18n="shelf">Thirteen doors. Twenty-five rides, free to watch.</p>
     <p class="b b-slide" data-i18n="slide">Scroll the names up top — tap one and the ride plays.</p>
     <button id="rdGo" type="button" data-i18n="go">See the rides &rarr;</button>
   </div>
@@ -163,7 +164,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 
 <header class="rd-head">
   <h1 data-i18n="title">The Rides</h1>
-  <p class="shelf" data-i18n="shelf">Fourteen doors. Twenty-five rides, free to watch.</p>
+  <p class="shelf" data-i18n="shelf">Thirteen doors. Twenty-five rides, free to watch.</p>
 </header>
 
 <nav id="picker" aria-label="Choose a ride"></nav>
@@ -196,17 +197,15 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <script>
 (function(){
   var RIDES = [
-    {key:'train',     short:'Train',     name:'The Starry Night Train',  img:'img/ride-train.jpg', vid:'ride-train.mp4', href:'https://geemondc.github.io/starry-night-train/',
+    {key:'train',     short:'Train',     name:'The Starry Night Train',  img:'img/ride-train.jpg', vid:'ride-train.mp4', href:'https://geemondc.github.io/starry-night-train/', n:4,
      en:'Four rides in one \u2014 The Ride, To The Park, To The Monument, and the Long Ride that runs them all.', es:'Cuatro paseos en uno \u2014 El Viaje, Al Parque, Al Monumento, y el Viaje Largo que los une todos.'},
     {key:'sleigh',    short:'Sleigh',    name:'The Sleigh',              img:'img/ride-sleigh.jpg', vid:'ride-sleigh.mp4',
      en:'A horse-drawn sleigh through a snowy village at dusk.', es:'Un trineo tirado por un caballo por un pueblo nevado al atardecer.'},
     {key:'drive',     short:'Drive',     name:'The Coastal Drive',       img:'img/ride-drive.jpg', vid:'ride-drive.mp4',
      en:'A sunset drive down the Florida coast.', es:'Un paseo al atardecer por la costa de Florida.'},
-    {key:'gondola',   short:'Gondola',   name:'The Gondola over the Falls', img:'img/ride-gondola.jpg', vid:'ride-gondola.mp4',
-     en:'A gondola ride over Storybook Falls.', es:'Un viaje en g\u00f3ndola sobre las Cataratas de Cuento.'},
-    {key:'rainbow',   short:'Rainbow',   name:'The Rainbow Falls',       img:'img/ride-gondola.jpg', vid:'ride-rainbow.mp4',
-     en:'A ride down toward the falls, into the rainbow mist.', es:'Un paseo hacia las cataratas, dentro de la niebla del arco\u00edris.'},
-    {key:'sub',       short:'Sub',       name:'The Underwater Sub',      img:'img/ride-sub.jpg', vid:'ride-sub.mp4', href:'https://geemondc.github.io/underwater-routes/',
+    {key:'gondola',   short:'Gondola',   name:'The Gondola over the Falls', img:'img/ride-gondola.jpg', vid:'ride-gondola.mp4', href:'https://geemondc.github.io/gondola-routes/', n:2,
+     en:'Two rides in one \u2014 The Gondola over the Falls, Rainbow Falls, and the Long Ride that rides them both.', es:'Dos paseos en uno \u2014 La G\u00f3ndola sobre las Cataratas, Las Cataratas Arco\u00edris, y el Viaje Largo que los recorre ambos.'},
+    {key:'sub',       short:'Sub',       name:'The Underwater Sub',      img:'img/ride-sub.jpg', vid:'ride-sub.mp4', href:'https://geemondc.github.io/underwater-routes/', n:5,
      en:'Five rides in one \u2014 The Ride, Coral Reef, Turtle Channel, Jellyfish Gardens, and the Long Ride that runs them all.', es:'Cinco paseos en uno \u2014 El Viaje, El Arrecife de Coral, El Canal de las Tortugas, El Jard\u00edn de Medusas, y el Viaje Largo que los une todos.'},
     {key:'space',     short:'Space',     name:'The Space Cockpit',       img:'img/ride-space.jpg', vid:'ride-space.mp4',
      en:'A spaceship ride through a glowing nebula.', es:'Un viaje en nave espacial por una nebulosa brillante.'},
@@ -216,7 +215,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
      en:'A bike ride down the Hollywood Broadwalk at sunset.', es:'Un paseo en bicicleta por el Broadwalk de Hollywood al atardecer.'},
     {key:'aurora',    short:'Lift',      name:'The Aurora Lift',         img:'img/ride-aurora.jpg', vid:'ride-aurora.mp4',
      en:'A chairlift ride under the northern lights, up to The Cabin.', es:'Un viaje en telesilla bajo la aurora boreal, hasta La Caba\u00f1a.'},
-    {key:'boat',      short:'Boat',      name:'The Boat Ride',           img:'boat-ride-poster.jpg', vid:'ride-boat.mp4', href:'https://geemondc.github.io/boat-ride-v3/',
+    {key:'boat',      short:'Boat',      name:'The Boat Ride',           img:'boat-ride-poster.jpg', vid:'ride-boat.mp4', href:'https://geemondc.github.io/boat-ride-v3/', n:5,
      en:'Five rides in one \u2014 Golden, Bridge, Marina and Sunset, and the Long Ride that joins them all.', es:'Cinco paseos en uno \u2014 Golden, Bridge, Marina y Sunset, y el Viaje Largo que los une a todos.'},
     {key:'balloon',   short:'Balloon',   name:'The Balloon Ride',        img:'img/ride-balloon.jpg', vid:'ride-balloon.mp4',
      en:'A balloon ride over Temple Valley at golden hour.', es:'Un paseo en globo sobre el Valle del Templo a la hora dorada.'},
@@ -228,7 +227,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   var ES = {
     navStore:'Fotos Vivientes', navTheater:'El Teatro', navCards:'Tarjetas y Sobres', navNotes:'Notas Vivientes',
     darkBtn:'Oscuro', qrTitle:'Escanea para abrir esta p\u00e1gina',
-    title:'Los Paseos', shelf:'Catorce puertas. Veinticinco paseos, gratis para ver.',
+    title:'Los Paseos', shelf:'Trece puertas. Veinticinco paseos, gratis para ver.',
     slide:'Recorre los nombres arriba \u2014 toca uno y el paseo se reproduce.',
     go:'Ver los paseos \u2192', allTen:'Los veinticinco paseos', tapClose:'Toca para cerrar', of:'de'
   };
@@ -238,12 +237,12 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 
   RIDES.forEach(function(r, i){
     var b = document.createElement('button');
-    b.type = 'button'; b.textContent = r.short; b.setAttribute('data-i', i);
+    b.type = 'button'; b.textContent = r.short + (r.n ? ' \u00b7 ' + r.n : ''); b.setAttribute('data-i', i);
     b.addEventListener('click', function(){ go(i); });
     picker.appendChild(b);
     var row = document.createElement('button');
     row.type = 'button'; row.className = 'fcRow'; row.setAttribute('data-i', i);
-    row.innerHTML = '<span class="fcN">' + (i + 1) + '</span><span class="fcNm"></span><span class="fcOc"></span>';
+    row.innerHTML = '<span class="fcN">' + (i + 1) + '</span><span class="fcNm"></span><span class="fcOc"></span><span class="fcBadge"></span>';
     row.querySelector('.fcNm').textContent = r.name;
     row.addEventListener('click', function(){ go(i); window.scrollTo({top:0, behavior:'smooth'}); });
     list.appendChild(row);
@@ -271,6 +270,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     for (var j = 0; j < rows.length; j++){
       rows[j].classList.toggle('on', j === cur);
       rows[j].querySelector('.fcOc').textContent = (lang === 'es') ? RIDES[j].es : RIDES[j].en;
+      var bd = rows[j].querySelector('.fcBadge'); if (bd) bd.textContent = RIDES[j].n ? (RIDES[j].n + ' ' + ((lang === 'es') ? 'PASEOS' : 'RIDES')) : '';
     }
     $('fcPrev').classList.toggle('off', cur === 0);
     $('fcNext').classList.toggle('off', cur === RIDES.length - 1);
