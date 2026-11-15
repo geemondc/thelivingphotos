@@ -152,8 +152,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   <div class="wrap">
     <img class="hero" src="img/ride-train.jpg" alt="The Starry Night Train">
     <h1 data-i18n="title">The Rides</h1>
-    <p class="b b-shelf" data-i18n="shelf">Ten rides — every one of them made today.</p>
-    <p class="b b-slide" data-i18n="slide">Slide the names up top — every ride plays on the big screen, numbered 1 of 10 to 10 of 10.</p>
+    <p class="b b-shelf" data-i18n="shelf">Eleven rides — every one of them made today.</p>
+    <p class="b b-slide" data-i18n="slide">Slide the names up top — every ride plays on the big screen, numbered 1 of 11 to 11 of 11.</p>
     <button id="rdGo" type="button" data-i18n="go">See the rides &rarr;</button>
   </div>
 </div>
@@ -179,7 +179,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <div id="fcCount" aria-live="polite"></div>
 
 <section class="list-wrap">
-  <h2 data-i18n="allTen">All ten rides</h2>
+  <h2 data-i18n="allTen">All eleven rides</h2>
   <nav id="rdList" aria-label="All ten rides"></nav>
 </section>
 
@@ -200,6 +200,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
      en:'A sunset drive down the Florida coast.', es:'Un paseo al atardecer por la costa de Florida.'},
     {key:'gondola',   short:'Gondola',   name:'The Gondola over the Falls', img:'img/ride-gondola.jpg', vid:'ride-gondola.mp4',
      en:'A gondola ride over Storybook Falls.', es:'Un viaje en g\u00f3ndola sobre las Cataratas de Cuento.'},
+    {key:'rainbow',   short:'Rainbow',   name:'The Rainbow Falls',       img:'img/ride-gondola.jpg', vid:'ride-rainbow.mp4',
+     en:'A ride down toward the falls, into the rainbow mist.', es:'Un paseo hacia las cataratas, dentro de la niebla del arco\u00edris.'},
     {key:'sub',       short:'Sub',       name:'The Underwater Sub',      img:'img/ride-sub.jpg', vid:'ride-sub.mp4',
      en:'A submarine ride through the coral reef.', es:'Un viaje en submarino por el arrecife de coral.'},
     {key:'space',     short:'Space',     name:'The Space Cockpit',       img:'img/ride-space.jpg', vid:'ride-space.mp4',
@@ -216,9 +218,9 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   var ES = {
     navStore:'Fotos Vivientes', navTheater:'El Teatro', navCards:'Tarjetas y Sobres', navNotes:'Notas Vivientes',
     darkBtn:'Oscuro', qrTitle:'Escanea para abrir esta p\u00e1gina',
-    title:'Los Paseos', shelf:'Diez paseos \u2014 todos hechos hoy.',
-    slide:'Desliza los nombres arriba \u2014 cada paseo se reproduce en la pantalla grande, numerado del 1 de 10 al 10 de 10.',
-    go:'Ver los paseos \u2192', allTen:'Los diez paseos', tapClose:'Toca para cerrar', of:'de'
+    title:'Los Paseos', shelf:'Once paseos \u2014 todos hechos hoy.',
+    slide:'Desliza los nombres arriba \u2014 cada paseo se reproduce en la pantalla grande, numerado del 1 de 11 al 11 de 11.',
+    go:'Ver los paseos \u2192', allTen:'Los once paseos', tapClose:'Toca para cerrar', of:'de'
   };
   var lang = 'en', cur = 0;
   var $ = function(id){ return document.getElementById(id); };
@@ -247,7 +249,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     var pr = vid.play(); if (pr) pr.catch(function(){});
     $('rdName').textContent = r.name;
     $('rdLine').textContent = (lang === 'es') ? r.es : r.en;
-    $('fcCount').textContent = r.name + ' \u00b7 ' + (cur + 1) + ' ' + ((lang === 'es') ? ES.of : 'of') + ' 10';
+    $('fcCount').textContent = r.name + ' \u00b7 ' + (cur + 1) + ' ' + ((lang === 'es') ? ES.of : 'of') + ' ' + RIDES.length;
     var pbtns = picker.querySelectorAll('button');
     for (var i = 0; i < pbtns.length; i++) pbtns[i].classList.toggle('on', i === cur);
     var rows = list.querySelectorAll('.fcRow');
