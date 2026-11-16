@@ -821,7 +821,7 @@ section.lpd{display:block;max-width:1060px;margin:8px auto 0;padding:26px 18px 6
         <img class="ph stage-still" src="https://geemondc.github.io/big-view/still.jpg" alt="The Big View" hidden loading="lazy">
       <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
       <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
-      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="https://geemondc.github.io/big-view/still.jpg" alt="The Big View" loading="lazy"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="https://geemondc.github.io/big-view/deep.jpg" alt="The Big View — the living photo" loading="lazy"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="https://geemondc.github.io/big-view/still.jpg" alt="The Big View" loading="lazy"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="https://geemondc.github.io/big-view/still.jpg" alt="The Big View — the living photo" loading="lazy"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
     </div>
   </div>
 
@@ -1294,7 +1294,15 @@ section.lpd{display:block;max-width:1060px;margin:8px auto 0;padding:26px 18px 6
        once (or the still has painted while resting on it) and never returns. */
     var frLoaded = false, frWarmed = false;
     function warm(){
-      if (frWarmed || !fr) return; frWarmed = true;
+      if (frWarmed) return; frWarmed = true;
+      /* EVENINGFIX (Nov 15): warm the still plate too - it is the exact
+         file the full-screen viewer's STILL tap shows, and a cold plate
+         was the black full-screen viewer on slow connections. */
+      if (stillLayer && stillLayer.tagName === 'IMG'){
+        var su = stillLayer.getAttribute('src');
+        if (su){ var pre = new Image(); pre.src = su; }
+      }
+      if (!fr) return;
       var need = fr.getAttribute('data-live');
       if (need && fr.getAttribute('src') !== need) fr.src = need;
     }
@@ -1626,8 +1634,22 @@ section.lpd{display:block;max-width:1060px;margin:8px auto 0;padding:26px 18px 6
       cap=document.getElementById('bvCatch'), ttl=document.getElementById('bvTitle'),
       bS=document.getElementById('bvStill'), bL=document.getElementById('bvLiving'), bX=document.getElementById('bvX'), bXT=document.getElementById('bvXTop');
   var cur={still:null,live:null,mode:'living'};
+  var waitTk = 0;
+  function stillReady(){
+    if(!cur.still) return true;
+    if(img.getAttribute('src')!==cur.still) return false;
+    return (img.complete && img.naturalWidth>0) || img.dataset.bvErr===cur.still;
+  }
   function show(){
-    var living = cur.mode==='living' && !!cur.live;
+    /* EVENINGFIX (Nov 15): the still starts loading the moment the viewer
+       opens (not on the STILL tap), and if it is still arriving when STILL
+       is tapped, the living picture stays up until the still lands, then
+       the swap completes. The old code hid the embed instantly, so a slow
+       plate (worst case the 755 KB cross-origin Big View still) left the
+       viewer black for seconds - "STILL makes the picture vanish". */
+    if(cur.still && img.getAttribute('src')!==cur.still){ delete img.dataset.bvErr; img.src=cur.still; }
+    var wantLiving = cur.mode==='living' && !!cur.live;
+    var living = wantLiving || (!wantLiving && !!cur.live && !stillReady());
     img.style.display = living ? 'none' : 'block';
     fr.style.visibility = living ? 'visible' : 'hidden'; /* IOSFLIPFIX: visibility, not display - display:none unloads the embed's document in WebKit */
     cap.style.pointerEvents = living ? 'none' : 'auto';
@@ -1636,11 +1658,19 @@ section.lpd{display:block;max-width:1060px;margin:8px auto 0;padding:26px 18px 6
          player that measures its window once at load gets the real size */
       fr.src='about:blank';
       requestAnimationFrame(function(){ requestAnimationFrame(function(){
-        if(cur.mode==='living' && !bv.hidden) fr.src=cur.live;
+        if(!bv.hidden && (cur.mode==='living' || !stillReady())) fr.src=cur.live;
       }); });
     }
-    if(!living && cur.still && img.getAttribute('src')!==cur.still) img.src=cur.still;
-    bS.classList.toggle('on', !living); bL.classList.toggle('on', living);
+    if(!wantLiving && cur.live && !stillReady()){
+      var tk = ++waitTk;
+      var onl = function(ev){
+        img.removeEventListener('load', onl); img.removeEventListener('error', onl);
+        if(ev && ev.type==='error') img.dataset.bvErr = cur.still;
+        if(tk===waitTk && !bv.hidden && cur.mode==='still') show();
+      };
+      img.addEventListener('load', onl); img.addEventListener('error', onl);
+    } else { waitTk++; }
+    bS.classList.toggle('on', !wantLiving); bL.classList.toggle('on', wantLiving);
     bL.style.display = cur.live ? '' : 'none';
     bS.style.display = cur.still ? '' : 'none';
   }
