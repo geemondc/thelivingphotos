@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Rides — Living Photos</title>
-<meta name="description" content="The Rides — thirty-one rides, free to watch. Scroll the names up top to see them all.">
+<meta name="description" content="The Rides — twenty-five rides, free to watch. Scroll the names up top to see them all.">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:Didot,"Playfair Display",Georgia,serif; background:#faf5ea; color:#3a2c22}
@@ -158,7 +158,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
     <img class="hero" src="img/opt-ride-train.webp" alt="The Starry Night Train">
   <div class="wrap">
     <h1 data-i18n="title">The Rides</h1>
-    <p class="b b-shelf" data-i18n="shelf">Thirty-one rides, free to watch.</p>
+    <p class="b b-shelf" data-i18n="shelf">Twenty-five rides, free to watch.</p>
     <p class="b b-slide" data-i18n="slide">Scroll the names up top — tap one and the ride plays.</p>
     <button id="rdGo" type="button" data-i18n="go">See the rides &rarr;</button>
   </div>
@@ -166,7 +166,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 
 <header class="rd-head">
   <h1 data-i18n="title">The Rides</h1>
-  <p class="shelf" data-i18n="shelf">Thirty-one rides, free to watch.</p>
+  <p class="shelf" data-i18n="shelf">Twenty-five rides, free to watch.</p>
 </header>
 
 <nav id="picker" aria-label="Choose a ride"></nav>
@@ -187,8 +187,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <div id="fcCount" aria-live="polite"></div>
 
 <section class="list-wrap">
-  <h2 data-i18n="allTen">All thirty-one rides</h2>
-  <nav id="rdList" aria-label="All thirty-one rides"></nav>
+  <h2 data-i18n="allTen">All twenty-five rides</h2>
+  <nav id="rdList" aria-label="All twenty-five rides"></nav>
 </section>
 
 <footer>Living Photos &middot; Future Ready</footer>
@@ -209,20 +209,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
      en:'The Starry Night Train, riding to the Statue of Liberty.', es:'El Tren de la Noche Estrellada, rumbo a la Estatua de la Libertad.'},
     {key:'trainlong', short:'Train Long Ride', name:'The Starry Night Train \u2014 Long Ride', img:'img/opt-ride-train.webp', href:'https://geemondc.github.io/starry-night-train/?ride=long',
      en:'All three train rides in a row \u2014 tap the picture and climb in. It never ends.', es:'Los tres paseos en tren seguidos \u2014 toca la imagen y sube. Nunca termina.'},
-    {key:'blossomstation', short:'The Station', name:'The Cherry-Blossom Train to The Station', img:'img/ride-blossom-station.jpg', vid:'ride-blossom-station.mp4',
-     en:'The Cherry-Blossom Train, riding down the track to the little clock-tower station.', es:'El Tren de los Cerezos, por la vía hasta la pequeña estación de la torre del reloj.'},
-    {key:'blossomriver', short:'The River', name:'The Cherry-Blossom Train Along The River', img:'img/ride-blossom-river.jpg', vid:'ride-blossom-river.mp4',
-     en:'The Cherry-Blossom Train, riding along the river, under the red torii gate.', es:'El Tren de los Cerezos, junto al río, bajo la gran puerta torii roja.'},
-    {key:'blossomfields', short:'The Tea Fields', name:'The Cherry-Blossom Train Through The Tea Fields', img:'img/ride-blossom-fields.jpg', vid:'ride-blossom-fields.mp4',
-     en:'The Cherry-Blossom Train, riding through the tea fields under the great cherry tree.', es:'El Tren de los Cerezos, entre los campos de té, bajo el gran cerezo.'},
-    {key:'blossomtrainlong', short:'Blossom Train Long Ride', name:'The Cherry-Blossom Train \u2014 Long Ride', img:'img/ride-blossom-train-long.jpg', href:'https://geemondc.github.io/blossom-train-scene/?ride=long',
-     en:'All three Cherry-Blossom Train rides in a row \u2014 to the station, along the river, through the tea fields. Tap the picture and climb in. It never ends.', es:'Los tres paseos del Tren de los Cerezos seguidos \u2014 a la estación, junto al río, entre los campos de té. Toca la imagen y sube. Nunca termina.'},
     {key:'sleigh',    short:'Sleigh',    name:'The Sleigh',              img:'img/opt-ride-sleigh.webp', vid:'ride-sleigh.mp4',
      en:'A horse-drawn sleigh through a snowy village at dusk.', es:'Un trineo tirado por un caballo por un pueblo nevado al atardecer.'},
-    {key:'sleighlong', short:'Sleigh Long Ride', name:'The Sleigh \u2014 Long Ride', img:'img/ride-sleigh-long.jpg', vid:'ride-sleigh-long.mp4',
-     en:'The Sleigh, the long way \u2014 a thirty-second glide down the lantern-lit lane into the village. It never ends.', es:'El Trineo, por el camino largo \u2014 un paseo de treinta segundos por el camino de faroles hasta el pueblo. Nunca termina.'},
-    {key:'carriage',  short:'Carriage',  name:'The Carriage Ride',       img:'img/opt-ride-carriage.webp', vid:'ride-carriage.mp4',
-     en:'A horse-drawn carriage down an autumn lane, to the covered bridge.', es:'Un carruaje tirado por un caballo por un camino de oto\u00f1o, hacia el puente cubierto.'},
     {key:'drive',     short:'Drive',     name:'The Coastal Drive',       img:'img/opt-ride-drive.webp', vid:'ride-drive.mp4',
      en:'A sunset drive down the Florida coast.', es:'Un paseo al atardecer por la costa de Florida.'},
     {key:'gondola',   short:'Gondola',   name:'The Gondola over the Falls', img:'img/opt-ride-gondola.webp', vid:'ride-gondola.mp4',
@@ -267,9 +255,9 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   var ES = {
     navStore:'Fotos Vivientes', navTheater:'El Teatro', navCards:'Tarjetas y Sobres', navNotes:'Notas Vivientes', navFirstClass:'Primera Clase', navRides:'Paseos',
     darkBtn:'Oscuro', qrTitle:'Escanea para abrir esta p\u00e1gina',
-    title:'Los Paseos', shelf:'Treinta y un paseos, gratis para ver.',
+    title:'Los Paseos', shelf:'Veinticinco paseos, gratis para ver.',
     slide:'Recorre los nombres arriba \u2014 toca uno y el paseo se reproduce.',
-    go:'Ver los paseos \u2192', allTen:'Los treinta y un paseos', tapClose:'Toca para cerrar', of:'de'
+    go:'Ver los paseos \u2192', allTen:'Los veinticinco paseos', tapClose:'Toca para cerrar', of:'de'
   };
   var lang = 'en', cur = 0;
   var $ = function(id){ return document.getElementById(id); };
