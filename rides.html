@@ -155,7 +155,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <div id="rdIntro" role="dialog" aria-label="The Rides — welcome">
   <button class="lang" id="rdLang" type="button" aria-pressed="false">Espa&ntilde;ol</button>
   <button class="close" id="rdClose" type="button" aria-label="Close">&times;</button>
-    <img class="hero" src="img/ride-train.jpg" alt="The Starry Night Train">
+    <img class="hero" src="img/opt-ride-train.webp" alt="The Starry Night Train">
   <div class="wrap">
     <h1 data-i18n="title">The Rides</h1>
     <p class="b b-shelf" data-i18n="shelf">Twenty-six rides, free to watch.</p>
@@ -174,7 +174,7 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <main class="stage">
   <div class="frame" id="frame" role="button" aria-label="See it full screen">
     <div class="blur" id="frameBlur"></div>
-    <video id="frameVid" autoplay muted loop playsinline preload="auto" poster="img/ride-train.jpg" src="ride-train.mp4" aria-label="The ride, playing"></video>
+    <video id="frameVid" autoplay muted loop playsinline preload="auto" poster="img/opt-ride-train.webp" src="ride-train.mp4" aria-label="The ride, playing"></video>
     <iframe id="frameFrame" title="The long ride, playing" allow="autoplay; fullscreen" style="display:none"></iframe>
     <button id="frameFsBtn" type="button" style="display:none">See it full screen</button>
   </div>
@@ -201,43 +201,43 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
 <script>
 (function(){
   var RIDES = [
-    {key:'train',     short:'Train',     name:'The Starry Night Train',  img:'img/ride-train.jpg', vid:'ride-train.mp4',
+    {key:'train',     short:'Train',     name:'The Starry Night Train',  img:'img/opt-ride-train.webp', vid:'ride-train.mp4',
      en:'A train ride under a swirling painted sky.', es:'Un viaje en tren bajo un cielo pintado que gira.'},
-    {key:'trainpark', short:'The Park',  name:'Starry Night Train to The Park', img:'img/ride-train-park.jpg', vid:'ride-train-park.mp4',
+    {key:'trainpark', short:'The Park',  name:'Starry Night Train to The Park', img:'img/opt-ride-train-park.webp', vid:'ride-train-park.mp4',
      en:'The Starry Night Train, riding through the park.', es:'El Tren de la Noche Estrellada, paseando por el parque.'},
-    {key:'trainmonument', short:'The Monument', name:'Starry Night Train to The Monument', img:'img/ride-train-monument.jpg', vid:'ride-train-monument.mp4',
+    {key:'trainmonument', short:'The Monument', name:'Starry Night Train to The Monument', img:'img/opt-ride-train-monument.webp', vid:'ride-train-monument.mp4',
      en:'The Starry Night Train, riding to the Statue of Liberty.', es:'El Tren de la Noche Estrellada, rumbo a la Estatua de la Libertad.'},
-    {key:'trainlong', short:'Train Long Ride', name:'The Starry Night Train \u2014 Long Ride', img:'img/ride-train.jpg', href:'https://geemondc.github.io/starry-night-train/?ride=long',
+    {key:'trainlong', short:'Train Long Ride', name:'The Starry Night Train \u2014 Long Ride', img:'img/opt-ride-train.webp', href:'https://geemondc.github.io/starry-night-train/?ride=long',
      en:'All three train rides in a row \u2014 tap the picture and climb in. It never ends.', es:'Los tres paseos en tren seguidos \u2014 toca la imagen y sube. Nunca termina.'},
-    {key:'sleigh',    short:'Sleigh',    name:'The Sleigh',              img:'img/ride-sleigh.jpg', vid:'ride-sleigh.mp4',
+    {key:'sleigh',    short:'Sleigh',    name:'The Sleigh',              img:'img/opt-ride-sleigh.webp', vid:'ride-sleigh.mp4',
      en:'A horse-drawn sleigh through a snowy village at dusk.', es:'Un trineo tirado por un caballo por un pueblo nevado al atardecer.'},
-    {key:'carriage',  short:'Carriage',  name:'The Carriage Ride',       img:'img/ride-carriage.jpg', vid:'ride-carriage.mp4',
+    {key:'carriage',  short:'Carriage',  name:'The Carriage Ride',       img:'img/opt-ride-carriage.webp', vid:'ride-carriage.mp4',
      en:'A horse-drawn carriage down an autumn lane, to the covered bridge.', es:'Un carruaje tirado por un caballo por un camino de oto\u00f1o, hacia el puente cubierto.'},
-    {key:'drive',     short:'Drive',     name:'The Coastal Drive',       img:'img/ride-drive.jpg', vid:'ride-drive.mp4',
+    {key:'drive',     short:'Drive',     name:'The Coastal Drive',       img:'img/opt-ride-drive.webp', vid:'ride-drive.mp4',
      en:'A sunset drive down the Florida coast.', es:'Un paseo al atardecer por la costa de Florida.'},
-    {key:'gondola',   short:'Gondola',   name:'The Gondola over the Falls', img:'img/ride-gondola.jpg', vid:'ride-gondola.mp4',
+    {key:'gondola',   short:'Gondola',   name:'The Gondola over the Falls', img:'img/opt-ride-gondola.webp', vid:'ride-gondola.mp4',
      en:'A gondola ride over Storybook Falls.', es:'Un viaje en g\u00f3ndola sobre las Cataratas de Cuento.'},
-    {key:'rainbow',   short:'Rainbow',   name:'The Rainbow Falls',       img:'img/ride-gondola.jpg', vid:'ride-rainbow.mp4',
+    {key:'rainbow',   short:'Rainbow',   name:'The Rainbow Falls',       img:'img/opt-ride-gondola.webp', vid:'ride-rainbow.mp4',
      en:'A ride down toward the falls, into the rainbow mist.', es:'Un paseo hacia las cataratas, dentro de la niebla del arco\u00edris.'},
-    {key:'sub',       short:'Sub',       name:'The Underwater Sub',      img:'img/ride-sub.jpg', vid:'ride-sub.mp4',
+    {key:'sub',       short:'Sub',       name:'The Underwater Sub',      img:'img/opt-ride-sub.webp', vid:'ride-sub.mp4',
      en:'A submarine ride through the coral reef.', es:'Un viaje en submarino por el arrecife de coral.'},
-    {key:'subreef',   short:'Coral Reef', name:'The Coral Reef',          img:'img/ride-sub-reef.jpg', vid:'ride-sub-reef.mp4',
+    {key:'subreef',   short:'Coral Reef', name:'The Coral Reef',          img:'img/opt-ride-sub-reef.webp', vid:'ride-sub-reef.mp4',
      en:'The Underwater Sub, gliding through the coral reef.', es:'El Submarino, desliz\u00e1ndose por el arrecife de coral.'},
-    {key:'subturtle', short:'Turtles',   name:'The Turtle Channel',      img:'img/ride-sub-turtle.jpg', vid:'ride-sub-turtle.mp4',
+    {key:'subturtle', short:'Turtles',   name:'The Turtle Channel',      img:'img/opt-ride-sub-turtle.webp', vid:'ride-sub-turtle.mp4',
      en:'The Underwater Sub, following the turtles.', es:'El Submarino, siguiendo a las tortugas.'},
-    {key:'subjellyfish', short:'Jellyfish', name:'The Jellyfish Gardens', img:'img/ride-sub-jellyfish.jpg', vid:'ride-sub-jellyfish.mp4',
+    {key:'subjellyfish', short:'Jellyfish', name:'The Jellyfish Gardens', img:'img/opt-ride-sub-jellyfish.webp', vid:'ride-sub-jellyfish.mp4',
      en:'The Underwater Sub, drifting through the jellyfish garden.', es:'El Submarino, flotando en el jard\u00edn de medusas.'},
-    {key:'sublong',   short:'Sub Long Ride', name:'The Underwater Sub \u2014 Long Ride', img:'img/ride-sub.jpg', href:'https://geemondc.github.io/underwater-routes/?ride=long',
+    {key:'sublong',   short:'Sub Long Ride', name:'The Underwater Sub \u2014 Long Ride', img:'img/opt-ride-sub.webp', href:'https://geemondc.github.io/underwater-routes/?ride=long',
      en:'All four underwater rides in a row \u2014 tap the picture and climb in. It never ends.', es:'Los cuatro paseos submarinos seguidos \u2014 toca la imagen y sube. Nunca termina.'},
-    {key:'space',     short:'Space',     name:'The Space Cockpit',       img:'img/ride-space.jpg', vid:'ride-space.mp4',
+    {key:'space',     short:'Space',     name:'The Space Cockpit',       img:'img/opt-ride-space.webp', vid:'ride-space.mp4',
      en:'A spaceship ride through a glowing nebula.', es:'Un viaje en nave espacial por una nebulosa brillante.'},
-    {key:'neon',      short:'Neon',      name:'The Neon Universe',       img:'img/ride-neon.jpg', vid:'ride-neon.mp4',
+    {key:'neon',      short:'Neon',      name:'The Neon Universe',       img:'img/opt-ride-neon.webp', vid:'ride-neon.mp4',
      en:'The same sky turned neon, swirling toward a black hole.', es:'El mismo cielo en ne\u00f3n, girando hacia un agujero negro.'},
-    {key:'broadwalk', short:'Broadwalk', name:'The Broadwalk Bike Ride', img:'img/ride-broadwalk.jpg', vid:'ride-broadwalk.mp4',
+    {key:'broadwalk', short:'Broadwalk', name:'The Broadwalk Bike Ride', img:'img/opt-ride-broadwalk.webp', vid:'ride-broadwalk.mp4',
      en:'A bike ride down the Hollywood Broadwalk at sunset.', es:'Un paseo en bicicleta por el Broadwalk de Hollywood al atardecer.'},
-    {key:'aurora',    short:'Lift',      name:'The Aurora Lift',         img:'img/ride-aurora.jpg', vid:'ride-aurora.mp4',
+    {key:'aurora',    short:'Lift',      name:'The Aurora Lift',         img:'img/opt-ride-aurora.webp', vid:'ride-aurora.mp4',
      en:'A chairlift ride under the northern lights, up to The Cabin.', es:'Un viaje en telesilla bajo la aurora boreal, hasta La Caba\u00f1a.'},
-    {key:'boat',      short:'Boat',      name:'The Boat Ride',           img:'boat-ride-poster.jpg', vid:'ride-boat.mp4',
+    {key:'boat',      short:'Boat',      name:'The Boat Ride',           img:'img/opt-ride-boat.webp', vid:'ride-boat.mp4',
      en:'Our flagship \u2014 Golden, Bridge, Marina and Sunset, and the Long Ride that joins them all.', es:'Nuestro favorito \u2014 Golden, Bridge, Marina y Sunset, y el Viaje Largo que los une a todos.'},
     {key:'boatbridge', short:'Bridge',  name:'The Boat Ride \u2014 Bridge', img:'img/ride-boat-bridge.jpg', vid:'ride-boat-bridge.mp4',
      en:'The Boat Ride, passing under the bridge.', es:'El Paseo en Barco, pasando bajo el puente.'},
@@ -245,13 +245,13 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
      en:'The Boat Ride, cruising through the marina.', es:'El Paseo en Barco, cruzando la marina.'},
     {key:'boatsunset', short:'Sunset',  name:'The Boat Ride \u2014 Sunset', img:'img/ride-boat-sunset.jpg', vid:'ride-boat-sunset.mp4',
      en:'The Boat Ride, sailing into the sunset.', es:'El Paseo en Barco, navegando hacia el atardecer.'},
-    {key:'boatlong',  short:'Boat Long Ride', name:'The Boat Ride \u2014 Long Ride', img:'boat-ride-poster.jpg', href:'https://geemondc.github.io/boat-ride-v3/?ride=long',
+    {key:'boatlong',  short:'Boat Long Ride', name:'The Boat Ride \u2014 Long Ride', img:'img/opt-ride-boat.webp', href:'https://geemondc.github.io/boat-ride-v3/?ride=long',
      en:'All four boat rides in a row \u2014 tap the picture and climb in. It never ends.', es:'Los cuatro paseos en barco seguidos \u2014 toca la imagen y sube. Nunca termina.'},
-    {key:'balloon',   short:'Balloon',   name:'The Balloon Ride',        img:'img/ride-balloon.jpg', vid:'ride-balloon.mp4',
+    {key:'balloon',   short:'Balloon',   name:'The Balloon Ride',        img:'img/opt-ride-balloon.webp', vid:'ride-balloon.mp4',
      en:'A balloon ride over Temple Valley at golden hour.', es:'Un paseo en globo sobre el Valle del Templo a la hora dorada.'},
-    {key:'drift',     short:'Valley Drift', name:'Temple Valley Drift', img:'img/ride-balloon-side.jpg', vid:'ride-drift.mp4', href:'https://geemondc.github.io/balloon-ride/',
+    {key:'drift',     short:'Valley Drift', name:'Temple Valley Drift', img:'img/opt-ride-balloon-side.webp', vid:'ride-drift.mp4', href:'https://geemondc.github.io/balloon-ride/',
      en:'The endless one \u2014 tap the picture and climb in. You drift over Temple Valley and it never ends.', es:'El interminable \u2014 toca la imagen y sube. Derivas sobre el Valle del Templo y nunca termina.'},
-    {key:'forward',   short:'Forward',   name:'Forward Drift',         img:'img/ride-balloon-fwd.jpg', vid:'ride-forward.mp4', href:'https://geemondc.github.io/balloon-ride-forward/',
+    {key:'forward',   short:'Forward',   name:'Forward Drift',         img:'img/opt-ride-balloon-fwd.webp', vid:'ride-forward.mp4', href:'https://geemondc.github.io/balloon-ride-forward/',
      en:'The endless one, coming at you \u2014 tap the picture and climb in. Balloons drift past you over Temple Valley.', es:'El interminable, viniendo hacia ti \u2014 toca la imagen y sube. Los globos pasan junto a ti sobre el Valle del Templo.'}
   ];
   var ES = {
