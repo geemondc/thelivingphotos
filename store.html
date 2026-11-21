@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-site-verification" content="nJ_n9rsAJQ0tbepMPgFOEseuQHCQPFSAnF2PPOPfkuc" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Living Photos — Future Ready</title>
+<meta name="description" content="Living Photos by Future Ready: a photo you love, made richer in color and light — by hand, one photo at a time.">
+<style>
+:root{
+  --ivory:#f6efdd; --ivory2:#efe3c8; --paper:#fbf7ec;
+  --ink:#2b2118; --ink2:#5a4a36;
+  --teal:#0d5c63; --teal-d:#093f44;
+  --gold:#c9a35c; --gold-b:#e8c877; --gold-deep:#a87f2e;
+  --shadow:0 24px 48px rgba(59,42,18,.28),0 4px 14px rgba(59,42,18,.20);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia,'Times New Roman',serif; color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 85% -5%, rgba(201,163,92,.28), rgba(201,163,92,0) 60%),
+    radial-gradient(1000px 700px at -10% 30%, rgba(13,92,99,.14), rgba(13,92,99,0) 55%),
+    radial-gradient(900px 500px at 110% 75%, rgba(201,163,92,.18), rgba(201,163,92,0) 60%),
+    repeating-radial-gradient(circle at 50% -260px, rgba(168,127,46,.055) 0 2px, rgba(168,127,46,0) 2px 46px),
+    linear-gradient(180deg,#f8f1de 0%, var(--ivory) 34%, #f1e6cb 68%, #eee0c0 100%);
+  min-height:100vh;
+}
+img{display:block;max-width:100%}
+a{color:var(--teal)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px 70px}
+
+/* ---------- COVER ---------- */
+.cover{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-start;
+  padding:26px 18px 22px;max-width:1180px;margin:0 auto;width:100%}
+.cover-photo{border-radius:22px;overflow:hidden;border:1px solid var(--gold-b);
+  box-shadow:var(--shadow);position:relative;background:#1c1712}
+.cover-photo img{width:100%;height:auto}
+.cover-photo::after{content:"";position:absolute;inset:0;border-radius:22px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14), inset 0 -30px 60px rgba(20,12,4,.18);pointer-events:none}
+.cover-photo{aspect-ratio:1920/1088}
+.cover-photo .cover-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover-photo iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.cover-photo .cov-chip{position:absolute;top:10px;left:auto;right:10px;z-index:3}
+.cover-still{position:absolute;left:12px;bottom:12px;width:37%;max-width:320px;z-index:3;
+  border:2px solid var(--gold-b);border-radius:12px;overflow:hidden;background:#14100c;
+  box-shadow:0 14px 30px rgba(10,6,2,.45)}
+.cover-photo .cover-still img{width:100%;height:auto;display:block}
+.cover-still .chip{top:8px;left:8px;font-size:10.5px;padding:4px 10px}
+.seg-in .seglabel{font-size:13.5px;font-weight:700;letter-spacing:.18em;padding:9px 22px;color:var(--teal-d)}
+.cover-band{text-align:center;padding:30px 10px 0}
+.kicker{font-size:12.5px;letter-spacing:.34em;font-weight:700;color:var(--gold-deep);text-transform:uppercase}
+.cover h1{font-size:clamp(44px,9vw,84px);line-height:1.02;font-weight:700;letter-spacing:.01em;margin:10px 0 6px}
+.cover .welcome{font-size:clamp(17px,2.6vw,21px);line-height:1.55;color:var(--ink2);max-width:640px;margin:10px auto 0}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.cta{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:999px;
+  font-family:inherit;font-size:16.5px;font-weight:700;text-decoration:none;cursor:pointer;white-space:nowrap}
+.cta.teal{background:var(--teal);color:#fdf6e3;border:1.5px solid var(--teal-d);box-shadow:0 10px 22px rgba(9,63,68,.28)}
+.cta.ghost{background:rgba(255,252,244,.75);color:var(--teal-d);border:1.5px solid var(--gold)}
+.cover-foot{margin-top:auto;padding-top:30px}
+.furn-row{display:flex;gap:10px;justify-content:center;align-items:stretch;flex-wrap:wrap}
+.furn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 20px;border-radius:999px;
+  background:rgba(255,252,244,.88);border:1.5px solid var(--gold);color:var(--ink);
+  font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.14em;text-decoration:none;cursor:pointer;white-space:nowrap}
+.furn .star{color:var(--gold-deep)}
+.furn.lang{background:var(--teal);border-color:var(--teal-d);color:#fdf6e3}
+.scroll-cue{text-align:center;margin-top:16px;color:var(--ink2);font-size:13px;letter-spacing:.22em}
+
+/* ---------- SECTIONS ---------- */
+section{margin-top:64px}
+.sec-head{text-align:center;max-width:720px;margin:0 auto}
+.sec-head h2{font-size:clamp(30px,5.4vw,44px);line-height:1.12}
+.sec-head p{margin-top:12px;font-size:17.5px;line-height:1.6;color:var(--ink2)}
+.sec-head .sec-note{font-size:15.5px;font-style:italic;color:#7a5c1e;max-width:640px;margin-left:auto;margin-right:auto}
+.goldrule{width:120px;height:2px;margin:20px auto 0;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.stage-frame{margin-top:30px;border-radius:20px;overflow:hidden;border:1px solid var(--gold-b);
+  box-shadow:var(--shadow);background:#14100c;position:relative}
+.stage-frame iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+.patience{margin:18px auto 0;text-align:center;font-style:italic;font-size:16.5px;color:var(--teal-d);max-width:560px;line-height:1.55}
+.pair-strip{display:grid;grid-template-columns:1fr;gap:14px;margin-top:22px}
+@media(min-width:720px){.pair-strip{grid-template-columns:1fr 1fr}}
+.pair-cell{border-radius:18px;overflow:hidden;border:1px solid var(--gold-b);box-shadow:0 14px 30px rgba(59,42,18,.20);position:relative;background:#14100c}
+.pair-cell img{width:100%;height:100%;object-fit:cover}
+.chip{position:absolute;top:10px;left:10px;background:rgba(20,14,8,.82);color:#f3e5bd;border:1px solid var(--gold);
+  font-size:11.5px;font-weight:700;letter-spacing:.22em;padding:6px 12px;border-radius:999px;z-index:3}
+.chip.living{background:var(--teal);color:#eafaf7;border-color:#7fd1c0}
+.exhibit-cap{text-align:center;margin-top:16px;font-size:16px;color:var(--ink2);line-height:1.55;max-width:620px;margin-left:auto;margin-right:auto}
+.full-btn{display:flex;justify-content:center;margin-top:16px}
+
+/* exhibits */
+.exhibit{margin-top:44px}
+.exhibit-new{display:inline-block;vertical-align:middle;margin-left:10px;padding:4px 12px;border-radius:999px;background:var(--teal);color:#fdf6e3;border:1.5px solid var(--gold);font-size:11.5px;font-weight:700;letter-spacing:.22em}
+.cat-head{text-align:center;margin:56px auto 4px;width:fit-content;padding-bottom:10px;border-bottom:2px solid var(--gold);font-size:clamp(22px,4vw,30px);color:var(--ink);font-weight:700}
+.ex-frame{border-radius:20px;overflow:hidden;border:1px solid var(--gold-b);box-shadow:var(--shadow);
+  background:#14100c;position:relative;max-width:880px;margin:0 auto}
+.ex-frame .ph{width:100%;height:auto}
+.ex-frame iframe{width:100%;border:0;display:block}
+.ex-frame .fill-link{position:absolute;inset:0;z-index:2}
+.seg{display:flex;justify-content:center;margin-top:16px}
+.seg-in{display:inline-flex;background:rgba(255,252,244,.9);border:1.5px solid var(--gold);border-radius:999px;padding:4px;gap:4px}
+.seg button{font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.18em;border:0;cursor:pointer;
+  padding:9px 22px;border-radius:999px;background:transparent;color:var(--ink2)}
+.seg button.on{background:var(--teal);color:#fdf6e3}
+.lp3 iframe{overflow:hidden}
+.exhibit h3{text-align:center;font-size:24px;margin-top:20px}
+.exhibit .exhibit-cap{margin-top:8px}
+
+/* story cards: recessed panels */
+.story-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+@media(min-width:760px){.story-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:760px){.story-grid>.scard:last-child{grid-column:1/-1;max-width:520px;justify-self:center;width:100%}}
+.story-grid .scard{text-align:center}
+.scard{border-radius:18px;padding:24px 24px 20px;border:1px solid var(--gold);
+  background:linear-gradient(180deg,#eee1c2,#e7d7b2);
+  box-shadow:inset 0 2px 16px rgba(90,64,20,.30), inset 0 -1px 0 rgba(255,255,255,.5)}
+.scard h3{font-size:13px;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:10px}
+.scard p{font-size:16.5px;line-height:1.6;color:var(--ink)}
+
+/* offer */
+.offer{margin-top:30px;border-radius:20px;padding:30px 26px;border:1px solid var(--gold);
+  background:linear-gradient(180deg,#f1e5c6,#eadbb6);
+  box-shadow:inset 0 2px 16px rgba(90,64,20,.28), 0 18px 36px rgba(59,42,18,.16);text-align:center}
+.offer .deal{font-size:clamp(21px,3.6vw,27px);font-weight:700;line-height:1.4}
+.offer .get{margin-top:12px;font-size:16.5px;line-height:1.6;color:var(--ink2)}
+.osteps{margin:24px auto 0;max-width:520px;text-align:left;display:grid;gap:12px}
+.ostep{display:flex;gap:12px;align-items:flex-start;font-size:16.5px;line-height:1.55}
+.ostep .on{flex:none;width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fdf6e3;
+  display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;margin-top:1px}
+.offer-honest{margin-top:20px;font-style:italic;color:var(--ink2);font-size:16px;line-height:1.55}
+.donatebtn{display:inline-flex;align-items:center;justify-content:center;margin-top:24px;min-height:78px;padding:0 54px;
+  border-radius:999px;text-decoration:none;font-size:23px;font-weight:800;letter-spacing:.08em;color:#3a2703;
+  background:linear-gradient(180deg,#ffc95e,#f39c12);border:1px solid #d98a06;
+  box-shadow:0 6px 0 #b97a0c, 0 20px 34px rgba(90,55,0,.35)}
+.donatebtn:active{transform:translateY(4px);box-shadow:0 2px 0 #b97a0c, 0 10px 18px rgba(90,55,0,.3)}
+.secure{margin-top:14px;font-size:14px;color:var(--ink2)}
+.guarantee{margin-top:22px;border-radius:20px;padding:26px;border:1px solid var(--gold);
+  background:linear-gradient(180deg,#eee1c2,#e7d7b2);
+  box-shadow:inset 0 2px 16px rgba(90,64,20,.30);text-align:left}
+.guarantee h3{color:var(--gold-deep);font-size:19px;margin-bottom:10px}
+.guarantee p{font-size:16px;line-height:1.65;color:var(--ink)}
+
+/* mission + footer */
+.mission-lines{text-align:center;margin-top:26px;display:grid;gap:12px}
+.mission-lines p{font-size:17.5px;line-height:1.6;color:var(--ink2)}
+.mission-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:26px}
+.bigbtn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 32px;border-radius:999px;
+  background:var(--teal);color:#fdf6e3;border:1.5px solid var(--teal-d);text-decoration:none;font-size:17.5px;font-weight:700;
+  box-shadow:0 12px 24px rgba(9,63,68,.26);white-space:nowrap}
+footer{margin-top:70px;text-align:center;border-top:1px solid var(--gold);padding-top:28px}
+footer .fl{font-size:16px;color:var(--ink2);line-height:1.6;max-width:560px;margin:0 auto}
+footer .mark{display:inline-block;margin-top:16px;font-size:15px;font-weight:700;letter-spacing:.3em;color:var(--ink);text-decoration:none}
+footer .mark .star{color:var(--gold-deep)}
+
+/* sidebar / qr */
+.scrim{position:fixed;inset:0;background:rgba(24,16,6,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
+.scrim.on{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;right:0;height:100dvh;width:min(340px,88vw);background:var(--paper);z-index:50;
+  transform:translateX(102%);transition:transform .3s;padding:22px;box-shadow:-18px 0 40px rgba(30,20,5,.3);overflow:auto}
+.sidebar.open{transform:none}
+.sb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sb-head h2{font-size:20px}
+.xbtn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:#fffdf6;font-size:16px;cursor:pointer;font-family:inherit}
+.sblink{display:flex;gap:12px;align-items:center;padding:14px 6px;border-bottom:1px solid #e7d9b8;text-decoration:none;color:var(--ink)}
+.sblink .ic{font-size:20px;width:30px;text-align:center}
+.sblink .t{font-weight:700;font-size:16.5px}
+.sblink .s{font-size:14px;color:var(--ink2)}
+.qrpanel{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%);opacity:0;pointer-events:none;z-index:50;
+  background:var(--paper);border:1px solid var(--gold-b);border-radius:20px;box-shadow:var(--shadow);
+  padding:26px;text-align:center;width:min(340px,90vw);transition:all .25s}
+.qrpanel.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.qrpanel h2{font-size:21px;margin-bottom:8px}
+.qrpanel p{color:var(--ink2);font-size:15px;line-height:1.5}
+.qrpanel img{width:180px;height:180px;margin:16px auto 10px}
+.qrpanel .url{font-size:13.5px;color:var(--teal-d);letter-spacing:.04em}
+.qrpanel .xbtn{position:absolute;top:10px;right:10px}
+
+/* ---------- STAGE + COMPARE (big screen, two small selectors) ---------- */
+.stage-title{display:flex;justify-content:center;margin-top:12px}
+.stage-title .st{font-size:12.5px;font-weight:700;letter-spacing:.26em}
+.stage-title .st-living{color:var(--teal)}
+.stage-title .st-still{color:var(--gold-deep)}
+.stage-title .st[hidden]{display:none}
+.stage-still[hidden]{display:none}
+.cover-photo .stage-still,.ex-frame .stage-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+/* CELLFIX2 (Nov 9): whole-photo law for stage stills - a still plate whose shape differs from its stage window is shown WHOLE over a blurred copy of itself, never sliced by cover-fit. The plate rides as an underlay exactly behind the still, so the fit is invisible when shapes match. */
+.ex-frame .stage-still,.cover-photo .stage-still{background-size:cover;background-position:center}
+.ex-frame .stage-fit-contain,.cover-photo .stage-fit-contain{object-fit:contain !important} /* FIX2 (Nov 9): loading sign — sits under the still (z 2) and the living frame, so it shows only while the stage is still black; the wall's copy rides above its frames and is hidden by showPhoto on load. */
+.lp-load{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.lp-load span{font-size:13px;font-weight:700;letter-spacing:.18em;color:#fdf6e3;background:rgba(20,16,12,.72);border:1px solid rgba(212,175,55,.6);border-radius:999px;padding:9px 18px}
+.lp-load[hidden]{display:none}
+.wall-load{z-index:5}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px auto 0;max-width:880px}
+.cover .cmp-row{max-width:none}
+.cmp-cell{font-family:inherit;display:block;width:100%;padding:0;border:1px solid var(--gold-b);border-radius:18px;overflow:hidden;background:#14100c;cursor:pointer;box-shadow:0 14px 30px rgba(59,42,18,.20);text-align:center;-webkit-tap-highlight-color:transparent}
+.cmp-cell .cmp-media{display:block;overflow:hidden}
+.cmp-cell .cmp-media img{width:100%;height:100%;object-fit:cover}
+.cmp-media img{opacity:0}
+.cmp-media img.lpimgok{opacity:1}
+.cmp-tag{display:block;padding:8px 6px;font-size:12px;font-weight:700;letter-spacing:.22em;background:#2b2118;color:#f3e5bd;border-top:1px solid var(--gold-b)}
+.cmp-tag.living{background:var(--teal);color:#eafaf7}
+.cmp-cell.on{outline:3px solid var(--gold);outline-offset:2px}
+.cmp-cell:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+/* The Hammock exhibit - tap readiness (com-LPe97c4672): a flip lands only when the
+   target is actually ready to show (still decoded / living embed
+   loaded); lazy cell paint stays invisible until decoded, so no
+   window can strand a void under the frame-catcher. */
+/* The Hammock exhibit - whole-photo fit (scoped to this exhibit only):
+   every window shows the ENTIRE painting; any window whose shape
+   differs from the painting letterboxes over a blurred copy of the
+   same plate instead of slicing its edges. */
+.fit-b0f4a059 .ex-frame .stage-still{object-fit:fill}
+.fit-b0f4a059 .cmp-cell .cmp-media{position:relative;background:#14100c}
+.fit-b0f4a059 .cmp-cell .cmp-media::before{content:"";position:absolute;inset:0;background-image:var(--hk);background-size:cover;background-position:center;filter:blur(14px) brightness(.72) saturate(1.06);transform:scale(1.12)}
+.fit-b0f4a059 .cmp-cell .cmp-media img{position:relative;z-index:1;object-fit:fill}
+
+/* ---------- THE WALL (full-screen tour) ---------- */
+.wall-invite{margin-top:30px;margin-bottom:32px;text-align:center}
+.wall-invite p{font-style:italic;font-size:17px;line-height:1.55;color:var(--teal-d);max-width:520px;margin:0 auto 14px}
+.cta.wallbtn{background:linear-gradient(180deg,#ffc95e,#f39c12);color:#3a2703;border:1.5px solid #d98a06;
+  box-shadow:0 6px 0 #b97a0c,0 16px 28px rgba(90,55,0,.30);font-size:21px;height:68px;padding:0 44px;
+  animation:wallPulse 1.8s ease-in-out infinite}
+@keyframes wallPulse{0%,100%{box-shadow:0 6px 0 #b97a0c,0 16px 28px rgba(90,55,0,.30),0 0 0 0 rgba(255,201,94,0);filter:brightness(1)}
+  50%{box-shadow:0 6px 0 #b97a0c,0 16px 34px rgba(90,55,0,.38),0 0 38px 10px rgba(255,201,94,.9);filter:brightness(1.12)}}
+@media (prefers-reduced-motion: reduce){.cta.wallbtn{animation:none}}
+.cta.wallbtn:active{transform:translateY(3px);box-shadow:0 2px 0 #b97a0c,0 8px 16px rgba(90,55,0,.28)}
+.wall{position:fixed;inset:0;z-index:90;background:#14100c}
+.wall[hidden]{display:none}
+.wall:fullscreen{width:100%;height:100%;background:#14100c}
+.wall-face{position:absolute;inset:0}
+.wall-face[hidden]{display:none}
+.wall-cardface{display:flex;align-items:center;justify-content:center;padding:22px;overflow:auto;
+  background:radial-gradient(900px 500px at 85% -5%, rgba(201,163,92,.30), rgba(201,163,92,0) 60%),
+  radial-gradient(800px 600px at -10% 90%, rgba(13,92,99,.16), rgba(13,92,99,0) 55%),
+  linear-gradient(180deg,#f8f1de 0%, var(--ivory) 40%, #eee0c0 100%)}
+.wall-card{max-width:580px;width:100%;text-align:center;background:var(--paper);border:1px solid var(--gold-b);
+  border-radius:22px;box-shadow:var(--shadow);padding:40px 34px 34px}
+.wall-card h2{font-size:clamp(28px,5.2vw,40px);line-height:1.14;margin-top:10px}
+.wall-card p{font-size:17.5px;line-height:1.62;color:var(--ink2);margin-top:14px}
+.wall-card .rule{width:120px;height:2px;margin:20px auto 0;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.wall-begin{display:inline-flex;align-items:center;justify-content:center;margin-top:26px;min-height:58px;padding:0 38px;
+  border-radius:999px;font-family:inherit;font-size:19px;font-weight:800;letter-spacing:.04em;color:#3a2703;cursor:pointer;
+  background:linear-gradient(180deg,#ffc95e,#f39c12);border:1px solid #d98a06;
+  box-shadow:0 6px 0 #b97a0c,0 18px 30px rgba(90,55,0,.32);text-decoration:none}
+.wall-begin:active{transform:translateY(3px);box-shadow:0 2px 0 #b97a0c,0 8px 16px rgba(90,55,0,.28)}
+.wall-notnow{display:block;margin:18px auto 0;background:none;border:0;font-family:inherit;font-size:15.5px;
+  color:var(--teal-d);text-decoration:underline;cursor:pointer;padding:6px}
+.wall-player{background:#000}
+.wall-slot{position:absolute;inset:0}
+.wall-slot iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#000}
+.wall-catch{position:absolute;inset:0;z-index:2;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.wall-x{position:absolute;bottom:18px;right:18px;z-index:3;min-height:48px;padding:0 20px;border-radius:999px;cursor:pointer;background:rgba(16,12,8,.78);color:#f6e7c8;border:1px solid rgba(231,198,106,.85);font:700 15px/1 'Avenir Next','Segoe UI',system-ui,sans-serif;opacity:1}
+.wall-x.dim{opacity:1}
+  border:1.5px solid rgba(232,200,119,.75);background:rgba(20,14,8,.55);color:#f3e5bd;font-size:16px;font-family:inherit;
+  display:flex;align-items:center;justify-content:center}
+.wall-next{position:absolute;right:18px;bottom:18px;z-index:3;width:54px;height:54px;border-radius:50%;pointer-events:none;
+  border:1.5px solid rgba(232,200,119,.75);background:rgba(20,14,8,.55);color:#f3e5bd;
+  display:flex;align-items:center;justify-content:center;font-size:30px;line-height:1}
+.wall-chrome{transition:opacity .7s ease}
+.wall-chrome.dim{opacity:.92}
+.wall-player.framed .wall-catch{display:none}
+.wall-player.framed .wall-next{pointer-events:auto;cursor:pointer}
+.wall-player.framed .wall-next.dim,.wall-player.framed .wall-x.dim{opacity:.92}
+.wall-mark{position:absolute;left:18px;bottom:18px;z-index:3;min-height:48px;padding:0 20px;border-radius:999px;cursor:pointer;background:rgba(16,12,8,.74);color:#f6e7c8;border:1px solid rgba(231,198,106,.8);font:700 15px/1 'Avenir Next','Segoe UI',system-ui,sans-serif}
+.wall-mark.on{background:#b97a0c;color:#fff7e0;border-color:#e7c66a}
+.wall-player.framed .wall-mark.dim{opacity:.92}
+.wall-feedback{display:block;margin-top:16px;font-weight:700;font-size:16.5px;color:#0f766e}
+.wall-marks h3{font-size:21px;margin-top:18px}
+.wall-marks ul{list-style:none;margin:12px 0 6px;padding:0}
+.wall-marks li{font-size:16.5px;line-height:1.55;color:var(--ink2)}
+.wall-marks li::before{content:"\2665  ";color:#b97a0c}
+.wall-buy{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.wall-buy a{flex:1;min-width:180px}
+.face-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:2px auto 0;max-width:560px}
+.face-chip{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(232,200,119,.75);background:#241b10}
+.card-pic{width:100%;border-radius:12px;display:block;margin:2px 0 10px}
+.mini-stage{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#14100c;border:1px solid rgba(232,200,119,.35);margin:2px 0 8px}
+.mini-stage img.base,.mini-stage img.glow{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.mini-stage img.glow{opacity:0}
+.mini-stage.playing img.glow{animation:miniGlow 7s ease-in-out infinite alternate}
+@keyframes miniGlow{from{opacity:.12}to{opacity:.96}}
+.mini-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;visibility:hidden}
+.mini-stage.playing iframe{visibility:visible}
+.mini-stage[data-mini="app"].playing img.base{visibility:hidden}
+.mini-toggle{display:flex;gap:8px;justify-content:center;margin:0 0 10px}
+.mini-toggle button{font:inherit;font-size:11.5px;font-weight:700;letter-spacing:.22em;padding:7px 16px;border-radius:999px;border:1px solid var(--gold-b);background:#f7efdb;color:var(--ink2);cursor:pointer}
+.mini-toggle button.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.scard{position:relative}
+.scard-pal{position:absolute;top:14px;right:14px;width:54px;height:54px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;box-shadow:0 4px 10px rgba(59,42,18,.25)}
+.make-pics{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.make-pics figure{margin:0}
+.make-pics img{width:100%;height:auto;border-radius:14px;border:1px solid var(--gold-b);display:block;box-shadow:var(--shadow)}
+.make-pics figcaption{margin-top:8px;font-size:14.5px;line-height:1.45;color:var(--ink2);text-align:center}
+.diy-live{max-width:520px;margin:28px auto 0}
+.diy-frame{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(232,200,119,.35);background:#120d08}
+.diy-frame .fs-rest{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.diy-frame iframe{width:100%;height:100%;border:0;display:block}
+.diy-cap{text-align:center;font-size:14.5px;opacity:.85;margin-top:10px}
+.details-btn{display:inline-block;padding:11px 22px;border-radius:999px;border:1.5px solid rgba(232,200,119,.8);background:rgba(232,200,119,.1);color:#f3e5bd;font-family:inherit;font-size:15.5px;font-weight:700;cursor:pointer}
+.muse-open{display:inline-block;padding:10px 20px;border-radius:999px;border:1.5px solid rgba(120,200,190,.55);background:rgba(120,200,190,.08);color:#bfe8e0;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
+.panel-wrap{position:fixed;inset:0;z-index:120;display:none}
+.panel-wrap.open{display:block}
+.panel-bg{position:absolute;inset:0;background:rgba(5,3,10,.62)}
+.panel{position:absolute;top:0;right:0;height:100%;width:min(400px,92vw);background:#171021;color:#ece4cf;border-left:1.5px solid rgba(232,200,119,.5);overflow-y:auto;padding:26px 24px 44px;box-shadow:-18px 0 50px rgba(0,0,0,.5);box-sizing:border-box}
+.panel h3{margin:24px 0 8px;color:#f3e5bd}
+.panel h3.first{margin-top:2px}
+.panel p{line-height:1.65;font-size:15.5px;margin:0 0 6px}
+.panel-x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(232,200,119,.75);background:rgba(20,14,8,.6);color:#f3e5bd;font-size:15px;cursor:pointer;z-index:2}
+.panel .code{font-size:27px;font-weight:800;letter-spacing:.14em;color:#8fe3d4;text-align:center;margin:12px 0 0}
+.panel .sprite{display:block;width:118px;border-radius:14px;margin:6px auto 12px}
+
+
+.gimg{display:block;margin:0 auto 14px;height:172px;width:auto;border-radius:16px;border:2px solid #d4af37;box-shadow:0 8px 22px rgba(0,0,0,.45);transform:rotate(-2deg)}
+.osteps .ostep{align-items:center}
+.ostep-g{height:56px;width:auto;border-radius:12px;border:1.5px solid #d4af37;margin-left:auto;flex:none}
+.gmini{height:42px;width:auto;border-radius:9px;border:1.5px solid #d4af37;vertical-align:-30px;margin-right:9px}
+#introGate{position:fixed;inset:0;z-index:300;align-items:center;background:radial-gradient(130% 95% at 50% -5%,#1a3160 0%,#0d1c3a 52%,#060f22 100%);display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:34px 18px 44px;transition:opacity .7s ease,visibility .7s}
+#introGate.gone{opacity:0;visibility:hidden;pointer-events:none}
+.intro-wall{max-width:780px;width:100%;text-align:center}
+.intro-brand{color:#d9b45c;letter-spacing:.42em;font-size:.78rem;margin:0 0 20px;text-indent:.42em}
+.intro-frame{position:relative;border:12px solid #a87f27;outline:3px solid #e7c66a;outline-offset:5px;box-shadow:0 34px 80px rgba(0,0,0,.65),0 0 90px rgba(80,130,255,.20);overflow:hidden;cursor:pointer;background:#000}
+.intro-frame::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 60% at 50% 0%,rgba(255,240,200,.16),transparent 60%);pointer-events:none}
+.intro-art{display:block;width:100%;height:auto;animation:introDrift 26s ease-in-out infinite alternate}
+@keyframes introDrift{from{transform:scale(1.03) translate(0,0)}to{transform:scale(1.12) translate(-1.6%,-1.2%)}}
+.intro-plaque{display:inline-block;margin-top:20px;background:linear-gradient(180deg,#e9cd7d,#c39a3a);color:#241a05;border-radius:6px;padding:9px 20px 8px;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.plaque-title{display:block;font-weight:700;letter-spacing:.24em;font-size:.86rem}
+.plaque-sub{display:block;font-size:.74rem;letter-spacing:.1em;opacity:.85;margin-top:2px}
+.intro-title{color:#f4ead2;font-size:clamp(2rem,6.5vw,3.2rem);letter-spacing:.14em;margin:24px 0 6px;font-weight:600}
+.intro-line{color:#b9c8e8;margin:0 0 24px;font-size:clamp(.98rem,2.6vw,1.12rem)}
+.intro-hint{color:#7e90b8;font-size:.8rem;margin:14px 0 0;letter-spacing:.06em}
+body.gated{overflow:hidden}
+
+/* FRAMES demo (Gary riff, Oct 31) */
+.cover-photo{position:relative}
+.cover-photo.fr-museum{border:14px solid transparent;border-image:linear-gradient(135deg,#8a6a24,#e7c66a 30%,#a87f27 55%,#e7c66a 80%,#8a6a24) 1;outline:2px solid #6d5316;outline-offset:3px;box-shadow:0 30px 60px rgba(30,20,5,.45)}
+.cover-photo.fr-tv{border:20px solid #0b0b0d;border-bottom:40px solid #0b0b0d;border-radius:16px;box-shadow:0 30px 60px rgba(10,10,20,.5)}
+.cover-photo.fr-tv::after{content:"";position:absolute;top:auto;left:50%;bottom:-30px;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#57e6a9;box-shadow:0 0 10px #57e6a9;z-index:4}
+.frame-row{max-width:880px;margin:18px auto 0;text-align:center}
+.frame-label{font-size:12.5px;font-weight:700;letter-spacing:.24em;color:var(--gold-deep);margin:0 0 10px}
+.frame-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.frame-btn{font-family:inherit;font-size:14.5px;font-weight:700;padding:10px 20px;border-radius:999px;border:1.5px solid var(--gold);background:#fff8ea;color:var(--ink);cursor:pointer}
+.frame-btn.on{background:var(--gold);color:#241a05}
+.frame-note{margin:12px auto 0;font-size:14.5px;color:var(--ink2);max-width:520px;line-height:1.5}
+
+.ostep-g{height:118px;border-radius:14px}
+.gmini{height:88px}
+.panel-art{width:100%;height:auto;background:#fdfbf6;border:2px solid #2b2118;border-radius:10px;display:block;margin:0 0 12px}
+.sbs{display:flex;gap:12px;margin:4px 0 14px}
+.sbs-panel{flex:1 1 0;min-width:0;display:block;text-decoration:none}
+.sbs-panel img{width:100%;height:auto;display:block;background:#14100c;border:2px solid #2b2118;border-radius:10px}
+.sbs-cap{display:block;text-align:center;margin-top:8px;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
+.sbs-panel:hover .sbs-cap{text-decoration:underline}
+@media(max-width:560px){.sbs{flex-direction:column}}
+.crew-scene{width:100%;height:auto;border-radius:18px;display:block;box-shadow:0 16px 34px rgba(59,42,18,.25);border:1px solid var(--gold-b)}
+.wall-scene{width:100%;height:auto;border-radius:14px;display:block;margin-bottom:14px}
+#introGate{padding:0;background:#04070f;cursor:pointer} #introGate .intro-wall{max-width:none;width:100%;height:100dvh} #introGate .intro-frame{width:100%;height:100dvh;border:12px solid transparent;border-image:linear-gradient(135deg,#8a6a24,#e7c66a 30%,#a87f27 55%,#e7c66a 80%,#8a6a24) 1;outline:none;box-shadow:none} #introGate .intro-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:none;z-index:1}
+#introGate .intro-artbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(28px) brightness(.72);transform:scale(1.18);z-index:0}
+
+
+
+#introGate .intro-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
+#introGate .intro-frame iframe{opacity:0;transition:opacity 1.4s ease}
+#introGate .intro-frame iframe.live{opacity:1}
+#brandBtn{text-decoration:none}
+
+.intro-catch{position:absolute;inset:0;z-index:3;cursor:pointer;background:transparent} .intro-enter{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:6;pointer-events:none;color:#f3d98b;border:1.5px solid rgba(217,180,92,.85);background:rgba(10,8,4,.55);padding:11px 26px;border-radius:999px;font-size:15px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;animation:introPulse 2.2s ease-in-out infinite}@keyframes introPulse{0%,100%{opacity:.6}50%{opacity:1}}
+#introFrame iframe{pointer-events:none}
+
+.doors{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:860px){.doors{grid-template-columns:1fr 1fr}}
+.door{position:relative;border:2px solid #2b2118;border-radius:14px;padding:24px 18px 22px;background:linear-gradient(180deg,#f8eed3,#f0e1ba);box-shadow:5px 5px 0 rgba(43,33,24,.85);display:flex;flex-direction:column;align-items:center;text-align:center}
+.door .deal{font-size:23px;line-height:1.35;margin-bottom:14px}
+.door .get{margin:0 0 14px}
+.door .donatebtn{margin-top:auto;min-height:58px;padding:0 24px;font-size:19px}
+.door.best{background:linear-gradient(180deg,#faf0cd,#f4e2a2)}
+.burst{position:absolute;top:-14px;right:12px;background:#b3541e;color:#fff8ea;font-weight:800;font-size:12.5px;letter-spacing:.09em;padding:5px 11px;border-radius:999px;border:2px solid #2b2118;transform:rotate(3deg);z-index:2}
+.ostep-g{height:124px;border:2px solid #2b2118;border-radius:10px}
+.osteps{max-width:660px}
+.details-btn{color:#3a2c17;background:rgba(232,200,119,.45);border-color:#a87f27;font-weight:700}
+#mission{margin-top:44px}
+.bye-hero{display:block;width:100%;max-width:880px;margin:0 auto 22px;border-radius:16px;border:3px solid #a87f27;box-shadow:0 16px 40px rgba(90,64,20,.35)}
+.bye-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+@media(min-width:760px){.bye-grid{grid-template-columns:1fr 1fr}}
+.bye-card{display:block;text-decoration:none;color:inherit;border:2px solid #2b2118;border-radius:14px;padding:20px 22px;background:linear-gradient(180deg,#f8eed3,#efe0b8);box-shadow:5px 5px 0 rgba(43,33,24,.85)}
+.bye-k{display:block;font-size:12px;font-weight:800;letter-spacing:.15em;color:#8a6d1f}
+.bye-t{display:block;font-size:25px;font-weight:800;margin-top:5px;line-height:1.2}
+.bye-s{display:block;margin-top:6px;font-size:15.5px;line-height:1.55;color:var(--ink2)}
+.bye-go{display:inline-block;margin-top:11px;font-weight:800;color:var(--teal-d)}
+.yt-line{text-align:center;margin:28px auto 0;max-width:640px;font-size:16.5px;line-height:1.6;color:var(--ink2)}
+.yt-cta{text-align:center;margin:14px auto 0}
+.yt-link{color:var(--gold-deep);font-weight:700;font-size:18px;text-decoration:underline;text-underline-offset:4px}
+.gift-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;align-items:start}
+.gift-duo .exhibit{margin-top:0;min-width:0}
+.gift-duo .exhibit h3{font-size:20px;margin-top:8px}
+
+.frame-catch{position:absolute;inset:0;z-index:6;cursor:zoom-in}
+.cover-photo{position:relative}
+.diy-frame{position:relative;aspect-ratio:16/9}
+.make-pics img{aspect-ratio:auto}
+@media(max-width:640px){.make-pics{grid-template-columns:1fr}}
+img.crew-scene{cursor:zoom-in}
+#bigView{position:fixed;inset:0;z-index:600;background:#0a0705}
+#bigView[hidden]{display:none}
+#bvImg{position:absolute;top:0;left:0;right:0;width:100%;height:calc(100% - 66px - env(safe-area-inset-bottom));object-fit:contain}
+#bvFrame{position:absolute;top:0;left:0;right:0;width:100%;height:calc(100% - 66px - env(safe-area-inset-bottom));border:0}
+#bvCatch{position:absolute;top:0;left:0;right:0;bottom:calc(66px + env(safe-area-inset-bottom));z-index:3;cursor:zoom-out}
+.bv-bar{position:absolute;left:0;right:0;bottom:0;z-index:4;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(10,7,5,.8),rgba(10,7,5,0));color:#f3e5bd}
+#bvTitle{font-size:13.5px;font-weight:700;text-shadow:0 1px 8px #000}
+.bv-modes{display:flex;gap:8px}
+.bv-modes button,#bvX{font:inherit;font-size:11.5px;font-weight:800;letter-spacing:.16em;padding:8px 15px;border-radius:999px;border:1px solid rgba(232,200,119,.65);background:rgba(20,16,12,.72);color:#f3e5bd;cursor:pointer}
+#bvXTop{position:absolute;top:calc(12px + env(safe-area-inset-top));right:14px;z-index:6;font:inherit;font-size:18px;font-weight:800;width:44px;height:44px;padding:0;border-radius:999px;border:1.5px solid rgba(232,200,119,.9);background:#fffdf6;color:#241c10;cursor:pointer;line-height:1;box-shadow:0 2px 14px rgba(0,0,0,.45)}
+#bvX{font:inherit;font-size:17px;font-weight:800;width:42px;height:42px;padding:0;border-radius:999px;border:1.5px solid rgba(232,200,119,.85);background:#fffdf6;color:#241c10;cursor:pointer;line-height:1}
+.bv-modes button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+
+.guarantee-art{display:block;width:100%;height:auto;border-radius:14px;margin:0 0 14px}
+.bye-grid{align-items:start}
+.bye-art{display:block;width:100%;height:auto;border-radius:12px;margin:0 0 10px}
+.demo{margin:6px 0 8px}
+.demo-stage{position:relative;border-radius:18px;overflow:hidden;background:#0e1420;aspect-ratio:1100/623}
+.demo-stage img,.demo-stage iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.demo-layer{opacity:0}
+.demo.play .l1{animation:demoFade 12s ease-in-out infinite}
+.demo.play .l2{animation:demoFade 12s ease-in-out -4s infinite}
+.demo.play .l3{animation:demoFade 12s ease-in-out -8s infinite}
+@keyframes demoFade{0%{opacity:0}12%{opacity:1}45%{opacity:1}58%{opacity:0}100%{opacity:0}}
+.demo-live{opacity:0;transition:opacity 1.2s ease}
+.demo.done .demo-live{opacity:1}
+.demo-cap{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.demo-cap span{flex:1;min-width:120px;text-align:center;font:700 12.5px/1.35 'Avenir Next','Segoe UI',system-ui,sans-serif;padding:9px 8px;border-radius:999px;background:#f3e7cd;color:#8a6d1f;transition:all .5s}
+.demo-cap span.on{background:#17352e;color:#ffe9a8}
+.demo-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.demo-trio figure{margin:0}
+.demo-trio img{width:100%;height:auto;display:block;border-radius:12px}
+.demo-trio figcaption{text-align:center;font:600 12px 'Avenir Next','Segoe UI',system-ui,sans-serif;color:#5c665f;margin-top:5px}
+.demo-honest{max-width:640px;margin:16px auto 0;text-align:center;font-size:16.5px;line-height:1.55;color:#44534b}
+.demo-replay{margin-top:12px}
+.sendbox{max-width:640px;margin:0 auto;text-align:center}
+.sendsteps{text-align:left;max-width:520px;margin:18px auto 0;display:grid;gap:10px}
+.sendsteps .ostep{background:#fffdf6;border:1px solid #e7dcc2;border-radius:14px;padding:12px 14px}
+/* close-reorder 2026-11-06 */
+.gift-duo{align-items:stretch}
+.gift-duo .exhibit{display:flex;flex-direction:column}
+.gift-duo .exhibit .exhibit-cap{max-width:none}
+.gift-duo .exhibit .lp3{margin-top:auto}
+.lc-sample-big{text-align:center;margin:30px auto 0}
+.lc-sample-big .cta{display:inline-block;font-size:20px;padding:16px 38px}
+.lc-sample-cap{text-align:center;margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.55;color:var(--ink2)}
+.yt-box{position:relative;max-width:640px;margin:44px auto 6px;background:#14100c;border:2px solid var(--gold);border-radius:18px;padding:38px 26px 28px;text-align:center;box-shadow:0 14px 40px rgba(20,12,2,.35)}
+.yt-lights{position:absolute;inset:9px;border-radius:12px;pointer-events:none}
+.yt-lights span{position:absolute;width:9px;height:9px;border-radius:50%;background:#ffcf5e;box-shadow:0 0 10px 3px rgba(255,190,70,.85);animation:ytchase 1.15s infinite}
+.yt-lights span:nth-child(1){top:-5px;left:6%}
+.yt-lights span:nth-child(2){top:-5px;left:36%}
+.yt-lights span:nth-child(3){top:-5px;left:66%}
+.yt-lights span:nth-child(4){top:-5px;left:94%}
+.yt-lights span:nth-child(5){bottom:-5px;left:6%;animation-delay:.58s}
+.yt-lights span:nth-child(6){bottom:-5px;left:36%;animation-delay:.58s}
+.yt-lights span:nth-child(7){bottom:-5px;left:66%;animation-delay:.58s}
+.yt-lights span:nth-child(8){bottom:-5px;left:94%;animation-delay:.58s}
+.yt-lights span:nth-child(9){left:-5px;top:32%;animation-delay:.29s}
+.yt-lights span:nth-child(10){left:-5px;top:68%;animation-delay:.86s}
+.yt-lights span:nth-child(11){right:-5px;top:32%;animation-delay:.29s}
+.yt-lights span:nth-child(12){right:-5px;top:68%;animation-delay:.86s}
+@keyframes ytchase{0%,100%{opacity:1}50%{opacity:.18}}
+.yt-box-line{color:#f2e7c8;font-size:18.5px;line-height:1.55;margin:0 auto;max-width:520px}
+.yt-box-btn{display:inline-block;margin-top:18px;background:#c8102e;color:#fff;font-weight:800;font-size:19px;letter-spacing:.02em;padding:14px 30px;border-radius:999px;text-decoration:none;box-shadow:0 6px 22px rgba(200,16,46,.4)}
+.cat-box{position:relative;max-width:800px;margin:26px auto 4px;background:#14100c;border:2px solid var(--gold);border-radius:20px;padding:48px 30px 36px;text-align:center;box-shadow:0 16px 46px rgba(20,12,2,.38)}
+.cat-box-title{color:#f6e9c9;font-size:27px;font-weight:800;line-height:1.3;margin:0 auto;max-width:640px}
+.cat-box-line{color:#e9dcba;font-size:18.5px;line-height:1.6;margin:16px auto 0;max-width:620px}
+.cat-box-crew{color:#cdb894;font-size:16.5px;line-height:1.6;margin:12px auto 0;max-width:600px}
+.cat-box-btn{display:inline-block;margin-top:24px;background:var(--teal);color:#fff;font-weight:800;font-size:20.5px;letter-spacing:.02em;padding:16px 36px;border-radius:999px;text-decoration:none;box-shadow:0 6px 22px rgba(13,92,99,.45)}
+</style>
+<!-- mirror sync 2026-11-05 -->
+</head>
+<body>
+<div id="introGate" role="dialog" aria-label="Living Photos — Cooking in the Clubhouse, a living photo">
+  <div class="intro-wall">
+    <div class="intro-frame" id="introFrame"><img class="intro-artbg" src="img/intro-artbg.webp" alt="" aria-hidden="true"><img class="intro-art" src="img/opt-intro-art.webp" alt="Cooking in the Clubhouse — a living photo"><iframe loading="lazy" src="https://playingandvibecoding.lovable.app" title="Living Photo — Cooking in the Clubhouse, playing" allow="autoplay; fullscreen" allowfullscreen></iframe><div class="intro-catch"></div><div class="intro-enter" data-en="Tap to step inside" data-es="Toca para entrar">Tap to step inside</div></div>
+  </div>
+  
+</div>
+<script>
+(function(){var g=document.getElementById('introGate');if(!g)return;
+try{history.scrollRestoration='manual';}catch(e){}
+var frame=document.getElementById('introFrame');
+var ifr=frame?frame.querySelector('iframe'):null;
+if(ifr){var lit=false;var light=function(){if(lit)return;lit=true;ifr.classList.add('live');};ifr.addEventListener('load',light);setTimeout(light,7000);}
+function snapTo(t){var de=document.documentElement;var p=de.style.scrollBehavior;de.style.scrollBehavior='auto';if(t){t.scrollIntoView();}else{window.scrollTo(0,0);}de.style.scrollBehavior=p;}
+function enter(){if(g.style.display==='none'||g.classList.contains('gone'))return;var t=null;try{t=location.hash?document.querySelector(location.hash):null;}catch(e){} document.body.classList.remove('gated');snapTo(t);g.classList.add('gone');setTimeout(function(){g.style.display='none';},800);}
+function showIntro(){var c=document.getElementById('sbClose');if(c)c.click();g.style.display='';g.classList.remove('gone');document.body.classList.add('gated');snapTo(null);}
+window.__showIntro=showIntro;
+g.addEventListener('click',function(){enter();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')enter();});
+document.addEventListener('click',function(e){var b=e.target&&e.target.closest?e.target.closest('#introAgain'):null;if(b)showIntro();});
+document.body.classList.add('gated');
+snapTo(null);
+})();
+</script>
+
+
+<div class="scrim" id="scrim"></div>
+<aside class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sb-head"><h2 data-en="More from Future Ready" data-es="Más de Future Ready">More from Future Ready</h2>
+  <button class="xbtn" id="sbClose" type="button" aria-label="Close">×</button></div>
+  <button class="sblink" id="introAgain" type="button" style="width:100%;text-align:left;background:none;border:none;cursor:pointer;font:inherit;color:inherit">
+    <span class="ic">↺</span><span><span class="t" data-en="See the intro again" data-es="Ver la portada otra vez">See the intro again</span><br>
+    <span class="s" data-en="Cooking in the Clubhouse, full screen" data-es="Cooking in the Clubhouse, pantalla completa">Cooking in the Clubhouse, full screen</span></span></button>
+  <a class="sblink" href="https://ready-launch-hub.lovable.app" target="_blank" rel="noopener">
+    <span class="ic">✦</span><span><span class="t" data-en="Future Ready — the mission" data-es="Future Ready: la misión">Future Ready — the mission</span><br>
+    <span class="s" data-en="Why all of this exists" data-es="Por qué existe todo esto">Why all of this exists</span></span></a>
+  <a class="sblink" href="https://geemondc.github.io/the-catalog/" target="_blank" rel="noopener">
+    <span class="ic">▤</span><span><span class="t" data-en="The Catalog" data-es="El Catálogo">The Catalog</span><br>
+    <span class="s" data-en="Everything we've built" data-es="Todo lo que hemos construido">Everything we've built</span></span></a> <a class="sblink" href="https://geemondc.github.io/living-cards-site/formal-preview-clean/" target="_blank" rel="noopener"> <span class="ic">✦</span><span><span class="t" data-en="First Class" data-es="Primera Clase">First Class</span><br> <span class="s" data-en="Our most formal cards — $1.50 each" data-es="Nuestras tarjetas más formales — $1.50 cada una">Our most formal cards — $1.50 each</span></span></a> <a class="sblink" href="rides.html"> <span class="ic">▶</span><span><span class="t" data-en="Rides" data-es="Paseos">Rides</span><br> <span class="s" data-en="Come take a ride with us" data-es="Ven a dar un paseo con nosotros">Come take a ride with us</span></span></a>
+  <a class="sblink" href="https://chillingathome.lovable.app" target="_blank" rel="noopener">
+    <span class="ic">♥</span><span><span class="t">Chilling at Home</span><br>
+    <span class="s" data-en="The living photo, playing" data-es="La foto viva, en movimiento">The living photo, playing</span></span></a>
+  <a class="sblink" href="#" data-muse-open>
+    <span class="ic">✧</span><span><span class="t" data-en="Want to learn how to use Muse?" data-es="¿Quieres aprender a usar Muse?">Want to learn how to use Muse?</span><br>
+    <span class="s" data-en="The tool behind all of this" data-es="La herramienta detrás de todo esto">The tool behind all of this</span></span></a>
+</aside>
+<div class="qrpanel" id="qrPanel" aria-hidden="true">
+  <button class="xbtn" id="qrClose" type="button" aria-label="Close">×</button>
+  <h2 data-en="Open on your phone" data-es="Ábrelo en tu teléfono">Open on your phone</h2>
+  <p data-en="Point your camera — it opens this page." data-es="Apunta tu cámara: abre esta página.">Point your camera — it opens this page.</p>
+  <img src="img/p-e7c7f80012.png" alt="QR code for this page">
+  <div class="url">geemondc.github.io/living-cards-site/</div>
+</div>
+
+<!-- ============ INTRO — the gang says hi ============ -->
+<style>
+.fri{max-width:1180px;margin:0 auto;padding:20px 18px 2px}
+.fri-photo{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--gold-b);box-shadow:var(--shadow);margin:0}
+.fri-photo img{width:100%;height:auto;display:block}
+.fri-hi{position:absolute;left:0;right:0;bottom:0;padding:44px 22px 16px;background:linear-gradient(transparent,rgba(24,12,2,.74));color:#fff6dc;font-family:Georgia,'Times New Roman',serif;font-size:clamp(27px,4.8vw,46px);letter-spacing:.01em;text-align:center}
+.fri-line{max-width:780px;margin:16px auto 2px;text-align:center;font-size:clamp(1.02rem,2.4vw,1.22rem);line-height:1.55}
+</style>
+<section class="fri" id="intro">
+  <figure class="fri-photo">
+    <img src="intro-gang.webp" fetchpriority="high" alt="Dr Gary in the middle, arm out to welcome you, with all eight friends around him and a glowing living photo on the wall behind them">
+    <figcaption class="fri-hi" data-en="Hi&#8230; we&#8217;re Future Ready!" data-es="&#161;Hola&#8230; somos Future Ready!">Hi&#8230; we&#8217;re Future Ready!</figcaption>
+  </figure>
+  <p class="fri-line" data-en="I&#8217;m Dr. Gary. These are my friends. We bring your favorite photos back to life &#8212; their colors, their light, their glow. Come on in and look around." data-es="Soy el Dr. Gary. Ellos son mis amigos. Devolvemos la vida a tus fotos favoritas: sus colores, su luz, su brillo. Pasa y mira todo con calma.">I&#8217;m Dr. Gary. These are my friends. We bring your favorite photos back to life &#8212; their colors, their light, their glow. Come on in and look around.</p>
+</section>
+
+<style>
+section.lpd{display:block;max-width:1060px;margin:8px auto 0;padding:26px 18px 6px;text-align:center}
+.lpd-kicker{font-size:12px;letter-spacing:.35em;color:#a07c2c;font-weight:700;margin:0 0 6px}
+.lpd h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(26px,4.5vw,38px);margin:0 0 8px;color:#2b2118}
+.lpd-sub{max-width:640px;margin:0 auto 22px;font-size:16.5px;line-height:1.55;color:#4a3a28}
+.lpd-row{display:flex;gap:18px;justify-content:center;align-items:stretch}
+.lpd-card{flex:1 1 0;max-width:330px;background:#fffdf6;border:1.5px solid #d9b45c;border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(90,60,10,.13);display:flex;flex-direction:column;text-align:center}
+.lpd-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.lpd-body{padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.lpd-name{font-family:Georgia,'Times New Roman',serif;font-size:23px;color:#2b2118}
+.lpd-line{font-size:15px;line-height:1.5;color:#4a3a28;flex:1}
+.lpd-price{font-size:14.5px;font-weight:700;color:#8a6420}
+.lpd-btn{display:inline-block;margin-top:4px;background:#0d5c50;color:#fff;text-decoration:none;font-weight:700;font-size:15.5px;padding:11px 18px;border-radius:999px}
+.lpd-btn:hover{background:#0a4a41}
+@media (max-width:760px){.lpd-row{flex-direction:column;align-items:center}.lpd-card{flex:none;width:100%;max-width:430px}}
+</style>
+<section class="lpd" id="doors">
+<p class="lpd-kicker" data-en="✦ THREE THINGS WE MAKE" data-es="✦ TRES COSAS QUE HACEMOS">✦ THREE THINGS WE MAKE</p>
+<h2 data-en="What would you like to make?" data-es="¿Qué quieres crear?">What would you like to make?</h2>
+<p class="lpd-sub" data-en="Bring a favorite photo into changing light, send a card that comes alive, or pass someone a folded note — with your own words inside." data-es="Dale luz cambiante a una foto favorita, envía una tarjeta que cobra vida o pasa una nota doblada — con tus propias palabras dentro.">Bring a favorite photo into changing light, send a card that comes alive, or pass someone a folded note — with your own words inside.</p>
+<div class="lpd-row">
+<div class="lpd-card">
+<img src="img/opt-fletch.webp" alt="A real photo — Gary and Emily with Fletch, before its light changes" loading="lazy" decoding="async">
+<div class="lpd-body">
+<div class="lpd-name" data-en="Living Photos" data-es="Fotos Vivas">Living Photos</div>
+<div class="lpd-line" data-en="Your own photo, with richer color and light that slowly changes — day, sunset, night. The people stay just as they are." data-es="Tu propia foto, con colores más ricos y una luz que cambia poco a poco — día, atardecer, noche. Las personas quedan tal como son.">Your own photo, with richer color and light that slowly changes — day, sunset, night. The people stay just as they are.</div>
+<div class="lpd-price" data-en="$5 for one · $10 for three" data-es="$5 por una · $10 por tres">$5 for one · $10 for three</div>
+<a class="lpd-btn" href="#difference" data-en="See a photo change" data-es="Mira cómo cambia una foto">See a photo change</a>
+</div>
+</div>
+<div class="lpd-card">
+<img src="img/opt-christmas.webp" alt="A Christmas living card — a glowing tree and a snowy scene" loading="lazy" decoding="async">
+<div class="lpd-body">
+<div class="lpd-name" data-en="Living Cards" data-es="Tarjetas Vivas">Living Cards</div>
+<div class="lpd-line" data-en="A little cartoon that comes alive inside its envelope, with your words in the middle. Every card includes its matching envelope." data-es="Una pequeña escena animada que cobra vida dentro de su sobre, con tus palabras en el centro. Cada tarjeta incluye su sobre a juego.">A little cartoon that comes alive inside its envelope, with your words in the middle. Every card includes its matching envelope.</div>
+<div class="lpd-price" data-en="$1 each · 5 for $3 · 10 for $5 — First Class $1.50 each" data-es="$1 cada una · 5 por $3 · 10 por $5 — Primera Clase $1.50 cada una">$1 each · 5 for $3 · 10 for $5 — First Class $1.50 each</div>
+<a class="lpd-btn" href="https://thelivingphotos.com/envelopes.html" data-en="Choose a card" data-es="Elige una tarjeta">Choose a card</a>
+</div>
+</div>
+<div class="lpd-card">
+<img src="img/opt-foldtable.webp" alt="The eight friends folding paper notes at a table" loading="lazy" decoding="async">
+<div class="lpd-body">
+<div class="lpd-name" data-en="Living Notes" data-es="Notas Vivas">Living Notes</div>
+<div class="lpd-line" data-en="A folded paper note that opens on the screen, with your words inside. A little hello, a thank-you, or a word of encouragement." data-es="Una nota de papel doblada que se abre en la pantalla, con tus palabras dentro. Un saludo, un gracias o unas palabras de ánimo.">A folded paper note that opens on the screen, with your words inside. A little hello, a thank-you, or a word of encouragement.</div>
+<div class="lpd-price" data-en="$1 each · 5 for $3 · 10 for $5" data-es="$1 cada una · 5 por $3 · 10 por $5">$1 each · 5 for $3 · 10 for $5</div>
+<a class="lpd-btn" href="https://futurereadyorigami.lovable.app" data-en="Unfold a sample" data-es="Abre una de muestra">Unfold a sample</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="cover-band">
+    <p class="kicker">✦ Future Ready</p>
+    <h1 data-en="Living Photos" data-es="Fotos Vivas">Living Photos</h1>
+    <p class="welcome" data-en="Your favorite picture, changing from day to night. Watch the colors shift and the lights twinkle — the people stay just as they are." data-es="Tu foto favorita, cambiando del día a la noche. Mira cómo cambian los colores y titilan las luces — la gente se queda tal como es.">Your favorite picture, changing from day to night. Watch the colors shift and the lights twinkle — the people stay just as they are.</p>
+    <p class="welcome" data-en="Made from your photo — $5 for one, $10 for three. Delivered within 3 days, with one lighting revision included." data-es="Hecha de tu foto — $5 por una, $10 por tres. Entrega en 3 días, con una revisión de iluminación incluida.">Made from your photo — $5 for one, $10 for three. Delivered within 3 days, with one lighting revision included.</p>
+    <div class="cta-row">
+      <a class="cta teal" href="#difference" data-en="See the difference" data-es="Mira la diferencia">See the difference</a>
+      <a class="cta ghost" href="#make" data-en="Make mine — from $5" data-es="Haz la mía — desde $5">Make mine — from $5</a>
+    </div>
+    <p style="margin-top:14px;font-size:15.5px"><span data-en="Also:" data-es="También:">Also:</span> <a href="envelopes.html" data-en="animated greeting cards with opening envelopes — from $1" data-es="tarjetas animadas con sobres que se abren — desde $1">animated greeting cards with opening envelopes — from $1</a></p>
+    <div class="wall-invite">
+      <p data-en="Start with the Wall — a full-screen walk through our living photos, one after another, day turning to night. Two minutes inside beats any description." data-es="Empieza con La Pared — un paseo a pantalla completa por nuestras fotos vivas, una tras otra, del día a la noche. Dos minutos dentro valen más que cualquier descripción.">Start with the Wall — a full-screen walk through our living photos, one after another, day turning to night. Two minutes inside beats any description.</p>
+      <button class="cta wallbtn" id="wallOpen" type="button" data-en="✦ Experience the Wall" data-es="✦ Vive La Pared">✦ Experience the Wall</button>
+    </div>
+    <style>.top-doors{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:2px auto 34px;max-width:940px}.top-doors .cta{height:auto;min-height:68px;font-size:21px;font-weight:800;letter-spacing:.02em;line-height:1.25;text-align:center;padding:16px 40px;border:2px solid;white-space:normal}.top-doors .td-theater{background:var(--teal);color:#fdf6e3;border-color:var(--teal-d);box-shadow:0 16px 36px rgba(9,63,68,.42)}.top-doors .td-cards{background:linear-gradient(180deg,var(--gold-b),var(--gold));color:#3a2703;border-color:var(--gold-deep);box-shadow:0 16px 32px rgba(90,55,0,.30)}@media (max-width:560px){.top-doors{flex-direction:column;margin-bottom:28px}.top-doors .cta{width:100%;font-size:19px;padding:15px 20px}}</style>
+    <div class="top-doors">
+      <a class="cta td-theater" href="theater.html" data-en="✦ The Theater" data-es="✦ El Teatro">✦ The Theater</a>
+      <a class="cta td-cards" href="envelopes.html" data-en="✦ Living Cards, Envelopes &amp; Notes" data-es="✦ Tarjetas, Sobres y Notas">✦ Living Cards, Envelopes &amp; Notes</a>
+    </div>
+  </div>
+  <div class="lp3" data-lp3>
+    <div class="cover-photo"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div><img class="cover-poster" src="img/opt-volcano.webp" alt="The Volcano — the living painting: the volcano erupts over a sea of clouds under the moon" data-canon="0" loading="lazy" decoding="async">
+      <iframe scrolling="no" data-live="https://futurereadycostarica2.lovable.app" title="Living Photo — The Volcano, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <img class="stage-still" src="img/p-636b5bfefe.gif" alt="The Volcano — the original painting" hidden data-dup="0" loading="lazy" decoding="async">
+    <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
+    <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+    <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1400/788"><img src="img/p-528a79b6b8.jpg" alt="The Volcano — the original painting" loading="lazy" decoding="async"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1400/788"><img src="img/p-6b947d93ee.jpg" alt="The Volcano — alive at eruption peak" loading="lazy" decoding="async"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+    <div class="frame-row">
+      <p class="frame-label" data-en="&#10022; TRY A FRAME — NEW" data-es="&#10022; PRUEBA UN MARCO — NUEVO">&#10022; TRY A FRAME — NEW</p>
+      <div class="frame-btns">
+        <button class="frame-btn on" type="button" data-frame="" data-en="Clean" data-es="Limpio">Clean</button>
+        <button class="frame-btn" type="button" data-frame="fr-museum" data-en="Museum" data-es="Museo">Museum</button>
+        <button class="frame-btn" type="button" data-frame="fr-tv" data-en="TV" data-es="TV">TV</button>
+      </div>
+      <p class="frame-note" data-en="Frames are the newest thing we're making. Soon, every living photo can wear the frame you pick — hang it like a painting, or put it on the TV." data-es="Los marcos son lo m&#225;s nuevo que estamos haciendo. Pronto, cada foto viva podr&#225; llevar el marco que elijas: colgarla como un cuadro o ponerla en la TV.">Frames are the newest thing we're making. Soon, every living photo can wear the frame you pick — hang it like a painting, or put it on the TV.</p>
+    </div>
+    <script>
+    (function(){var cp=document.querySelector('.cover-photo');if(!cp)return;
+    document.querySelectorAll('.frame-btn').forEach(function(b){b.addEventListener('click',function(){
+      cp.classList.remove('fr-museum','fr-tv');
+      if(b.dataset.frame)cp.classList.add(b.dataset.frame);
+      document.querySelectorAll('.frame-btn').forEach(function(x){x.classList.toggle('on',x===b);});
+    });});})();
+    </script>
+    <p class="exhibit-cap" data-en="The Volcano — a painting by Manus. The volcano erupts over a sea of clouds, the moon up, the waterfalls falling." data-es="El volcán — una pintura de Manus: el volcán erupciona sobre un mar de nubes, con la luna arriba y las cascadas cayendo.">The Volcano — a painting by Manus. The volcano erupts over a sea of clouds, the moon up, the waterfalls falling.</p>
+  </div>
+  
+<div class="cover-foot">
+    <nav class="furn-row">
+      <a class="furn" href="https://ready-launch-hub.lovable.app" target="_blank" rel="noopener"><span class="star">✦</span> FUTURE&nbsp;READY</a> <a class="furn" href="https://geemondc.github.io/living-cards-site/formal-preview-clean/" target="_blank" rel="noopener"><span data-en="First Class" data-es="Primera Clase">First Class</span></a> <a class="furn" href="rides.html"><span data-en="Rides" data-es="Paseos">Rides</span></a>
+      <button class="furn" id="sbBtn" type="button">☰ <span data-en="Links" data-es="Enlaces">Links</span></button>
+      <button class="furn" id="qrBtn" type="button">▦ QR</button>
+      <button class="furn lang" id="langBtn" type="button">Español</button>
+    </nav>
+    <p class="scroll-cue">↓</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ THE DIFFERENCE / STAGE ============ -->
+<section id="difference">
+  <div class="sec-head">
+    <img class="gimg" src="img/p-5e41427f3d.webp" alt="Adriana, your guide" data-canon="1" loading="lazy" decoding="async">
+    <h2 data-en="The Difference" data-es="La diferencia">The Difference</h2>
+    <p data-en="Same photo in both frames — the only difference is the time someone put into the color and the light." data-es="La misma foto en ambos marcos: la única diferencia es el tiempo que alguien puso en el color y la luz.">Same photo in both frames — the only difference is the time someone put into the color and the light.</p>
+  </div>
+  <div class="goldrule"></div>
+  <div class="exhibit">
+    <h3 data-en="Made from a real photo — ours." data-es="Hecha de una foto real — la nuestra.">Made from a real photo — ours.</h3>
+    <p class="exhibit-cap" data-en="Gary and Emily stay exactly themselves. Only the light changes." data-es="Gary y Emily se quedan exactamente como son. Solo cambia la luz.">Gary and Emily stay exactly themselves. Only the light changes.</p>
+    <div class="lp3" data-lp3 data-default="living">
+      <div class="ex-frame" style="aspect-ratio:1930/1364"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+        <span class="chip living" data-en="Real photo" data-es="Foto real">Real photo</span>
+        <iframe scrolling="no" data-live="https://geemondc.github.io/fletch/#wall" title="Living Photo — Fletch, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1930/1364"></iframe>
+        <img class="ph stage-still" src="img/opt-fletch.webp" alt="Fletch — Gary and Emily with Fletch the boxer, September 1996" hidden loading="lazy" decoding="async">
+      <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
+      <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+    </div>
+  </div>
+  <div class="lp3" data-lp3 data-default="living">
+    <div class="ex-frame" style="aspect-ratio:1200/680"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+      <iframe scrolling="no" data-live="https://chillingathome.lovable.app" title="Living Photo — Chilling at Home, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1200/680"></iframe>
+      <img class="ph stage-still" src="img/p-84bd458431.jpg" alt="Chilling at Home — the original photo, golden hour" hidden data-canon="2" loading="lazy" decoding="async">
+      <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div>
+    </div>
+    <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+    <p class="patience" data-en="Give it 30 seconds. A living photo takes its time — watch the colors deepen. That's the whole show." data-es="Dale 30 segundos. Una foto viva se toma su tiempo: mira cómo se profundizan los colores. Ese es todo el espectáculo.">Give it 30 seconds. A living photo takes its time — watch the colors deepen. That's the whole show.</p>
+    <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1200/680"><img src="img/p-636b5bfefe.gif" alt="Chilling at Home — the original photo, golden hour" data-dup="2" loading="lazy" decoding="async"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1200/680"><img src="img/p-a64de1e711.jpg" alt="Chilling at Home — the same photo at neon night" data-canon="3" loading="lazy" decoding="async"></span><span class="cmp-tag" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+  </div>
+  <p class="exhibit-cap" data-en="Chilling at Home — one photo: golden hour on the left, its living night on the right. Tap either frame to watch the whole journey, or watch it playing on the big screen above." data-es="Chilling at Home: una sola foto — la hora dorada a la izquierda, su noche viva a la derecha. Toca cualquier foto pequeña y llenará la pantalla grande de arriba. Toca el botón de ampliar en la esquina superior derecha de la pantalla grande para verla en tamaño completo.">Chilling at Home — one photo: golden hour on the left, its living night on the right. Tap either small photo and it fills the big screen above. Tap the enlarge button in the top-right corner of the big screen to see it full size.</p>
+</section>
+
+<!-- ============ OFFER ============ -->
+<!-- ============ WAYS TO LIVE WITH ONE ============ -->
+<section id="uses">
+  <div class="sec-head">
+    <img class="gimg" src="img/p-636b5bfefe.gif" alt="Adriana, your guide" data-dup="1" loading="lazy" decoding="async">
+    <h2 data-en="Ways to live with one" data-es="Formas de vivir con una">Ways to live with one</h2>
+    <p data-en="A living photo isn’t a file you put away in a folder. It moves in where you live — onto the screens and walls that are already part of your day." data-es="Una foto viva no es un archivo que se guarda en una carpeta. Se muda a donde tú vives: a las pantallas y las paredes que ya son parte de tu día.">A living photo isn’t a file you put away in a folder. It moves in where you live — onto the screens and walls that are already part of your day.</p>
+  </div>
+  <div class="goldrule"></div>
+  <div class="story-grid">
+    <div class="scard"><h3 data-en="📱 On your phone" data-es="📱 En tu teléfono">📱 On your phone</h3><p data-en="As your wallpaper, it’s the first thing you see when you pick your phone up — the photo you love, its light changing from day to night right along with you." data-es="Como fondo de pantalla, es lo primero que ves al tomar tu teléfono: la foto que amas, con su luz cambiando del día a la noche junto contigo.">As your wallpaper, it’s the first thing you see when you pick your phone up — the photo you love, its light changing from day to night right along with you.</p></div>
+    <div class="scard"><h3 data-en="📺 On the TV" data-es="📺 En el televisor">📺 On the TV</h3><p data-en="As a screensaver on the big screen, it turns the whole room into that moment. Guests notice. Guests ask." data-es="Como protector de pantalla en la pantalla grande, convierte todo el cuarto en ese momento. Los invitados lo notan. Los invitados preguntan.">As a screensaver on the big screen, it turns the whole room into that moment. Guests notice. Guests ask.</p></div>
+    <div class="scard"><h3 data-en="🖥 On your monitor" data-es="🖥 En tu monitor">🖥 On your monitor</h3><p data-en="Beside your work all day, quietly glowing — the trip, the family, the night you keep going back to." data-es="Junto a tu trabajo todo el día, brillando en silencio: el viaje, la familia, la noche a la que siempre vuelves.">Beside your work all day, quietly glowing — the trip, the family, the night you keep going back to.</p></div>
+    <div class="scard"><h3 data-en="🖼 Framed on the wall" data-es="🖼 Enmarcada en la pared">🖼 Framed on the wall</h3><p data-en="Hung like a painting in a frame you choose — the one piece on the wall whose light is alive." data-es="Colgada como un cuadro, en el marco que tú elijas: la única pieza de la pared cuya luz está viva.">Hung like a painting in a frame you choose — the one piece on the wall whose light is alive.</p></div>
+    <div class="scard"><h3 data-en="♥ Just to have it" data-es="♥ Solo por tenerla">♥ Just to have it</h3><p data-en="Some photos aren’t for any screen at all. You just want that moment back — its colors, its light — for yourself. That’s reason enough." data-es="Algunas fotos no son para ninguna pantalla. Solo quieres recuperar ese momento — sus colores, su luz — para ti. Esa es razón suficiente.">Some photos aren’t for any screen at all. You just want that moment back — its colors, its light — for yourself. That’s reason enough.</p></div>
+  </div>
+</section>
+
+<section id="make">
+  <div class="sec-head">
+    <img class="gimg" src="img/p-636b5bfefe.gif" alt="Adriana, your guide" data-dup="1" loading="lazy" decoding="async">
+    <h2 data-en="Cook at home — or eat out" data-es="Cocínalo en casa — o sal a comer">Cook at home — or eat out</h2>
+    <p data-en="It's like a good meal. You can cook at home — follow our recipe above, it's free — or you can eat out and let us cook for you. Same recipe, same quality either way. The only difference is who does the work." data-es="Es como una buena comida. Puedes cocinar en casa — sigue nuestra receta de arriba, es gratis — o puedes salir a comer y dejar que cocinemos por ti. La misma receta, la misma calidad. La única diferencia es quién hace el trabajo.">It's like a good meal. You can cook at home — follow our recipe above, it's free — or you can eat out and let us cook for you. Same recipe, same quality either way. The only difference is who does the work.</p>
+  </div>
+  <div class="goldrule"></div>
+  <div class="make-pics"><figure><img src="img/p-d3824541f2.webp" alt="Adriana cooking at home in her kitchen" loading="lazy" decoding="async"><figcaption data-en="Cook at home — the recipe is free. But it's your time, your tries, and your cleanup." data-es="Cocínalo en casa — la receta es gratis. Pero es tu tiempo, tus intentos y tu limpieza.">Cook at home — the recipe is free. But it's your time, your tries, and your cleanup.</figcaption></figure><figure><img src="img/p-d6a0f00350.webp" alt="Adriana eating out at a restaurant" loading="lazy" decoding="async"><figcaption data-en="Eat out — it costs a little more, we do all the work, and you just enjoy it." data-es="Sal a comer — cuesta un poco más, hacemos todo el trabajo y tú solo lo disfrutas.">Eat out — it costs a little more, we do all the work, and you just enjoy it.</figcaption></figure></div>
+  <div class="offer">
+<div class="doors">
+<div class="door"><p class="deal" data-en="One living photo — $5" data-es="Una foto viva — $5">One living photo — $5</p><p class="get" data-en="One photo you love, brought to life — we do the work, you save the time." data-es="Una foto que amas, hecha viva — nosotros hacemos el trabajo, tú ahorras el tiempo.">One photo you love, brought to life — we do the work, you save the time.</p><a class="donatebtn" href="https://buy.stripe.com/bJebJ140f47d1iX9hwbsc02" target="_blank" rel="noopener" data-en="Make my photo — $5" data-es="Haz mi foto — $5">Make my photo — $5</a></div>
+<div class="door best"><span class="burst" data-en="BEST VALUE" data-es="MEJOR OFERTA">BEST VALUE</span><p class="deal" data-en="Three living photos — $10 · buy two, get one free" data-es="Tres fotos vivas — $10 · compras dos, una gratis">Three living photos — $10 · buy two, get one free</p><p class="get" data-en="Three favorites, brought to life — buy two, get one free." data-es="Tres favoritas, hechas vivas: compras dos y la tercera va por la casa.">Three favorites, brought to life — buy two, get one free.</p><a class="donatebtn" href="https://buy.stripe.com/6oU8wP8gv3391iXalAbsc03" target="_blank" rel="noopener" data-en="Make my three — $10" data-es="Haz mis tres — $10">Make my three — $10</a></div>
+</div>
+<p class="secure" data-en="Your price covers the living photo and its page. Want to keep the other two versions as still photos as well? They're $1 each — just ask when you send your photo." data-es="Tu precio cubre la foto viva y su página. ¿Quieres guardar también las otras dos versiones como fotos fijas? Cuestan $1 cada una: solo pídelas cuando envíes tu foto.">Your price covers the living photo and its page. Want to keep the other two versions as still photos as well? They're $1 each — just ask when you send your photo.</p>
+<p class="secure" data-en="Secure payment through Stripe." data-es="Pago seguro a través de Stripe.">Secure payment through Stripe.</p>
+<div class="osteps">
+      <div class="ostep"><span class="on">1</span><span data-en="Choose your door above — $5 for one photo, $10 for three — and check out." data-es="Elige tu puerta arriba — $5 por una foto, $10 por tres — y completa tu pago.">Choose your door above — $5 for one photo, $10 for three — and check out.</span><img class="ostep-g" src="img/p-72072f5d2e.webp" alt="Adriana shows this step" loading="lazy" decoding="async"></div>
+      <div class="ostep"><span class="on">2</span><span><span data-en="Email your photos to" data-es="Envía tus fotos a">Email your photos to</span> <a href="mailto:geemondc@gmail.com">geemondc@gmail.com</a></span><img class="ostep-g" src="img/p-500413b2ae.webp" alt="Adriana shows this step" loading="lazy" decoding="async"></div>
+      <div class="ostep"><span class="on">3</span><span data-en="We will try to make them glow — delivered within 3 days — and email them back to you." data-es="Intentaremos hacerlas brillar — entregadas en 3 días — y te las enviaremos de vuelta por correo.">We will try to make them glow — delivered within 3 days — and email them back to you.</span><img class="ostep-g" src="img/p-2738506aec.webp" alt="Adriana shows this step" loading="lazy" decoding="async"></div>
+    </div>
+    <p class="offer-honest" data-en="We will try. Every photo is made by hand and checked before it goes back to you." data-es="Lo intentaremos. Cada foto se hace a mano y se revisa antes de volver a ti.">We will try. Every photo is made by hand and checked before it goes back to you.</p>
+<p class="secure" data-en="Your page is unlisted: it is not shown in our public gallery, but anyone with the link can open it." data-es="Tu página no está listada: no aparece en nuestra galería pública, pero cualquiera con el enlace puede abrirla.">Your page is unlisted: it is not shown in our public gallery, but anyone with the link can open it.</p>
+<p class="secure" data-en="One revision to the lighting is included. Faces, expressions, and the scene itself are never changed." data-es="Incluye una revisión de la iluminación. Los rostros, las expresiones y la escena nunca se cambian.">One revision to the lighting is included. Faces, expressions, and the scene itself are never changed.</p>
+<p class="secure" data-en="We will never use your photo or your finished keepsake in our samples without your permission." data-es="Nunca usaremos tu foto ni tu recuerdo terminado en nuestras muestras sin tu permiso.">We will never use your photo or your finished keepsake in our samples without your permission.</p>
+</div>
+  <div style="text-align:center;margin-top:18px"><button class="details-btn" data-panel-open data-en="Details &amp; where the money goes →" data-es="Detalles y a dónde va el dinero →">Details &amp; where the money goes →</button></div>
+</section>
+
+<!-- ============ YOURS ============ -->
+<section id="yours">
+  <div class="sec-head">
+    <h2 data-en="Once it&#8217;s yours, it&#8217;s yours" data-es="Cuando es tuyo, es tuyo">Once it&#8217;s yours, it&#8217;s yours</h2>
+    <p data-en="Buy a living photo and it&#8217;s yours &#8212; share it with anyone you like, put it on every screen you own. We don&#8217;t mind; sharing is how people find us. What we offer on top is the personal touch &#8212; your name on it." data-es="Compra una foto viva y es tuya: comp&#225;rtela con quien quieras y ponla en cada pantalla que tengas. No nos molesta; compartiendo es como la gente nos encuentra. Lo que ofrecemos adem&#225;s es el toque personal: tu nombre en ella.">Buy a living photo and it&#8217;s yours &#8212; share it with anyone you like, put it on every screen you own. We don&#8217;t mind; sharing is how people find us. What we offer on top is the personal touch &#8212; your name on it.</p>
+  </div>
+  <div class="goldrule"></div>
+  <div class="story-grid">
+    <div class="scard"><h3 data-en="&#10052; Your name on a snow globe" data-es="&#10052; Tu nombre en una bola de nieve">&#10052; Your name on a snow globe</h3><p data-en="The little world under glass, with your family&#8217;s name written in it &#8212; the keepsake, made personal." data-es="El peque&#241;o mundo bajo el cristal, con el nombre de tu familia dentro: el recuerdo, hecho personal.">The little world under glass, with your family&#8217;s name written in it &#8212; the keepsake, made personal.</p></div>
+    <div class="scard"><h3 data-en="&#127878; Your name in the sky" data-es="&#127878; Tu nombre en el cielo">&#127878; Your name in the sky</h3><p data-en="Fireworks that burst into a name &#8212; a birthday, an anniversary, a welcome home, written across the night." data-es="Fuegos artificiales que estallan formando un nombre: un cumplea&#241;os, un aniversario, una bienvenida, escritos en la noche.">Fireworks that burst into a name &#8212; a birthday, an anniversary, a welcome home, written across the night.</p></div>
+    <div class="scard"><h3 data-en="&#128444; Your name in the room" data-es="&#128444; Tu nombre en el cuarto">&#128444; Your name in the room</h3><p data-en="Our living rooms and windows, with your name worked into the scene &#8212; a place that&#8217;s yours the moment you open it." data-es="Nuestros cuartos y ventanas con vida, con tu nombre dentro de la escena: un lugar tuyo en el momento en que lo abres.">Our living rooms and windows, with your name worked into the scene &#8212; a place that&#8217;s yours the moment you open it.</p></div>
+  </div>
+  <p style="margin-top:22px;text-align:center;font-style:italic;color:var(--ink2);font-size:16px;line-height:1.55" data-en="Want yours personalized? Tell us the name when you send your photo &#8212; or just ask, and we&#8217;ll show you what&#8217;s possible." data-es="&#191;Quieres la tuya personalizada? Dinos el nombre cuando env&#237;es tu foto &#8212; o solo pregunta, y te mostramos lo que es posible.">Want yours personalized? Tell us the name when you send your photo &#8212; or just ask, and we&#8217;ll show you what&#8217;s possible.</p>
+</section>
+
+<!-- ============ SEND YOUR PHOTO ============ -->
+<section id="send">
+  <div class="sec-head">
+    <h2 data-en="Already paid? Send your photo here" data-es="¿Ya pagaste? Envía tu foto aquí">Already paid? Send your photo here</h2>
+    <p data-en="Paying was step one. Your living photo starts the moment your photo reaches us." data-es="Pagar fue el paso uno. Tu foto viva empieza en el momento en que tu foto llega a nosotros.">Paying was step one. Your living photo starts the moment your photo reaches us.</p>
+  </div>
+  <div class="goldrule"></div>
+  <div class="sendbox">
+    <a class="bigbtn teal" id="sendMailBtn" href="mailto:geemondc@gmail.com?subject=My%20living%20photo" ><span data-en="Email my photo →" data-es="Enviar mi foto →">Email my photo →</span></a>
+    <p class="send-order" id="sendOrderLine" hidden></p>
+    <div class="sendsteps">
+      <div class="ostep"><span class="on">1</span><span data-en="Tap the button — your email opens with our address already filled in." data-es="Toca el botón: tu correo se abre con nuestra dirección ya puesta.">Tap the button — your email opens with our address already filled in.</span></div>
+      <div class="ostep"><span class="on">2</span><span data-en="Attach the photo you love. (For three photos, attach all three.)" data-es="Adjunta la foto que amas. (Si son tres, adjunta las tres.)">Attach the photo you love. (For three photos, attach all three.)</span></div>
+      <div class="ostep"><span class="on">3</span><span data-en="Send it. We make it by hand, check it, and email it back to you." data-es="Envíala. La hacemos a mano, la revisamos y te la devolvemos por correo.">Send it. We make it by hand, check it, and email it back to you.</span></div>
+    </div>
+    <p class="offer-honest" data-en="Paid but got pulled away before sending? Don't worry — we check every payment. If your photo hasn't reached us within a day, we'll email you and ask for it. Nothing gets lost." data-es="¿Pagaste pero algo te interrumpió antes de enviarla? No te preocupes: revisamos cada pago. Si tu foto no nos llega en un día, te escribimos y te la pedimos. Nada se pierde.">Paid but got pulled away before sending? Don't worry — we check every payment. If your photo hasn't reached us within a day, we'll email you and ask for it. Nothing gets lost.</p>
+    <p class="offer-honest" data-en="How matching works: we pair every photo with its payment before we start. A photo with no matching payment doesn't get made — we reply with the pay link instead. Only paid photos are made." data-es="Así funciona el cruce: emparejamos cada foto con su pago antes de empezar. Una foto sin pago no se hace: respondemos con el enlace de pago. Solo se hacen las fotos pagadas.">How matching works: we pair every photo with its payment before we start. A photo with no matching payment doesn't get made — we reply with the pay link instead. Only paid photos are made.</p>
+  </div>
+</section>
+
+<!-- ============ EXHIBITS ============ -->
+<section id="samples">
+  <div class="sec-head">
+    <img class="gimg" src="img/p-636b5bfefe.gif" alt="Adriana, your guide" data-dup="1" loading="lazy" decoding="async">
+    <h2 data-en="The Pieces" data-es="Las piezas">The Pieces</h2>
+    <p data-en="Artwork, brought to life — in each piece the light travels from day to night, and nothing else moves." data-es="Arte que cobra vida: en cada pieza la luz viaja del día a la noche, y nada más se mueve.">Artwork, brought to life — in each piece the light travels from day to night, and nothing else moves.</p>
+    <p class="sec-note" data-en="Sample transformations by Living Photos. Paintings and artwork are labeled; your order uses your own photograph." data-es="Transformaciones de muestra de Living Photos. Las pinturas y obras de arte están etiquetadas; tu pedido usa tu propia fotografía.">Sample transformations by Living Photos. Paintings and artwork are labeled; your order uses your own photograph.</p>
+    <p class="sec-note" data-en="Every piece here starts as a still photo, so the page stays fast and never slows down your browser. Want to see a photo come to life? Click the small LIVING photo under any piece to turn its motion on — tap STILL to rest it again. Or tap the big picture itself — or the enlarge button in its top-right corner — to see it maximized, living and full-screen." data-es="Cada pieza aquí empieza como una foto quieta, para que la página sea rápida y nunca frene tu navegador. ¿Quieres ver una foto cobrar vida? Toca la foto pequeña VIVA debajo de cualquier pieza para encender su movimiento — toca QUIETA para descansarla. O toca la foto grande — o el botón de ampliar en su esquina superior derecha — para verla maximizada, viva y en pantalla completa.">Every piece here starts as a still photo, so the page stays fast and never slows down your browser. Want to see a photo come to life? Click the small LIVING photo under any piece to turn its motion on — tap STILL to rest it again. Or tap the big picture itself — or the enlarge button in its top-right corner — to see it maximized, living and full-screen.</p>
+  </div>
+  <div class="goldrule"></div>
+  
+  <h2 class="cat-head" data-en="Living Ambience" data-es="Ambiente Vivo">Living Ambience</h2>
+
+<div class="exhibit">
+    <h3 data-en="New York at Nightfall" data-es="Nueva York al anochecer">New York at Nightfall</h3>
+    <p class="exhibit-cap" data-en="The harbor at nightfall — ferries crossing in opposite directions, lights coming up across the water, the city settling into its glow." data-es="El puerto al anochecer: ferris que se cruzan en direcciones opuestas, luces que se encienden sobre el agua y la ciudad que se acomoda en su resplandor.">The harbor at nightfall — ferries crossing in opposite directions, lights coming up across the water, the city settling into its glow.</p>
+    <div class="lp3" data-lp3>
+      <div class="ex-frame" style="aspect-ratio:1600/900"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+        <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
+        <iframe scrolling="no" data-live="https://newyorkatnightfall.lovable.app" title="Living Photo — New York at Nightfall, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/900"></iframe>
+        <img class="ph stage-still" src="img/opt-newyork.webp" alt="New York at Nightfall" hidden loading="lazy">
+      <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
+      <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="img/opt-newyork.webp" alt="New York at Nightfall" loading="lazy"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="img/opt-newyork.webp" alt="New York at Nightfall — the living photo" loading="lazy"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+    </div>
+  </div>
+
+<div class="exhibit">
+    <h3 data-en="The Cabin" data-es="La Cabaña">The Cabin</h3>
+    <p class="exhibit-cap" data-en="A painted valley with its waterfall — the little house above the falls, the afternoon going gold, then the windows warming as night comes on." data-es="Un valle pintado con su cascada: la casita sobre las cataratas, la tarde dorándose y luego las ventanas encendiéndose al caer la noche.">A painted valley with its waterfall — the little house above the falls, the afternoon going gold, then the windows warming as night comes on.</p>
+    <div class="lp3" data-lp3>
+      <div class="ex-frame" style="aspect-ratio:1600/1024"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+        <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
+        <iframe scrolling="no" data-live="https://futurereadycabin.lovable.app" title="Living Photo — The Cabin, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/1024"></iframe>
+        <img class="ph stage-still" src="img/opt-cabin.webp" alt="The Cabin" hidden loading="lazy">
+      <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
+      <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1600/1024"><img src="img/opt-cabin.webp" alt="The Cabin" loading="lazy"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1600/1024"><img src="img/opt-cabin.webp" alt="The Cabin — the living photo" loading="lazy"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+    </div>
+  </div>
+
+<div class="exhibit">
+    <h3 data-en="The Big View" data-es="La Gran Vista">The Big View</h3>
+    <p class="exhibit-cap" data-en="The whole crew, the screens, and the guitar — the room stays warm while the night outside builds to fireworks." data-es="Toda la pandilla, las pantallas y la guitarra: la habitación se mantiene cálida mientras la noche de afuera culmina en fuegos artificiales.">The whole crew, the screens, and the guitar — the room stays warm while the night outside builds to fireworks.</p>
+    <div class="lp3" data-lp3>
+      <div class="ex-frame" style="aspect-ratio:1600/900"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+        <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
+        <iframe scrolling="no" data-live="https://geemondc.github.io/big-view/?v=2#wall" title="Living Photo — The Big View, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/900"></iframe>
+        <img class="ph stage-still" src="img/opt-bigview.webp" alt="The Big View" hidden loading="lazy">
+      <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
+      <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="img/opt-bigview.webp" alt="The Big View" loading="lazy"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="img/opt-bigview.webp" alt="The Big View — the living photo" loading="lazy"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+    </div>
+  </div>
+
+<div class="exhibit">
+    <h3 data-en="The Snow Globe" data-es="La esfera de nieve">The Snow Globe</h3>
+    <p class="exhibit-cap" data-en="A whole winter village inside the glass &#8212; snow falling soft, every window lit, the tree glowing at the center of it all." data-es="Un pueblito de invierno dentro del cristal: la nieve cayendo suave, cada ventana encendida y el árbol brillando en el centro de todo.">A whole winter village inside the glass — snow falling soft, every window lit, the tree glowing at the center of it all.</p>
+    <div class="lp3" data-lp3>
+      <div class="ex-frame" style="aspect-ratio:1600/900"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+        <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
+        <iframe scrolling="no" data-live="https://futurereadysnowglobe.lovable.app" title="Living Photo — The Snow Globe, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/900"></iframe>
+        <img class="ph stage-still" src="img/opt-snowglobe.webp" alt="The Snow Globe" hidden loading="lazy">
+      <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
+      <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="img/opt-snowglobe.webp" alt="The Snow Globe" loading="lazy"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1600/900"><img src="img/opt-snowglobe.webp" alt="The Snow Globe — the living photo" loading="lazy"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+    </div>
+
+<div class="exhibit">
+    <h3 data-en="The Hammock" data-es="La Hamaca">The Hammock</h3>
+    <p class="exhibit-cap" data-en="A painted view from a hammock by the sea — leaves overhead, the water below, and the whole day passing over you: bright morning, golden sunset, and a night full of color." data-es="Una vista pintada desde una hamaca junto al mar: hojas arriba, el agua abajo y todo el día pasando sobre ti: mañana brillante, atardecer dorado y una noche llena de color.">A painted view from a hammock by the sea — leaves overhead, the water below, and the whole day passing over you: bright morning, golden sunset, and a night full of color.</p>
+    <div class="lp3 fit-b0f4a059" data-lp3>
+      <div class="ex-frame" style="aspect-ratio:1600/1200"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+        <span class="chip" data-en="Painting" data-es="Pintura">Painting</span>
+        <iframe scrolling="no" data-live="https://geemondc.github.io/hammock/#wallnb" title="Living Photo — The Hammock, playing" loading="eager" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/1200"></iframe>
+        <img class="ph stage-still" src="img/opt-hammock.webp" alt="The Hammock" hidden loading="lazy" decoding="async">
+      <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
+      <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1600/1200;--hk:url(img/opt-hammock.webp)"><img src="img/opt-hammock.webp" alt="The Hammock" loading="lazy" decoding="async"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1600/1200;--hk:url(img/opt-hammock-night.webp)"><img src="img/opt-hammock-night.webp" alt="The Hammock — the living photo" loading="lazy" decoding="async"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+    </div>
+  </div>
+
+  </section>
+
+<!-- ============ REAL PHOTOS ============ -->
+<section id="real-photos">
+  <div class="sec-head">
+    <h2 data-en="Real Photos, Brought to Life" data-es="Fotos reales que cobran vida">Real Photos, Brought to Life</h2>
+    <p data-en="These began as real photographs. The people in them stay exactly themselves — all we do is change the colors, the brightness and the shading." data-es="Estas empezaron como fotografías reales. Las personas se quedan exactamente como son: solo cambiamos los colores, el brillo y las sombras.">These began as real photographs. The people in them stay exactly themselves — all we do is change the colors, the brightness and the shading.</p>
+  </div>
+  <div class="goldrule"></div>
+
+<div class="exhibit">
+    <h3 data-en="Prom Night" data-es="Noche de graduación">Prom Night</h3>
+    <p class="exhibit-cap" data-en="A real photograph — one night, kept exactly as it was; only the light moves." data-es="Una fotografía real: una noche, guardada tal como fue; solo se mueve la luz.">A real photograph — one night, kept exactly as it was; only the light moves.</p>
+    <div class="lp3" data-lp3>
+      <div class="ex-frame" style="aspect-ratio:1515/1046"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+        <span class="chip living" data-en="Real photo" data-es="Foto real">Real photo</span>
+        <iframe scrolling="no" data-live="https://geemondc.github.io/prom-night/#wall" title="Living Photo — Prom Night, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1515/1046"></iframe>
+        <img class="ph stage-still" src="img/opt-prom.webp" alt="Prom Night" hidden loading="lazy" decoding="async">
+      <div class="frame-catch" data-fs-open data-catch-parked aria-hidden="true"></div></div>
+      <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span><span class="st st-still" data-en="STILL" data-es="QUIETA" hidden>STILL</span></div>
+      <div class="cmp-row"><button type="button" class="cmp-cell" data-put="still" aria-pressed="false"><span class="cmp-media" style="aspect-ratio:1515/1046"><img src="img/opt-prom.webp" alt="Prom Night" loading="lazy"></span><span class="cmp-tag" data-en="STILL" data-es="QUIETA">STILL</span></button><button type="button" class="cmp-cell on" data-put="living" aria-pressed="true"><span class="cmp-media" style="aspect-ratio:1515/1046"><img src="img/opt-prom-glow.webp" alt="Prom Night — the living photo" loading="lazy"></span><span class="cmp-tag living" data-en="LIVING" data-es="VIVA">LIVING</span></button></div>
+    </div>
+  </div>
+
+
+
+
+</section>
+
+<style>.theater-door{text-align:center;max-width:660px;margin:48px auto 6px}.theater-door h2{margin:24px 0 8px}.theater-door:not(.cards-door){max-width:840px;margin:56px auto 10px;padding:42px 46px 44px;background:linear-gradient(180deg,var(--paper),var(--ivory2));border:1px solid var(--gold-b);border-radius:20px;box-shadow:var(--shadow)}.theater-door:not(.cards-door) .goldrule{margin-top:0}.theater-door:not(.cards-door) h2{font-size:clamp(30px,5.4vw,44px);line-height:1.12;margin:18px 0 10px}.theater-door:not(.cards-door) p{font-size:17.5px;line-height:1.62;color:var(--ink2);max-width:660px;margin:0 auto}.theater-door:not(.cards-door) .cta-row{margin-top:26px}.theater-door:not(.cards-door) .cta-row .cta{height:auto;min-height:66px;font-size:22px;font-weight:800;letter-spacing:.02em;line-height:1.25;text-align:center;padding:20px 52px;border-width:2px;box-shadow:0 16px 36px rgba(9,63,68,.42)}@media (max-width:560px){.theater-door:not(.cards-door){padding:30px 20px 32px}.theater-door:not(.cards-door) .cta-row .cta{font-size:19px;padding:17px 24px;width:100%}}</style>
+<div class="theater-door">
+  <div class="goldrule"></div>
+  <h2 data-en="Step Into Our Theater" data-es="Entra a Nuestro Teatro">Step Into Our Theater</h2>
+  <p data-en="This page holds our select six, and the Wall walks you through eleven favorites — but the whole collection lives in the theater, kept up to date. Every living photo on one page would make this page too heavy and slow, so they live in their own room: step in, pick a poster, and it plays full-screen, like a movie." data-es="Esta página guarda nuestras seis selectas, y La Pared te lleva por once favoritas — pero toda la colección vive en el teatro, siempre al día. Todas las fotos vivas en una sola página harían esta página demasiado pesada y lenta, así que viven en su propia sala: entra, elige un póster y se reproduce en pantalla completa, como una película.">This page holds our select six, and the Wall walks you through eleven favorites — but the whole collection lives in the theater, kept up to date. Every living photo on one page would make this page too heavy and slow, so they live in their own room: step in, pick a poster, and it plays full-screen, like a movie.</p>
+  <div class="cta-row"><a class="cta teal" href="theater.html" data-en="Enter the Theater" data-es="Entra al Teatro">Enter the Theater</a></div>
+</div>
+
+<p class="exhibit-cap" style="margin-top:36px"><span data-en="Want a scene we haven't made yet? " data-es="¿Quieres una escena que aún no hemos hecho? ">Want a scene we haven't made yet? </span><a href="mailto:geemondc@gmail.com" data-en="Email us" data-es="Escríbenos">Email us</a><span data-en=" your idea." data-es=" tu idea por correo."> your idea.</span></p>
+
+
+<!-- ============ DO IT YOURSELF ============ -->
+<section id="diy">
+  <div class="sec-head">
+    <img class="gimg" src="img/p-5b36be1f80.webp" alt="Adriana, your guide" loading="lazy" decoding="async">
+    <h2 data-en="How we do it — so you can, too" data-es="Cómo lo hacemos — para que tú también puedas">How we do it — so you can, too</h2>
+    <p data-en="We don't keep secrets. A living photo is a photo you already love, with its light brought to life. Here's our whole recipe — take it and make your own." data-es="No guardamos secretos. Una foto viva es una foto que ya amas, con su luz traída a la vida. Aquí está toda nuestra receta — tómala y haz la tuya.">We don't keep secrets. A living photo is a photo you already love, with its light brought to life. Here's our whole recipe — take it and make your own.</p>
+    <p data-en="It's old art tricks — color, light, and patience. Nothing fancy." data-es="Son trucos de arte de siempre: color, luz y paciencia. Nada complicado.">It's old art tricks — color, light, and patience. Nothing fancy.</p>
+  </div>
+  <div class="goldrule"></div>
+  <div class="demo2" id="demo">
+      <div class="demo2-head">
+        <h3 data-en="Watch one photo come alive" data-es="Mira cómo una foto cobra vida">Watch one photo come alive</h3>
+        <p data-en="This is our corner of the world — one photo of home, three moments hiding inside it, then alive." data-es="Este es nuestro rincón del mundo: una foto de casa, tres momentos escondidos en ella, y luego cobra vida.">This is our corner of the world — one photo of home, three moments hiding inside it, then alive.</p>
+      </div>
+      <div class="demo2-stage" id="demo2Stage">
+        <div class="demo2-layer on" id="demo2Layer1"><img src="img/p-636b5bfefe.gif" alt="Chilling at Home — the original photo, golden hour" data-dup="2" loading="lazy" decoding="async"></div>
+        <div class="demo2-layer" id="demo2Layer2">
+          <div class="demo2-tri-stack">
+            <figure class="demo2-mfig"><img src="img/p-636b5bfefe.gif" alt="Day — Chilling at Home, golden hour" data-dup="2" loading="lazy" decoding="async"><figcaption><span data-en="Day" data-es="Día">Day</span></figcaption></figure>
+            <figure class="demo2-mfig"><img src="img/p-636b5bfefe.gif" alt="Sunset — the same photo in golden-hour light" data-dup="2" loading="lazy" decoding="async"><figcaption><span data-en="Sunset" data-es="Atardecer">Sunset</span></figcaption></figure>
+            <figure class="demo2-mfig"><img src="img/p-636b5bfefe.gif" alt="Night — the same photo at neon night" data-dup="3" loading="lazy" decoding="async"><figcaption><span data-en="Night" data-es="Noche">Night</span></figcaption></figure>
+          </div>
+        </div>
+        <div class="demo2-layer" id="demo2Layer3"></div>
+      </div>
+      <div class="demo2-guide" aria-hidden="true">
+        <img class="on" data-g="1" src="img/p-9e6870e8d7.webp" alt="" loading="lazy" decoding="async">
+        <img data-g="2" src="img/p-d512b7ce4d.webp" alt="" loading="lazy" decoding="async">
+        <img data-g="3" src="img/p-6ffed00fc4.webp" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="demo2-steps">
+        <button class="demo2-step on" type="button" data-step="1"><span class="demo2-n">1</span><span data-en="Your photo" data-es="Tu foto">Your photo</span></button>
+        <button class="demo2-step" type="button" data-step="2"><span class="demo2-n">2</span><span data-en="Three moments" data-es="Tres momentos">Three moments</span></button>
+        <button class="demo2-step" type="button" data-step="3"><span class="demo2-n">3</span><span data-en="It comes alive" data-es="Cobra vida">It comes alive</span></button>
+        <button class="demo2-pause" id="demo2Pause" type="button" aria-pressed="false">⏸ <span>Pause</span></button>
+      </div>
+      <p class="demo2-cap" id="demo2Cap" data-en="It starts as one photo — yours. Nothing added, nothing faked." data-es="Empieza como una sola foto: la tuya. Nada añadido, nada fingido.">It starts as one photo — yours. Nothing added, nothing faked.</p>
+      <p class="demo2-magic" data-en="All we do is change the colors, the brightness and the shading. It's like magic — but it's not magic." data-es="Todo lo que hacemos es cambiar los colores, el brillo y las sombras. Parece magia — pero no es magia.">All we do is change the colors, the brightness and the shading. It's like magic — but it's not magic.</p>
+      <div class="demo2-honest">
+        <img src="img/p-b77a2001d2.webp" alt="Adriana flipping a little book whose pages are the same picture in day, sunset and night light" loading="lazy" decoding="async">
+        <p data-en="That's all we're doing — like flipping the pages of a little book: the same picture, its light changing a little each time, and it moves. Anyone can do it. But it takes time — you ask the AI, it makes mistakes, you do it again, and that costs money. Most people don't want to do all that. So we do it for them. That's the service." data-es="Eso es todo lo que hacemos: como pasar las páginas de un librito — la misma foto, su luz cambiando un poquito cada vez, y se mueve. Cualquiera puede hacerlo. Pero toma tiempo: le pides a la IA, comete errores, lo haces de nuevo, y eso cuesta dinero. La mayoría no quiere hacer todo eso. Por eso lo hacemos por ellos. Ese es el servicio.">That's all we're doing — like flipping the pages of a little book: the same picture, its light changing a little each time, and it moves. Anyone can do it. But it takes time — you ask the AI, it makes mistakes, you do it again, and that costs money. Most people don't want to do all that. So we do it for them. That's the service.</p>
+      </div>
+    </div>
+    <style>
+    .demo2{margin:6px 0 26px}
+    .demo2-head h3{font-family:var(--display);font-size:clamp(24px,6vw,34px);color:#2e2013;text-align:center;margin:0 0 8px}
+    .demo2-head p{font-family:var(--serif);font-style:italic;font-size:17px;color:#5a4632;text-align:center;max-width:560px;margin:0 auto 16px;line-height:1.5}
+    .demo2-stage{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(244,201,93,.45);box-shadow:0 18px 50px rgba(0,0,0,.5);background:#0a0f24;transition:box-shadow .8s}
+    .demo2-stage.glow{box-shadow:0 0 0 2px rgba(244,201,93,.7),0 0 44px rgba(244,201,93,.45),0 18px 50px rgba(0,0,0,.5)}
+    .demo2-layer{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;pointer-events:none}
+    .demo2-layer.on{opacity:1;pointer-events:auto}
+    .demo2-layer img{width:100%;height:100%;object-fit:cover;display:block}
+    .demo2-layer iframe{width:100%;height:100%;border:0;display:block}
+    .demo2-tri{display:grid;grid-template-columns:1fr 1fr 1fr;height:100%}
+    .demo2-tri figure{margin:0;position:relative;overflow:hidden}
+    .demo2-tri figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 4px 7px;text-align:center;font-family:var(--display);font-size:13px;letter-spacing:.06em;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.65))}
+    .demo2-steps{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+    .demo2-pause{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.55);border:1px solid rgba(90,64,32,.35);color:#5a4632;border-radius:999px;padding:9px 16px;font-family:var(--serif);font-size:15.5px;cursor:pointer;transition:all .3s}
+    .demo2-pause.on{border-color:#b98a1d;background:rgba(244,201,93,.28);color:#2e2013}
+    .demo2-step{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.55);border:1px solid rgba(90,64,32,.35);color:#5a4632;border-radius:999px;padding:9px 16px 9px 9px;font-family:var(--serif);font-size:15.5px;cursor:pointer;transition:all .3s}
+    .demo2-step .demo2-n{width:26px;height:26px;border-radius:50%;background:rgba(90,64,32,.14);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:14px;color:#5a4632}
+    .demo2-step.on{border-color:#b98a1d;color:#2e2013;background:rgba(244,201,93,.28)}
+    .demo2-step.on .demo2-n{background:var(--gold);color:#231a06}
+    .demo2-cap{text-align:center;font-family:var(--serif);font-style:italic;font-size:16.5px;color:#4c3a26;min-height:48px;margin:12px auto 0;max-width:560px;line-height:1.45}
+    .demo2-guide{position:relative;aspect-ratio:2.2/1;margin-top:12px;border-radius:14px;overflow:hidden;border:1px solid rgba(185,138,29,.5);box-shadow:0 10px 26px rgba(60,40,10,.22);background:#f3e8cf}
+    .demo2-guide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;opacity:0;transition:opacity .9s ease}
+    .demo2-guide img.on{opacity:1}
+    .demo2-stage.windows{aspect-ratio:auto;background:transparent;border-color:transparent;box-shadow:none;overflow:visible}
+    .demo2-stage.windows #demo2Layer2{position:relative;inset:auto}
+    .demo2-tri-stack{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+    .demo2-mfig{margin:0;background:#fffdf6;padding:7px 7px 0;border:1px solid #d8c391;border-radius:6px;box-shadow:0 14px 28px rgba(59,42,18,.28)}
+    .demo2-mfig img{display:block;width:100%;height:auto;border-radius:3px}
+    .demo2-mfig figcaption{display:block;text-align:center;color:#2b2118;font-family:var(--display);font-size:13px;letter-spacing:.08em;padding:7px 0 8px}
+    .demo2-magic{text-align:center;font-family:var(--display);font-size:19.5px;color:var(--ink);margin:18px auto 0;max-width:580px;line-height:1.5}
+    .demo2-honest{display:grid;grid-template-columns:1fr;gap:14px;align-items:center;margin-top:18px;background:rgba(120,84,30,.06);border:1px solid rgba(90,64,32,.22);border-radius:18px;padding:16px}
+    .demo2-honest img{width:100%;border-radius:12px;display:block}
+    .demo2-honest p{font-size:16.5px;line-height:1.6;color:#3d2d1b;margin:0}
+    @media(min-width:700px){.demo2-honest{grid-template-columns:300px 1fr}}
+    </style>
+    <script>
+    (function(){
+      var CAPS = {
+        1: { en: "It starts as one photo \u2014 yours. Nothing added, nothing faked.",
+             es: "Empieza como una sola foto: la tuya. Nada a\u00f1adido, nada fingido." },
+        2: { en: "We find the moments hiding inside it \u2014 the day, the sunset, the night it already holds.",
+             es: "Encontramos los momentos que ya guarda: el d\u00eda, el atardecer, la noche." },
+        3: { en: "Then the moments melt into each other, the sky changes, the name lights up \u2014 and it never stops moving.",
+             es: "Luego los momentos se funden entre s\u00ed, el cielo cambia, el nombre se ilumina\u2026 y nunca deja de moverse." }
+      };
+      var cur = 1, timer = null, loaded = false, inView = false, paused = false;
+      var capEl = document.getElementById('demo2Cap');
+      function setCap(n){
+        capEl.setAttribute('data-en', CAPS[n].en);
+        capEl.setAttribute('data-es', CAPS[n].es);
+        capEl.textContent = CAPS[n][(typeof lang !== 'undefined' ? lang : 'en')];
+      }
+      var stageEl2 = document.querySelector('.demo2-stage');
+      function show(n){
+        cur = n;
+        if (stageEl2) stageEl2.classList.toggle('windows', n === 2);
+        [1,2,3].forEach(function(i){
+          document.getElementById('demo2Layer' + i).classList.toggle('on', i === n);
+        });
+        document.querySelectorAll('.demo2-step').forEach(function(b){
+          b.classList.toggle('on', +b.getAttribute('data-step') === n);
+        });
+        document.querySelectorAll('.demo2-guide img').forEach(function(g){
+          g.classList.toggle('on', +g.getAttribute('data-g') === n);
+        });
+        document.getElementById('demo2Stage').classList.toggle('glow', n === 3);
+        if (n === 3 && !loaded){
+          loaded = true;
+          var f = document.createElement('iframe');
+          f.src = 'https://chillingathome.lovable.app';
+          f.title = 'Chilling at Home — the living photo';
+          f.setAttribute('scrolling', 'no');
+          f.style.pointerEvents = 'none';
+          document.getElementById('demo2Layer3').appendChild(f);
+        }
+        setCap(n); setPauseLabel();
+      }
+      function cycle(){ show(cur % 3 + 1); }
+      function restart(){ clearInterval(timer); timer = null; if (inView && !paused) timer = setInterval(cycle, 4200); }
+      var pauseBtn = document.getElementById('demo2Pause');
+      function setPauseLabel(){ if (!pauseBtn) return; var L = (typeof lang !== 'undefined' ? lang : 'en'); pauseBtn.querySelector('span').textContent = paused ? (L === 'es' ? 'Seguir' : 'Play') : (L === 'es' ? 'Pausa' : 'Pause'); pauseBtn.setAttribute('aria-pressed', paused ? 'true' : 'false'); pauseBtn.classList.toggle('on', paused); }
+      function setPaused(v){ paused = v; if (paused){ clearInterval(timer); timer = null; } else { restart(); } setPauseLabel(); }
+      if (pauseBtn) pauseBtn.addEventListener('click', function(){ setPaused(!paused); });
+      document.querySelectorAll('.demo2-step').forEach(function(b){
+        b.addEventListener('click', function(){ var n = +b.getAttribute('data-step'); if (n === cur){ setPaused(!paused); } else { show(n); restart(); } });
+      });
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          inView = e.isIntersecting;
+          if (inView && !timer && !paused) timer = setInterval(cycle, 4200);
+          if (!inView && timer){ clearInterval(timer); timer = null; }
+        });
+      }, {threshold: .35});
+      io.observe(document.getElementById('demo'));
+      show(1);
+    })();
+    </script>
+    <div class="diy-live"><div class="diy-frame" data-fs-still="img/diy-fs-still.webp"><iframe scrolling="no" data-live="https://futurereadyafterdinner.lovable.app" title="Living Photo — After the Feast, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><div class="frame-catch" data-fs-open aria-hidden="true"></div></div><p class="diy-cap" data-en="After the Feast — one of ours, made with this very recipe." data-es="Después de la cena: una de las nuestras, hecha con esta misma receta.">After the Feast — one of ours, made with this very recipe.</p></div>
+  <div class="scard" style="max-width:660px;margin:32px auto 0">
+    <div class="osteps" style="margin-top:0">
+      <div class="ostep"><span class="on">1</span><span data-en="Start with a photo you already love." data-es="Empieza con una foto que ya amas.">Start with a photo you already love.</span><img class="ostep-g" src="img/p-69c6a5da01.webp" alt="Adriana shows this step" loading="lazy" decoding="async"></div>
+      <div class="ostep"><span class="on">2</span><span data-en="Never repaint the people. They stay exactly as they are — only the light moves." data-es="Nunca repintes a las personas. Quedan exactamente como están — solo se mueve la luz.">Never repaint the people. They stay exactly as they are — only the light moves.</span><img class="ostep-g" src="img/p-2920087a1a.webp" alt="Adriana shows this step" loading="lazy" decoding="async"></div>
+      <div class="ostep"><span class="on">3</span><span data-en="Ask the light to perform: day easing into night, a glow growing, reflections waking up. (An AI builder like Lovable does this part with you.)" data-es="Pide a la luz que actúe: el día que se vuelve noche, un brillo que crece, reflejos que despiertan. (Un creador con IA como Lovable hace esta parte contigo.)">Ask the light to perform: day easing into night, a glow growing, reflections waking up. (An AI builder like Lovable does this part with you.)</span><img class="ostep-g" src="img/p-d1e34b80a3.webp" alt="Adriana shows this step" loading="lazy" decoding="async"></div>
+      <div class="ostep"><span class="on">4</span><span data-en="Make it loop — the end melts back into the beginning, so it can live on a screen forever." data-es="Haz que se repita — el final se funde con el principio, para que viva en una pantalla para siempre.">Make it loop — the end melts back into the beginning, so it can live on a screen forever.</span><img class="ostep-g" src="img/p-3b56ee0ad2.webp" alt="Adriana shows this step" loading="lazy" decoding="async"></div>
+      <div class="ostep"><span class="on">5</span><span data-en="Always keep the original beside it. The difference is the whole point." data-es="Guarda siempre la original al lado. La diferencia es todo el punto.">Always keep the original beside it. The difference is the whole point.</span><img class="ostep-g" src="img/p-f7edbd02bc.webp" alt="Adriana shows this step" loading="lazy" decoding="async"></div>
+    </div>
+    <p style="margin-top:22px;text-align:center;font-style:italic;color:var(--ink2);font-size:16px;line-height:1.55" data-en="That's it. Go brighten a photo — and someone's day." data-es="Eso es todo. Ve a darle luz a una foto — y al día de alguien.">That's it. Go brighten a photo — and someone's day.</p>
+  </div>
+</section>
+
+<!-- ============ DO IT WITH US ============ -->
+<section id="withus">
+  <div class="sec-head">
+    <h2 data-en="Do it with us" data-es="Hazlo con nosotros">Do it with us</h2>
+    <p data-en="Living Photos is bigger as a group project. Join our Discord and create alongside us — we're brightening photos, and days, together. New makers welcome; bring one photo you love. In our kitchen it's finance during the week and games on the weekends — and building with AI together, the way you see on this page." data-es="Living Photos crece cuando es un proyecto en grupo. Únete a nuestro Discord y crea junto a nosotros — estamos dándole luz a fotos, y a días, juntos. Nuevos creadores bienvenidos; trae una foto que amas. En nuestra cocina es finanzas entre semana y juegos los fines de semana — y construir con IA juntos, como ves en esta página.">Living Photos is bigger as a group project. Join our Discord and create alongside us — we're brightening photos, and days, together. New makers welcome; bring one photo you love. In our kitchen it's finance during the week and games on the weekends — and building with AI together, the way you see on this page.</p>
+  </div>
+  <div class="goldrule"></div>
+  <img class="crew-scene" src="img/p-28eeba1b2c.jpg" alt="The Living Photos crew — the whole gang around the table, holding up their glowing photos" loading="lazy" decoding="async">
+  <div class="mission-cta">
+    <a class="bigbtn teal" href="https://buy.stripe.com/7sY8wP7creLRgdR3Xcbsc09" target="_blank" rel="noopener"><span data-en="Join the Discord — $10" data-es="Únete al Discord — $10">Join the Discord — $10</span></a>
+  </div>
+  <p style="margin:24px auto 0;max-width:560px;text-align:center;font-style:italic;font-size:16.5px;line-height:1.55;color:var(--teal-d)" data-en="Our dream: teach kids this craft, so they can create — and raise money for their schools and local businesses." data-es="Nuestro sueño: enseñar este arte a los niños, para que puedan crear — y recaudar fondos para sus escuelas y negocios locales.">Our dream: teach kids this craft, so they can create — and raise money for their schools and local businesses.</p>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story">
+  <div class="sec-head">
+    <img class="gimg" src="img/p-2595d34420.webp" alt="Adriana, your guide" loading="lazy" decoding="async">
+    <h2 data-en="The Short Story" data-es="La historia corta">The Short Story</h2>
+  </div>
+  <div class="goldrule"></div>
+  <div class="story-grid">
+    <div class="scard"><h3 data-en="Who it's for" data-es="Para quién es">Who it's for</h3><div class="mini-stage"><img class="base" src="img/p-4d91ac0ae8.webp" alt="Adriana and the camera roll — a photo sitting flat, waiting" loading="lazy" decoding="async"></div>
+      <p data-en="Anyone with a photo they love — the family, the trip, the night that mattered — sitting flat in a camera roll." data-es="Cualquiera que tenga una foto que ama — la familia, el viaje, la noche que importó — guardada y plana en el carrete de su teléfono.">Anyone with a photo they love — the family, the trip, the night that mattered — sitting flat in a camera roll.</p></div>
+    <div class="scard"><h3 data-en="What it's for" data-es="Para qué es">What it's for</h3><div class="mini-stage" data-mini="app"><img class="base" src="img/p-01c14b6c90.jpg" alt="The Welcome, alive at night" loading="lazy" decoding="async"><iframe scrolling="no" data-live="https://futurereadywelcome.lovable.app" title="Living Photo — The Welcome, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div><div class="mini-toggle"><button type="button" class="on" data-m="still" data-en="STILL" data-es="QUIETA">STILL</button><button type="button" data-m="living" data-en="LIVING" data-es="VIVA">LIVING</button></div>
+      <p data-en="Turning that one photo into a living page: its colors deepen, its light travels from day toward night, and it becomes a page you can open and share." data-es="Convertir esa foto en una página viva: sus colores se intensifican, su luz viaja del día hacia la noche, y se convierte en una página que puedes abrir y compartir.">Turning that one photo into a living page: its colors deepen, its light travels from day toward night, and it becomes a page you can open and share.</p></div>
+    <div class="scard"><img class="panel-art" src="img/p-5b57c4ef88.webp" alt="Adriana holding a photo that is losing its color" loading="lazy" decoding="async"><h3 data-en="What's the problem?" data-es="¿Cuál es el problema?">What's the problem?</h3>
+      <p data-en="A photo freezes one second and then just sits there. The colors you remember — the gold of that evening, the glow of that night — fade a little more every time you scroll past." data-es="Una foto congela un segundo y después solo se queda ahí. Los colores que recuerdas — el dorado de esa tarde, el brillo de esa noche — se apagan un poco más cada vez que pasas de largo.">A photo freezes one second and then just sits there. The colors you remember — the gold of that evening, the glow of that night — fade a little more every time you scroll past.</p></div>
+    <div class="scard"><img class="panel-art" src="img/p-6265e744d2.webp" alt="Adriana at her easel, painting a photo back to life" loading="lazy" decoding="async"><h3 data-en="Can you fix it?" data-es="¿Tiene arreglo?">Can you fix it?</h3>
+      <p data-en="Usually, yes — if a photo has good light and color in it, there's a lot to bring out, and we do it by hand. Not every photo takes the treatment equally well." data-es="Normalmente sí: si una foto tiene buena luz y color, hay mucho que resaltar, y lo hacemos a mano. No todas las fotos aceptan el tratamiento igual.">Usually, yes — if a photo has good light and color in it, there's a lot to bring out, and we do it by hand. Not every photo takes the treatment equally well.</p></div>
+    <div class="scard"><img class="panel-art" src="img/p-824b75a579.webp" alt="Adriana at a market stall, checking the price of a framed photo" loading="lazy" decoding="async"><h3 data-en="How much does it cost?" data-es="¿Cuánto cuesta?">How much does it cost?</h3>
+      <p data-en="Learning it is free — the recipe is on this page. Having us make yours: $5 for one photo — or $10 for three: buy two, get one free." data-es="Aprenderlo es gratis — la receta está en esta página. Que lo hagamos por ti: $5 por una foto — o $10 por tres: compras dos y la tercera va por la casa.">Learning it is free — the recipe is on this page. Having us make yours: $5 for one photo — or $10 for three: buy two, get one free.</p></div>
+    
+  </div>
+</section>
+
+<!-- ============ SEND A LIVING CARD ============ -->
+<style>
+.lc-form{max-width:640px;margin:26px auto 0;text-align:left}
+.lc-label{font-weight:700;font-size:17px;margin:22px 0 10px;color:var(--ink)}
+.lc-scenes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lc-scenes:has(> .lc-scene:only-child){grid-template-columns:minmax(0,430px);justify-content:center}
+.lc-scene{border:2px solid var(--gold-b);background:#fff;border-radius:14px;padding:14px 16px;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink)}
+.lc-scene.on{border-color:var(--teal);background:#eef6f5;box-shadow:0 4px 14px rgba(20,90,85,.14)}
+.lc-scene img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:9px;display:block;margin-bottom:9px}
+.lc-scene-t{display:block;font-weight:700;font-size:16.5px}
+.lc-scene-s{display:block;font-size:14.5px;color:var(--ink2);margin-top:3px}
+.lc-field{display:block;margin:12px 0}
+.lc-field>span{display:block;font-weight:600;font-size:15.5px;margin-bottom:6px}
+.lc-field input{width:100%;padding:13px 14px;font-size:16.5px;font-family:inherit;border:1.5px solid var(--gold-b);border-radius:12px;background:#fff;color:var(--ink)}
+.lc-field.bad input{border-color:#c0392b;background:#fdf1f0}
+.lc-make{margin-top:16px;width:100%}
+.lc-result{margin-top:24px}
+.lc-linkrow{word-break:break-all;text-align:center;margin:14px 0 4px;font-size:15px}
+.lc-share{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}
+.lc-copied{text-align:center;color:var(--teal);font-weight:700;margin-top:12px}
+.lc-sample{text-align:center;margin-top:20px}
+@media (max-width:560px){.lc-scenes{grid-template-columns:1fr}.lc-scenes:has(> .lc-scene:only-child){grid-template-columns:minmax(0,430px)}}
+</style>
+<section id="sendcard">
+  <div class="sec-head">
+    <h2 data-en="We also make Living Cards" data-es="Tambi&#233;n hacemos Tarjetas Vivas">We also make Living Cards</h2>
+    <p data-en="A Living Card is a little living scene that arrives inside an envelope. Here&#8217;s how it works: pick an envelope, pick a card, then write just three things &#8212; who it&#8217;s for, one line from you, and your name. We make the card and give you a link, and you send it to your person. They tap the envelope, it opens, and your card comes alive with your words in the middle." data-es="Una Tarjeta Viva es una peque&#241;a escena viva que llega dentro de un sobre. As&#237; funciona: elige un sobre, elige una tarjeta y escribe solo tres cosas: para qui&#233;n es, una l&#237;nea tuya y tu nombre. Hacemos la tarjeta y te damos un enlace para que se la env&#237;es a tu persona. Ella toca el sobre, se abre, y tu tarjeta cobra vida con tus palabras en el centro.">A Living Card is a little living scene that arrives inside an envelope. Here&#8217;s how it works: pick an envelope, pick a card, then write just three things &#8212; who it&#8217;s for, one line from you, and your name. We make the card and give you a link, and you send it to your person. They tap the envelope, it opens, and your card comes alive with your words in the middle.</p>
+    <p data-en="Cards are $1 each &#8212; 5 for $3, 10 for $5. Your first card is free: the Emerald, our best one." data-es="Las tarjetas cuestan $1 cada una: 5 por $3, 10 por $5. Tu primera tarjeta es gratis: la Emerald, la mejor de todas.">Cards are $1 each &#8212; 5 for $3, 10 for $5. Your first card is free: the Emerald, our best one.</p>
+  </div>
+  <div class="goldrule"></div>
+  <style id="sendcard1113">
+  .sc-boxes .lc-sample-big{margin-top:16px}
+  .sc-fine{display:block;margin-top:10px;font-size:.84em;line-height:1.5;opacity:.88}
+  </style>
+  <div class="pitch sc-boxes">
+    <figure class="pitch-panel">
+      <img class="pitch-pic" src="img/opt-sharing.webp" alt="All eight friends together &#8212; Braids holds a sealed envelope, and Pink holds one open with a glowing card inside" loading="lazy">
+      <figcaption><span class="pitch-name" data-en="Your first card is free &#8212; the Emerald, our best one." data-es="Tu primera tarjeta es gratis &#8212; la Emerald, la mejor de todas.">Your first card is free &#8212; the Emerald, our best one.</span> <span data-en="Open it on the cards page, write your words there, and send it." data-es="&#193;brela en la p&#225;gina de tarjetas, escribe tus palabras all&#237; y env&#237;ala.">Open it on the cards page, write your words there, and send it.</span><span class="sc-fine" data-en="First Class cards are $1.50 each and aren&#8217;t part of the bundles. This one is on us." data-es="Las tarjetas First Class cuestan $1.50 cada una y no forman parte de los paquetes. Esta va por la casa.">First Class cards are $1.50 each and aren&#8217;t part of the bundles. This one is on us.</span><p class="lc-sample-big"><a class="cta teal" href="https://geemondc.github.io/living-cards-site/emerald.html" target="_blank" rel="noopener" data-en="Take a look at your free Emerald card" data-es="Mira tu tarjeta Emerald gratis">Take a look at your free Emerald card</a></p></figcaption>
+    </figure>
+    <figure class="pitch-panel">
+      <img class="pitch-pic" src="img/opt-walkwall.webp" alt="The friends on the move &#8212; Braids carries a sealed envelope, Teal a glowing card, Puff a little note" loading="lazy">
+      <figcaption><span data-en="Every card lives inside its envelope &#8212; pick the pair you love." data-es="Cada tarjeta vive dentro de su sobre: elige la pareja que m&#225;s te guste.">Every card lives inside its envelope &#8212; pick the pair you love.</span><p class="lc-sample-big"><a class="cta ghost" href="https://thelivingphotos.com/envelopes.html" target="_blank" rel="noopener" data-en="See all the envelopes &amp; cards &#8594;" data-es="Mira todos los sobres y tarjetas &#8594;">See all the envelopes &amp; cards &#8594;</a></p></figcaption>
+    </figure>
+  </div>
+
+  <div class="yt-box">
+    <div class="yt-lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <p class="yt-box-line" data-en="Subscribe to our YouTube and learn more about us — and how Future Ready originated." data-es="Suscríbete a nuestro YouTube y conoce más de nosotros, y cómo nació Future Ready.">Subscribe to our YouTube and learn more about us — and how Future Ready originated.</p>
+    <a class="yt-box-btn" href="https://www.youtube.com/@geemondc?sub_confirmation=1" target="_blank" rel="noopener" data-en="Subscribe to our YouTube channel" data-es="Suscr&#237;bete a nuestro canal de YouTube">Subscribe to our YouTube channel</a>
+  </div>
+</section>
+<script>
+(function(){
+  var CARD = 'https://geemondc.github.io/living-card-sample/';
+  var scene = 'biglove';
+  var sceneBtns = document.querySelectorAll('.lc-scene');
+  sceneBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      sceneBtns.forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
+      b.classList.add('on'); b.setAttribute('aria-pressed','true');
+      scene = b.getAttribute('data-scene') || 'biglove';
+    });
+  });
+  function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  document.getElementById('lcMake')&&document.getElementById('lcMake').addEventListener('click', function(){
+    var to = val('lcTo'), from = val('lcFrom'), line = val('lcLine'), ok = true;
+    [['lcTo', to], ['lcFrom', from]].forEach(function(pair){
+      var f = document.getElementById(pair[0]).closest('.lc-field');
+      if (f){ if (!pair[1]){ f.classList.add('bad'); ok = false; } else { f.classList.remove('bad'); } }
+    });
+    if (!ok) return;
+    var url = CARD + '?to=' + encodeURIComponent(to) + '&from=' + encodeURIComponent(from) +
+      (line ? '&line=' + encodeURIComponent(line) : '') + '&scene=' + scene;
+    var res = document.getElementById('lcResult');
+    res.hidden = false;
+    document.getElementById('lcPreview').src = url;
+    var link = document.getElementById('lcLink');
+    link.href = url; link.textContent = url;
+    var enc = encodeURIComponent(url);
+    document.getElementById('lcSms').href = 'sms:?&body=' + enc;
+    document.getElementById('lcWa').href = 'https://wa.me/?text=' + enc;
+    document.getElementById('lcMail').href = 'mailto:?subject=' + encodeURIComponent('A Living Card for ' + to) + '&body=' + enc;
+    document.getElementById('lcCopied').hidden = true;
+    if (res.scrollIntoView) res.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+  document.getElementById('lcCopy')&&document.getElementById('lcCopy').addEventListener('click', function(){
+    var url = document.getElementById('lcLink').href;
+    function done(){ document.getElementById('lcCopied').hidden = false; }
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done, done); }
+    else {
+      var ta = document.createElement('textarea');
+      ta.value = url; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta); done();
+    }
+  });
+})();
+</script>
+
+
+<section id="more">
+  <div class="sec-head"><h2 data-en="Come see more of our stuff" data-es="Ven a ver más de lo nuestro">Come see more of our stuff</h2></div>
+  <div class="goldrule"></div>
+  <div class="lp3" data-lp3 data-default="living" style="max-width:880px;margin:22px auto 0">
+    <div class="ex-frame" style="aspect-ratio:1600/1067;border-radius:18px;overflow:hidden;border:2px solid var(--gold);box-shadow:0 10px 34px rgba(90,60,10,.18);background:#0a0705 url(img/opt-maproom.webp) center/cover no-repeat"><button type="button" class="fs-corner" data-fs-open aria-label="Full screen">&#9974;</button><div class="lp-load" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div>
+      <iframe scrolling="no" data-live="https://geemondc.github.io/map-room/#embed" title="Living Photo — The GeeVerse Map Room, playing" loading="lazy" allow="autoplay; fullscreen" allowfullscreen style="aspect-ratio:1600/1067"></iframe>
+      <div class="frame-catch" data-fs-open aria-hidden="true"></div>
+    </div>
+    <div class="stage-title"><span class="st st-living" data-en="LIVING" data-es="VIVA">LIVING</span></div>
+    <div class="cat-box">
+    <div class="yt-lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <p class="cat-box-title" data-en="Come see all of our projects" data-es="Ven a ver todos nuestros proyectos">Come see all of our projects</p>
+    <p class="cat-box-line" data-en="This store is one room in a much bigger house — our Future Ready Catalog. Games, investing tools, living photos and cards, and more categories growing all the time. We're learning together, and there's always something new." data-es="Esta tienda es un solo cuarto en una casa mucho más grande: nuestro Catálogo Future Ready. Juegos, herramientas de inversión, fotos vivas y tarjetas, y más categorías que crecen todo el tiempo. Estamos aprendiendo juntos, y siempre hay algo nuevo.">This store is one room in a much bigger house — our Future Ready Catalog. Games, investing tools, living photos and cards, and more categories growing all the time. We're learning together, and there's always something new.</p>
+    <p class="cat-box-crew" data-en="Our group is a bunch of different trades — traders, a doctor, photo editors, builders and teachers — each of us learning from the others." data-es="Nuestro grupo reúne muchos oficios distintos: operadores de bolsa, un médico, editores de fotos, constructores y maestros, cada uno aprendiendo de los demás.">Our group is a bunch of different trades — traders, a doctor, photo editors, builders and teachers — each of us learning from the others.</p>
+    <a class="cat-box-btn" href="https://geemondc.github.io/future-ready-hub" data-en="See the Future Ready Catalog →" data-es="Ver el Catálogo Future Ready →">See the Future Ready Catalog →</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p class="fl" data-en="Living Photos by Future Ready — the same photo you love, richer in color and light." data-es="Fotos Vivas de Future Ready: la misma foto que amas, con más color y más luz.">Living Photos by Future Ready — the same photo you love, richer in color and light.</p>
+  <p class="fl"><span data-en="Questions?" data-es="¿Preguntas?">Questions?</span> <a href="mailto:geemondc@gmail.com" style="color:inherit;text-decoration:underline" data-en="Email us" data-es="Escríbenos">Email us</a></p>
+  <a class="mark" href="https://ready-launch-hub.lovable.app" target="_blank" rel="noopener"><span class="star">✦</span> FUTURE READY</a>
+</footer>
+
+</div>
+
+<!-- ============ THE WALL ============ -->
+<div class="wall" id="wall" hidden aria-hidden="true">
+  <div class="wall-face wall-cardface" id="wallPreface">
+    <div class="wall-card">
+      <img class="gimg" src="img/p-636b5bfefe.gif" alt="Adriana, your guide" data-dup="1" loading="lazy" decoding="async">
+      <p class="kicker" data-en="✦ The Wall" data-es="✦ La Pared">✦ The Wall</p>
+      <h2 data-en="A little museum of living photos" data-es="Un pequeño museo de fotos vivas">A little museum of living photos</h2>
+      <div class="rule"></div>
+      <p data-en="Every photo on the Wall fills the whole screen — the way one would live on your desktop or your TV: glowing, unhurried, asking nothing of you." data-es="Cada foto de La Pared llena toda la pantalla, como viviría una en tu escritorio o en tu televisor: brillando, sin prisa, sin pedirte nada.">Every photo on the Wall fills the whole screen — the way one would live on your desktop or your TV: glowing, unhurried, asking nothing of you.</p>
+      <p data-en="Give each one a little time — thirty seconds to a minute is when you really see it. Tap or click anywhere for the next one, and tap the ♥ to mark the ones you love." data-es="Dale a cada una un poco de tiempo: entre treinta segundos y un minuto es cuando la ves de verdad. Toca o haz clic en cualquier lugar para pasar a la siguiente, y toca el ♥ para marcar las que ames.">Give each one a little time — thirty seconds to a minute is when you really see it. Tap or click anywhere for the next one, and tap the ♥ to mark the ones you love.</p>
+      <button class="wall-begin" id="wallBegin" type="button" data-en="Begin the Wall" data-es="Comenzar La Pared">Begin the Wall</button>
+      <button class="wall-notnow" id="wallCancel" type="button" data-en="Not now" data-es="Ahora no">Not now</button>
+    </div>
+  </div>
+  <div class="wall-face wall-player" id="wallPlayer" hidden>
+    <div class="wall-slot" id="wallSlot"><div class="lp-load wall-load" id="wallLoad" aria-hidden="true"><span data-en="Loading…" data-es="Cargando…">Loading…</span></div></div>
+    <div class="wall-catch" id="wallCatch"></div>
+    <button class="wall-mark wall-chrome" id="wallMark" type="button" aria-pressed="false">♥ Mark this one</button>
+    <button class="wall-x wall-chrome" id="wallExit" type="button" aria-label="Exit the Wall" data-en="× Close" data-es="× Cerrar">× Close</button>
+    <div class="wall-next wall-chrome" aria-hidden="true">›</div>
+  </div>
+  <div class="wall-face wall-cardface" id="wallEnd" hidden>
+    <div class="wall-card">
+      <p class="kicker" data-en="✦ The Wall" data-es="✦ La Pared">✦ The Wall</p>
+      <h2 data-en="That’s the wall." data-es="Esa es La Pared.">That’s the wall.</h2>
+      <div class="rule"></div>
+      <p data-en="Eleven photos — eleven moments, each given back its color and its light. Your photo could live like this." data-es="Once fotos: once momentos, cada uno con su color y su luz de vuelta. Tu foto podría vivir así.">Eleven photos — eleven moments, each given back its color and its light. Your photo could live like this.</p>
+      <div class="wall-marks" id="wallMarks" hidden>
+        <h3 data-en="♥ Your marked photos" data-es="♥ Tus fotos marcadas">♥ Your marked photos</h3>
+        <ul id="wallMarksList"></ul>
+        <p data-en="Marked the ones you loved? Now make one of your own photos live like them:" data-es="¿Marcaste las que amaste? Ahora haz que una foto tuya viva como ellas:">Marked the ones you loved? Now make one of your own photos live like them:</p>
+        <div class="wall-buy">
+          <a class="donatebtn" href="https://buy.stripe.com/bJebJ140f47d1iX9hwbsc02" target="_blank" rel="noopener" data-en="Make my photo — $5" data-es="Haz mi foto — $5">Make my photo — $5</a>
+          <a class="donatebtn" href="https://buy.stripe.com/6oU8wP8gv3391iXalAbsc03" target="_blank" rel="noopener" data-en="Make my three — $10" data-es="Haz mis tres — $10">Make my three — $10</a>
+        </div>
+      </div>
+      <button class="wall-begin" id="wallToMake" type="button" data-en="See how it works" data-es="Mira cómo funciona">See how it works</button>
+      <button class="wall-notnow" id="wallAgain" type="button" data-en="Watch again" data-es="Ver de nuevo">Watch again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var lang = 'en';
+  function setLang(l){
+    lang = l;
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var v = el.getAttribute('data-' + l);
+      if (v) el.textContent = v;
+    });
+    document.getElementById('langBtn').textContent = (l === 'en') ? 'Español' : 'English';
+  }
+  document.getElementById('langBtn').addEventListener('click', function(){ setLang(lang === 'en' ? 'es' : 'en'); });
+
+  var sb = document.getElementById('sidebar'), qr = document.getElementById('qrPanel'), scrim = document.getElementById('scrim');
+  function openSb(){ sb.classList.add('open'); sb.setAttribute('aria-hidden','false'); scrim.classList.add('on'); }
+  function openQr(){ qr.classList.add('open'); qr.setAttribute('aria-hidden','false'); scrim.classList.add('on'); }
+  function closeAll(){ sb.classList.remove('open'); sb.setAttribute('aria-hidden','true');
+    qr.classList.remove('open'); qr.setAttribute('aria-hidden','true'); scrim.classList.remove('on'); }
+  document.getElementById('sbBtn').addEventListener('click', openSb);
+  document.getElementById('qrBtn').addEventListener('click', openQr);
+  document.getElementById('sbClose').addEventListener('click', closeAll);
+  document.getElementById('qrClose').addEventListener('click', closeAll);
+  scrim.addEventListener('click', closeAll);
+  sb.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click', closeAll); });
+
+  /* Stage + compare rows: tap a small photo and it fills the big screen.
+   The living embed stays loaded behind the still layer, so swaps are instant. */
+  document.querySelectorAll('[data-lp3]').forEach(function(box){
+    var stillLayer = box.querySelector('.stage-still');
+    var stL = box.querySelector('.st-living'), stS = box.querySelector('.st-still');
+    var fr = box.querySelector('iframe');
+    var modeStill = true;
+    /* FLIPFIX (Nov 9, Gary's phone verdict): the old setMode blanked the
+       embed on every STILL flip (src='about:blank') and, on LIVING, held the
+       still over the stage until the embed's load event PLUS 1200ms - so on a
+       real phone every LIVING tap was a full cold load and seconds of
+       "nothing happened", which read as a dead button and drew second taps.
+       Now: the embed is NEVER blanked; it is warmed early (IntersectionObserver,
+       ~1.2 viewports ahead, idle fallback); a LIVING tap swaps visibility
+       synchronously; the Loading pill clears the moment the embed has loaded
+       once (or the still has painted while resting on it) and never returns. */
+    var frLoaded = false, frWarmed = false;
+    function warm(){
+      if (frWarmed) return; frWarmed = true;
+      /* EVENINGFIX (Nov 15): warm the still plate too - it is the exact
+         file the full-screen viewer's STILL tap shows, and a cold plate
+         was the black full-screen viewer on slow connections. */
+      if (stillLayer && stillLayer.tagName === 'IMG'){
+        var su = stillLayer.getAttribute('src');
+        if (su){ var pre = new Image(); pre.src = su; }
+      }
+      if (!fr) return;
+      var need = fr.getAttribute('data-live');
+      if (need && fr.getAttribute('src') !== need) fr.src = need;
+    }
+    function stillReady(){
+      if (!stillLayer) return true;
+      if (stillLayer.tagName !== 'IMG') return true;
+      return !!(stillLayer.complete && stillLayer.naturalWidth);
+    }
+    function syncPill(){
+      var pill = box.querySelector('.lp-load');
+      if (pill) pill.hidden = frLoaded || (modeStill && stillReady());
+    }
+    if (fr) fr.addEventListener('load', function(){ frLoaded = true; try { fr.dataset.lpLoaded = '1'; } catch(e){} syncPill(); });
+    if (stillLayer && stillLayer.tagName === 'IMG') stillLayer.addEventListener('load', syncPill);
+    if (fr && 'IntersectionObserver' in window){
+      var wio = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ warm(); wio.disconnect(); } }); }, { rootMargin: '120% 0px 120% 0px' });
+      wio.observe(box);
+    } else if (fr){
+      (window.requestIdleCallback || function(f){ setTimeout(f, 1200); })(warm);
+    }
+    function setMode(showStill){
+      modeStill = showStill;
+      /* IOSFLIPFIX (Nov 10): never display:none the living embed - WebKit
+         unloads a display:none iframe's document, so STILL->LIVING on an
+         iPhone revealed a dead frame (desktop browsers keep it alive,
+         which is why checks passed and Gary's phone failed). The still
+         layer (absolute, z 2) simply covers the embed (z 1) while the
+         piece rests; LIVING uncovers it. The embed is never switched off. */
+      if (fr && !showStill){
+        warm();
+        if (stillLayer) stillLayer.hidden = true;
+      }
+      syncPill();
+      if (stillLayer && showStill) stillLayer.hidden = false;
+      /* CELLFIX2: fit-whole when the plate's shape differs from the stage
+         window's shape; cover (edge-to-edge) when they match. */
+      if (stillLayer){
+        if (!stillLayer.style.backgroundImage && stillLayer.getAttribute('src')) stillLayer.style.backgroundImage = 'url("' + stillLayer.getAttribute('src') + '")';
+      }
+      if (stillLayer && stillLayer.naturalWidth && stillLayer.naturalHeight){
+        var fw = box.querySelector('.ex-frame,.cover-photo');
+        if (fw && fw.clientWidth && fw.clientHeight){
+          var pa = stillLayer.naturalWidth / stillLayer.naturalHeight, fa = fw.clientWidth / fw.clientHeight;
+          var mismatch = Math.abs(pa - fa) / fa > 0.03;
+          stillLayer.classList.toggle('stage-fit-contain', mismatch);
+          if (mismatch && !stillLayer.style.backgroundImage) stillLayer.style.backgroundImage = 'url("' + stillLayer.getAttribute('src') + '")';
+        }
+      }
+      var fc0 = box.querySelector('.frame-catch');
+      /* STAGETAP (Nov 10, Gary): the stage catch takes taps in BOTH modes,
+         so tapping the big picture itself opens the full-screen viewer in
+         STILL and in LIVING (the top-right corner button does too). The old
+         parking set pointerEvents='none' in LIVING, sending taps into the
+         embed where the stage read as dead - worst on his phone. The catch
+         keeps touch-action:manipulation, so a vertical drag still scrolls
+         the page instead of opening the viewer. */
+      if (fc0) fc0.style.pointerEvents = '';
+      if (stL) stL.hidden = showStill;
+      if (stS) stS.hidden = !showStill;
+      box.querySelectorAll('.cmp-cell').forEach(function(c){
+        var on = (c.getAttribute('data-put') === 'still') === showStill;
+        c.classList.toggle('on', on);
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+    box.querySelectorAll('.cmp-cell').forEach(function(cell){
+      cell.addEventListener('click', function(){
+        /* CELLFIX2 (Nov 9): a tap flips the stage on the FIRST tap, always.
+           The old code only RECORDED the wish (box.__pendWant) and polled
+           every 250ms for proof the living embed had "painted" before
+           flipping - and its only paint detectors (contentWindow.LP /
+           contentDocument) both throw or read null on every cross-origin
+           embed on this page, so detection never fired: still-defaulted
+           pieces waited out a flat ~4s timer, and boxes whose still plate
+           had not loaded with naturalWidth>0 yet (lazy plates below the
+           fold, two data-default="living" showcases) NEVER flipped - the
+           tap simply died, exactly the "tap LIVING a few times / buttons
+           not working" report. Now: flip the mode synchronously on tap.
+           setMode already keeps the still (or the frame's own backdrop)
+           over the stage until the embed's load event, then reveals - so
+           an instant flip still never strands a void, and a still tap
+           shows the still layer immediately even while its file is still
+           arriving (broken-image icon suppressed until it lands). */
+        var wantStill = (cell.getAttribute('data-put') === 'still');
+        box.__pendWant = wantStill;
+        setMode(wantStill);
+      });
+    });
+    box.querySelectorAll('img').forEach(function(im){
+      function ok(){ if (im.complete && im.naturalWidth) im.classList.add('lpimgok'); }
+      im.addEventListener('load', ok); im.addEventListener('error', ok); ok();
+    });
+    setMode(box.getAttribute('data-default') !== 'living'); /* pieces rest on their still unless the box is a living showcase */
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var PHOTOS = [
+    {src:'https://playingandvibecoding.lovable.app', t:'Living Photo \u2014 Cooking in the Clubhouse, playing'},
+    {src:'https://geemondc.github.io/train/#wall', t:'Living Photo \u2014 Window Seat \u2014 The Train, playing'},
+    {src:'https://futurereadysnowglobe.lovable.app', t:'Living Photo \u2014 The Snow Globe, playing'},
+    {src:'https://templevalley2.lovable.app', t:'Living Photo \u2014 Temple Valley 2, playing'},
+    {src:'https://geemondc.github.io/broadwalk/#wall', t:'Living Photo \u2014 The Hollywood Broadwalk, playing'},
+    {src:'https://newyorkatnightfall.lovable.app', t:'Living Photo \u2014 New York at Nightfall, playing'},
+    {src:'https://futurereadycabin.lovable.app', t:'Living Photo \u2014 The Cabin, playing'},
+    {src:'https://futurereadybeach.lovable.app', t:'Living Photo \u2014 Future Ready Beach, playing'},
+    {src:'https://geemondc.github.io/prom-night/#wall', t:'Living Photo \u2014 Prom Night, playing'},
+    {src:'https://geemondc.github.io/hammock/#wall', t:'Living Photo \u2014 The Hammock, playing'},
+    {src:'https://geemondc.github.io/lighthouse/#wall', t:'Living Photo \u2014 The Lighthouse, playing'}
+  ];
+  var wall = document.getElementById('wall'),
+      pre = document.getElementById('wallPreface'),
+      play = document.getElementById('wallPlayer'),
+      end = document.getElementById('wallEnd'),
+      slot = document.getElementById('wallSlot'),
+      wallNext = play.querySelector('.wall-next'),
+      state = 'closed', idx = 0, frames = [], fadeTimer = null;
+  var marks = {};
+  try { marks = JSON.parse(sessionStorage.getItem('lpWallMarks') || '{}') || {}; } catch(e) { marks = {}; }
+  var markBtn = document.getElementById('wallMark');
+  function photoName(i){ return PHOTOS[i].t.replace('Living Photo — ', '').replace(', playing', ''); }
+  function saveMarks(){ try { sessionStorage.setItem('lpWallMarks', JSON.stringify(marks)); } catch(e){} }
+  function curLang(){ return document.documentElement.lang === 'es' ? 'es' : 'en'; }
+  function updateMark(){
+    var on = !!marks[idx];
+    markBtn.classList.toggle('on', on);
+    markBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    markBtn.textContent = on ? (curLang() === 'es' ? '♥ Marcada — toca para quitarla' : '♥ Marked — tap to unmark')
+                             : (curLang() === 'es' ? '♥ Marcar esta' : '♥ Mark this one');
+  }
+  function renderMarks(){
+    var box = document.getElementById('wallMarks'), list = document.getElementById('wallMarksList');
+    var names = [];
+    PHOTOS.forEach(function(p, i){ if (marks[i]) names.push(photoName(i)); });
+    box.hidden = names.length === 0;
+    list.innerHTML = '';
+    names.forEach(function(n){ var li = document.createElement('li'); li.textContent = n; list.appendChild(li); });
+  }
+
+  function face(which){
+    pre.hidden = which !== 'preface';
+    play.hidden = which !== 'player';
+    end.hidden = which !== 'end';
+  }
+  function showChrome(){
+    var els = play.querySelectorAll('.wall-chrome');
+    els.forEach(function(el){ el.classList.remove('dim'); });
+    clearTimeout(fadeTimer);
+    fadeTimer = setTimeout(function(){
+      els.forEach(function(el){ el.classList.add('dim'); });
+    }, 2800);
+  }
+  function enterFS(){
+    var p = null;
+    try {
+      if (wall.requestFullscreen) p = wall.requestFullscreen();
+      else if (wall.webkitRequestFullscreen) wall.webkitRequestFullscreen();
+    } catch(e){}
+    if (p && p.catch) p.catch(function(){});
+  }
+  function exitFS(){
+    if (document.fullscreenElement && document.exitFullscreen) {
+      var p = document.exitFullscreen();
+      if (p && p.catch) p.catch(function(){});
+    }
+  }
+  function showPhoto(i){
+    idx = i;
+    if (!frames[i]) {
+      var f = document.createElement('iframe');
+      f.src = PHOTOS[i].src;
+      f.title = PHOTOS[i].t;
+      f.setAttribute('allow', 'autoplay; fullscreen');
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('scrolling', 'no');
+      f.addEventListener('load', function(){ f.dataset.lpLoaded = '1'; var wl = document.getElementById('wallLoad'); if (wl) wl.hidden = true; });
+      slot.appendChild(f);
+      frames[i] = f;
+    }
+    frames.forEach(function(f, j){ if (f) f.style.visibility = (j === i) ? 'visible' : 'hidden'; }); /* IOSFLIPFIX: visibility, never display:none - WebKit unloads display:none iframes */
+    /* FIX2 (Nov 9): loading sign — show until this stop's frame has painted. */
+    var wl2 = document.getElementById('wallLoad');
+    if (wl2) wl2.hidden = !!(frames[i] && frames[i].dataset.lpLoaded);
+    play.classList.toggle('framed', !!PHOTOS[i].framed);
+    wallNext.setAttribute('aria-hidden', PHOTOS[i].framed ? 'false' : 'true');
+    showChrome();
+    updateMark();
+  }
+  function openWall(){
+    state = 'preface';
+    face('preface');
+    wall.hidden = false;
+    wall.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeWall(){
+    state = 'closed';
+    clearTimeout(fadeTimer);
+    wall.hidden = true;
+    wall.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    exitFS();
+  }
+  function beginWall(){
+    state = 'playing';
+    face('player');
+    enterFS();
+    showPhoto(0);
+  }
+  function nextPhoto(){
+    if (state !== 'playing') return;
+    if (idx < PHOTOS.length - 1) showPhoto(idx + 1);
+    else { state = 'end'; renderMarks(); face('end'); }
+  }
+  document.getElementById('wallOpen').addEventListener('click', openWall);
+  document.getElementById('wallBegin').addEventListener('click', beginWall);
+  document.getElementById('wallCancel').addEventListener('click', closeWall);
+  document.getElementById('wallExit').addEventListener('click', function(e){
+    e.stopPropagation();
+    closeWall();
+  });
+  document.getElementById('wallCatch').addEventListener('click', nextPhoto);
+  markBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (state !== 'playing') return;
+    if (marks[idx]) delete marks[idx]; else marks[idx] = 1;
+    saveMarks();
+    updateMark();
+    showChrome();
+  });
+  wallNext.addEventListener('click', function(e){ e.stopPropagation(); nextPhoto(); });
+  play.addEventListener('mousemove', showChrome);
+  play.addEventListener('pointerdown', showChrome);
+  document.getElementById('wallAgain').addEventListener('click', beginWall);
+  document.getElementById('wallToMake').addEventListener('click', function(){
+    var m = document.getElementById('make');
+    function go(){ if (m) m.scrollIntoView({behavior:'smooth'}); }
+    if (document.fullscreenElement) {
+      var done = false;
+      document.addEventListener('fullscreenchange', function h(){
+        document.removeEventListener('fullscreenchange', h);
+        if (!done) { done = true; go(); }
+      });
+      setTimeout(function(){ if (!done) { done = true; go(); } }, 700);
+    }
+    closeWall();
+    if (!document.fullscreenElement) go();
+  });
+  document.addEventListener('keydown', function(e){
+    if ((e.key === 'Escape' || e.key === 'Esc') && state !== 'closed') closeWall();
+  });
+  document.addEventListener('fullscreenchange', function(){
+    if (!document.fullscreenElement && (state === 'playing' || state === 'end')) closeWall();
+  });
+})();
+</script>
+<div class="panel-wrap" id="panelWrap">
+  <div class="panel-bg" data-panel-close></div>
+  <aside class="panel">
+    <button class="panel-x" data-panel-close aria-label="Close">×</button>
+    <h3 class="first" data-en="The details" data-es="Los detalles">The details</h3>
+    <h3 data-en="Where the money goes" data-es="A dónde va el dinero"><img class="gmini" src="img/p-ac35fa9dc5.webp" alt="Adriana" loading="lazy" decoding="async">Where the money goes</h3>
+    <p data-en="Help us help others. Every dollar from photos goes to Future Ready: helping kids and grown-ups build a foundation in health, money, and sharing." data-es="Ayúdanos a ayudar a otros. Cada dólar de las fotos va a Future Ready: ayudamos a niños y adultos a construir una base de salud, dinero y generosidad.">Help us help others. Every dollar from photos goes to Future Ready: helping kids and grown-ups build a foundation in health, money, and sharing.</p>
+    <h3 data-en="What you get" data-es="Lo que recibes"><img class="gmini" src="img/p-188d10c6b0.webp" alt="Adriana" loading="lazy" decoding="async">What you get</h3>
+    <p data-en="Each photo comes back to you two ways: a living page link you can open and share, and a film you can send on WhatsApp." data-es="Cada foto vuelve a ti de dos maneras: un enlace a su página viva, para abrirla y compartirla, y una película que puedes enviar por WhatsApp.">Each photo comes back to you two ways: a living page link you can open and share, and a film you can send on WhatsApp.</p>
+  </aside>
+</div>
+<div class="panel-wrap" id="museWrap">
+  <div class="panel-bg" data-muse-close></div>
+  <aside class="panel">
+    <button class="panel-x" data-muse-close aria-label="Close">×</button>
+    <h3 class="first" data-en="✦ Made with Muse" data-es="✦ Hecho con Muse">✦ Made with Muse</h3>
+    <img class="sprite" src="img/p-b384bd5dbf.jpg" alt="Little Gee" loading="lazy" decoding="async">
+    <p data-en="One small note: everything on this page was made with Muse — my AI partner. Want your own? Join Muse, then within your first 48 hours go to Settings → Redeem token and enter this code. It starts you with $33 in value — the first ingredient is on me." data-es="Una nota pequeña: todo en esta página se hizo con Muse, mi compañero de IA. ¿Quieres el tuyo? Únete a Muse y, dentro de tus primeras 48 horas, ve a Ajustes → Redeem token e ingresa este código. Empiezas con $33 en valor: el primer ingrediente va por mi cuenta.">One small note: everything on this page was made with Muse — my AI partner. Want your own? Join Muse, then within your first 48 hours go to Settings → Redeem token and enter this code. It starts you with $33 in value — the first ingredient is on me.</p>
+    <p class="code">ESFXNF</p>
+  </aside>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-mini]').forEach(function(stage){
+    var row = stage.parentElement.querySelector('.mini-toggle');
+    if (!row) return;
+    row.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var living = btn.getAttribute('data-m') === 'living';
+        var fr = stage.querySelector('iframe');
+        if (living && fr && !fr.getAttribute('src')) fr.src = fr.getAttribute('data-live');
+        /* IOSFLIPFIX: src is set once and never removed; the .playing class (visibility) shows/hides the embed, so STILL->LIVING never cold-boots. */
+        stage.classList.toggle('playing', living);
+        row.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on', b === btn); });
+      });
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var w = document.getElementById('panelWrap');
+  function open(){ var sb = document.getElementById('sidebar'); if (sb && sb.classList.contains('open')) { document.getElementById('sbClose').click(); } w.classList.add('open'); }
+  function close(){ w.classList.remove('open'); }
+  document.querySelectorAll('[data-panel-open]').forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); open(); }); });
+  document.querySelectorAll('[data-panel-close]').forEach(function(b){ b.addEventListener('click', close); });
+  var mw = document.getElementById('museWrap');
+  function mopen(){ var sb = document.getElementById('sidebar'); if (sb && sb.classList.contains('open')) { document.getElementById('sbClose').click(); } mw.classList.add('open'); }
+  function mclose(){ mw.classList.remove('open'); }
+  document.querySelectorAll('[data-muse-open]').forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); mopen(); }); });
+  document.querySelectorAll('[data-muse-close]').forEach(function(b){ b.addEventListener('click', mclose); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { close(); mclose(); } });
+})();
+</script>
+
+<div id="bigView" hidden role="dialog" aria-label="Full-screen photo">
+  <img id="bvImg" alt="">
+  <iframe id="bvFrame" title="Living photo — full screen" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <div id="bvCatch"></div>
+  <button type="button" id="bvXTop" aria-label="Close">&times;</button>
+  <div class="bv-bar">
+    <span id="bvTitle"></span>
+    <span class="bv-modes"><button type="button" id="bvStill" data-en="STILL" data-es="QUIETA">STILL</button><button type="button" id="bvLiving" data-en="LIVING" data-es="VIVA">LIVING</button></span>
+    <button type="button" id="bvX" aria-label="Back">&times;</button>
+  </div>
+</div>
+<script>
+(function(){
+  var bv=document.getElementById('bigView'), img=document.getElementById('bvImg'), fr=document.getElementById('bvFrame'),
+      cap=document.getElementById('bvCatch'), ttl=document.getElementById('bvTitle'),
+      bS=document.getElementById('bvStill'), bL=document.getElementById('bvLiving'), bX=document.getElementById('bvX'), bXT=document.getElementById('bvXTop');
+  var cur={still:null,live:null,mode:'living'};
+  var waitTk = 0;
+  function stillReady(){
+    if(!cur.still) return true;
+    if(img.getAttribute('src')!==cur.still) return false;
+    return (img.complete && img.naturalWidth>0) || img.dataset.bvErr===cur.still;
+  }
+  function show(){
+    /* EVENINGFIX (Nov 15): the still starts loading the moment the viewer
+       opens (not on the STILL tap), and if it is still arriving when STILL
+       is tapped, the living picture stays up until the still lands, then
+       the swap completes. The old code hid the embed instantly, so a slow
+       plate (worst case the 755 KB cross-origin Big View still) left the
+       viewer black for seconds - "STILL makes the picture vanish". */
+    if(cur.still && img.getAttribute('src')!==cur.still){ delete img.dataset.bvErr; img.src=cur.still; }
+    var wantLiving = cur.mode==='living' && !!cur.live;
+    var living = wantLiving || (!wantLiving && !!cur.live && !stillReady());
+    img.style.display = living ? 'none' : 'block';
+    fr.style.visibility = living ? 'visible' : 'hidden'; /* IOSFLIPFIX: visibility, not display - display:none unloads the embed's document in WebKit */
+    cap.style.pointerEvents = living ? 'none' : 'auto';
+    if(living && fr.getAttribute('src')!==cur.live){
+      /* let the viewer finish laying out before the piece boots, so a
+         player that measures its window once at load gets the real size */
+      fr.src='about:blank';
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+        if(!bv.hidden && (cur.mode==='living' || !stillReady())) fr.src=cur.live;
+      }); });
+    }
+    if(!wantLiving && cur.live && !stillReady()){
+      var tk = ++waitTk;
+      var onl = function(ev){
+        img.removeEventListener('load', onl); img.removeEventListener('error', onl);
+        if(ev && ev.type==='error') img.dataset.bvErr = cur.still;
+        if(tk===waitTk && !bv.hidden && cur.mode==='still') show();
+      };
+      img.addEventListener('load', onl); img.addEventListener('error', onl);
+    } else { waitTk++; }
+    bS.classList.toggle('on', !wantLiving); bL.classList.toggle('on', wantLiving);
+    bL.style.display = cur.live ? '' : 'none';
+    bS.style.display = cur.still ? '' : 'none';
+  }
+  function open(o){ cur=o; ttl.textContent=o.title||''; bv.hidden=false; document.body.style.overflow='hidden'; show(); }
+  function close(){ bv.hidden=true; fr.src='about:blank'; document.body.style.overflow=''; }
+  cap.addEventListener('click', close);
+  bX.addEventListener('click', function(e){ e.stopPropagation(); close(); });
+  bXT.addEventListener('click', function(e){ e.stopPropagation(); close(); });
+  bS.addEventListener('click', function(e){ e.stopPropagation(); cur.mode='still'; show(); });
+  bL.addEventListener('click', function(e){ e.stopPropagation(); cur.mode='living'; show(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !bv.hidden) close(); });
+  document.querySelectorAll('[data-fs-open]').forEach(function(c){
+    c.addEventListener('click', function(){
+      var frame=c.parentElement, box=frame.closest('[data-lp3]'), live=frame.querySelector('iframe');
+      if(box){
+        var st=box.querySelector('.stage-still');
+        open({still: st?st.getAttribute('src'):null, live: live?(live.getAttribute('data-live')||live.getAttribute('src')):null, mode:(live && (live.getAttribute('data-live')||live.getAttribute('src')))?'living':((st && !st.hidden)?'still':'living'), title: live?live.getAttribute('title'):''});
+      } else {
+        open({still: frame.getAttribute('data-fs-still'), live: live?(live.getAttribute('data-live')||live.getAttribute('src')):null, mode:'living', title: live?live.getAttribute('title'):''});
+      }
+    });
+  });
+  var crew=document.querySelector('img.crew-scene');
+  if(crew) crew.addEventListener('click', function(){ open({still:crew.getAttribute('src'), live:null, mode:'still', title:crew.getAttribute('alt')||''}); });
+})();
+</script>
+
+<style id="ship455css">
+#topBar{position:fixed;top:0;left:0;right:0;z-index:45;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px;background:rgba(246,239,221,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1.5px solid var(--gold);box-shadow:0 6px 18px rgba(59,42,18,.12)}
+#brandBtn{display:inline-flex;align-items:center;gap:10px;background:none;border:none;cursor:pointer;font:inherit;padding:2px 4px}
+#brandBtn img{width:38px;height:38px;border-radius:9px;border:1.5px solid var(--gold);display:block}
+#brandBtn span{font-weight:700;letter-spacing:.18em;font-size:15px;color:var(--ink);text-transform:uppercase;white-space:nowrap}
+.tb-group{display:flex;gap:8px;align-items:center;flex:1;justify-content:space-evenly}
+@media (max-width:760px){ #brandBtn span{display:none} #topBar{gap:6px;padding:8px 8px} .tb-group{gap:6px} .tbtn{padding:6px 10px;font-size:12px} }
+.tbtn{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 16px;border-radius:999px;background:rgba(255,252,244,.9);border:1.5px solid var(--gold);color:var(--ink);font:inherit;font-size:14px;font-weight:700;letter-spacing:.06em;cursor:pointer;white-space:nowrap}
+@media(max-width:560px){.tbtn{padding:0 10px;font-size:12.5px;height:42px}#brandBtn{gap:7px}#brandBtn span{font-size:11px;letter-spacing:.05em;line-height:1.15;max-width:76px;white-space:normal}#brandBtn img{width:30px;height:30px}#tbSb span{display:none}#tbTheme{padding:0 14px;font-size:15px;min-width:76px;justify-content:center}#tbTheme span{display:inline;font-size:12.5px}#topBar{padding:7px 8px;gap:6px}.tb-group{gap:6px}}
+body{padding-top:62px}
+section{scroll-margin-top:78px}
+@media (max-width:640px){
+  /* Phone header (Nov 10): brand on its own full-width line (name restored),
+     pills in tidy centered rows below with their labels back. */
+  #topBar{flex-direction:column;align-items:stretch;gap:7px;padding:8px 10px 9px}
+  #brandBtn{justify-content:center;gap:8px}
+  #brandBtn img{width:28px;height:28px}
+  #brandBtn span{display:inline;font-size:13px;letter-spacing:.14em;line-height:1.1;max-width:none;white-space:nowrap}
+  .tb-group{flex:none;width:100%;justify-content:center;flex-wrap:wrap;gap:6px}
+  .tbtn{height:36px;padding:0 11px;font-size:12px}
+  #tbSb span{display:inline}
+  #tbTheme{min-width:0;padding:0 11px}
+  #tbTheme span{font-size:12px}
+  body{padding-top:136px}
+  section{scroll-margin-top:142px}
+}
+.send-order{font-size:16px;line-height:1.55;color:var(--teal-d);background:rgba(13,92,99,.08);border:1px solid rgba(13,92,99,.35);border-radius:14px;padding:12px 16px;margin:0 auto 16px;max-width:560px;text-align:center}
+body.dark{--ivory:#171310;--ivory2:#1e1710;--paper:#221a12;--ink:#f5ecd7;--ink2:#cdb894;background-color:#14100c;background-image:none}
+body.dark #topBar{background:rgba(23,19,16,.95)}
+body.dark .tbtn,body.dark .furn{background:rgba(34,26,18,.92);color:var(--ink)}
+body.dark .scard,body.dark .offer,body.dark .guarantee,body.dark .bye-card,body.dark .door{background:linear-gradient(180deg,#2a2115,#211910)}
+body.dark .sendsteps .ostep{background:#241c12;border-color:#4a3a22}
+body.dark .demo2-step{background:rgba(34,26,18,.75);color:var(--ink)}
+body.dark .demo2-step .demo2-n{background:rgba(232,200,119,.18);color:var(--ink)}
+body.dark .demo2-pause{background:rgba(34,26,18,.75);color:var(--ink)}
+body.dark .demo2-honest{background:rgba(232,200,119,.07);border-color:rgba(232,200,119,.25)}
+body.dark .demo2-honest p{color:var(--ink)}
+body.dark .mini-toggle button{background:#241c12;color:var(--ink)}
+body.dark .xbtn,body.dark .frame-btn{background:#241c12;color:var(--ink)}
+body.dark .demo-cap span{background:#241c12;color:var(--ink)}
+body.dark .send-order{color:#7fd4da;border-color:rgba(127,212,218,.4);background:rgba(13,92,99,.18)}
+</style>
+<nav id="topBar" aria-label="Site">
+  <a id="brandBtn" href="#" aria-label="Back to intro photo"><img src="img/p-42b0e5a17c.jpg" alt=""><span>Future Ready</span></a>
+  <div class="tb-group">
+    <button class="tbtn" id="tbIntro" type="button">↺ <span data-en="Back to intro photo" data-es="Volver a la foto de portada">Back to intro photo</span></button>
+    <a class="tbtn" href="https://geemondc.github.io/living-cards-site/formal-preview-clean/" target="_blank" rel="noopener"><span data-en="First Class" data-es="Primera Clase">First Class</span></a> <a class="tbtn" href="rides.html"><span data-en="Rides" data-es="Paseos">Rides</span></a> <button class="tbtn" id="tbSb" type="button">☰ <span data-en="Links" data-es="Enlaces">Links</span></button>
+    <button class="tbtn" id="tbQr" type="button">▦ QR</button>
+    <button class="tbtn" id="tbLang" type="button">Español</button>
+    <button class="tbtn" id="tbTheme" type="button" aria-pressed="false">☾ <span>Dark</span></button>
+  </div>
+</nav>
+<script id="ship455js">
+(function(){
+  var byId = function(id){ return document.getElementById(id); };
+  var sb = byId('sbBtn'), qr = byId('qrBtn'), lg = byId('langBtn');
+  function curLang(){ return (typeof lang !== 'undefined' ? lang : 'en'); }
+  function syncTheme(){
+    var b = byId('tbTheme'); if (!b) return;
+    var d = document.body.classList.contains('dark'), L = curLang();
+    b.innerHTML = d ? '☀ <span>' + (L === 'es' ? 'Claro' : 'Light') + '</span>' : '☾ <span>' + (L === 'es' ? 'Oscuro' : 'Dark') + '</span>';
+    b.setAttribute('aria-pressed', d ? 'true' : 'false');
+  }
+  function syncLang(){ var t = byId('tbLang'); if (t && lg) t.textContent = lg.textContent; syncTheme(); }
+  /* brandBtn: now a plain link to the Future Ready Mission page (Gary, Nov 3) — no JS handler. */
+  byId('tbSb').addEventListener('click', function(){ if (sb) sb.click(); });
+  byId('tbQr').addEventListener('click', function(){ if (qr) qr.click(); });
+  byId('tbLang').addEventListener('click', function(){ if (lg) lg.click(); setTimeout(syncLang, 60); });
+  byId('tbTheme').addEventListener('click', function(){ document.body.classList.toggle('dark'); syncTheme(); });
+  syncTheme();
+  var oid = (new URLSearchParams(window.location.search).get('order') || '');
+  var line = byId('sendOrderLine'), btn = byId('sendMailBtn');
+  if (/^cs_[A-Za-z0-9_]{10,}$/.test(oid) && line && btn){
+    var en = '✓ We have your payment — order ' + oid + '. Tap the button and your email will carry this order number with it, so your photo and your payment meet up right away.';
+    var es = '✓ Ya tenemos tu pago — pedido ' + oid + '. Toca el botón y tu correo llevará este número de pedido, para que tu foto y tu pago se encuentren enseguida.';
+    line.textContent = (curLang() === 'es' ? es : en);
+    line.setAttribute('data-en', en); line.setAttribute('data-es', es);
+    line.hidden = false;
+    btn.href = 'mailto:geemondc@gmail.com?subject=' + encodeURIComponent('My living photo — order ' + oid) + '&body=' + encodeURIComponent('Hi! I just paid for my living photo.\nMy order number: ' + oid + '\nMy photo is attached. (For the 3-photo order, all three photos are attached.)');
+  }
+})();
+</script>
+
+<script>var tbI=document.getElementById('tbIntro');if(tbI)tbI.addEventListener('click',function(){var b=document.getElementById('introAgain');if(b)b.click();});var bb=document.getElementById('brandBtn');if(bb)bb.addEventListener('click',function(e){e.preventDefault();var b=document.getElementById('introAgain');if(b)b.click();});</script>
+
+<script>/* diet 2026-11-05: repeated inline pictures share one kept copy */
+(function(){var c={};document.querySelectorAll('img[data-canon]').forEach(function(im){c[im.getAttribute('data-canon')]=im.getAttribute('src');});document.querySelectorAll('img[data-dup]').forEach(function(im){var u=c[im.getAttribute('data-dup')];if(u)im.src=u;});})();
+</script>
+
+<script>/* pieces outside the exhibit rows rest on their still too */
+document.querySelectorAll('.diy-frame').forEach(function(frame){
+  var still = frame.getAttribute('data-fs-still'); if (!still) return;
+  var img = document.createElement('img');
+  img.className = 'fs-rest'; img.src = still; img.alt = '';
+  frame.insertBefore(img, frame.firstChild);
+});</script>
+
+<style id="touchfix1109">
+/* TOUCHFIX (Nov 9, touch pass 2): one-touch reliability.
+   1) manipulation: no double-tap zoom, no tap delay on any tappable surface.
+   2) overflow-x clip: off-canvas chrome (the parked sidebar runs to x=774)
+      can no longer widen the layout past the phone - a 427-434px layout on a
+      390px phone is what made real taps land off-target and parked the
+      right-hand controls off-screen. */
+.cmp-cell,.frame-catch,#bvCatch,#bvX,#bvXTop,.bv-modes button,.wall-catch,.wall-chrome,.wall-begin,.wall-notnow,.wall-next,#wallOpen,.tbtn,.mini-toggle button{touch-action:manipulation}
+html,body{overflow-x:hidden;overflow-x:clip}
+</style>
+
+<style id="flipfix1109">
+/* FLIPFIX (Nov 9): a parent-owned full-screen corner button on every piece
+   stage. It stays tappable in BOTH modes - above the embed and above the
+   stage catch (z 9 over catch z 6) - because in LIVING mode the catch is
+   parked and stage taps belong to the piece itself. */
+.fs-corner{position:absolute;top:10px;right:10px;z-index:9;width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(232,200,119,.85);background:rgba(20,14,8,.55);color:#f3e5bd;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation;padding:0}
+</style>
+
+<style id="topbarfix1109">
+/* TOPBARFIX (Nov 9): at phone widths the fixed top bar overflowed - the
+   Dark button ended 63px past the right edge of a 390px screen, only a
+   sliver tappable. The intro button now rides icon-only at small widths
+   (the same treatment the bar already gives the Links and brand labels),
+   which brings every control fully on-screen. */
+@media (max-width:520px){
+  #tbIntro span{display:none}
+  #tbIntro{min-width:0}
+}
+@media (max-width:640px){
+  /* Phone header (Nov 10): in the stacked bar the pills wrap to a second
+     row, so there is room for the intro label again. */
+  #tbIntro span{display:inline}
+}
+</style>
+
+<style>
+.zoomable{cursor:zoom-in}
+.zoombadge{position:absolute;top:10px;right:10px;z-index:3;background:rgba(20,12,2,.74);color:#ffe9a8;font-family:Georgia,serif;font-weight:700;font-size:12.5px;padding:6px 11px;border-radius:999px;pointer-events:none;letter-spacing:.03em;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.lpd-card{position:relative}
+#zoomlb{position:fixed;inset:0;z-index:9999;background:rgba(10,6,2,.95);display:flex;flex-direction:column}
+#zoomlb[hidden]{display:none}
+#zoomStage{flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center;touch-action:none;position:relative;cursor:grab}
+#zoomStage:active{cursor:grabbing}
+#zoomImg{max-width:97%;max-height:97%;width:auto;height:auto;display:block;user-select:none;-webkit-user-drag:none;will-change:transform;border-radius:6px;box-shadow:0 12px 44px rgba(0,0,0,.6)}
+#zoomBar{background:rgba(20,12,2,.88);padding:10px 12px 14px;text-align:center}
+#zoomHint{color:#d8c491;font-size:13.5px;font-style:italic;margin-bottom:9px}
+#zoomBtns{display:flex;gap:12px;justify-content:center}
+#zoomBtns button{width:54px;height:54px;border-radius:50%;border:2px solid #d9b45c;background:#2b2118;color:#ffe9a8;font-size:25px;font-weight:700;cursor:pointer;line-height:1}
+#zoomBtns button:active{transform:scale(.93)}
+</style>
+<div id="zoomlb" hidden role="dialog" aria-label="Photo zoom">
+  <div id="zoomStage"><img id="zoomImg" src="" alt=""></div>
+  <div id="zoomBar">
+    <div id="zoomHint" data-en="Drag to look around · pinch or scroll to zoom" data-es="Arrastra para moverte · pellizca o desplaza para ampliar">Drag to look around · pinch or scroll to zoom</div>
+    <div id="zoomBtns">
+      <button type="button" id="zoomOut" aria-label="Zoom out">−</button>
+      <button type="button" id="zoomIn" aria-label="Zoom in">+</button>
+      <button type="button" id="zoomFit" aria-label="Fit whole photo" style="font-size:19px">FIT</button>
+      <button type="button" id="zoomClose" aria-label="Close">✕</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('zoomlb'), stage=document.getElementById('zoomStage'), img=document.getElementById('zoomImg');
+  if(!lb||!stage||!img) return;
+  var s=1, tx=0, ty=0, MIN=1, MAX=6;
+  function clamp(){
+    var mx=Math.max(0,(img.clientWidth*s-stage.clientWidth)/2+30), my=Math.max(0,(img.clientHeight*s-stage.clientHeight)/2+30);
+    tx=Math.max(-mx,Math.min(mx,tx)); ty=Math.max(-my,Math.min(my,ty));
+  }
+  function render(){ clamp(); img.style.transform='translate('+tx+'px,'+ty+'px) scale('+s+')'; }
+  function reset(){ s=1; tx=0; ty=0; render(); }
+  function zoomAt(cx,cy,ns){
+    ns=Math.max(MIN,Math.min(MAX,ns)); if(ns===s) return;
+    var r=stage.getBoundingClientRect(), px=cx-r.left-r.width/2, py=cy-r.top-r.height/2, k=ns/s;
+    tx=px-(px-tx)*k; ty=py-(py-ty)*k; s=ns; render();
+  }
+  function centerZoom(ns){ var r=stage.getBoundingClientRect(); zoomAt(r.left+r.width/2, r.top+r.height/2, ns); }
+  function openZoom(src, alt){
+    img.src=src; img.alt=alt||''; reset();
+    lb.hidden=false; document.body.style.overflow='hidden';
+    if(img.complete&&img.naturalWidth) reset();
+    else img.onload=function(){ reset(); };
+  }
+  function closeZoom(){ lb.hidden=true; document.body.style.overflow=''; }
+  document.getElementById('zoomClose').addEventListener('click', closeZoom);
+  document.getElementById('zoomIn').addEventListener('click', function(){ centerZoom(s*1.45); });
+  document.getElementById('zoomOut').addEventListener('click', function(){ centerZoom(s/1.45); });
+  document.getElementById('zoomFit').addEventListener('click', reset);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'&&!lb.hidden) closeZoom(); });
+  stage.addEventListener('wheel', function(e){ e.preventDefault(); zoomAt(e.clientX, e.clientY, s*(e.deltaY<0?1.16:0.86)); }, {passive:false});
+  stage.addEventListener('click', function(e){ if(e.target===stage&&s<=1.02) closeZoom(); });
+  var ptrs={}, pinch=null, lastTap=0;
+  stage.addEventListener('pointerdown', function(e){ try{ stage.setPointerCapture(e.pointerId); }catch(err){} ptrs[e.pointerId]={x:e.clientX,y:e.clientY};
+    var ids=Object.keys(ptrs);
+    if(ids.length===2){ var a=ptrs[ids[0]], b=ptrs[ids[1]]; pinch={d:Math.hypot(a.x-b.x,a.y-b.y), s:s}; }
+  });
+  stage.addEventListener('pointermove', function(e){
+    if(!ptrs[e.pointerId]) return;
+    var prev=ptrs[e.pointerId]; ptrs[e.pointerId]={x:e.clientX,y:e.clientY};
+    var ids=Object.keys(ptrs);
+    if(ids.length===2&&pinch){
+      var a=ptrs[ids[0]], b=ptrs[ids[1]], d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(pinch.d>0) zoomAt((a.x+b.x)/2,(a.y+b.y)/2, pinch.s*d/pinch.d);
+    } else if(ids.length===1&&s>1){
+      tx+=e.clientX-prev.x; ty+=e.clientY-prev.y; render();
+    }
+  });
+  function endPtr(e){
+    delete ptrs[e.pointerId];
+    if(Object.keys(ptrs).length<2) pinch=null;
+    if(e.type==='pointerup'&&s<=1.02){
+      var now=Date.now();
+      if(now-lastTap<330){ reset(); zoomAt(e.clientX,e.clientY,2.5); lastTap=0; }
+      else lastTap=now;
+    }
+  }
+  stage.addEventListener('pointerup', endPtr);
+  stage.addEventListener('pointercancel', endPtr);
+  function addBadge(parent){ if(!parent||parent.querySelector('.zoombadge')) return; var b=document.createElement('span'); b.className='zoombadge'; b.innerHTML='🔍 <span data-en="Zoom" data-es="Ampliar">Zoom</span>'; parent.appendChild(b); }
+  function enrollOpen(im){ openZoom(im.currentSrc||im.src, im.alt||''); }
+  var hero=document.querySelector('.fri-photo'), heroImg=hero?hero.querySelector('img'):null;
+  if(hero&&heroImg){ hero.classList.add('zoomable'); addBadge(hero); hero.addEventListener('click', function(){ enrollOpen(heroImg); }); }
+  document.querySelectorAll('.lpd-card img').forEach(function(im){
+    im.classList.add('zoomable'); addBadge(im.closest('.lpd-card'));
+    im.addEventListener('click', function(ev){ ev.preventDefault(); enrollOpen(im); });
+  });
+})();
+</script>
+
+</body>
+<!-- mirror sync 2026-11-05 -->
+</html>
