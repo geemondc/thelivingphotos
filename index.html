@@ -120,28 +120,12 @@
   #s4 .pace{color:#f5ecd9}
   .lp{
     position:relative; width:min(96vw,680px); aspect-ratio:16/9;
-    border-radius:12px; overflow:hidden; cursor:pointer;
+    border-radius:12px; overflow:hidden;
     box-shadow:0 30px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(217,164,65,.3);
   }
   .lp img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
-  .lp .base{animation:lpBreathe 34s ease-in-out infinite; animation-play-state:paused}
-  .lp .dusk{opacity:0; animation:lpDusk 26s ease-in-out infinite; animation-play-state:paused}
-  .lp .glow{
-    position:absolute; width:56%; padding-top:56%; border-radius:50%;
-    left:34%; top:-14%; pointer-events:none; mix-blend-mode:screen;
-    background:radial-gradient(circle, rgba(255,196,96,.55) 0%, rgba(255,170,70,.16) 45%, rgba(255,170,70,0) 68%);
-    animation:lpGlow 9s ease-in-out infinite; animation-play-state:paused;
-  }
-  .lp .sweep{
-    position:absolute; top:-25%; height:150%; width:60%; pointer-events:none; mix-blend-mode:screen;
-    background:linear-gradient(100deg, rgba(255,215,150,0) 15%, rgba(255,215,150,.30) 50%, rgba(255,215,150,0) 85%);
-    animation:lpSweep 12s ease-in-out infinite; animation-play-state:paused;
-  }
-  .inview .lp .base,.inview .lp .dusk,.inview .lp .glow,.inview .lp .sweep{animation-play-state:running}
-  @keyframes lpBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
-  @keyframes lpDusk{0%,100%{opacity:0}35%{opacity:.5}65%{opacity:.18}82%{opacity:.55}}
-  @keyframes lpGlow{0%,100%{opacity:.35}50%{opacity:.75}}
-  @keyframes lpSweep{0%{transform:translateX(-320px) rotate(11deg)}55%{transform:translateX(560px) rotate(11deg)}100%{transform:translateX(560px) rotate(11deg)}}
+  .lp iframe{position:absolute; inset:0; width:100%; height:100%; border:0; display:block; background:#14100c}
+  #s4 .lp .chip{z-index:3; pointer-events:none}
   #s4 .chip{bottom:12px}
 
   /* ---------- S5 Rides ---------- */
@@ -189,7 +173,7 @@
     #s1 .stage,#s2 .stage{width:360px}
   }
   @media (prefers-reduced-motion: reduce){
-    .lp .base,.lp .dusk,.lp .glow,.lp .sweep,.chip,#hero .scrollhint{animation:none !important}
+    .chip,#hero .scrollhint{animation:none !important}
     section{transition:none; opacity:1; transform:none}
   }
 </style>
@@ -205,6 +189,9 @@
 #brandBtn img{width:38px;height:38px;border-radius:9px;border:1.5px solid var(--gold);display:block}
 #brandBtn span{font-weight:700;letter-spacing:.18em;font-size:15px;color:var(--ink);text-transform:uppercase;white-space:nowrap}
 .tb-group{display:flex;gap:8px;align-items:center;flex:1;justify-content:space-evenly}
+.tb-left{display:flex;align-items:center;gap:8px;flex:none}
+.tb-right{display:flex;align-items:center;gap:8px;flex:none}
+.tb-group.tb-mid{justify-content:center;flex-wrap:wrap}
 @media (max-width:760px){ #brandBtn span{display:none} #topBar{gap:6px;padding:8px 8px} .tb-group{gap:6px} .tbtn{padding:6px 10px;font-size:12px} }
 .tbtn{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 16px;border-radius:999px;background:rgba(255,252,244,.9);border:1.5px solid var(--gold);color:var(--ink);font:inherit;font-size:14px;font-weight:700;letter-spacing:.06em;cursor:pointer;white-space:nowrap}
 @media(max-width:560px){.tbtn{padding:0 10px;font-size:12.5px;height:42px}#brandBtn{gap:7px}#brandBtn span{font-size:11px;letter-spacing:.05em;line-height:1.15;max-width:76px;white-space:normal}#brandBtn img{width:30px;height:30px}#tbSb span{display:none}#tbTheme{padding:0 14px;font-size:15px;min-width:76px;justify-content:center}#tbTheme span{display:inline;font-size:12.5px}#topBar{padding:7px 8px;gap:6px}.tb-group{gap:6px}}
@@ -217,11 +204,13 @@ section{scroll-margin-top:78px}
   #brandBtn img{width:28px;height:28px}
   #brandBtn span{display:inline;font-size:13px;letter-spacing:.14em;line-height:1.1;max-width:none;white-space:nowrap}
   .tb-group{flex:none;width:100%;justify-content:center;flex-wrap:wrap;gap:6px}
+  .tb-left{width:100%;justify-content:flex-start}
+  .tb-right{width:100%;justify-content:center}
   .tbtn{height:36px;padding:0 11px;font-size:12px}
   #tbSb span{display:inline}
   #tbTheme{min-width:0;padding:0 11px}
   #tbTheme span{font-size:12px}
-  section{scroll-margin-top:142px}
+  section{scroll-margin-top:204px}
 }
 .send-order{font-size:16px;line-height:1.55;color:var(--teal-d);background:rgba(13,92,99,.08);border:1px solid rgba(13,92,99,.35);border-radius:14px;padding:12px 16px;margin:0 auto 16px;max-width:560px;text-align:center}
 body.dark{--ivory:#171310;--ivory2:#1e1710;--paper:#221a12;--ink:#f5ecd7;--ink2:#cdb894;background-color:#14100c;background-image:none}
@@ -271,8 +260,6 @@ body.dark .send-order{color:#7fd4da;border-color:rgba(127,212,218,.4);background
 .panel .code{font-size:27px;font-weight:800;letter-spacing:.14em;color:#8fe3d4;text-align:center;margin:12px 0 0}
 .panel .sprite{display:block;width:118px;border-radius:14px;margin:6px auto 12px}
 .tbtn{touch-action:manipulation}
-@media (max-width:520px){#tbIntro span{display:none}#tbIntro{min-width:0}}
-@media (max-width:640px){#tbIntro span{display:inline}}
 /* the 'See everything' door, riding directly above the footer */
 .store-door{background:#241610;text-align:center;padding:54px 20px 2px}
 .store-door .store-line{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(24px,6.4vw,32px);color:#f3e9cf}
@@ -282,10 +269,19 @@ body.dark .send-order{color:#7fd4da;border-color:rgba(127,212,218,.4);background
 <body>
 
 <nav id="topBar" aria-label="Site">
-  <a id="brandBtn" href="https://thelivingphotos.com/" aria-label="Back to intro photo"><img src="img/p-42b0e5a17c.jpg" alt=""><span>Future Ready</span></a>
-  <div class="tb-group">
-    <button class="tbtn" id="tbIntro" type="button">↺ <span data-en="Back to intro photo" data-es="Volver a la foto de portada">Back to intro photo</span></button>
-    <a class="tbtn" href="https://geemondc.github.io/living-cards-site/formal-preview-clean/" target="_blank" rel="noopener"><span data-en="First Class" data-es="Primera Clase">First Class</span></a> <a class="tbtn" href="rides.html"><span data-en="Rides" data-es="Paseos">Rides</span></a> <button class="tbtn" id="tbSb" type="button">☰ <span data-en="Links" data-es="Enlaces">Links</span></button>
+  <div class="tb-left">
+    <a id="brandBtn" href="https://thelivingphotos.com/" aria-label="Living Photos — home"><img src="img/p-42b0e5a17c.jpg" alt=""><span>Future Ready</span></a>
+    <button class="tbtn" id="tbSb" type="button">☰ <span data-en="Links" data-es="Enlaces">Links</span></button>
+  </div>
+  <div class="tb-group tb-mid">
+    <a class="tbtn" href="https://thelivingphotos.com/firstclass.html"><span data-en="First Class" data-es="Primera Clase">First Class</span></a>
+    <a class="tbtn" href="https://thelivingphotos.com/store.html"><span data-en="Photos" data-es="Fotos">Photos</span></a>
+    <a class="tbtn" href="https://thelivingphotos.com/envelopes.html"><span data-en="Cards and Envelopes" data-es="Tarjetas y Sobres">Cards and Envelopes</span></a>
+    <a class="tbtn" href="https://thelivingphotos.com/living-notes/"><span data-en="Notes" data-es="Notas">Notes</span></a>
+    <a class="tbtn" href="https://thelivingphotos.com/rides.html"><span data-en="Rides" data-es="Paseos">Rides</span></a>
+    <a class="tbtn" href="https://thelivingphotos.com/theater.html"><span data-en="The Theater" data-es="El Teatro">The Theater</span></a>
+  </div>
+  <div class="tb-right">
     <button class="tbtn" id="tbQr" type="button">▦ QR</button>
     <button class="tbtn" id="tbLang" type="button">Español</button>
     <button class="tbtn" id="tbTheme" type="button" aria-pressed="false">☾ <span>Dark</span></button>
@@ -380,11 +376,9 @@ body.dark .send-order{color:#7fd4da;border-color:rgba(127,212,218,.4);background
 <section id="s4">
   <div class="eyebrow">Living Photos</div>
   <p class="pace">A favorite photo deserves to stay alive, doesn't it?</p>
-  <div class="lp" id="bigview" role="img" aria-label="The Big View — a living photo of the evening view, its light slowly changing">
-    <img class="base" src="https://geemondc.github.io/big-view/still.jpg" alt="" loading="lazy">
-    <img class="dusk" src="https://geemondc.github.io/big-view/dusk.jpg" alt="" loading="lazy">
-    <div class="glow"></div>
-    <div class="sweep"></div>
+  <div class="lp" id="bigview">
+    <img class="poster" src="https://geemondc.github.io/big-view/still.jpg" alt="The Big View — the evening view over the water" loading="lazy">
+    <iframe id="bvframe" data-live="https://geemondc.github.io/big-view/?v=2#wall" title="Living Photo — The Big View, playing" scrolling="no" allow="autoplay; fullscreen" allowfullscreen></iframe>
     <span class="chip">It's alive — watch the light</span>
   </div>
   <a class="lead" href="https://thelivingphotos.com/theater.html">Step into the Theater</a>
@@ -478,11 +472,18 @@ body.dark .send-order{color:#7fd4da;border-color:rgba(127,212,218,.4);background
   }, { rootMargin: '240px 0px', threshold: 0.15 });
   vio.observe(vid);
 
+  /* the Big View: ignite the living piece (the one with the fireworks,
+     same embed as the store homepage's exhibit) when it nears the screen */
+  var bv = document.getElementById('bvframe');
+  var bio = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting && !bv.src) bv.src = bv.getAttribute('data-live');
+    });
+  }, { rootMargin: '240px 0px', threshold: 0.15 });
+  bio.observe(bv);
+
   function goRides(){ window.location.href = 'https://thelivingphotos.com/rides.html'; }
   document.getElementById('ridewrap').addEventListener('click', goRides);
-  document.getElementById('bigview').addEventListener('click', function(){
-    window.location.href = 'https://thelivingphotos.com/theater.html';
-  });
 })();
 </script>
 <script>
