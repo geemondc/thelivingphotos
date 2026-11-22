@@ -98,6 +98,12 @@
   }
   @keyframes hintBob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 
+  /* ---------- S0 Christmas ---------- */
+  #s0{background:linear-gradient(180deg,#5c0a14,#7f1d1d 55%,#8f1220); color:#fdf3e0}
+  #s0 .pace{color:#ffeec9}
+  #s0 .stage{width:min(94vw,540px)}
+  #s0 .stage img{border-radius:10px; box-shadow:0 30px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(217,164,65,.4)}
+
   /* ---------- S1 First Class ---------- */
   #s1{background:radial-gradient(130% 100% at 50% 0%, #0e4d30 0%, #083420 55%, #041f13 100%); color:#f3e9cf}
   #s1 .pace{color:#f7ecc9}
@@ -339,6 +345,17 @@ body.dark .send-order{color:#7fd4da;border-color:rgba(127,212,218,.4);background
   <div class="scrollhint">↓ &nbsp;Start with the emerald&nbsp; ↓</div>
 </section>
 
+<!-- CHRISTMAS -->
+<section id="s0">
+  <div class="eyebrow">Christmas at Living Photos</div>
+  <p class="pace">Cards to send, a calendar to open, a fire to sit by.</p>
+  <button class="stage" data-open="christmastree" aria-label="Open the Trimming the Tree Christmas card">
+    <img src="https://geemondc.github.io/christmastree-scene/still.jpg" alt="Trimming the Tree — the eight friends decorating the Christmas tree" loading="lazy">
+    <span class="chip">Tap to open it</span>
+  </button>
+  <a class="lead" href="https://futurereadyadvent2.lovable.app">Christmas at Living Photos</a>
+</section>
+
 <!-- 1 · FIRST CLASS -->
 <section id="s1">
   <div class="eyebrow">First Class Cards</div>
@@ -427,7 +444,9 @@ body.dark .send-order{color:#7fd4da;border-color:rgba(127,212,218,.4);background
     card: { title: "Living Cards — the Boat Ride",
       src: "https://geemondc.github.io/living-card-sample/?scene=boat&color=red&anim=scene&to=Riley&from=Jordan&line=Smooth%20sailing%20all%20year" },
     note: { title: "Living Notes — a folded letter",
-      src: "https://thelivingphotos.com/living-notes/?note=ivoryl&to=Friend&from=Me" }
+      src: "https://thelivingphotos.com/living-notes/?note=ivoryl&to=Friend&from=Me" },
+    christmastree: { title: "Christmas — Trimming the Tree",
+      src: "https://geemondc.github.io/living-card-sample/?scene=christmastree&to=Taylor&from=Robin" }
   };
   var overlay = document.getElementById('overlay'),
       frame = document.getElementById('ovframe'),
