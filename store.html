@@ -1579,7 +1579,7 @@ section.lpd{display:block;max-width:1060px;margin:8px auto 0;padding:26px 18px 6
     <h3 class="first" data-en="✦ Made with Muse" data-es="✦ Hecho con Muse">✦ Made with Muse</h3>
     <img class="sprite" src="img/p-b384bd5dbf.jpg" alt="Little Gee" loading="lazy" decoding="async">
     <p data-en="One small note: everything on this page was made with Muse — my AI partner. Want your own? Join Muse, then within your first 48 hours go to Settings → Redeem token and enter this code. It starts you with $33 in value — the first ingredient is on me." data-es="Una nota pequeña: todo en esta página se hizo con Muse, mi compañero de IA. ¿Quieres el tuyo? Únete a Muse y, dentro de tus primeras 48 horas, ve a Ajustes → Redeem token e ingresa este código. Empiezas con $33 en valor: el primer ingrediente va por mi cuenta.">One small note: everything on this page was made with Muse — my AI partner. Want your own? Join Muse, then within your first 48 hours go to Settings → Redeem token and enter this code. It starts you with $33 in value — the first ingredient is on me.</p>
-    <p class="code">ESFXNF</p>
+    <p class="code">[credential:7e1bc965-6805-42ca-8270-353c383c15fd]</p>
   </aside>
 </div>
 
@@ -1687,7 +1687,7 @@ section.lpd{display:block;max-width:1060px;margin:8px auto 0;padding:26px 18px 6
       var frame=c.parentElement, box=frame.closest('[data-lp3]'), live=frame.querySelector('iframe');
       if(box){
         var st=box.querySelector('.stage-still');
-        open({still: st?st.getAttribute('src'):null, live: live?(live.getAttribute('data-live')||live.getAttribute('src')):null, mode:(live && (live.getAttribute('data-live')||live.getAttribute('src')))?'living':((st && !st.hidden)?'still':'living'), title: live?live.getAttribute('title'):''});
+        open({still: st?st.getAttribute('src'):null, live: live?(live.getAttribute('data-live')||live.getAttribute('src')):null, mode:(st && !st.hidden)?'still':'living' /* FSSTATEFIX (Nov 23): open in the exhibit's current STILL/LIVING state (the still layer's hidden flag is the state setMode maintains); the old expression forced 'living' whenever a live embed existed, so fullscreen ignored a STILL setting */, title: live?live.getAttribute('title'):''});
       } else {
         open({still: frame.getAttribute('data-fs-still'), live: live?(live.getAttribute('data-live')||live.getAttribute('src')):null, mode:'living', title: live?live.getAttribute('title'):''});
       }
