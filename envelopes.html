@@ -509,8 +509,8 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
   <div class="tb-group">
     <a class="tbtn" href="https://thelivingphotos.com/" data-i18n="navStore">Living Photos</a>
     <a class="tbtn" href="https://thelivingphotos.com/theater.html" data-i18n="navTheater">The Theater</a>
-    <a class="tbtn on" href="envelopes.html" aria-current="page" data-i18n="navCards">Cards &amp; Envelopes</a>
-    <a class="tbtn" href="https://thelivingphotos.com/living-notes/" data-i18n="navNotes">Living Notes</a> <a class="tbtn" href="https://geemondc.github.io/living-cards-site/formal-preview-clean/" data-i18n="navFirstClass">First Class</a> <a class="tbtn" href="https://thelivingphotos.com/rides.html" data-i18n="navRides">Rides</a>
+    <a class="tbtn on" href="envelopes.html" aria-current="page" data-i18n="navCards">Living Cards</a>
+    <a class="tbtn" href="https://thelivingphotos.com/living-notes/" data-i18n="navNotes">Living Notes</a> <a class="tbtn" href="https://geemondc.github.io/living-cards-site/formal-preview-clean/" data-i18n="navFirstClass">First Class</a> <a class="tbtn" href="https://geemondc.github.io/pop-up-cards/">Pop-Up Cards</a> <a class="tbtn" href="https://thelivingphotos.com/rides.html" data-i18n="navRides">Rides</a>
     <button class="tbtn" type="button" id="langBtn" aria-pressed="false">Espa&ntilde;ol</button>
     <button class="tbtn" type="button" id="darkBtn" aria-pressed="false" data-i18n="darkBtn">Dark</button>
     <button class="tbtn" type="button" id="qrBtn" aria-pressed="false">QR</button>
@@ -619,6 +619,19 @@ body.dark #topBar .tbtn.on{background:#f2d98c;color:#2b1218}
       <p data-i18n="beatFc3">These don't mix and match.</p>
       <p data-i18n="beatFc4">First Class cards are $1.50 each and they aren't sold in bundles.</p>
       <a class="beat-btn" href="https://geemondc.github.io/living-cards-site/formal-preview-clean/" data-i18n="beatFcBtn">See the First Class cards</a>
+    </div>
+  </div>
+  <style>
+    .beat>iframe.popframe{width:40%;max-width:250px;height:330px;border:0;border-radius:12px;display:block;box-shadow:0 6px 16px rgba(60,30,10,.18);background:#101410}
+    @media (max-width:640px){.beat>iframe.popframe{width:100%;max-width:330px;height:400px;margin:0 auto}}
+  </style>
+  <div class="beat">
+    <iframe class="popframe" src="https://geemondc.github.io/paperfold-tree/" title="The Tree — a pop-up card that opens and lights itself" loading="lazy"></iframe>
+    <div class="btxt">
+      <h3>Pop-Up Cards</h3>
+      <p>Cards that open into little worlds — a tree that lights itself, a sea in an envelope, a cake whose candles light one by one.</p>
+      <p>$2 each.</p>
+      <a class="beat-btn" href="https://geemondc.github.io/pop-up-cards/">See the Pop-Up Cards</a>
     </div>
   </div>
 </section>
@@ -2232,7 +2245,7 @@ body.dark .lc-pair{background:#241c12}
 (function(){
   var ES = {
     fcDoorH:'First Class — lo más formal.', fcDoorLine:'Las tarjetas First Class cuestan $1.50 cada una y no forman parte de los paquetes.', fcDoorBtn:'Mira las tarjetas First Class →',
-    navStore:'Fotos Vivientes', navTheater:'El Teatro', navCards:'Tarjetas y Sobres', navNotes:'Notas Vivientes', navFirstClass:'Primera Clase', navRides:'Paseos',
+    navStore:'Fotos Vivientes', navTheater:'El Teatro', navCards:'Tarjetas Vivientes', navNotes:'Notas Vivientes', navFirstClass:'Primera Clase', navRides:'Paseos',
     darkBtn:'Oscuro', qrTitle:'Escanea para abrir esta p\u00e1gina',
     counts:'12 colores \u00b7 98 tarjetas \u00b7 30 notas vivientes',
     beatHowH:'Cómo funciona',
